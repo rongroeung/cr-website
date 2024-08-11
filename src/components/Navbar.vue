@@ -1,18 +1,36 @@
 <template>
   <nav class="Navbar">
     <input type="checkbox" id="sidebar-active" />
-    <label for="sidebar-active" class="open-sidebar-button">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="32px"
-        viewBox="0 -960 960 960"
-        width="32px"
-        fill="#5f6368"
-      >
-        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-      </svg>
-    </label>
-
+    <div class="navbar-mobile">
+      <div class="navbar-search-icon-mobile">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"
+          ></path>
+        </svg>
+      </div>
+      <div class="navbar-logo-mobile">
+        <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
+      </div>
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          fill="#5f6368"
+        >
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </label>
+    </div>
     <label for="sidebar-active" class="overlay"></label>
     <div class="links-container">
       <label for="sidebar-active" class="close-sidebar-button">
@@ -28,57 +46,70 @@
           />
         </svg>
       </label>
-
-      <div class="navbar-logo">
-        <img src="../assets/img/crossroads-logo-01.png" alt="" onclick="" />
+      <div class="navbar-logo-desktop">
+        <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
       </div>
-
       <div class="dropdown-menu">
-        <a href="/about" @click="handleNavbarClick('about')"
-          >About<svg
+        <a href="/about" @click="handleNavbarClick('about')">
+          About
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
             viewBox="0 -960 960 960"
             width="32px"
             fill="#5f6368"
           >
-            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" /></svg
-        ></a>
-        <div class="sub-menu">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+          </svg>
+        </a>
+        <div
+          class="sub-menu sub-menu-about"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showAbout }"
+        >
           <a href="/church-board">Church Board</a>
           <a href="/pastoral-team">Pastoral Team</a>
           <a href="/milestone">Milestone</a>
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/ministries"
-          >Ministries<svg
+        <a href="/ministries" @click="handleNavbarClick('ministries')">
+          Ministries
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
             viewBox="0 -960 960 960"
             width="32px"
             fill="#5f6368"
           >
-            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" /></svg
-        ></a>
-        <div class="sub-menu">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+          </svg>
+        </a>
+        <div
+          class="sub-menu sub-menu-ministries"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showMinistries }"
+        >
           <a href="/campus-ministry">Campus Ministry</a>
           <a href="/worship-ministry">Worship Ministry</a>
           <a href="/sport-ministry">Sport Ministry</a>
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/mission"
-          >Mission<svg
+        <a href="/mission" @click="handleNavbarClick('mission')">
+          Mission
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
             viewBox="0 -960 960 960"
             width="32px"
             fill="#5f6368"
           >
-            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" /></svg
-        ></a>
-        <div class="sub-menu">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+          </svg>
+        </a>
+        <div
+          class="sub-menu sub-menu-mission"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showMission }"
+        >
           <a href="/church-outreach">Church Outreach</a>
           <a href="/micro-enterprise-project">Micro-Enterprise Projects</a>
           <a href="/certificate-in-ministry-leadership">Certificate In Ministry Leadership</a>
@@ -86,17 +117,22 @@
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/get-involve"
-          >Get Involved<svg
+        <a href="/get-involve" @click="handleNavbarClick('get-involve')">
+          Get Involved
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
             viewBox="0 -960 960 960"
             width="32px"
             fill="#5f6368"
           >
-            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" /></svg
-        ></a>
-        <div class="sub-menu">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+          </svg>
+        </a>
+        <div
+          class="sub-menu sub-menu-get-involve"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showGetInvolve }"
+        >
           <a href="/short-term-missions">Short-Term Missions</a>
           <a href="/professional-equipper">Professional Equipper</a>
           <a href="/volunteer">Volunteer</a>
@@ -104,24 +140,28 @@
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/news"
-          >News<svg
+        <a href="/news" @click="handleNavbarClick('news')">
+          News
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
             viewBox="0 -960 960 960"
             width="32px"
             fill="#5f6368"
           >
-            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" /></svg
-        ></a>
-        <div class="sub-menu">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+          </svg>
+        </a>
+        <div
+          class="sub-menu sub-menu-news"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showNews }"
+        >
           <a href="/sunday-sermons">Sunday Sermons</a>
           <a href="/events">Events</a>
           <a href="/church-news">Church News</a>
         </div>
       </div>
       <div class="dropdown-menu"><a href="/contact">Contact</a></div>
-
       <div class="navbar-search-icon-desktop">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -154,11 +194,80 @@
 </template>
 
 <script>
+import router from '../router'
 export default {
   name: 'Navbar',
+  data() {
+    return {
+      width: 0,
+      showAbout: false,
+      showMinistries: false,
+      showMission: false,
+      showGetInvolve: false,
+      showNews: false,
+      openOnce: false
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  watch: {
+    width(newValue) {
+      if (newValue > 1200) {
+        this.showAbout = false
+        this.showMinistries = false
+        this.showMission = false
+        this.showGetInvolve = false
+        this.showNews = false
+      }
+    }
+  },
   methods: {
     handleNavbarClick(args) {
-      console.log(args)
+      if (this.isBelowTabletScreen) {
+        event.preventDefault()
+        if (this.openOnce) this.goToSelectedRoute(args)
+        this.showSelectedDropdownMenu(args)
+      }
+    },
+    showSelectedDropdownMenu(menu) {
+      this.showAbout = menu === 'about'
+      this.showMinistries = menu === 'ministries'
+      this.showMission = menu === 'mission'
+      this.showGetInvolve = menu === 'get-involve'
+      this.showNews = menu === 'news'
+      this.openOnce = true
+    },
+    goToSelectedRoute(route) {
+      let RouteName
+      if (this.showAbout && route == 'about') {
+        RouteName = 'about'
+      } else if (this.showMinistries && route == 'ministries') {
+        RouteName = 'ministries'
+      } else if (this.showMission && route == 'mission') {
+        RouteName = 'mission'
+      } else if (this.showGetInvolve && route == 'get-involve') {
+        RouteName = 'get-involve'
+      } else if (this.showNews && route == 'news') {
+        RouteName = 'news'
+      }
+      this.openOnce = false
+      if (RouteName) router.push(RouteName)
+    },
+    handleResize() {
+      this.width = window.innerWidth
+    },
+    onClickLogo() {
+      router.push('home')
+    }
+  },
+  computed: {
+    isBelowTabletScreen() {
+      return this.width < 1200 // the same as CSS , @media (max-width: 1200px) {
     }
   }
 }
@@ -176,6 +285,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar-mobile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .links-container {
@@ -205,17 +322,34 @@ html {
   fill: var(--primary-color);
 }
 
-.navbar-logo {
+.navbar-logo-mobile {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-logo-mobile img {
+  max-height: var(--navbar-height);
+  width: auto;
+  cursor: pointer;
+  padding: 3px 0;
+}
+
+.navbar-logo-desktop {
   display: flex;
   justify-content: center;
   margin-right: 120px;
 }
 
-.navbar-logo img {
+.navbar-logo-desktop img {
   max-height: var(--navbar-height);
   width: auto;
   cursor: pointer;
   padding: 3px 0;
+}
+
+.navbar-search-icon-mobile {
+  display: block;
+  padding: 30px;
 }
 
 .navbar-search-icon-desktop {
@@ -242,10 +376,6 @@ nav svg {
   display: flex;
   position: relative;
   height: inherit;
-}
-
-.dropdown-menu:hover .sub-menu {
-  display: flex;
 }
 
 .sub-menu {
@@ -278,6 +408,21 @@ nav svg {
   background-size: cover;
 }
 
+/* Media query above tablet-screen */
+@media (min-width: 1200px) {
+  /* show sub-menu when hover */
+  .dropdown-menu:hover .sub-menu {
+    display: flex;
+  }
+  .navbar-search-icon-mobile {
+    display: none;
+  }
+  .navbar-mobile {
+    display: none;
+  }
+}
+
+/* Media query below tablet-screen */
 @media (max-width: 1200px) {
   nav {
     justify-content: flex-end;
@@ -298,7 +443,7 @@ nav svg {
     gap: 0;
   }
 
-  .navbar-logo {
+  .navbar-logo-desktop {
     height: auto;
     width: 100%;
     margin: 0 0 20px;
@@ -368,6 +513,7 @@ nav svg {
   }
 }
 
+/* Media query below mobile-screen */
 @media (max-width: 500px) {
   .links-container {
     width: 100%;
