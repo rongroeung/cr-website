@@ -20,7 +20,7 @@
 body {
   min-height: 100vh;
   color: white;
-  background:white;
+  background:var(--border-color);
   transition:
     color 0.5s,
     background-color 0.5s;
