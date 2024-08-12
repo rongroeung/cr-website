@@ -3,30 +3,17 @@
     <input type="checkbox" id="sidebar-active" />
     <div class="navbar-mobile">
       <div class="navbar-search-icon-mobile">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 24 24">
           <path
-            d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"
-          ></path>
+            d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z">
+          </path>
         </svg>
       </div>
       <div class="navbar-logo-mobile">
         <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
       </div>
       <label for="sidebar-active" class="open-sidebar-button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 -960 960 960"
-          width="32px"
-          fill="#5f6368"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
       </label>
@@ -34,82 +21,51 @@
     <label for="sidebar-active" class="overlay"></label>
     <div class="links-container">
       <label for="sidebar-active" class="close-sidebar-button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="32px"
-          viewBox="0 -960 960 960"
-          width="32px"
-          fill="#5f6368"
-        >
-          <path
-            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
         </svg>
       </label>
       <div class="navbar-logo-desktop">
         <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
       </div>
       <div class="dropdown-menu">
-        <a href="/about" @click="handleNavbarClick('about')">
-          About
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#5f6368"
-          >
+        <span class="dropdown-menu-inline">
+          <a href="/about" @click="handleNavbarClick('about')" v-t="'about'">
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
           </svg>
-        </a>
-        <div
-          class="sub-menu sub-menu-about"
-          :class="{ hidden: isBelowTabletScreen, 'flex-important': showAbout }"
-        >
-          <a href="/church-board">Church Board</a>
+        </span>
+        <div class="sub-menu sub-menu-about" :class="{ hidden: isBelowTabletScreen, 'flex-important': showAbout }">
+          <a href="/church-board" v-t="'church-board'"></a>
           <a href="/pastoral-team">Pastoral Team</a>
-          <a href="/milestone">Milestone</a>
+          <a href="/milestone" v-t="'milestone'"></a>
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/ministries" @click="handleNavbarClick('ministries')">
-          Ministries
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#5f6368"
-          >
+        <span class="dropdown-menu-inline">
+          <a href="/ministries" @click="handleNavbarClick('ministries')" v-t="'ministries'">
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
           </svg>
-        </a>
-        <div
-          class="sub-menu sub-menu-ministries"
-          :class="{ hidden: isBelowTabletScreen, 'flex-important': showMinistries }"
-        >
+        </span>
+        <div class="sub-menu sub-menu-ministries"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showMinistries }">
           <a href="/campus-ministry">Campus Ministry</a>
           <a href="/worship-ministry">Worship Ministry</a>
           <a href="/sport-ministry">Sport Ministry</a>
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/mission" @click="handleNavbarClick('mission')">
-          Mission
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#5f6368"
-          >
+        <span class="dropdown-menu-inline">
+          <a href="/mission" @click="handleNavbarClick('mission')" v-t="'mission'">
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
           </svg>
-        </a>
-        <div
-          class="sub-menu sub-menu-mission"
-          :class="{ hidden: isBelowTabletScreen, 'flex-important': showMission }"
-        >
+        </span>
+        <div class="sub-menu sub-menu-mission" :class="{ hidden: isBelowTabletScreen, 'flex-important': showMission }">
           <a href="/church-outreach">Church Outreach</a>
           <a href="/micro-enterprise-project">Micro-Enterprise Projects</a>
           <a href="/certificate-in-ministry-leadership">Certificate In Ministry Leadership</a>
@@ -117,22 +73,15 @@
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/get-involve" @click="handleNavbarClick('get-involve')">
-          Get Involved
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#5f6368"
-          >
+        <span class="dropdown-menu-inline">
+          <a href="/get-involved" @click="handleNavbarClick('get-involved')" v-t="'get-involved'">
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
           </svg>
-        </a>
-        <div
-          class="sub-menu sub-menu-get-involve"
-          :class="{ hidden: isBelowTabletScreen, 'flex-important': showGetInvolve }"
-        >
+        </span>
+        <div class="sub-menu sub-menu-get-involve"
+          :class="{ hidden: isBelowTabletScreen, 'flex-important': showGetInvolve }">
           <a href="/short-term-missions">Short-Term Missions</a>
           <a href="/professional-equipper">Professional Equipper</a>
           <a href="/volunteer">Volunteer</a>
@@ -140,40 +89,25 @@
         </div>
       </div>
       <div class="dropdown-menu">
-        <a href="/news" @click="handleNavbarClick('news')">
-          News
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#5f6368"
-          >
+        <span class="dropdown-menu-inline">
+          <a href="/news" @click="handleNavbarClick('news')" v-t="'news'">
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#5f6368">
             <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
           </svg>
-        </a>
-        <div
-          class="sub-menu sub-menu-news"
-          :class="{ hidden: isBelowTabletScreen, 'flex-important': showNews }"
-        >
-          <a href="/sunday-sermons">Sunday Sermons</a>
-          <a href="/events">Events</a>
-          <a href="/church-news">Church News</a>
+        </span>
+        <div class="sub-menu sub-menu-news" :class="{ hidden: isBelowTabletScreen, 'flex-important': showNews }">
+          <a href="/sunday-sermons" v-t="'sunday-sermons'"></a>
+          <a href="/events" v-t="'events'"></a>
+          <a href="/church-news" v-t="'church-news'"></a>
         </div>
       </div>
-      <div class="dropdown-menu"><a href="/contact" v-t="'contact'"></a></div>
+      <div class="dropdown-menu"><a href="/contact" class="contact" v-t="'contact'"></a></div>
       <div class="navbar-search-icon-desktop">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
           <path
-            d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"
-          ></path>
+            d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z">
+          </path>
         </svg>
       </div>
       <div class="navbar-language-icon-desktop cursor-pointer">
@@ -306,13 +240,25 @@ html {
   text-transform: uppercase;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu-inline {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu:hover .contact {
   color: var(--primary-color);
 }
 
-.dropdown-menu a:hover svg {
-  fill: var(--primary-color);
+.dropdown-menu-inline:hover a {
+  color: var(--primary-color);
+  transition: 0.25s;
 }
+
+.dropdown-menu-inline:hover svg {
+  fill: var(--primary-color);
+  transition: 0.25s;
+}
+
 
 .navbar-logo-mobile {
   display: flex;
@@ -402,13 +348,16 @@ nav svg {
 
 /* Media query above tablet-screen */
 @media (min-width: 1200px) {
+
   /* show sub-menu when hover */
   .dropdown-menu:hover .sub-menu {
     display: flex;
   }
+
   .navbar-search-icon-mobile {
     display: none;
   }
+
   .navbar-mobile {
     display: none;
   }
@@ -492,11 +441,11 @@ nav svg {
     cursor: pointer;
   }
 
-  #sidebar-active:checked ~ .links-container {
+  #sidebar-active:checked~.links-container {
     right: 0;
   }
 
-  #sidebar-active:checked ~ .overlay {
+  #sidebar-active:checked~.overlay {
     position: fixed;
     height: 100%;
     width: 100%;

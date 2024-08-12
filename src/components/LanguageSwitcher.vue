@@ -10,8 +10,8 @@
     </div>
   </div>
 </template>
-  
-  <script setup>
+
+<script setup>
 import { useI18n } from 'vue-i18n'
 import { watchEffect } from 'vue'
 
@@ -36,13 +36,19 @@ watchEffect(() => {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .language {
   display: flex;
   flex-direction: row;
   height: 1.5rem;
   width: 6rem;
 }
+
 .language img {
   margin-right: 0.25rem;
+}
+
+.language:hover button {
+  color: var(--primary-color);
 }
 </style>
