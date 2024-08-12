@@ -200,11 +200,6 @@ export default {
 </script>
 
 <style scoped>
-html {
-  font-size: 1rem;
-  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
-}
-
 .Navbar {
   height: var(--navbar-height);
   background-color: var(--secondary-color);

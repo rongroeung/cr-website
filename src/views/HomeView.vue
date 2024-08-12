@@ -1,12 +1,13 @@
-<script setup>
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+<script>
+import Carousel from '@/components/Carousel.vue';
+export default{
+  name:'HomeView',
+  components: {Carousel}
+}
 </script>
 
 <template>
   <main>
-    <h1 class="text-primary">Home Page</h1>
-    <LanguageSwitcher />
-    <p class="text-black">{{ t('welcome') }}</p>
+    <Carousel/>
   </main>
 </template>

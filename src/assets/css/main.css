@@ -17,10 +17,16 @@
   --navbar-height: 90px;
 }
 
+html {
+  font-size: 1rem;
+  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+}
+
+
 body {
   min-height: 100vh;
   color: white;
-  background:var(--border-color);
+  background: var(--border-color);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -45,6 +51,14 @@ body {
 }
 
 /* customize class */
-.flex-important{
+.flex-important {
   display: flex !important;
+}
+
+.h-carousel {
+  height: calc(100vh - 90px);
+}
+
+.h-110 {
+  height: 50rem;
 }
