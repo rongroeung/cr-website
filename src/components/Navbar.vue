@@ -446,7 +446,7 @@ nav svg {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 9999;
   }
 }
 
