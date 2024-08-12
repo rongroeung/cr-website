@@ -35,8 +35,8 @@
         </button>
         <!-- Inner Content -->
         <div class="center-content">
-            <p class="text-white text-3xl md:text-4xl xl:text-5xl mb-4 lg:mb-5 xl:mb-7" v-t="'rebuilding-cambodia'"> </p>
-            <p class="text-white text-xl sm:text-2xl mb-4 lg:mb-5 xl:mb-7" v-t="'love-god-love-other'"> </p>
+            <p class="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7" v-t="'rebuilding-cambodia'"> </p>
+            <p class="text-white text-sm sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7" v-t="'love-god-love-other'"> </p>
             <button v-t="'learn-more'" class="btn-learn-more">
             </button>
         </div>
@@ -82,5 +82,13 @@ export default{
     color: white;
     text-transform: uppercase;
     text-align: center;
+}
+
+/* Media query below mobile-screen */
+@media (max-width: 768px) {
+    .btn-learn-more{
+        width: 8rem;
+        height: 2rem;
+    }
 }
 </style>
