@@ -15,17 +15,27 @@
   --text-color: #f0f0f0;
   --border-color: #f0f0f06b;
   --navbar-height: 90px;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
 }
 
 html {
   font-size: 1rem;
-  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+  font-family:
+    Poppins,
+    Segoe UI,
+    Tahoma,
+    sans-serif;
 }
-
 
 body {
   min-height: 100vh;
-  color: white;
+  color: black;
   background: var(--border-color);
   transition:
     color 0.5s,

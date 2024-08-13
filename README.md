@@ -18,9 +18,20 @@ npm run dev
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/) 
+### Lint with [ESLint](https://eslint.org/)
+
 (for analyze code)
 
 ```sh
 npm run lint
+```
+
+### Commit Message
+
+```
+feat (new feature)
+fix (bug fix)
+docs (changes to documentation)
+style (formatting, missing semi colons, etc; no code change)
+refactor (refactoring production code)
 ```
