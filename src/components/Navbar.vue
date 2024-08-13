@@ -1,7 +1,7 @@
 <script>
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import router from '@/router'
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 export default {
   name: 'Navbar',
   components: { LanguageSwitcher },
@@ -46,7 +46,7 @@ export default {
       this.showAbout = menu === 'about'
       this.showMinistries = menu === 'ministries'
       this.showMission = menu === 'mission'
-      this.showGetInvolve = menu === 'get-involve'
+      this.showGetInvolve = menu === 'get-involved'
       this.showNews = menu === 'news'
       this.openOnce = true
     },
@@ -133,8 +133,8 @@ export default {
         <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
       </div>
       <div class="dropdown-menu">
-        <span class="dropdown-menu-inline">
-          <a href="/about" @click="handleNavbarClick('about')" v-t="'about'"> </a>
+        <span class="dropdown-menu-inline" @click="handleNavbarClick('about')">
+          <a href="/about" v-t="'about'"> </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -149,14 +149,14 @@ export default {
           class="sub-menu sub-menu-about"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showAbout }"
         >
-          <router-link :to="{ name: 'church-board'}" v-t="'church-board'"></router-link>
-          <router-link :to="{ name: 'pastoral-team'}" v-t="'pastoral-team'"></router-link>
-          <router-link :to="{ name: 'milestone'}" v-t="'milestone'"></router-link>
+          <router-link :to="{ name: 'church-board' }" v-t="'church-board'"></router-link>
+          <router-link :to="{ name: 'pastoral-team' }" v-t="'pastoral-team'"></router-link>
+          <router-link :to="{ name: 'milestone' }" v-t="'milestone'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
-        <span class="dropdown-menu-inline">
-          <a href="/ministries" @click="handleNavbarClick('ministries')" v-t="'ministries'"> </a>
+        <span class="dropdown-menu-inline" @click="handleNavbarClick('ministries')">
+          <a href="/ministries" v-t="'ministries'"> </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -171,14 +171,14 @@ export default {
           class="sub-menu sub-menu-ministries"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showMinistries }"
         >
-          <router-link :to="{ name: 'campus-ministry'}" v-t="'campus-ministry'"></router-link>
-          <router-link :to="{ name: 'worship-ministry'}" v-t="'worship-ministry'"></router-link>
-          <router-link :to="{ name: 'sport-ministry'}" v-t="'sport-ministry'"></router-link>
+          <router-link :to="{ name: 'campus-ministry' }" v-t="'campus-ministry'"></router-link>
+          <router-link :to="{ name: 'worship-ministry' }" v-t="'worship-ministry'"></router-link>
+          <router-link :to="{ name: 'sport-ministry' }" v-t="'sport-ministry'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
-        <span class="dropdown-menu-inline">
-          <a href="/mission" @click="handleNavbarClick('mission')" v-t="'mission'"> </a>
+        <span class="dropdown-menu-inline" @click="handleNavbarClick('mission')">
+          <a href="/mission" v-t="'mission'"> </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -193,16 +193,21 @@ export default {
           class="sub-menu sub-menu-mission"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showMission }"
         >
-          <router-link :to="{ name: 'church-outreach'}" v-t="'church-outreach'"></router-link>
-          <router-link :to="{ name: 'micro-enterprise-project'}" v-t="'micro-enterprise-project'"></router-link>
-          <router-link :to="{ name: 'certificate-in-ministry-leadership'}" v-t="'certificate-in-ministry-leadership'"></router-link>
-          <router-link :to="{ name: 'sponsor-a-child'}" v-t="'sponsor-a-child'"></router-link>
+          <router-link :to="{ name: 'church-outreach' }" v-t="'church-outreach'"></router-link>
+          <router-link
+            :to="{ name: 'micro-enterprise-project' }"
+            v-t="'micro-enterprise-project'"
+          ></router-link>
+          <router-link
+            :to="{ name: 'certificate-in-ministry-leadership' }"
+            v-t="'certificate-in-ministry-leadership'"
+          ></router-link>
+          <router-link :to="{ name: 'sponsor-a-child' }" v-t="'sponsor-a-child'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
-        <span class="dropdown-menu-inline">
-          <a href="/get-involved" @click="handleNavbarClick('get-involved')" v-t="'get-involved'">
-          </a>
+        <span class="dropdown-menu-inline" @click="handleNavbarClick('get-involved')">
+          <a href="/get-involved" v-t="'get-involved'"> </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -217,15 +222,21 @@ export default {
           class="sub-menu sub-menu-get-involve"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showGetInvolve }"
         >
-          <router-link :to="{ name: 'short-term-missions'}" v-t="'short-term-missions'"></router-link>
-          <router-link :to="{ name: 'professional-equipper'}" v-t="'professional-equipper'"></router-link>
-          <router-link :to="{ name: 'volunteer'}" v-t="'volunteer'"></router-link>
-          <router-link :to="{ name: 'give'}" v-t="'give'"></router-link>
+          <router-link
+            :to="{ name: 'short-term-missions' }"
+            v-t="'short-term-missions'"
+          ></router-link>
+          <router-link
+            :to="{ name: 'professional-equipper' }"
+            v-t="'professional-equipper'"
+          ></router-link>
+          <router-link :to="{ name: 'volunteer' }" v-t="'volunteer'"></router-link>
+          <router-link :to="{ name: 'give' }" v-t="'give'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
-        <span class="dropdown-menu-inline">
-          <a href="/news" @click="handleNavbarClick('news')" v-t="'news'"> </a>
+        <span class="dropdown-menu-inline" @click="handleNavbarClick('news')">
+          <a href="/news" v-t="'news'"> </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -240,14 +251,14 @@ export default {
           class="sub-menu sub-menu-news"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showNews }"
         >
-          <router-link :to="{ name: 'sunday-sermons'}" v-t="'sunday-sermons'"></router-link>
-          <router-link :to="{ name: 'events'}" v-t="'events'"></router-link>
-          <router-link :to="{ name: 'church-news'}" v-t="'church-news'"></router-link>
+          <router-link :to="{ name: 'sunday-sermons' }" v-t="'sunday-sermons'"></router-link>
+          <router-link :to="{ name: 'events' }" v-t="'events'"></router-link>
+          <router-link :to="{ name: 'church-news' }" v-t="'church-news'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline">
-          <router-link :to="{ name: 'contact'}" v-t="'contact'"></router-link>
+          <router-link :to="{ name: 'contact' }" v-t="'contact'"></router-link>
         </span>
       </div>
       <div class="navbar-search-icon-desktop">
@@ -313,6 +324,7 @@ export default {
 .dropdown-menu-inline {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .dropdown-menu:hover .contact {
