@@ -1,3 +1,14 @@
+
+<script setup>
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+  initFlowbite()
+})
+</script>
+
 <template>
   <div id="controls-carousel" class="relative w-full flex flex-col" data-carousel="slide">
     <!-- Carousel wrapper -->
@@ -97,15 +108,6 @@
   </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
-
-// initialize components based on data attribute selectors
-onMounted(() => {
-  initFlowbite()
-})
-</script>
 <style scoped>
 .center-content-wrapper {
   height: 100%;

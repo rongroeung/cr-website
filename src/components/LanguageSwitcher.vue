@@ -1,16 +1,3 @@
-<template>
-  <div class="LanguageSwitcher">
-    <div class="language mr-2">
-      <img src="../assets/img/kh-flag.png" />
-      <button @click="setLanguage('kh')">ភាសាខ្មែរ</button>
-    </div>
-    <div class="language">
-      <img src="../assets/img/us-flag.png" />
-      <button @click="setLanguage('en')">English</button>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { watchEffect } from 'vue'
@@ -29,6 +16,19 @@ watchEffect(() => {
   }
 })
 </script>
+
+<template>
+  <div class="LanguageSwitcher">
+    <div class="language mr-2">
+      <img src="../assets/img/kh-flag.png" />
+      <button @click="setLanguage('kh')">ភាសាខ្មែរ</button>
+    </div>
+    <div class="language">
+      <img src="../assets/img/us-flag.png" />
+      <button @click="setLanguage('en')">English</button>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .LanguageSwitcher {

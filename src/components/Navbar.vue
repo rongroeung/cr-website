@@ -1,3 +1,86 @@
+<script>
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import router from '@/router'
+import { RouterLink } from 'vue-router';
+export default {
+  name: 'Navbar',
+  components: { LanguageSwitcher },
+  data() {
+    return {
+      width: 0,
+      showAbout: false,
+      showMinistries: false,
+      showMission: false,
+      showGetInvolve: false,
+      showNews: false,
+      openOnce: false
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  watch: {
+    width(newValue) {
+      if (newValue > 1200) {
+        this.showAbout = false
+        this.showMinistries = false
+        this.showMission = false
+        this.showGetInvolve = false
+        this.showNews = false
+      }
+    }
+  },
+  methods: {
+    handleNavbarClick(args) {
+      if (this.isBelowTabletScreen) {
+        event.preventDefault()
+        if (this.openOnce) this.goToSelectedRoute(args)
+        this.showSelectedDropdownMenu(args)
+      }
+    },
+    showSelectedDropdownMenu(menu) {
+      this.showAbout = menu === 'about'
+      this.showMinistries = menu === 'ministries'
+      this.showMission = menu === 'mission'
+      this.showGetInvolve = menu === 'get-involve'
+      this.showNews = menu === 'news'
+      this.openOnce = true
+    },
+    goToSelectedRoute(route) {
+      let RouteName
+      if (this.showAbout && route == 'about') {
+        RouteName = 'about'
+      } else if (this.showMinistries && route == 'ministries') {
+        RouteName = 'ministries'
+      } else if (this.showMission && route == 'mission') {
+        RouteName = 'mission'
+      } else if (this.showGetInvolve && route == 'get-involve') {
+        RouteName = 'get-involve'
+      } else if (this.showNews && route == 'news') {
+        RouteName = 'news'
+      }
+      this.openOnce = false
+      if (RouteName) router.push(RouteName)
+    },
+    handleResize() {
+      this.width = window.innerWidth
+    },
+    onClickLogo() {
+      router.push('/')
+    }
+  },
+  computed: {
+    isBelowTabletScreen() {
+      return this.width < 1200 // the same as CSS , @media (max-width: 1200px) {
+    }
+  }
+}
+</script>
+
 <template>
   <nav class="Navbar">
     <input type="checkbox" id="sidebar-active" />
@@ -66,9 +149,9 @@
           class="sub-menu sub-menu-about"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showAbout }"
         >
-          <a href="/church-board" v-t="'church-board'"></a>
-          <a href="/pastoral-team">Pastoral Team</a>
-          <a href="/milestone" v-t="'milestone'"></a>
+          <router-link :to="{ name: 'church-board'}" v-t="'church-board'"></router-link>
+          <router-link :to="{ name: 'pastoral-team'}" v-t="'pastoral-team'"></router-link>
+          <router-link :to="{ name: 'milestone'}" v-t="'milestone'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
@@ -88,9 +171,9 @@
           class="sub-menu sub-menu-ministries"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showMinistries }"
         >
-          <a href="/campus-ministry">Campus Ministry</a>
-          <a href="/worship-ministry">Worship Ministry</a>
-          <a href="/sport-ministry">Sport Ministry</a>
+          <router-link :to="{ name: 'campus-ministry'}" v-t="'campus-ministry'"></router-link>
+          <router-link :to="{ name: 'worship-ministry'}" v-t="'worship-ministry'"></router-link>
+          <router-link :to="{ name: 'sport-ministry'}" v-t="'sport-ministry'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
@@ -110,10 +193,10 @@
           class="sub-menu sub-menu-mission"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showMission }"
         >
-          <a href="/church-outreach">Church Outreach</a>
-          <a href="/micro-enterprise-project">Micro-Enterprise Projects</a>
-          <a href="/certificate-in-ministry-leadership">Certificate In Ministry Leadership</a>
-          <a href="/sponsor-a-chile">Sponsor A Child</a>
+          <router-link :to="{ name: 'church-outreach'}" v-t="'church-outreach'"></router-link>
+          <router-link :to="{ name: 'micro-enterprise-project'}" v-t="'micro-enterprise-project'"></router-link>
+          <router-link :to="{ name: 'certificate-in-ministry-leadership'}" v-t="'certificate-in-ministry-leadership'"></router-link>
+          <router-link :to="{ name: 'sponsor-a-child'}" v-t="'sponsor-a-child'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
@@ -134,10 +217,10 @@
           class="sub-menu sub-menu-get-involve"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showGetInvolve }"
         >
-          <a href="/short-term-missions">Short-Term Missions</a>
-          <a href="/professional-equipper">Professional Equipper</a>
-          <a href="/volunteer">Volunteer</a>
-          <a href="/give">Give</a>
+          <router-link :to="{ name: 'short-term-missions'}" v-t="'short-term-missions'"></router-link>
+          <router-link :to="{ name: 'professional-equipper'}" v-t="'professional-equipper'"></router-link>
+          <router-link :to="{ name: 'volunteer'}" v-t="'volunteer'"></router-link>
+          <router-link :to="{ name: 'give'}" v-t="'give'"></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
@@ -157,12 +240,16 @@
           class="sub-menu sub-menu-news"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showNews }"
         >
-          <a href="/sunday-sermons" v-t="'sunday-sermons'"></a>
-          <a href="/events" v-t="'events'"></a>
-          <a href="/church-news" v-t="'church-news'"></a>
+          <router-link :to="{ name: 'sunday-sermons'}" v-t="'sunday-sermons'"></router-link>
+          <router-link :to="{ name: 'events'}" v-t="'events'"></router-link>
+          <router-link :to="{ name: 'church-news'}" v-t="'church-news'"></router-link>
         </div>
       </div>
-      <div class="dropdown-menu"><a href="/contact" class="contact" v-t="'contact'"></a></div>
+      <div class="dropdown-menu">
+        <span class="dropdown-menu-inline">
+          <router-link :to="{ name: 'contact'}" v-t="'contact'"></router-link>
+        </span>
+      </div>
       <div class="navbar-search-icon-desktop">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -184,87 +271,7 @@
   </nav>
 </template>
 
-<script>
-import LanguageSwitcher from '../components/LanguageSwitcher.vue'
-import router from '../router'
-export default {
-  name: 'Navbar',
-  components: { LanguageSwitcher },
-  data() {
-    return {
-      width: 0,
-      showAbout: false,
-      showMinistries: false,
-      showMission: false,
-      showGetInvolve: false,
-      showNews: false,
-      openOnce: false
-    }
-  },
-  created() {
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.handleResize)
-  },
-  watch: {
-    width(newValue) {
-      if (newValue > 1200) {
-        this.showAbout = false
-        this.showMinistries = false
-        this.showMission = false
-        this.showGetInvolve = false
-        this.showNews = false
-      }
-    }
-  },
-  methods: {
-    handleNavbarClick(args) {
-      if (this.isBelowTabletScreen) {
-        event.preventDefault()
-        if (this.openOnce) this.goToSelectedRoute(args)
-        this.showSelectedDropdownMenu(args)
-      }
-    },
-    showSelectedDropdownMenu(menu) {
-      this.showAbout = menu === 'about'
-      this.showMinistries = menu === 'ministries'
-      this.showMission = menu === 'mission'
-      this.showGetInvolve = menu === 'get-involve'
-      this.showNews = menu === 'news'
-      this.openOnce = true
-    },
-    goToSelectedRoute(route) {
-      let RouteName
-      if (this.showAbout && route == 'about') {
-        RouteName = 'about'
-      } else if (this.showMinistries && route == 'ministries') {
-        RouteName = 'ministries'
-      } else if (this.showMission && route == 'mission') {
-        RouteName = 'mission'
-      } else if (this.showGetInvolve && route == 'get-involve') {
-        RouteName = 'get-involve'
-      } else if (this.showNews && route == 'news') {
-        RouteName = 'news'
-      }
-      this.openOnce = false
-      if (RouteName) router.push(RouteName)
-    },
-    handleResize() {
-      this.width = window.innerWidth
-    },
-    onClickLogo() {
-      router.push('/')
-    }
-  },
-  computed: {
-    isBelowTabletScreen() {
-      return this.width < 1200 // the same as CSS , @media (max-width: 1200px) {
-    }
-  }
-}
-</script>
+
 
 <style scoped>
 .Navbar {
