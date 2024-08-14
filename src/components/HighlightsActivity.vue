@@ -38,14 +38,17 @@ export default {
       </template>
       <template #right-content>
         <img
-          :src="certificateInMinistryLeadershipContent.image"
+          src="../assets/img/The-school-of-missions.jpg"
           :alt="certificateInMinistryLeadershipContent.headerTag"
         />
       </template>
     </layout-2-columns>
     <layout-2-columns id="worship-ministry" :cssWrapper="'pt-0 lg:pt-12'">
       <template #left-content>
-        <img :src="worshipMinistryContent.image" :alt="worshipMinistryContent.headerTag" />
+        <img
+          src="../assets/img/The-school-of-missions.jpg"
+          :alt="worshipMinistryContent.headerTag"
+        />
       </template>
       <template #right-content>
         <HighlightsActivityCard
