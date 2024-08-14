@@ -78,3 +78,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.duration-2000{
+  transition-duration: 2000ms;
+
+}

@@ -10,14 +10,14 @@ export default {
         headerTag: 'certificate-in-ministry-leadership',
         header: 'the-school-of-missions',
         content: 'the-school-of-missions-is-a-theological-training',
-        image: 'src/assets/img/The-school-of-missions.jpg',
+        image: '/src/assets/img/The-school-of-missions.jpg',
         routeName: 'ministries'
       },
       worshipMinistryContent: {
         headerTag: 'worship-ministry',
         header: 'sunday-worship',
         content: 'our-worship-team-exists-to-not-only',
-        image: 'src/assets/img/The-school-of-missions.jpg',
+        image: '/src/assets/img/The-school-of-missions.jpg',
         routeName: 'worship-ministry'
       }
     }

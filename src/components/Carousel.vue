@@ -14,7 +14,7 @@ onMounted(() => {
     <!-- Carousel wrapper -->
     <div class="relative overflow-hidden h-72 md:h-96 lg:h-35rem xl:h-45rem 2xl:h-50rem">
       <!-- Item 1 -->
-      <div class="hidden duration-1000 ease-in-out" data-carousel-item="active">
+      <div class="carousel-item hidden ease-in-out" data-carousel-item="active">
         <img
           src="../assets/img/slideshow-01.jpg"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -22,7 +22,7 @@ onMounted(() => {
         />
       </div>
       <!-- Item 2 -->
-      <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+      <div class="carousel-item hidden ease-in-out" data-carousel-item>
         <img
           src="../assets/img/About--Cover-001.jpg"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -30,7 +30,7 @@ onMounted(() => {
         />
       </div>
       <!-- Item 3 -->
-      <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+      <div class="carousel-item hidden ease-in-out" data-carousel-item>
         <img
           src="../assets/img/About--Cover-002.jpg"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -117,6 +117,10 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.carousel-item {
+  transition-duration: 3s;
 }
 .center-content {
   width: fit-content;

@@ -56,7 +56,7 @@ export default {
           'devotional-disciples',
           'discipleship-character',
           'discipleship-skills',
-          'biblical-octrines'
+          'biblical-doctrines'
         ]
       }
     }
