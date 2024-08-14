@@ -43,7 +43,7 @@ export default {
         />
       </template>
     </layout-2-columns>
-    <layout-2-columns id="worship-ministry">
+    <layout-2-columns id="worship-ministry" :cssWrapper="'pt-0 lg:pt-12'">
       <template #left-content>
         <img :src="worshipMinistryContent.image" :alt="worshipMinistryContent.headerTag" />
       </template>

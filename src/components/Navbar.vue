@@ -1,6 +1,7 @@
 <script>
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import router from '@/router'
+import Field from '@/util/constant'
 export default {
   name: 'Navbar',
   components: { LanguageSwitcher },
@@ -42,25 +43,25 @@ export default {
       }
     },
     showSelectedDropdownMenu(menu) {
-      this.showAbout = menu === 'about'
-      this.showMinistries = menu === 'ministries'
-      this.showMission = menu === 'mission'
-      this.showGetInvolve = menu === 'get-involved'
-      this.showNews = menu === 'news'
+      this.showAbout = menu === Field.ABOUT
+      this.showMinistries = menu === Field.MINISTRIES
+      this.showMission = menu === Field.MISSION
+      this.showGetInvolve = menu === Field.GET_INVOLVED
+      this.showNews = menu === Field.NEWS
       this.openOnce = true
     },
     goToSelectedRoute(route) {
       let RouteName
-      if (this.showAbout && route == 'about') {
-        RouteName = 'about'
-      } else if (this.showMinistries && route == 'ministries') {
-        RouteName = 'ministries'
-      } else if (this.showMission && route == 'mission') {
-        RouteName = 'mission'
-      } else if (this.showGetInvolve && route == 'get-involved') {
-        RouteName = 'get-involved'
-      } else if (this.showNews && route == 'news') {
-        RouteName = 'news'
+      if (this.showAbout && route == Field.ABOUT) {
+        RouteName = Field.ABOUT
+      } else if (this.showMinistries && route == Field.MINISTRIES) {
+        RouteName = Field.MINISTRIES
+      } else if (this.showMission && route == Field.MISSION) {
+        RouteName = Field.MISSION
+      } else if (this.showGetInvolve && route == Field.GET_INVOLVED) {
+        RouteName = Field.GET_INVOLVED
+      } else if (this.showNews && route == Field.NEWS) {
+        RouteName = Field.NEWS
       }
       this.openOnce = false
       if (RouteName) router.push({ name: RouteName })

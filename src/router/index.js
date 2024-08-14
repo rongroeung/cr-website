@@ -60,7 +60,7 @@ const router = createRouter({
           path: 'milestone',
           name: 'milestone',
           component: MilestonePage
-        },
+        }
       ]
     },
     {
@@ -85,7 +85,7 @@ const router = createRouter({
           path: 'sport-ministry',
           name: 'sport-ministry',
           component: SportMinistryPage
-        },
+        }
       ]
     },
     {
@@ -115,7 +115,7 @@ const router = createRouter({
           path: 'sponsor-a-child',
           name: 'sponsor-a-child',
           component: SponsorAChildPage
-        },
+        }
       ]
     },
     {
@@ -145,7 +145,7 @@ const router = createRouter({
           path: 'give',
           name: 'give',
           component: GivePage
-        },
+        }
       ]
     },
     {
@@ -170,7 +170,7 @@ const router = createRouter({
           path: 'church-news',
           name: 'church-news',
           component: ChurchNewsPage
-        },
+        }
       ]
     },
     {

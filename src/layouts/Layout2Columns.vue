@@ -5,11 +5,14 @@ export default {
     wrapReverse: {
       type: Boolean,
       default: false
-    }
+    },
+    cssWrapper: String
   },
   computed: {
     wrapClass() {
-      return this.wrapReverse ? 'flex-wrap-reverse' : 'flex-wrap'
+      return this.wrapReverse
+        ? `flex-wrap-reverse ${this.cssWrapper}`
+        : `flex-wrap ${this.cssWrapper}`
     }
   }
 }

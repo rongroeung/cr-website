@@ -1,4 +1,5 @@
 <script setup>
+import CrButton from './CrButton.vue'
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 
@@ -75,7 +76,7 @@ onMounted(() => {
           class="text-white text-sm sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7"
           v-t="'love-god-love-other'"
         ></p>
-        <button v-t="'learn-more'" class="btn-learn-more"></button>
+        <CrButton />
       </div>
       <button
         type="button"
