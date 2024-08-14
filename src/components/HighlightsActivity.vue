@@ -27,7 +27,7 @@ export default {
 
 <template>
   <section id="highlights-activities" class="bg-white text-black">
-    <layout-2-columns id="certificate-in-ministry-leadership">
+    <layout-2-columns id="certificate-in-ministry-leadership" :wrapReverse="true">
       <template #left-content>
         <HighlightsActivityCard
           :cardHeaderTag="certificateInMinistryLeadershipContent.headerTag"

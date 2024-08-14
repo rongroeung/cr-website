@@ -35,3 +35,44 @@ docs (changes to documentation)
 style (formatting, missing semi colons, etc; no code change)
 refactor (refactoring production code)
 ```
+
+### Conventional order of CSS properties
+
+```
+element {
+  /* I. Microcosm of All Properties */
+  content:           /* What it is. */
+  display:           /* Where or whether it is. */
+  position:              /* Relationships to others. */
+
+  /* A. Content Properties † */
+  background-image:   /* 1. Internal content styling ... */
+  background- ...
+  border:
+  opacity:
+
+  font-family:       /* 2. Typographic styling ...*/
+  font- ...
+  text- ...
+  color:
+
+  /* B. Display Properties */
+  box-sizing:            /* Ordered by Box Model ...*/
+  height:
+  width:
+  max- ...
+  padding:
+  margin:
+
+  /* C. Relational Properties */
+  float:
+  order:
+  z-index:
+
+  /* D. State Properties */
+  cursor:
+  animation:
+  transition:
+}
+
+```

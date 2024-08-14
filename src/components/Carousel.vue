@@ -41,7 +41,7 @@ onMounted(() => {
     <div class="center-content-wrapper">
       <button
         type="button"
-        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        class="absolute top-0 start-0 z-30 flex-center h-full px-4 cursor-pointer group focus:outline-none"
         data-carousel-prev
       >
         <span
@@ -79,7 +79,7 @@ onMounted(() => {
       </div>
       <button
         type="button"
-        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        class="absolute top-0 end-0 z-30 flex-center h-full px-4 cursor-pointer group focus:outline-none"
         data-carousel-next
       >
         <span

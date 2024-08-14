@@ -1,5 +1,4 @@
 <script>
-import { RouterLink } from 'vue-router'
 export default {
   name: 'CrButton',
   props: {
@@ -22,7 +21,7 @@ export default {
 
 <template>
   <div
-    class="cr-button bg-sub-primary flex items-center justify-center text-white"
+    class="cr-button flex-center bg-sub-primary text-white cursor-pointer"
     :class="ButtonSize"
     :color="buttonColor"
   >

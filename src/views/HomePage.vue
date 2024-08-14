@@ -22,8 +22,6 @@ export default {
   <main>
     <Carousel />
     <DiscipleshipJurney />
-    <img src="../assets/img/image2.png" alt="" />
-
     <HighlightsActivity />
     <SundaySermons />
     <PastoralTeamHighlights />

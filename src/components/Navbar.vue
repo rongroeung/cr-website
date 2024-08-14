@@ -1,7 +1,6 @@
 <script>
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import router from '@/router'
-import { RouterLink } from 'vue-router'
 export default {
   name: 'Navbar',
   components: { LanguageSwitcher },
@@ -58,13 +57,13 @@ export default {
         RouteName = 'ministries'
       } else if (this.showMission && route == 'mission') {
         RouteName = 'mission'
-      } else if (this.showGetInvolve && route == 'get-involve') {
-        RouteName = 'get-involve'
+      } else if (this.showGetInvolve && route == 'get-involved') {
+        RouteName = 'get-involved'
       } else if (this.showNews && route == 'news') {
         RouteName = 'news'
       }
       this.openOnce = false
-      if (RouteName) router.push(RouteName)
+      if (RouteName) router.push({ name: RouteName })
     },
     handleResize() {
       this.width = window.innerWidth
@@ -290,7 +289,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 .navbar-mobile {
   display: flex;
   flex-direction: row;
@@ -298,7 +296,6 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-
 .links-container {
   height: 100%;
   width: 100%;
@@ -309,7 +306,6 @@ export default {
   gap: 20px;
   z-index: 9999;
 }
-
 .dropdown-menu a {
   height: 100%;
   display: flex;
@@ -318,83 +314,68 @@ export default {
   transition: 0.25s;
   text-transform: uppercase;
 }
-
 .dropdown-menu-inline {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-
 .dropdown-menu:hover .contact {
   color: var(--primary-color);
 }
-
 .dropdown-menu-inline:hover a {
   color: var(--primary-color);
   transition: 0.25s;
 }
-
 .dropdown-menu-inline:hover svg {
   fill: var(--primary-color);
   transition: 0.25s;
 }
-
 .navbar-logo-mobile {
   display: flex;
   justify-content: center;
 }
-
 .navbar-logo-mobile img {
   max-height: var(--navbar-height);
   width: auto;
   cursor: pointer;
   padding: 3px 0;
 }
-
 .navbar-logo-desktop {
   display: flex;
   justify-content: center;
   margin-right: 120px;
 }
-
 .navbar-logo-desktop img {
   max-height: var(--navbar-height);
   width: auto;
   cursor: pointer;
   padding: 3px 0;
 }
-
 .navbar-search-icon-mobile {
   display: block;
   padding: 30px;
 }
-
 .navbar-search-icon-desktop {
   display: flex;
   justify-content: center;
   margin-left: 120px;
   cursor: pointer;
 }
-
 nav svg {
   fill: var(--text-color);
 }
-
 #sidebar-active {
   display: none;
 }
-
 .open-sidebar-button,
 .close-sidebar-button {
   display: none;
 }
-
 .dropdown-menu {
   display: flex;
   position: relative;
   height: inherit;
 }
-
 .sub-menu {
   position: absolute;
   display: none;
@@ -403,17 +384,14 @@ nav svg {
   width: 260px;
   background-color: var(--secondary-color);
 }
-
 .sub-menu a {
   height: 60px;
   padding: 0 30px;
 }
-
 .sub-menu a:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
-
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -424,29 +402,24 @@ nav svg {
   background-image: url(../assets/img/languages.jpg);
   background-size: cover;
 }
-
 /* Media query above tablet-screen */
 @media (min-width: 1200px) {
   /* show sub-menu when hover */
   .dropdown-menu:hover .sub-menu {
     display: flex;
   }
-
   .navbar-search-icon-mobile {
     display: none;
   }
-
   .navbar-mobile {
     display: none;
   }
 }
-
 /* Media query below tablet-screen */
 @media (max-width: 1200px) {
   nav {
     justify-content: flex-end;
   }
-
   .links-container {
     position: fixed;
     flex-direction: column;
@@ -461,21 +434,17 @@ nav svg {
     transition: 0.75s ease-out;
     gap: 0;
   }
-
   .navbar-logo-desktop {
     height: auto;
     width: 100%;
     margin: 0 0 20px;
   }
-
   .navbar-search-icon-desktop {
     display: none;
   }
-
   .navbar-language-icon-desktop {
     margin: 28px;
   }
-
   .dropdown-menu {
     flex-direction: column;
     height: auto;
@@ -484,45 +453,37 @@ nav svg {
     padding: 16px 30px;
     border-bottom: solid 1px var(--border-color);
   }
-
   .dropdown-menu a {
     height: auto;
     width: fit-content;
     padding: 0;
   }
-
   .sub-menu {
     position: static;
     width: 100%;
   }
-
   .sub-menu a {
     height: auto;
     font-size: smaller;
     margin: 12px 20px 0;
     padding: 0;
   }
-
   .sub-menu a:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
   }
-
   .hero-section {
     background-size: contain;
   }
-
   .open-sidebar-button,
   .close-sidebar-button {
     display: block;
     padding: 30px;
     cursor: pointer;
   }
-
   #sidebar-active:checked ~ .links-container {
     right: 0;
   }
-
   #sidebar-active:checked ~ .overlay {
     position: fixed;
     height: 100%;
@@ -532,7 +493,6 @@ nav svg {
     z-index: 9999;
   }
 }
-
 /* Media query below mobile-screen */
 @media (max-width: 500px) {
   .links-container {
