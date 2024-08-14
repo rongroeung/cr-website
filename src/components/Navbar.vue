@@ -282,8 +282,6 @@ export default {
   </nav>
 </template>
 
-
-
 <style scoped>
 .Navbar {
   height: var(--navbar-height);

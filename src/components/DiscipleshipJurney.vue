@@ -5,7 +5,7 @@ export default {
   components: { DiscipleshipCard },
   data() {
     return {
-      items: [
+      discipleshipCardContents: [
         {
           id: 1,
           icon: '/src/assets/icon/connect.svg',
@@ -49,7 +49,16 @@ export default {
             'connecting-them-with-people-and-opportunities'
           ]
         }
-      ]
+      ],
+      discipleshipJourney: {
+        header: 'our-discipleship-journey',
+        contents: [
+          'devotional-disciples',
+          'discipleship-character',
+          'discipleship-skills',
+          'biblical-octrines'
+        ]
+      }
     }
   }
 }
@@ -58,20 +67,22 @@ export default {
 <template>
   <section id="discipleship-journey" class="bg-secondary h-fit">
     <div class="flex flex-col items-center text-white py-7">
-      <p class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl p-4">Our Discipleship Journey</p>
+      <p
+        class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl p-4"
+        v-t="discipleshipJourney.header"
+      ></p>
       <ul class="sm:text-2xl xl:text-3xl w-fit text-center">
-        <li>Devotional Disciples</li>
-        <li>Discipleship Character</li>
-        <li>Discipleship Skills</li>
-        <li>Biblical Doctrines</li>
+        <template v-for="content in discipleshipJourney.contents" :key="content">
+          <li v-t="content"></li>
+        </template>
       </ul>
     </div>
     <section class="flex flex-row flex-wrap justify-center border-1 text-black pb-6">
-      <div v-for="item in items" :key="item.id">
+      <div v-for="content in discipleshipCardContents" :key="content.id">
         <DiscipleshipCard
-          :iconPath="item.icon"
-          :cardHeader="item.header"
-          :cardContents="item.contents"
+          :iconPath="content.icon"
+          :cardHeader="content.header"
+          :cardContents="content.contents"
         />
       </div>
     </section>
