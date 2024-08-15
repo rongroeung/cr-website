@@ -1,9 +1,11 @@
-class Field {
-  static ABOUT = 'about'
-  static MINISTRIES = 'ministries'
-  static MISSION = 'mission'
-  static GET_INVOLVED = 'get-involved'
-  static NEWS = 'news'
-}
-
-export default Field
+export default Object.freeze({
+   ABOUT : 'about',
+   MINISTRIES : 'ministries',
+   MISSION : 'mission',
+   GET_INVOLVED : 'get-involved',
+   NEWS : 'news',
+   CONNECT : 'connect',
+   ESTABLISH : 'establish',
+   EQUIP : 'equip',
+   MULTIPLY : 'multiply',
+})

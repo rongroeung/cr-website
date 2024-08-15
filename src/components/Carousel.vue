@@ -12,7 +12,7 @@ onMounted(() => {
 <template>
   <div id="controls-carousel" class="relative w-full flex flex-col" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative overflow-hidden h-72 md:h-96 lg:h-35rem xl:h-45rem 2xl:h-50rem">
+    <div class="relative overflow-hidden h-64 md:h-96 lg:h-35rem xl:h-45rem 2xl:h-50rem">
       <!-- Item 1 -->
       <div class="carousel-item hidden ease-in-out" data-carousel-item="active">
         <img

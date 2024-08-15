@@ -17,7 +17,7 @@ export default {
         headerTag: 'worship-ministry',
         header: 'sunday-worship',
         content: 'our-worship-team-exists-to-not-only',
-        image: '/src/assets/img/The-school-of-missions.jpg',
+        image: '/src/assets/img/sunday-worship.jpg',
         routeName: 'worship-ministry'
       }
     }
@@ -45,10 +45,7 @@ export default {
     </layout-2-columns>
     <layout-2-columns id="worship-ministry" :cssWrapper="'pt-0 lg:pt-12'">
       <template #left-content>
-        <img
-          src="../assets/img/The-school-of-missions.jpg"
-          :alt="worshipMinistryContent.headerTag"
-        />
+        <img src="../assets/img/sunday-worship.jpg" :alt="worshipMinistryContent.headerTag" />
       </template>
       <template #right-content>
         <HighlightsActivityCard

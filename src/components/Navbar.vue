@@ -26,12 +26,11 @@ export default {
   watch: {
     width(newValue) {
       if (newValue > 1200) {
-        this.showAbout = false
-        this.showMinistries = false
-        this.showMission = false
-        this.showGetInvolve = false
-        this.showNews = false
+        this.resetNavbarState()
       }
+    },
+    currentRoute() {
+      this.closeSidebar()
     }
   },
   methods: {
@@ -63,7 +62,6 @@ export default {
       } else if (this.showNews && route == Field.NEWS) {
         RouteName = Field.NEWS
       }
-      this.openOnce = false
       if (RouteName) router.push({ name: RouteName })
     },
     handleResize() {
@@ -71,11 +69,26 @@ export default {
     },
     onClickLogo() {
       router.push('/')
+    },
+    closeSidebar() {
+      this.openOnce = false
+      this.resetNavbarState()
+      this.$refs.sidebarActive.checked = false
+    },
+    resetNavbarState() {
+      this.showAbout = false
+      this.showMinistries = false
+      this.showMission = false
+      this.showGetInvolve = false
+      this.showNews = false
     }
   },
   computed: {
     isBelowTabletScreen() {
       return this.width < 1200 // the same as CSS , @media (max-width: 1200px) {
+    },
+    currentRoute() {
+      return this.$route.name
     }
   }
 }
@@ -83,7 +96,7 @@ export default {
 
 <template>
   <nav class="Navbar">
-    <input type="checkbox" id="sidebar-active" />
+    <input type="checkbox" id="sidebar-active" ref="sidebarActive" />
     <div class="navbar-mobile">
       <div class="navbar-search-icon-mobile">
         <svg
@@ -430,6 +443,7 @@ nav svg {
     right: -100%;
     z-index: 9999;
     width: 400px;
+    height: 2000px;
     background-color: var(--secondary-color);
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
     transition: 0.75s ease-out;
