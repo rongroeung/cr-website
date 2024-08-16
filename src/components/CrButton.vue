@@ -25,10 +25,44 @@ export default {
     :class="ButtonSize"
     :color="buttonColor"
   >
-    <span class="uppercase font-bold">
+    <span class="span-text uppercase font-bold flex-center text-center">
       <router-link :to="{ name: buttonRoute }" v-t="label"></router-link>
     </span>
   </div>
 </template>
 
-<script scoped></script>
+<style scoped>
+.span-text {
+  position: absolute;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  width: inherit;
+  height: inherit;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    bottom: 14px;
+    left: 10%;
+    margin-left: auto;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover {
+    color: white;
+
+    &::after {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+}
+</style>
