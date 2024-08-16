@@ -1,6 +1,6 @@
 <script>
 import Carousel from '@/components/Carousel.vue'
-import DiscipleshipJurney from '@/components/DiscipleshipJurney.vue'
+import DiscipleshipJourney from '@/components/DiscipleshipJourney.vue'
 import HighlightsActivity from '@/components/HighlightsActivity.vue'
 import SundaySermons from '@/components/SundaySermons.vue'
 import PastoralTeamHighlights from '@/components/PastoralTeamHighlights.vue'
@@ -9,7 +9,7 @@ export default {
   name: 'HomePage',
   components: {
     Carousel,
-    DiscipleshipJurney,
+    DiscipleshipJourney,
     HighlightsActivity,
     SundaySermons,
     PastoralTeamHighlights,
@@ -21,7 +21,7 @@ export default {
 <template>
   <main>
     <Carousel />
-    <DiscipleshipJurney />
+    <DiscipleshipJourney />
     <HighlightsActivity />
     <SundaySermons />
     <PastoralTeamHighlights />

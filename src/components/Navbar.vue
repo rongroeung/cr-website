@@ -298,7 +298,9 @@ export default {
 <style scoped>
 .Navbar {
   height: var(--navbar-height);
+  width: 100%;
   background-color: var(--secondary-color);
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;

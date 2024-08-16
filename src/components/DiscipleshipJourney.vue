@@ -1,8 +1,9 @@
 <script>
 import DiscipleshipCard from './DiscipleshipCard.vue'
+import CrButton from './CrButton.vue'
 export default {
-  name: 'DiscipleshipJurney',
-  components: { DiscipleshipCard },
+  name: 'DiscipleshipJourney',
+  components: { DiscipleshipCard, CrButton },
   data() {
     return {
       discipleshipCardContents: [
@@ -66,18 +67,24 @@ export default {
 
 <template>
   <section id="discipleship-journey" class="bg-secondary h-fit">
-    <div class="flex flex-col items-center text-white py-7">
-      <p
-        class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl p-4"
-        v-t="discipleshipJourney.header"
-      ></p>
-      <ul class="sm:text-2xl xl:text-3xl w-fit text-center">
+    <div class="flex flex-col items-center text-white py-20">
+      <p class="text-2xl md:text-3xl xl:text-4xl pb-6" v-t="discipleshipJourney.header"></p>
+      <ul class="text-md md:text-lg xl:text-lg w-fit text-center pb-8">
         <template v-for="content in discipleshipJourney.contents" :key="content">
           <li v-t="content"></li>
         </template>
       </ul>
+      <div class="flex">
+        <CrButton class="me-4" />
+        <CrButton
+          label="About Us"
+          buttonColor="bg-secondary"
+          buttonBorder="cr-border-button"
+          buttonRoute="about"
+        />
+      </div>
     </div>
-    <section class="flex flex-row flex-wrap justify-center border-1 text-black pb-6">
+    <section class="flex flex-row flex-wrap justify-center border-1 text-black gap-6 pb-20">
       <div v-for="content in discipleshipCardContents" :key="content.id">
         <DiscipleshipCard
           :iconPath="content.icon"
@@ -91,6 +98,6 @@ export default {
 
 <style scoped>
 li {
-  line-height: 1.5;
+  line-height: 1.8;
 }
 </style>

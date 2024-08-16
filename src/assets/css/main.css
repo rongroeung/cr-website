@@ -14,7 +14,7 @@
   --sub-secondary-color: #01153a;
   --text-color: #f0f0f0;
   --border-color: #f0f0f06b;
-  --navbar-height: 90px;
+  --navbar-height: 80px;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
@@ -36,7 +36,8 @@ html {
 body {
   min-height: 100vh;
   color: black;
-  background: var(--border-color);
+  background: var(--secondary-color);
+  display: block;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -81,5 +82,8 @@ body {
 
 .duration-2000{
   transition-duration: 2000ms;
+}
 
+.cr-border-button{
+  border: 2px solid rgb(107 114 128);
 }

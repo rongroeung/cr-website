@@ -1,7 +1,7 @@
 <script>
 import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
-import FooterSection from './components/FooterSection.vue';
+import FooterSection from './components/FooterSection.vue'
 export default {
   components: { Navbar, RouterView, FooterSection }
 }
@@ -9,9 +9,14 @@ export default {
 
 <template>
   <Navbar />
-  <RouterView />
-  <FooterSection />
+  <div class="app">
+    <RouterView />
+    <FooterSection />
+  </div>
 </template>
 
 <style scoped>
+.app {
+  max-width: 95rem;
+}
 </style>

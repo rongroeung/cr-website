@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div class="max-w-sm h-80 p-6 m-4 bg-white border rounded-lg shadow text-center">
+  <div class="max-w-xs h-80 p-6 bg-white border rounded-lg shadow text-center">
     <div class="flex items-center">
       <img v-if="cardHeader == 'connect'" src="../assets/icon/connect.svg" />
       <img v-if="cardHeader == 'establish'" src="../assets/icon/establish.svg" />

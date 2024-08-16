@@ -7,7 +7,7 @@ export default {
 }
 </script>
 <template>
-  <section class="pastoral-team-highlight-card w-35rem bg-white rounded-lg m-4 p-6">
+  <section class="pastoral-team-highlight-card max-w-md bg-white rounded-lg m-4 p-6">
     <div class="mb-8 text-xl text-gray-600" v-t="item.content"></div>
     <div class="profile-section flex">
       <img
