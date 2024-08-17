@@ -15,9 +15,13 @@ export default {
     <div class="w-80 flex flex-col">
       <div class="relative">
         <!-- Image Video -->
-        <img :src="video.thumbnail" class="w-80 h-auto rounded-lg" />
+        <img
+          :src="video.thumbnail"
+          class="w-80 rounded-lg"
+          style="height: 180px; object-fit: contain"
+        />
 
-        <p class="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py">
+        <p class="absolute right-2 bottom-2 bg-gray-700 text-gray-100 text-xs px-1 py rounded-sm">
           {{ video.duration }}
         </p>
       </div>
