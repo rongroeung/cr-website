@@ -88,3 +88,7 @@ body {
 .cr-border-button{
   border: 2px solid var(--text-color);
 }
+
+.w-17rem{
+  width: 17rem;
+}

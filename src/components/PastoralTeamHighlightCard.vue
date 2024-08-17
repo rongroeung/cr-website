@@ -19,7 +19,7 @@ export default {
       <img v-if="item.id == 2" src="../assets/img/Menghun-Profile.png" :class="cssClass" />
       <img v-if="item.id == 3" src="../assets/img/Dany-Profile.png" :class="cssClass" />
       <div class="flex flex-col justify-center">
-        <p v-t="item.name" class="text-secondary text-sm"></p>
+        <p class="text-secondary text-sm">{{ item.name }}</p>
         <p v-t="item.role" class="uppercase text-sm md:text-base text-gray-500 font-semibold"></p>
       </div>
     </div>
