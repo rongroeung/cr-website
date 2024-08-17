@@ -95,7 +95,7 @@ export default {
 </script>
 
 <template>
-  <nav class="Navbar">
+  <nav class="Navbar top-0 flex z-50">
     <input type="checkbox" id="sidebar-active" ref="sidebarActive" />
     <div class="navbar-mobile">
       <div class="navbar-search-icon-mobile">
@@ -113,7 +113,11 @@ export default {
         </svg>
       </div>
       <div class="navbar-logo-mobile">
-        <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
+        <img
+          src="../assets/img/crossroads-logo-01.png"
+          alt="Crossroads Church Logo"
+          @click="onClickLogo()"
+        />
       </div>
       <label for="sidebar-active" class="open-sidebar-button">
         <svg
