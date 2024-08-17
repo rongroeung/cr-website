@@ -1,6 +1,7 @@
 {
   "welcome": "ស្វាគមន៍",
   "about": "អំពីយើង",
+  "about-us": "អំពីយើង",
   "church-board": "ក្រុមប្រឹក្សាព្រះវិហារ",
   "pastoral-team": "ក្រុមអ្នកបំរើ",
   "milestone": "ព្រឹត្តិការណ៍សំខាន់",
@@ -23,6 +24,7 @@
   "events": "កម្មវិធី",
   "church-news": "ព័ត៌មானព្រះវិហារ",
   "contact": "ទាក់ទង",
+  "contact-us": "ទាក់ទងយើង",
   "rebuilding-cambodia": "កសាងប្រទេសកម្ពុជាឡើងវិញ",
   "love-god-love-other": "ស្រឡាញ់ព្រះ ស្រឡាញ់អ្នកដទៃ បង្កើតសិស្ស",
   "learn-more": "ស្វែងយល់បន្ថែម",
@@ -54,5 +56,10 @@
   "the-school-of-missions-is-a-theological-training": "សាលាបេសកកម្មគឺជាកម្មវិធីបណ្តុះបណ្តាលខាងទ្រឹស្ដីដែលរៀបចំឡើងដោយ CNEC ដែលរៀបចំសម្រាប់គ្រូគង្វាល និងអ្នកដឹកនាំព្រះវិហារ",
   "our-worship-team-exists-to-not-only": "ក្រុមគោរពរបស់យើងមានដើម្បីមិនត្រឹមតែនាំយើងចូលទៅក្នុងបេះដូងរបស់ព្រះយេស៊ូវតាមរយៈឧបករណ៍ភ្លេងនិងឧបករណ៍ភ្លេងប៉ុណ្ណោះទេប៉ុន្តែថែមទាំងដើម្បីទទួលស្គាល់គ្រូបង្វឹក និងដោះលែងអ្នកដែលត្រូវបានចាក់ប្រេងក្នុងការហៅរបស់ទ្រង់។",
   "the-school-of-missions": "សាលាបេសកកម្ម",
-  "sunday-worship": "ការគោរពថ្ងៃអាទិត្យ"
+  "sunday-worship": "ការគោរពថ្ងៃអាទិត្យ",
+  "senior-pastor": "Senior Pastor",
+  "assistant-pastor": "Assistant Pastor",
+  "pastoral-team-member": "Pastoral Team Member",
+  "pastor-rathana-is-the-fruit-of-crossroads-ministry": "Pastor Rathana is the fruit of Crossroads Ministry. He came to follow Jesus as his personal Lord and Savior in 2006 through Crossroads Ministry. In 2008 after receiving God's vision through a dream, he was commissioned to plant the church amongst University students. (Pastor Rathana holds a bachelor degree in IT and Economics.) Later on, in 2013, he went to the Philippines to pursue an M.Div. in Pastoral Studies. He graduated with honors and the Theological Award in 2017, And then, right/after his graduation he returned to Cambodia and was installed to be the pastor of the Crossroads Church in 2018 His passion is to reach the younger generation through preaching God's Word"
+
 }

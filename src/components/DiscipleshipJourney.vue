@@ -66,10 +66,10 @@ export default {
 </script>
 
 <template>
-  <section id="discipleship-journey" class="bg-secondary h-fit">
-    <div class="flex flex-col items-center text-white py-20">
-      <p class="text-2xl md:text-3xl xl:text-4xl pb-6" v-t="discipleshipJourney.header"></p>
-      <ul class="text-md md:text-lg xl:text-lg w-fit text-center pb-8">
+  <section id="discipleship-journey" class="bg-secondary h-fit flex-center flex-col">
+    <div class="w-4/5 flex flex-col items-center text-white py-20">
+      <p class="text-2xl md:text-4xl xl:text-5xl pb-6" v-t="discipleshipJourney.header"></p>
+      <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
         <template v-for="content in discipleshipJourney.contents" :key="content">
           <li v-t="content"></li>
         </template>
@@ -77,14 +77,15 @@ export default {
       <div class="flex">
         <CrButton class="me-4" />
         <CrButton
-          label="About Us"
+          label="about-us"
           buttonColor="bg-secondary"
           buttonBorder="cr-border-button"
           buttonRoute="about"
+          :allowHover="true"
         />
       </div>
     </div>
-    <section class="flex flex-row flex-wrap justify-center border-1 text-black gap-6 pb-20">
+    <section class="w-4/5 flex flex-row flex-wrap justify-center border-1 text-black gap-6 pb-20">
       <div v-for="content in discipleshipCardContents" :key="content.id">
         <DiscipleshipCard
           :iconPath="content.icon"

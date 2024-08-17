@@ -10,6 +10,7 @@ export default {
       colors: {
         primary: '#f5a807',
         secondary: '#021b4b',
+        'cr-gray':'#f4f5f7',
         'sub-primary': '#f5aa07c5',
         'sub-secondary': '#01153a'
       },

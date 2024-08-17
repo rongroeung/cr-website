@@ -36,6 +36,19 @@ style (formatting, missing semi colons, etc; no code change)
 refactor (refactoring production code)
 ```
 
+### Text Styling
+
+> For normal paragraph text
+```
+text-sm md:text-base
+```
+
+> For heading text
+```
+text-2xl md:text-4xl xl:text-5xl
+```
+
+
 ### Conventional order of CSS properties
 
 ```

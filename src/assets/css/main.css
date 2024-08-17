@@ -10,10 +10,11 @@
 :root {
   --primary-color: #f5a807;
   --secondary-color: #021b4b;
+  --cr-gray:#f4f5f7;
   --sub-primary-color: #f5aa07c5;
   --sub-secondary-color: #01153a;
   --text-color: #f0f0f0;
-  --border-color: #f0f0f06b;
+  --border-color: #6B7280;
   --navbar-height: 80px;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
@@ -35,7 +36,7 @@ html {
 
 body {
   min-height: 100vh;
-  color: black;
+  color: white;
   background: var(--secondary-color);
   display: block;
   transition:
@@ -85,5 +86,5 @@ body {
 }
 
 .cr-border-button{
-  border: 2px solid rgb(107 114 128);
+  border: 2px solid var(--text-color);
 }

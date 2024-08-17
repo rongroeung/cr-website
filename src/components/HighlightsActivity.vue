@@ -26,8 +26,14 @@ export default {
 </script>
 
 <template>
-  <section id="highlights-activities" class="bg-white text-black">
-    <layout-2-columns id="certificate-in-ministry-leadership" :wrapReverse="true">
+  <section id="highlights-activities" class="bg-cr-gray flex-center flex-col text-black">
+    <layout-2-columns
+      id="certificate-in-ministry-leadership"
+      :wrapReverse="true"
+      cssWrapper="w-4/5 py-12 pb-0"
+      cssLeft="pb-0 lg:ps-0"
+      cssRight="lg:pe-0"
+    >
       <template #left-content>
         <HighlightsActivityCard
           :cardHeaderTag="certificateInMinistryLeadershipContent.headerTag"
@@ -43,7 +49,12 @@ export default {
         />
       </template>
     </layout-2-columns>
-    <layout-2-columns id="worship-ministry" :cssWrapper="'pt-0 lg:pt-12'">
+    <layout-2-columns
+      id="worship-ministry"
+      cssWrapper="w-4/5 py-12"
+      cssLeft="lg:ps-0"
+      cssRight="lg:pe-0"
+    >
       <template #left-content>
         <img src="../assets/img/sunday-worship.jpg" :alt="worshipMinistryContent.headerTag" />
       </template>
