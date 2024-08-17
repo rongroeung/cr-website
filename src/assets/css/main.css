@@ -16,6 +16,7 @@
   --text-color: #f0f0f0;
   --border-color: #6B7280;
   --navbar-height: 80px;
+  --max-width:1520px;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
@@ -91,4 +92,16 @@ body {
 
 .w-17rem{
   width: 17rem;
+}
+
+.max-w-24{
+  max-width: 22.5rem;
+}
+
+.h-300-px{
+  height: 300px;
+}
+
+.image-header {
+  background-image: url(/src/assets/img/Coverpage-001.jpg);
 }

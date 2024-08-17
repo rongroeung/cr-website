@@ -12,7 +12,7 @@ export default {
 }
 </script>
 <template>
-  <section class="pastoral-team-highlight-card bg-white rounded-lg p-6 max-w-sm">
+  <section class="pastoral-team-highlight-card bg-white rounded-lg p-6 max-w-24">
     <div class="mb-8 text-sm text-gray-600" v-t="item.content"></div>
     <div class="profile-section flex">
       <img v-if="item.id == 1" src="../assets/img/Rathana-Profile.png" :class="cssClass" />

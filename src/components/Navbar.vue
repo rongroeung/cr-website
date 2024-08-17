@@ -95,7 +95,7 @@ export default {
 </script>
 
 <template>
-  <nav class="Navbar top-0 flex z-50">
+  <nav class="Navbar top-0 fixed z-50">
     <input type="checkbox" id="sidebar-active" ref="sidebarActive" />
     <div class="navbar-mobile">
       <div class="navbar-search-icon-mobile">

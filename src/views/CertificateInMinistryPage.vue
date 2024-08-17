@@ -1,11 +1,16 @@
 <script>
-export default{
-    name:'CertificateInMinistryPage'
+export default {
+  name: 'CertificateInMinistryPage'
 }
 </script>
 
 <template>
-    <p class="text-black text-5xl" v-t="'certificate-in-ministry-leadership'"></p>
+  <section class="bg-secondary h-fit w-full flex-center flex-col">
+    <div class="image-header h-300-px w-full flex-center">
+      <p class="text-white text-5xl" v-t="'certificate-in-ministry-leadership'"></p>
+    </div>
+    <div class="content">Content goes here</div>
+  </section>
 </template>
 
 <script scoped>

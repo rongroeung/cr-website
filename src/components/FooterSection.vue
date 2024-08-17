@@ -18,11 +18,11 @@ export default {
   <footer class="bg-secondary text-white">
     <div class="container w-4/5 mx-auto px-6">
       <div class="py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div>
+        <div class="flex items-center justify-center md:justify-start">
           <img
             src="../assets/img/crossroads-logo-01.png"
             alt="Crossroads Church Logo"
-            class="h-24 mb-4 cursor-pointer"
+            class="h-24 cursor-pointer"
             @click="onClickLogo()"
           />
         </div>
@@ -104,6 +104,10 @@ export default {
 </template>
 
 <style scoped>
+footer {
+  width: 100vw;
+  max-width: 1519px;
+}
 li:hover {
   color: var(--primary-color);
 }

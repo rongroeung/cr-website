@@ -10,9 +10,10 @@ export default {
 <template>
   <section id="contact-us " class="flex-center flex-col">
     <div id="contact-us-map" class="h-60 w-4/5 flex-center flex-col sm:flex-row">
-      <p class="w-2/4 text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0 font-semibold">
-        Have a project in mind? Let’s get to work.
-      </p>
+      <p
+        class="w-2/4 text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0 font-semibold"
+        v-t="'want-to-get-in-touch'"
+      ></p>
       <CrButton label="contact-us" :class="'sm:ml-auto'" buttonRoute="contact" />
     </div>
     <div class="h-96 w-full">

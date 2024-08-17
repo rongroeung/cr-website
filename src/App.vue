@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
 .app {
-  max-width: 95rem;
+  max-width: var(--max-width);
+  margin-top: var(--navbar-height);
 }
 </style>

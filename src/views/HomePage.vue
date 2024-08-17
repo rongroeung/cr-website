@@ -19,14 +19,12 @@ export default {
 </script>
 
 <template>
-  <main>
-    <Carousel />
-    <DiscipleshipJourney />
-    <HighlightsActivity />
-    <SundaySermons />
-    <PastoralTeamHighlights />
-    <ContactUsMap />
-  </main>
+  <Carousel />
+  <DiscipleshipJourney />
+  <HighlightsActivity />
+  <SundaySermons />
+  <PastoralTeamHighlights />
+  <ContactUsMap />
 </template>
 
 <style scoped>
