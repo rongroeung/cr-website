@@ -11,7 +11,7 @@ const app = createApp(App)
 
 // bind global variable
 app.config.globalProperties.$Field = Field;
-
+app.config.globalProperties.$assetsPath = 'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets'
 
 app.use(router)
 app.use(i18n);

@@ -15,9 +15,7 @@ export default {
   <section class="pastoral-team-highlight-card bg-white rounded-lg p-6 max-w-24">
     <div class="mb-8 text-sm text-gray-600" v-t="item.content"></div>
     <div class="profile-section flex">
-      <img v-if="item.id == 1" src="../assets/img/Rathana-Profile.png" :class="cssClass" />
-      <img v-if="item.id == 2" src="../assets/img/Menghun-Profile.png" :class="cssClass" />
-      <img v-if="item.id == 3" src="../assets/img/Dany-Profile.png" :class="cssClass" />
+      <img :src="item.image" :class="cssClass" />
       <div class="flex flex-col justify-center">
         <p class="text-secondary text-sm">{{ item.name }}</p>
         <p v-t="item.role" class="uppercase text-sm md:text-base text-gray-500 font-semibold"></p>

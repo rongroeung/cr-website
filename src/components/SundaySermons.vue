@@ -10,7 +10,7 @@ export default {
         {
           id: 1,
           thumbnail:
-            'https://static.vecteezy.com/system/resources/thumbnails/011/998/173/small_2x/youtube-icon-free-vector.jpg',
+            'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/Deacon_Bryan_Testimony.png',
           url: 'https://www.youtube.com/watch?v=7sDG_CUmTQM',
           title: "Deacon Bryan's Testimony",
           duration: '36:09',
@@ -23,7 +23,7 @@ export default {
         {
           id: 2,
           thumbnail:
-            'https://static.vecteezy.com/system/resources/thumbnails/011/998/173/small_2x/youtube-icon-free-vector.jpg',
+            'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/Jesus_raise_lazarus_from_the_dead.png',
           url: 'https://www.youtube.com/watch?v=7sDG_CUmTQM',
           title:
             'ព្រះយេស៊ូវប្រោសឡាសាឲ្យរស់ឡើងវិញ (បញ្ចប់) ​| យ៉ូហាន 11:38-45 ~ គ្រូអធិប្បាយ មឿន រតនា',
@@ -37,7 +37,7 @@ export default {
         {
           id: 3,
           thumbnail:
-            'https://static.vecteezy.com/system/resources/thumbnails/011/998/173/small_2x/youtube-icon-free-vector.jpg',
+            'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/Knowing_Your_WHY.png',
           url: 'https://www.youtube.com/watch?v=L4wA3Eb9zW0&t',
           title: 'Knowing Your WHY | យ៉ូហាន៖៤ ~ Guest Speaker Pastor Val',
           duration: '41:09',
@@ -50,7 +50,7 @@ export default {
         {
           id: 4,
           thumbnail:
-            'https://static.vecteezy.com/system/resources/thumbnails/011/998/173/small_2x/youtube-icon-free-vector.jpg',
+            'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/Mother_day.png',
           url: 'https://www.youtube.com/watch?v=4n2c-7Ie2zM',
           title: "ទិវាអ្នកម្តាយ -Mother's Day | សុភាសិត 31:10-31~ គ្រូអធិប្បាយ មឿន រតនា",
           duration: '36:09',
@@ -69,7 +69,9 @@ export default {
   <section id="sunday-sermons" class="flex-center flex-col bg-white py-20">
     <div class="h-fit w-4/5 flex items-center justify-center flex-col">
       <div id="our-sunday-sermons" class="h-fit w-full mb-6 flex-center flex-col sm:flex-row">
-        <p class="w-2/4 text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0">
+        <p
+          class="w-full md:w-2/4 text-center md:text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
+        >
           Our Sunday Sermons
         </p>
         <CrButton label="sunday-sermons" :class="'sm:ml-auto'" buttonRoute="sunday-sermons" />

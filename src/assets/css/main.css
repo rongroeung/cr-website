@@ -104,4 +104,5 @@ body {
 
 .image-header {
   background-image: url(/src/assets/img/Coverpage-001.jpg);
+  background-position: center;
 }
