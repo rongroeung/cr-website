@@ -10,11 +10,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="controls-carousel" class="relative w-full flex flex-col" data-carousel="slide">
+  <div
+    id="controls-carousel"
+    class="relative w-full flex flex-col"
+    data-carousel="slide"
+    data-carousel-interval="8000"
+  >
     <!-- Carousel wrapper -->
     <div class="relative overflow-hidden h-64 md:h-96 lg:h-35rem xl:h-45rem 2xl:h-50rem">
       <!-- Item 1 -->
-      <div class="carousel-item hidden ease-in-out" data-carousel-item="active">
+      <div class="carousel-item hidden linear" data-carousel-item="active">
         <img
           src="../assets/img/slideshow-01.jpg"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -22,7 +27,7 @@ onMounted(() => {
         />
       </div>
       <!-- Item 2 -->
-      <div class="carousel-item hidden ease-in-out" data-carousel-item>
+      <div class="carousel-item hidden linear" data-carousel-item>
         <img
           src="../assets/img/About--Cover-001.jpg"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -30,7 +35,7 @@ onMounted(() => {
         />
       </div>
       <!-- Item 3 -->
-      <div class="carousel-item hidden ease-in-out" data-carousel-item>
+      <div class="carousel-item hidden linear" data-carousel-item>
         <img
           src="../assets/img/About--Cover-002.jpg"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -120,7 +125,7 @@ onMounted(() => {
 }
 
 .carousel-item {
-  transition-duration: 3s;
+  transition-duration: 4s;
 }
 .center-content {
   width: fit-content;

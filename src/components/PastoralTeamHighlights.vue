@@ -35,7 +35,7 @@ export default {
 <template>
   <section class="pastoral-team-highlights flex-center bg-cr-gray py-20">
     <div class="w-4/5 flex flex-row flex-wrap items-center justify-center gap-6">
-      <template v-for="team in PastoralTseamHighlights" :key="team">
+      <template v-for="team in PastoralTeamHighlights" :key="team">
         <PastoralTeamHighlightCard :item="team" />
       </template>
     </div>
