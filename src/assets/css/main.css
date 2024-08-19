@@ -112,9 +112,9 @@ display: block !important;
 }
 
 .w-180-px{
-  width: 180px;
+  max-width: 180px;
 }
 
 .h-180-px{
-  height: 180px;
+  max-height: 180px;
 }
