@@ -70,6 +70,10 @@ export default {
     onClickLogo() {
       router.push('/')
     },
+    onClickLogoOnSideNav() {
+      router.push('/')
+      this.$refs.sidebarActive.checked = false
+    },
     closeSidebar() {
       this.openOnce = false
       this.resetNavbarState()
@@ -147,7 +151,7 @@ export default {
         </svg>
       </label>
       <div class="navbar-logo-desktop">
-        <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogo()" />
+        <img src="../assets/img/crossroads-logo-01.png" alt="" @click="onClickLogoOnSideNav()" />
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('about')">

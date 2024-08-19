@@ -5,11 +5,6 @@ export default {
     return {
       cssHeader: 'font-semibold uppercase hover:text-primary'
     }
-  },
-  methods: {
-    onClickLogo() {
-      this.$router.push('/')
-    }
   }
 }
 </script>
@@ -23,7 +18,6 @@ export default {
             src="../assets/img/crossroads-logo-01.png"
             alt="Crossroads Church Logo"
             class="navbar-height cursor-pointer"
-            @click="onClickLogo()"
           />
         </div>
         <div>

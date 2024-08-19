@@ -2,8 +2,9 @@
 import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import FooterSection from './components/FooterSection.vue'
+import ScrollTopButton from './components/ScrollTopButton.vue'
 export default {
-  components: { Navbar, RouterView, FooterSection }
+  components: { Navbar, RouterView, FooterSection, ScrollTopButton }
 }
 </script>
 
@@ -12,6 +13,7 @@ export default {
   <div class="app">
     <RouterView />
     <FooterSection />
+    <ScrollTopButton />
   </div>
 </template>
 
