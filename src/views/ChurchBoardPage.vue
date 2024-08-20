@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       ChurchBoard: {
-        title: 'Church Board of Directors 2024-2025',
+        title: 'church-board-of-directors',
         description:
           'We come together as a community, bound by faith and purpose, to share in the leadership and stewardship of our beloved church. With hearts full of gratitude, we thank God for calling us, the alumni, to join hands and build up the body of Christ.',
         image: `${this.$assetsPath}/img/Group-Photo---Church-Board-Members-2024.jpg`,
@@ -56,15 +56,15 @@ export default {
           },
           {
             name: 'Mr. Gnonn Danet',
-            role: 'Member'
+            role: 'member'
           },
           {
             name: 'Mr. Norl Chanly',
-            role: 'Member'
+            role: 'member'
           },
           {
             name: 'Mr. Theng Rathrongroeung',
-            role: 'Member'
+            role: 'member'
           }
         ]
       }
@@ -79,9 +79,10 @@ export default {
       <p class="text-white text-5xl" v-t="'church-board'"></p>
     </div>
     <div class="content w-4/5 mx-auto my-20">
-      <p class="text-secondary text-2xl md:text-4xl xl:text-5xl text-center mb-2">
-        {{ ChurchBoard.title }}
-      </p>
+      <p
+        class="text-secondary text-2xl md:text-4xl xl:text-5xl text-center mb-2"
+        v-t="ChurchBoard.title"
+      ></p>
       <p class="text-sm md:text-base my-8">
         {{ ChurchBoard.description }}
       </p>
@@ -98,7 +99,7 @@ export default {
         </ul>
       </div>
       <div class="flex-center flex-col">
-        <img :src="ChurchBoard.image" alt="" class="w-4/5" />
+        <img :src="ChurchBoard.image" alt="Image of church board member" class="w-4/5" />
         <p class="text-sm md:text-base my-2">
           {{ ChurchBoard.imageDescription }}
         </p>
@@ -107,7 +108,7 @@ export default {
         <ul class="list-disc m-2">
           <template v-for="boardMember in ChurchBoard.BoardMembers" :key="boardMember">
             <li class="text-sm md:text-base italic my-1">
-              {{ boardMember.name }} | {{ boardMember.role }}
+              {{ boardMember.name }} | <span v-t="boardMember.role"></span>
             </li>
           </template>
         </ul>
