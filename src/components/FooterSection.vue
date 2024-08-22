@@ -99,7 +99,7 @@ export default {
 
 <style scoped>
 footer {
-  max-width: 1519px;
+  max-width: var(--max-width);
 }
 li:hover {
   color: var(--primary-color);

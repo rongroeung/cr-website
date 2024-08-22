@@ -60,7 +60,7 @@ export default {
       <p class="text-white text-5xl" v-t="'pastoral-team'"></p>
     </div>
     <div class="content w-4/5 mx-auto my-20">
-      <h1 class="text-3xl font-bold text-gray-800 mb-8">Full-Time Pastors</h1>
+      <p class="text-3xl font-bold text-gray-800 mb-8">Full-Time Pastors</p>
       <div class="flex justify-center flex-wrap gap-20">
         <template v-for="team in PastoralTeams" :key="team.id">
           <PastoralTeamCard :item="team" />
@@ -69,6 +69,5 @@ export default {
     </div>
   </section>
 </template>
-  
-  <script scoped>
-</script>
+
+<script scoped></script>
