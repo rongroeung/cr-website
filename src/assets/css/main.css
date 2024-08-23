@@ -10,13 +10,13 @@
 :root {
   --primary-color: #f5a807;
   --secondary-color: #021b4b;
-  --cr-gray:#f4f5f7;
+  --cr-gray: #f4f5f7;
   --sub-primary-color: #f5aa07c5;
   --sub-secondary-color: #01153a;
   --text-color: #f0f0f0;
-  --border-color: #6B7280;
+  --border-color: #6b7280;
   --navbar-height: 80px;
-  --max-width:1920px;
+  --max-width: 1920px;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
@@ -82,23 +82,27 @@ body {
   justify-content: center;
 }
 
-.duration-2000{
+.duration-2000 {
   transition-duration: 2000ms;
 }
 
-.cr-border-button{
+.cr-border-button {
   border: 2px solid var(--text-color);
 }
 
-.w-17rem{
+.w-17rem {
   width: 17rem;
 }
 
-.max-w-24{
+.max-w-24 {
   max-width: 22.5rem;
 }
 
-.h-300-px{
+.max-w-30 {
+  max-width: 30rem;
+}
+
+.h-300-px {
   height: 300px;
 }
 
@@ -107,14 +111,14 @@ body {
   background-position: center;
 }
 
-.block-important{
-display: block !important;
+.block-important {
+  display: block !important;
 }
 
-.w-180-px{
+.w-180-px {
   max-width: 180px;
 }
 
-.h-180-px{
+.h-180-px {
   max-height: 180px;
 }

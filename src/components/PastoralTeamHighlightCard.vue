@@ -18,7 +18,7 @@ export default {
       <img :src="item.image" :class="cssClass" />
       <div class="flex flex-col justify-center">
         <p class="text-secondary text-sm">{{ item.name }}</p>
-        <p v-t="item.role" class="uppercase text-sm md:text-base text-gray-500 font-semibold"></p>
+        <p v-t="item.role" class="uppercase text-sm md:text-lg text-gray-500 font-semibold"></p>
       </div>
     </div>
   </section>

@@ -9,9 +9,8 @@ export default {
     <div class="image-header h-300-px w-full flex-center">
       <p class="text-white text-5xl" v-t="'milestone'"></p>
     </div>
-    <div class="content">Content goes here</div>
+    <div class="content w-4/5 flex-center">Content goes here</div>
   </section>
 </template>
-  
-  <script scoped>
-</script>
+
+<script scoped></script>

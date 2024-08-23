@@ -18,7 +18,7 @@ export default {
       <img v-if="cardHeader == 'multiply'" src="../assets/icon/multiply.svg" />
       <p class="ms-2 text-base lg:text-xl uppercase font-bold" v-t="cardHeader"></p>
     </div>
-    <ol class="list-decimal text-left text-sm md:text-base m-2">
+    <ol class="list-decimal text-left text-sm sm:text-base m-2">
       <template v-for="content in cardContents" :key="content">
         <li v-t="content"></li>
       </template>

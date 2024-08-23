@@ -30,14 +30,29 @@ export default {
 <template>
   <section id="about-page" class="bg-white h-fit w-full flex-center flex-col">
     <div class="image-header h-300-px w-full flex-center">
-      <p>AboutPage</p>
+      <p class="text-5xl" v-t="'about'"></p>
     </div>
-    <div class="about-content w-4/5 text-black my-20">
-      <p class="text-3xl font-bold text-gray-800 mb-4">{{ whoWeAre.header }}</p>
-      <div class="text-sm sm:text-base" v-html="$t(whoWeAre.content)"></div>
-
-      <p class="text-3xl font-bold text-gray-800 mb-4 mt-20">{{ whatWeDo.header }}</p>
-      <div class="text-sm sm:text-base" v-html="$t(whatWeDo.content)"></div>
+    <div class="about-content text-gray-600 flex-center flex-col">
+      <div class="my-20 w-4/5">
+        <p class="text-3xl font-bold text-gray-800 mb-6">{{ whoWeAre.header }}</p>
+        <div class="text-sm sm:text-lg" v-html="$t(whoWeAre.content)"></div>
+      </div>
+      <div class="bg-cr-gray flex-center">
+        <div class="w-4/5 my-20">
+          <p class="text-3xl font-bold text-gray-800 mb-6">{{ whatWeDo.header }}</p>
+          <div class="text-sm sm:text-lg" v-html="$t(whatWeDo.content)"></div>
+        </div>
+      </div>
+      <div class="w-4/5 my-20">
+        <p class="text-3xl font-bold text-gray-800 mb-6">Our Beliefs</p>
+        <ul class="list-disc m-2 flex justify-center flex-wrap gap-6">
+          <template v-for="ourBelief in ourBeliefs" :key="ourBelief">
+            <li class="text-sm sm:text-lg h-fit w-full sm:w-2/5">
+              {{ ourBelief }}
+            </li>
+          </template>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
