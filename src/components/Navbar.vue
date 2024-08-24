@@ -155,7 +155,7 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('about')">
-          <a href="/about" v-t="'about'"> </a>
+          <router-link :to="{ name: 'about' }" v-t="'about'"></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -177,7 +177,7 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('ministries')">
-          <a href="/ministries" v-t="'ministries'"> </a>
+          <router-link :to="{ name: 'ministries' }" v-t="'ministries'"></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -199,7 +199,7 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('mission')">
-          <a href="/mission" v-t="'mission'"> </a>
+          <router-link :to="{ name: 'mission' }" v-t="'mission'"></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -228,7 +228,7 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('get-involved')">
-          <a href="/get-involved" v-t="'get-involved'"> </a>
+          <router-link :to="{ name: 'get-involved' }" v-t="'get-involved'"></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -257,7 +257,7 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('news')">
-          <a href="/news" v-t="'news'"> </a>
+          <router-link :to="{ name: 'news' }" v-t="'news'"></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
