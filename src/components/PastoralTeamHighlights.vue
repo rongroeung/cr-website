@@ -33,7 +33,14 @@ export default {
 }
 </script>
 <template>
-  <section class="pastoral-team-highlights flex-center bg-cr-gray py-20">
+  <section class="flex-center flex-col bg-cr-gray py-20">
+    <div class="h-fit w-4/5 mb-6">
+      <p
+        class="w-full md:w-2/4 text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
+      >
+        Pastoral Team
+      </p>
+    </div>
     <div class="w-4/5 flex flex-row flex-wrap items-center justify-center gap-6">
       <template v-for="team in PastoralTeamHighlights" :key="team">
         <PastoralTeamHighlightCard :item="team" />

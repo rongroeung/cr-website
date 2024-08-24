@@ -81,7 +81,7 @@ onMounted(() => {
           class="text-white sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7"
           v-t="'love-god-love-other'"
         ></p>
-        <CrButton />
+        <CrButton buttonRouter="home" buttonRouteId="discipleship-journey" />
       </div>
       <button
         type="button"

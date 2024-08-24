@@ -20,11 +20,11 @@ export default {
 
 <template>
   <Carousel />
-  <DiscipleshipJourney />
-  <HighlightsActivity />
-  <SundaySermons />
-  <PastoralTeamHighlights />
-  <ContactUsMap />
+  <DiscipleshipJourney id="discipleship-journey" />
+  <HighlightsActivity id="highlights-activities" />
+  <SundaySermons id="sunday-sermons" />
+  <PastoralTeamHighlights id="pastoral-team-highlights" />
+  <ContactUsMap id="contact-us-map" />
 </template>
 
 <style scoped>

@@ -66,7 +66,7 @@ export default {
 </script>
 
 <template>
-  <section id="discipleship-journey" class="bg-secondary h-fit flex-center flex-col">
+  <section class="bg-secondary h-fit flex-center flex-col">
     <div class="w-4/5 flex flex-col items-center text-white py-20">
       <p class="text-2xl md:text-4xl xl:text-5xl pb-6" v-t="discipleshipJourney.header"></p>
       <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
@@ -75,7 +75,7 @@ export default {
         </template>
       </ul>
       <div class="flex">
-        <CrButton class="me-4" />
+        <CrButton class="me-4" buttonRoute="home" buttonRouteId="highlights-activities" />
         <CrButton
           label="about-us"
           buttonColor="bg-secondary"

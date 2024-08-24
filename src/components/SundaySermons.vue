@@ -66,7 +66,7 @@ export default {
 }
 </script>
 <template>
-  <section id="sunday-sermons" class="flex-center flex-col bg-white py-20">
+  <section class="flex-center flex-col bg-white py-20">
     <div class="h-fit w-4/5 flex items-center justify-center flex-col">
       <div id="our-sunday-sermons" class="h-fit w-full mb-6 flex-center flex-col sm:flex-row">
         <p

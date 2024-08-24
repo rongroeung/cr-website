@@ -25,8 +25,23 @@ import EventsPage from '@/views/EventsPage.vue'
 import ChurchNewsPage from '@/views/ChurchNewsPage.vue'
 import NotFoundPage from '@/views/NotFoundPage.vue'
 
+const navbarHeight = 80; //ref --navbar-height: 80px
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      // scroll to specific id by specify buttonRouteId <CrButton buttonRouter="home" buttonRouteId="discipleship-journey" />
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+        left: 0,
+        top: navbarHeight,
+      }
+    }else{
+      return { top:0 }
+    }
+  },
   routes: [
     {
       path: '/:pathMatch(.*)*',

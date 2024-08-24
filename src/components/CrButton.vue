@@ -4,6 +4,7 @@ export default {
   props: {
     label: { type: String, default: 'learn-more' },
     buttonRoute: String,
+    buttonRouteId: String,
     buttonColor: { type: String, default: 'bg-sub-primary' },
     buttonBorder: String,
     allowHover: { type: Boolean, default: false }
@@ -17,6 +18,9 @@ export default {
       return `${this.ButtonSize} ${this.buttonColor} ${this.buttonBorder} ${
         this.allowHover ? 'cr-button-hover' : ''
       }`
+    },
+    getHash() {
+      return this.buttonRouteId ? `#${this.buttonRouteId}` : ''
     }
   }
 }
@@ -24,9 +28,11 @@ export default {
 
 <template>
   <div class="cr-button flex-center cursor-pointer" :class="cssClass">
-    <span class="span-text uppercase font-semibold flex-center text-center text-sm">
-      <router-link :to="{ name: buttonRoute }" v-t="label"></router-link>
-    </span>
+    <router-link
+      :to="{ name: buttonRoute, hash: getHash }"
+      v-t="label"
+      class="w-full h-full span-text uppercase font-semibold flex-center text-center text-sm"
+    ></router-link>
   </div>
 </template>
 

@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <section id="highlights-activities" class="bg-cr-gray flex-center flex-col text-black">
+  <section class="bg-cr-gray flex-center flex-col text-black">
     <layout-2-columns
       id="certificate-in-ministry-leadership"
       :wrapReverse="true"
