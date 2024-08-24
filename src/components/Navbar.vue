@@ -2,12 +2,13 @@
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import router from '@/router'
 import Field from '@/util/constant'
+import windowResizeMixin from '@/util/mixin.js'
 export default {
   name: 'Navbar',
   components: { LanguageSwitcher },
+  mixins: [windowResizeMixin],
   data() {
     return {
-      width: 0,
       showAbout: false,
       showMinistries: false,
       showMission: false,
@@ -15,13 +16,6 @@ export default {
       showNews: false,
       openOnce: false
     }
-  },
-  created() {
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
-  },
-  unmounted() {
-    window.removeEventListener('resize', this.handleResize)
   },
   watch: {
     width(newValue) {
@@ -64,9 +58,6 @@ export default {
       }
       if (RouteName) router.push({ name: RouteName })
     },
-    handleResize() {
-      this.width = window.innerWidth
-    },
     onClickLogo() {
       router.push('/')
     },
@@ -89,7 +80,7 @@ export default {
   },
   computed: {
     isBelowTabletScreen() {
-      return this.width < 1200 // the same as CSS , @media (max-width: 1200px) {
+      return this.width < 1200 // the same as CSS , @media (max-width: 1200px) { // width data in mixin
     },
     currentRoute() {
       return this.$route.name
