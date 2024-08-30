@@ -31,15 +31,15 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      // scroll to specific id by specify buttonRouteId <CrButton buttonRouter="home" buttonRouteId="discipleship-journey" />
+      // scroll to specific id by specify buttonRouteId <CrButton buttonRouter="home" buttonRouteId="discipleship_journey" />
       return {
         el: to.hash,
         behavior: 'smooth',
         left: 0,
         top: navbarHeight,
       }
-    }else{
-      return { top:0 }
+    } else {
+      return { top: 0 }
     }
   },
   routes: [
@@ -172,8 +172,8 @@ const router = createRouter({
           component: NewsPage
         },
         {
-          path: 'sunday-sermons',
-          name: 'sunday-sermons',
+          path: 'sunday_sermons',
+          name: 'sunday_sermons',
           component: SundaySermonsPage
         },
         {

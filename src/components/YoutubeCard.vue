@@ -36,9 +36,7 @@ export default {
           <p class="text-gray-400 text-xs mt-2">
             {{ video.profileName }}
           </p>
-          <p class="text-gray-400 text-xs mt-1 flex">
-            {{ video.views }} views
-            <img src="../assets/icon/dot.svg" />
+          <p class="text-gray-400 text-xs mt-2 flex">
             {{ video.date }}
           </p>
         </div>

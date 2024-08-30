@@ -36,7 +36,7 @@ export default {
   <section class="flex-center flex-col bg-cr-gray py-20">
     <div class="h-fit w-4/5 mb-6">
       <p
-        class="w-full md:w-2/4 text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
+        class="w-full md:w-2/4 text-center md:text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
       >
         Pastoral Team
       </p>

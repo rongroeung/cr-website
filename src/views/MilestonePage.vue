@@ -34,15 +34,11 @@ export default {
           <div
             class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
-            <div class="flex items-center justify-between space-x-2 mb-1">
-              <div class="font-bold text-black">CNEC Singapore started Crossroads Ministry</div>
-            </div>
-            <div class="">
-              In the annals of technology history, the departure of Steve Wozniak marked a turning
-              point for Apple Inc. as it embarked on a new chapter under the leadership of chief
-              executive John Sculley. However, behind the scenes, a dramatic power struggle ensued,
-              with Sculley attempting to oust Steve Jobs from his positions as chairman of the board
-              and head of the Macintosh division.
+            <div class="flex-center flex-col mb-1">
+              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <div class="font-bold text-black text-start">
+                CNEC Singapore started Crossroads Ministry
+              </div>
             </div>
           </div>
         </div>
@@ -62,17 +58,11 @@ export default {
             :class="cssBefore"
             class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
-            <div class="flex items-center justify-between space-x-2 mb-1">
-              <div class="font-bold text-black">
+            <div class="flex-center flex-col mb-1">
+              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <div class="font-bold text-black text-start">
                 CNEC installed interim Local Board of Directors
               </div>
-            </div>
-            <div class="">
-              In the annals of technology history, the departure of Steve Wozniak marked a turning
-              point for Apple Inc. as it embarked on a new chapter under the leadership of chief
-              executive John Sculley. However, behind the scenes, a dramatic power struggle ensued,
-              with Sculley attempting to oust Steve Jobs from his positions as chairman of the board
-              and head of the Macintosh division.
             </div>
           </div>
         </div>
@@ -91,17 +81,11 @@ export default {
           <div
             class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
-            <div class="flex items-center justify-between space-x-2 mb-1">
-              <div class="font-bold text-black">
+            <div class="flex-center flex-col mb-1">
+              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <div class="font-bold text-black text-start">
                 CNEC sent potential Local Leaders to Bible School
               </div>
-            </div>
-            <div class="">
-              In the annals of technology history, the departure of Steve Wozniak marked a turning
-              point for Apple Inc. as it embarked on a new chapter under the leadership of chief
-              executive John Sculley. However, behind the scenes, a dramatic power struggle ensued,
-              with Sculley attempting to oust Steve Jobs from his positions as chairman of the board
-              and head of the Macintosh division.
             </div>
           </div>
         </div>
@@ -121,17 +105,11 @@ export default {
             :class="cssBefore"
             class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
-            <div class="flex items-center justify-between space-x-2 mb-1">
-              <div class="font-bold text-black">
+            <div class="flex-center flex-col mb-1">
+              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <div class="font-bold text-black text-start">
                 CNEC installed an official Pastor Of the Crossroads Church
               </div>
-            </div>
-            <div class="">
-              In the annals of technology history, the departure of Steve Wozniak marked a turning
-              point for Apple Inc. as it embarked on a new chapter under the leadership of chief
-              executive John Sculley. However, behind the scenes, a dramatic power struggle ensued,
-              with Sculley attempting to oust Steve Jobs from his positions as chairman of the board
-              and head of the Macintosh division.
             </div>
           </div>
         </div>
@@ -150,17 +128,11 @@ export default {
           <div
             class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
-            <div class="flex items-center justify-between space-x-2 mb-1">
-              <div class="font-bold text-black">
+            <div class="flex-center flex-col mb-1">
+              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <div class="font-bold text-black text-start">
                 CNEC installed Official Local Board f Directors & started New Building Project
               </div>
-            </div>
-            <div class="">
-              In the annals of technology history, the departure of Steve Wozniak marked a turning
-              point for Apple Inc. as it embarked on a new chapter under the leadership of chief
-              executive John Sculley. However, behind the scenes, a dramatic power struggle ensued,
-              with Sculley attempting to oust Steve Jobs from his positions as chairman of the board
-              and head of the Macintosh division.
             </div>
           </div>
         </div>
@@ -179,17 +151,11 @@ export default {
             :class="cssBefore"
             class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
-            <div class="flex items-center justify-between space-x-2 mb-1">
-              <div class="font-bold text-black">
+            <div class="flex-center flex-col mb-1">
+              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <div class="font-bold text-black text-start">
                 The New Crossroads Missions Centre is completely built
               </div>
-            </div>
-            <div class="">
-              In the annals of technology history, the departure of Steve Wozniak marked a turning
-              point for Apple Inc. as it embarked on a new chapter under the leadership of chief
-              executive John Sculley. However, behind the scenes, a dramatic power struggle ensued,
-              with Sculley attempting to oust Steve Jobs from his positions as chairman of the board
-              and head of the Macintosh division.
             </div>
           </div>
         </div>

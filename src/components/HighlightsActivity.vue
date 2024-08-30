@@ -8,15 +8,15 @@ export default {
     return {
       certificateInMinistryLeadershipContent: {
         headerTag: 'certificate-in-ministry-leadership',
-        header: 'the-school-of-missions',
-        content: 'the-school-of-missions-is-a-theological-training',
+        title: 'the-school-of-missions',
+        descriptions: 'the-school-of-missions-is-a-theological-training',
         image: '/src/assets/img/The-school-of-missions.jpg',
         routeName: 'ministries'
       },
       worshipMinistryContent: {
         headerTag: 'worship-ministry',
-        header: 'sunday-worship',
-        content: 'our-worship-team-exists-to-not-only',
+        title: 'sunday-worship',
+        descriptions: 'our-worship-team-exists-to-not-only',
         image: '/src/assets/img/sunday-worship.jpg',
         routeName: 'worship-ministry'
       }
@@ -37,8 +37,8 @@ export default {
       <template #left-content>
         <HighlightsActivityCard
           :cardHeaderTag="certificateInMinistryLeadershipContent.headerTag"
-          :cardHeader="certificateInMinistryLeadershipContent.header"
-          :cardContent="certificateInMinistryLeadershipContent.content"
+          :cardHeader="certificateInMinistryLeadershipContent.title"
+          :cardContent="certificateInMinistryLeadershipContent.descriptions"
           :cardRouteName="certificateInMinistryLeadershipContent.routeName"
         />
       </template>
@@ -61,8 +61,8 @@ export default {
       <template #right-content>
         <HighlightsActivityCard
           :cardHeaderTag="worshipMinistryContent.headerTag"
-          :cardHeader="worshipMinistryContent.header"
-          :cardContent="worshipMinistryContent.content"
+          :cardHeader="worshipMinistryContent.title"
+          :cardContent="worshipMinistryContent.descriptions"
           :cardRouteName="worshipMinistryContent.routeName"
         />
       </template>

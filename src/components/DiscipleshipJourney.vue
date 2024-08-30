@@ -10,8 +10,8 @@ export default {
         {
           id: 1,
           icon: '/src/assets/icon/connect.svg',
-          header: 'connect',
-          contents: [
+          title: 'connect',
+          descriptions: [
             'share-the-gospel-with-them',
             'identify-their-spiritual-interest',
             'clarify-the-gospel-and-remove-barriers',
@@ -22,8 +22,8 @@ export default {
         {
           id: 2,
           icon: '/src/assets/icon/establish.svg',
-          header: 'establish',
-          contents: [
+          title: 'establish',
+          descriptions: [
             'helping-them-developing-a-right-relationship-with-god',
             'helping-them-develop-a-right-relationship-with-self',
             'helping-them-develop-a-right-relationship-with-others'
@@ -32,8 +32,8 @@ export default {
         {
           id: 3,
           icon: '/src/assets/icon/equip.svg',
-          header: 'equip',
-          contents: [
+          title: 'equip',
+          descriptions: [
             'training-them-to-evangelize-and-establish-others',
             'leading-them-in-personal-ministry',
             'helping-them-begin-to-understand-and-develop-vision',
@@ -43,8 +43,8 @@ export default {
         {
           id: 4,
           icon: '/src/assets/icon/multiply.svg',
-          header: 'multiply',
-          contents: [
+          title: 'multiply',
+          descriptions: [
             'helping-them-begin-to-discern-their-unique-role-in-the-church-kingdom',
             'developing-a-personalized-ministry-plan-with-them',
             'connecting-them-with-people-and-opportunities'
@@ -52,8 +52,8 @@ export default {
         }
       ],
       discipleshipJourney: {
-        header: 'our-discipleship-journey',
-        contents: [
+        title: 'our-discipleship_journey',
+        descriptions: [
           'devotional-disciples',
           'discipleship-character',
           'discipleship-skills',
@@ -68,14 +68,14 @@ export default {
 <template>
   <section class="bg-secondary h-fit flex-center flex-col">
     <div class="w-4/5 flex flex-col items-center text-white py-20">
-      <p class="text-2xl md:text-4xl xl:text-5xl pb-6" v-t="discipleshipJourney.header"></p>
+      <p class="text-2xl md:text-4xl xl:text-5xl pb-6" v-t="discipleshipJourney.title"></p>
       <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
-        <template v-for="content in discipleshipJourney.contents" :key="content">
+        <template v-for="content in discipleshipJourney.descriptions" :key="content">
           <li v-t="content"></li>
         </template>
       </ul>
       <div class="flex">
-        <CrButton class="me-4" buttonRoute="home" buttonRouteId="highlights-activities" />
+        <CrButton class="me-4" buttonRoute="home" buttonRouteId="highlights_activities" />
         <CrButton
           label="about-us"
           buttonColor="bg-secondary"
@@ -89,8 +89,8 @@ export default {
       <div v-for="content in discipleshipCardContents" :key="content.id">
         <DiscipleshipCard
           :iconPath="content.icon"
-          :cardHeader="content.header"
-          :cardContents="content.contents"
+          :cardHeader="content.title"
+          :cardContents="content.descriptions"
         />
       </div>
     </section>
