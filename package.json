@@ -11,9 +11,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@paypal/paypal-js": "^8.1.1",
+    "axios": "^1.7.7",
     "flowbite": "^2.5.1",
-    "vue": "^3.4.29",
     "vite": "^5.0.5",
+    "vue": "^3.4.29",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.3.3"
   },

@@ -2,7 +2,7 @@
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
 import router from '@/router'
 import Field from '@/util/constant'
-import windowResizeMixin from '@/util/mixin.js'
+import { windowResizeMixin } from '@/util/mixin.js'
 export default {
   name: 'Navbar',
   components: { LanguageSwitcher },
@@ -90,7 +90,7 @@ export default {
 </script>
 
 <template>
-  <nav class="Navbar top-0 fixed z-50">
+  <nav class="Navbar top-0 fixed">
     <input type="checkbox" id="sidebar-active" ref="sidebarActive" />
     <div class="navbar-mobile">
       <div class="navbar-search-icon-mobile">
@@ -303,6 +303,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 .navbar-mobile {
   display: flex;

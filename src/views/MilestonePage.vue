@@ -1,8 +1,16 @@
 <script>
-import windowResizeMixin from '@/util/mixin'
+import { windowResizeMixin } from '@/util/mixin'
 export default {
   name: 'MilestonePage',
   mixins: [windowResizeMixin],
+  data() {
+    return {
+      data: {}
+    }
+  },
+  async created() {
+    this.data = await this.fetchData('04001001')
+  },
   computed: {
     cssBefore() {
       return this.width < 768 ? 'card-wrapper' : 'card-wrapper-right' // width data in mixin

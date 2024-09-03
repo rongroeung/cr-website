@@ -5,6 +5,14 @@ export default {
     iconPath: String,
     cardHeader: String,
     cardContents: Array
+  },
+  data() {
+    return {
+      data: {}
+    }
+  },
+  async created() {
+    this.data = await this.fetchData('01003001')
   }
 }
 </script>

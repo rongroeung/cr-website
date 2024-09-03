@@ -5,6 +5,9 @@ export default {
   components: { PastoralTeamHighlightCard },
   data() {
     return {
+      firstItem: {},
+      secondItem: {},
+      thirdItem: {},
       PastoralTeamHighlights: [
         {
           id: '1',
@@ -29,6 +32,11 @@ export default {
         }
       ]
     }
+  },
+  async created() {
+    this.firstItem = await this.fetchData('01006001')
+    this.secondItem = await this.fetchData('01006002')
+    this.thirdItem = await this.fetchData('01006003')
   }
 }
 </script>

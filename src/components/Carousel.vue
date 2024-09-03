@@ -1,12 +1,22 @@
-<script setup>
+<script>
 import CrButton from './CrButton.vue'
-import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 
-// initialize components based on data attribute selectors
-onMounted(() => {
-  initFlowbite()
-})
+export default {
+  name: 'Carousel',
+  components: { CrButton },
+  data() {
+    return {
+      data: {}
+    }
+  },
+  async created() {
+    this.data = await this.fetchData('01001001')
+  },
+  mounted() {
+    initFlowbite()
+  }
+}
 </script>
 
 <template>

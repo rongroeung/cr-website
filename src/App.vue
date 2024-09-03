@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.vue'
 import FooterSection from './components/FooterSection.vue'
 import ScrollTopButton from './components/ScrollTopButton.vue'
 export default {
+  name: 'app',
   components: { Navbar, RouterView, FooterSection, ScrollTopButton }
 }
 </script>

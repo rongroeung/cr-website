@@ -6,6 +6,11 @@ export default {
   components: { DiscipleshipCard, CrButton },
   data() {
     return {
+      discipleshipJourneyData: null,
+      cardConnectData: {},
+      cardEstablishData: {},
+      cardEquipData: {},
+      cardMultiplyData: {},
       discipleshipCardContents: [
         {
           id: 1,
@@ -61,6 +66,13 @@ export default {
         ]
       }
     }
+  },
+  async created() {
+    this.discipleshipJourneyData = await this.fetchData('01002001')
+    this.cardConnectData = await this.fetchData('01003001')
+    this.cardEstablishData = await this.fetchData('01003002')
+    this.cardEquipData = await this.fetchData('01003003')
+    this.cardMultiplyData = await this.fetchData('01003004')
   }
 }
 </script>

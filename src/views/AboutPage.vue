@@ -3,6 +3,7 @@ export default {
   name: 'AboutPage',
   data() {
     return {
+      data: {},
       whoWeAre: {
         header: 'Who We Are',
         content:
@@ -23,6 +24,9 @@ export default {
         'The bodily resurrection of both the saved and the lost during the second coming of Christ; they that are saved unto the resurrection of life, they that are lost unto the resurrection of damnation.'
       ]
     }
+  },
+  async created() {
+    this.data = await this.fetchData('02001001')
   }
 }
 </script>

@@ -6,6 +6,8 @@ export default {
   components: { Layout2Columns, HighlightsActivityCard },
   data() {
     return {
+      firstItem: {},
+      secondItem: {},
       certificateInMinistryLeadershipContent: {
         headerTag: 'certificate-in-ministry-leadership',
         title: 'the-school-of-missions',
@@ -21,6 +23,10 @@ export default {
         routeName: 'worship-ministry'
       }
     }
+  },
+  async created() {
+    this.firstItem = await this.fetchData('01004001') //Certificate In Ministry Leadership
+    this.secondItem = await this.fetchData('01004002') //Worship Ministry
   }
 }
 </script>

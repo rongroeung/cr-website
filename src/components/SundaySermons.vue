@@ -6,6 +6,7 @@ export default {
   components: { CrButton, YoutubeCard },
   data() {
     return {
+      data: {},
       youtubeVideos: [
         {
           id: 1,
@@ -59,6 +60,9 @@ export default {
         }
       ]
     }
+  },
+  async created() {
+    this.data = await this.fetchData('01005001')
   }
 }
 </script>

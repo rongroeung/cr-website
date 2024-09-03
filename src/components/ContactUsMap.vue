@@ -3,7 +3,15 @@ import Layout2Columns from '@/layouts/Layout2Columns.vue'
 import CrButton from './CrButton.vue'
 export default {
   name: 'ContactUsMap',
-  components: { CrButton, Layout2Columns }
+  components: { CrButton, Layout2Columns },
+  data() {
+    return {
+      data: {}
+    }
+  },
+  async created() {
+    this.data = await this.fetchData('01007001')
+  }
 }
 </script>
 

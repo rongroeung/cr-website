@@ -5,6 +5,7 @@ export default {
   components: { PastoralTeamCard },
   data() {
     return {
+      data: {},
       PastoralTeams: [
         {
           id: 1,
@@ -50,6 +51,9 @@ export default {
         }
       ]
     }
+  },
+  async created() {
+    this.data = await this.fetchData('03001001')
   }
 }
 </script>

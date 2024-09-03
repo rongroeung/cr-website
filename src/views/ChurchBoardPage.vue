@@ -3,6 +3,7 @@ export default {
   name: 'ChurchBoardPage',
   data() {
     return {
+      data: {},
       ChurchBoard: {
         title: 'church-board-of-directors',
         description:
@@ -69,6 +70,9 @@ export default {
         ]
       }
     }
+  },
+  async created() {
+    this.data = await this.fetchData('03001001')
   }
 }
 </script>
