@@ -34,7 +34,7 @@ const fetchDataMixin = {
           headers: {
             'Content-Type': 'application/json'
           },
-          timeout: 3000
+          timeout: 5000
         })
         if (response.data.message === 'Success') {
           return response.data.data
