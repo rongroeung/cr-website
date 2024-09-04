@@ -1,16 +1,15 @@
 <script>
-import Layout2Columns from '@/layouts/Layout2Columns.vue'
 import CrButton from './CrButton.vue'
 export default {
   name: 'ContactUsMap',
-  components: { CrButton, Layout2Columns },
+  components: { CrButton },
   data() {
     return {
-      data: {}
+      section7: null
     }
   },
   async created() {
-    this.data = await this.fetchData('01007001')
+    this.section7 = await this.fetchData('01007001')
   }
 }
 </script>
@@ -19,9 +18,11 @@ export default {
   <section class="flex-center flex-col">
     <div class="h-60 w-4/5 flex-center flex-col sm:flex-row">
       <p
+        v-if="section7"
         class="w-full md:w-2/4 text-2xl text-center md:text-start md:text-4xl xl:text-5xl mb-4 sm:mb-0 font-semibold"
-        v-t="'want-to-get-in-touch'"
-      ></p>
+      >
+        {{ section7.title }}
+      </p>
       <CrButton label="contact-us" :class="'sm:ml-auto'" buttonRoute="contact" />
     </div>
     <div class="h-96 w-full">
@@ -38,5 +39,4 @@ export default {
   </section>
 </template>
 
-<script scoped>
-</script>
+<script scoped></script>

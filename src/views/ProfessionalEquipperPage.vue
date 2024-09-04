@@ -11,6 +11,5 @@ export default {
     <div class="content">Content goes here</div>
   </section>
 </template>
-  
-  <script scoped>
-</script>
+
+<script scoped></script>

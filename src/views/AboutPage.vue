@@ -3,7 +3,7 @@ export default {
   name: 'AboutPage',
   data() {
     return {
-      data: {},
+      data: null,
       whoWeAre: {
         header: 'Who We Are',
         content:

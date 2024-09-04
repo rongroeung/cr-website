@@ -6,84 +6,95 @@ export default {
   components: { DiscipleshipCard, CrButton },
   data() {
     return {
-      discipleshipJourneyData: null,
-      cardConnectData: {},
-      cardEstablishData: {},
-      cardEquipData: {},
-      cardMultiplyData: {},
-      discipleshipCardContents: [
-        {
-          id: 1,
-          icon: '/src/assets/icon/connect.svg',
-          title: 'connect',
-          descriptions: [
-            'share-the-gospel-with-them',
-            'identify-their-spiritual-interest',
-            'clarify-the-gospel-and-remove-barriers',
-            'bring-them-to-a-decision-point-about-christ',
-            'thoroughly-follow-up-if-they-indicate-belief-and-repentance'
-          ]
-        },
-        {
-          id: 2,
-          icon: '/src/assets/icon/establish.svg',
-          title: 'establish',
-          descriptions: [
-            'helping-them-developing-a-right-relationship-with-god',
-            'helping-them-develop-a-right-relationship-with-self',
-            'helping-them-develop-a-right-relationship-with-others'
-          ]
-        },
-        {
-          id: 3,
-          icon: '/src/assets/icon/equip.svg',
-          title: 'equip',
-          descriptions: [
-            'training-them-to-evangelize-and-establish-others',
-            'leading-them-in-personal-ministry',
-            'helping-them-begin-to-understand-and-develop-vision',
-            'identifying-their-character-needs-and-helping-them-mature-and-christ-likeness'
-          ]
-        },
-        {
-          id: 4,
-          icon: '/src/assets/icon/multiply.svg',
-          title: 'multiply',
-          descriptions: [
-            'helping-them-begin-to-discern-their-unique-role-in-the-church-kingdom',
-            'developing-a-personalized-ministry-plan-with-them',
-            'connecting-them-with-people-and-opportunities'
-          ]
-        }
-      ],
-      discipleshipJourney: {
-        title: 'our-discipleship_journey',
-        descriptions: [
-          'devotional-disciples',
-          'discipleship-character',
-          'discipleship-skills',
-          'biblical-doctrines'
-        ]
-      }
+      section2: null,
+      section3: [],
+      section3Item1: null,
+      section3Item2: null,
+      section3Item3: null,
+      section3Item4: null
+      // discipleshipCardContents: [
+      //   {
+      //     id: 1,
+      //     icon: '/src/assets/icon/connect.svg',
+      //     title: 'connect',
+      //     descriptions: [
+      //       'share-the-gospel-with-them',
+      //       'identify-their-spiritual-interest',
+      //       'clarify-the-gospel-and-remove-barriers',
+      //       'bring-them-to-a-decision-point-about-christ',
+      //       'thoroughly-follow-up-if-they-indicate-belief-and-repentance'
+      //     ]
+      //   },
+      //   {
+      //     id: 2,
+      //     icon: '/src/assets/icon/establish.svg',
+      //     title: 'establish',
+      //     descriptions: [
+      //       'helping-them-developing-a-right-relationship-with-god',
+      //       'helping-them-develop-a-right-relationship-with-self',
+      //       'helping-them-develop-a-right-relationship-with-others'
+      //     ]
+      //   },
+      //   {
+      //     id: 3,
+      //     icon: '/src/assets/icon/equip.svg',
+      //     title: 'equip',
+      //     descriptions: [
+      //       'training-them-to-evangelize-and-establish-others',
+      //       'leading-them-in-personal-ministry',
+      //       'helping-them-begin-to-understand-and-develop-vision',
+      //       'identifying-their-character-needs-and-helping-them-mature-and-christ-likeness'
+      //     ]
+      //   },
+      //   {
+      //     id: 4,
+      //     icon: '/src/assets/icon/multiply.svg',
+      //     title: 'multiply',
+      //     descriptions: [
+      //       'helping-them-begin-to-discern-their-unique-role-in-the-church-kingdom',
+      //       'developing-a-personalized-ministry-plan-with-them',
+      //       'connecting-them-with-people-and-opportunities'
+      //     ]
+      //   }
+      // ],
+      // discipleshipJourney: {
+      //   title: 'our-discipleship_journey',
+      //   description: [
+      //     'devotional-disciples',
+      //     'discipleship-character',
+      //     'discipleship-skills',
+      //     'biblical-doctrines'
+      //   ]
+      // }
     }
   },
   async created() {
-    this.discipleshipJourneyData = await this.fetchData('01002001')
-    this.cardConnectData = await this.fetchData('01003001')
-    this.cardEstablishData = await this.fetchData('01003002')
-    this.cardEquipData = await this.fetchData('01003003')
-    this.cardMultiplyData = await this.fetchData('01003004')
+    this.section2 = await this.fetchData('01002001') //discipleshipJourney
+    // this.section2 = this.$fallbackData.page1.section2
+    this.section3Item1 = await this.fetchData('01003001') //connect
+    this.section3Item2 = await this.fetchData('01003002') //establish
+    this.section3Item3 = await this.fetchData('01003003') //equip
+    this.section3Item4 = await this.fetchData('01003004') //multiply
+    if (this.section3Item1) {
+      this.section3.push(
+        this.section3Item1,
+        this.section3Item2,
+        this.section3Item3,
+        this.section3Item4
+      )
+    }
   }
 }
 </script>
+0d001
 
 <template>
   <section class="bg-secondary h-fit flex-center flex-col">
-    <div class="w-4/5 flex flex-col items-center text-white py-20">
-      <p class="text-2xl md:text-4xl xl:text-5xl pb-6" v-t="discipleshipJourney.title"></p>
+    <section v-if="section2" class="section2 w-4/5 flex flex-col items-center text-white py-20">
+      <p class="text-2xl md:text-4xl xl:text-5xl pb-6">{{ section2.title }}</p>
       <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
-        <template v-for="content in discipleshipJourney.descriptions" :key="content">
-          <li v-t="content"></li>
+        <template v-for="content in section2.description" :key="content.id">
+          <li>{{ content.text }}</li>
         </template>
       </ul>
       <div class="flex">
@@ -96,13 +107,17 @@ export default {
           :allowHover="true"
         />
       </div>
-    </div>
-    <section class="w-4/5 flex flex-row flex-wrap justify-center border-1 text-black gap-6 pb-20">
-      <div v-for="content in discipleshipCardContents" :key="content.id">
+    </section>
+    <section
+      v-if="section3"
+      class="section3 w-4/5 flex flex-row flex-wrap justify-center border-1 text-black gap-6 pb-20"
+    >
+      <div v-for="content in section3" :key="content.id">
         <DiscipleshipCard
-          :iconPath="content.icon"
+          :cardIcon="content.media[0].url"
+          :cardIconName="content.media[0].name"
           :cardHeader="content.title"
-          :cardContents="content.descriptions"
+          :cardContents="content.description"
         />
       </div>
     </section>

@@ -13,5 +13,4 @@ export default {
   </section>
 </template>
 
-<script scoped>
-</script>
+<script scoped></script>

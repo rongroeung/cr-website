@@ -4,9 +4,16 @@ import { watchEffect } from 'vue'
 
 const { locale } = useI18n()
 
+const disableClass = 'cursor-not-allowed	text-gray-500'
+
 const setLanguage = (newLang) => {
   locale.value = newLang
   localStorage.setItem('lang', newLang)
+  window.location.reload()
+}
+
+const isSeleted = (lang) => {
+  return localStorage.getItem('lang') == lang
 }
 
 watchEffect(() => {
@@ -19,13 +26,13 @@ watchEffect(() => {
 
 <template>
   <div class="LanguageSwitcher">
-    <div class="language mr-2">
+    <div class="language mr-2" :class="isSeleted('kh') ? disableClass : ''">
       <img src="../assets/img/kh-flag.png" />
-      <button @click="setLanguage('kh')">ភាសាខ្មែរ</button>
+      <button @click="setLanguage('kh')" :disabled="isSeleted('kh')">ភាសាខ្មែរ</button>
     </div>
-    <div class="language">
+    <div class="language" :class="isSeleted('en') ? disableClass : ''">
       <img src="../assets/img/us-flag.png" />
-      <button @click="setLanguage('en')">English</button>
+      <button @click="setLanguage('en')" :disabled="isSeleted('en')">English</button>
     </div>
   </div>
 </template>
@@ -49,7 +56,11 @@ watchEffect(() => {
   margin-right: 0.25rem;
 }
 
-.language:hover button {
+.language:hover button:enabled {
   color: var(--primary-color);
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 </style>

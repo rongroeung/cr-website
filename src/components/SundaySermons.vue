@@ -6,7 +6,7 @@ export default {
   components: { CrButton, YoutubeCard },
   data() {
     return {
-      data: {},
+      section5: null,
       youtubeVideos: [
         {
           id: 1,
@@ -62,7 +62,7 @@ export default {
     }
   },
   async created() {
-    this.data = await this.fetchData('01005001')
+    this.section5 = await this.fetchData('01005001')
   }
 }
 </script>
@@ -76,14 +76,13 @@ export default {
           Our Sunday Sermons
         </p>
       </div>
-      <div class="flex-center flex-wrap gap-6">
-        <template v-for="video in youtubeVideos" :key="video.id">
+      <div v-if="section5" class="flex-center flex-wrap gap-6">
+        <template v-for="video in section5.youtube" :key="video.id">
           <YoutubeCard :video="video" />
         </template>
       </div>
-      <CrButton label="See more" class="mt-6" buttonRoute="sunday_sermons" />
+      <CrButton label="see-more" class="mt-6" buttonRoute="sunday_sermons" />
     </div>
   </section>
 </template>
-<style scoped>
-</style>
+<style scoped></style>

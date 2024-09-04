@@ -3,7 +3,7 @@ export default {
   name: 'ChurchBoardPage',
   data() {
     return {
-      data: {},
+      data: null,
       ChurchBoard: {
         title: 'church-board-of-directors',
         description:

@@ -5,7 +5,7 @@ export default {
   mixins: [windowResizeMixin],
   data() {
     return {
-      data: {}
+      data: null
     }
   },
   async created() {
@@ -204,4 +204,4 @@ export default {
   margin-right: -15px;
   transform: rotate(45deg);
 }
-</style> 
+</style>

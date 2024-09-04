@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from 'axios'
 
 const windowResizeMixin = {
   data() {
@@ -17,34 +17,36 @@ const windowResizeMixin = {
     handleResize() {
       this.width = window.innerWidth
     }
-  },
+  }
 }
 
 const fetchDataMixin = {
   methods: {
-    async fetchData(id) {
+    async fetchData(content_id) {
+      const lang = localStorage.getItem('lang') || 'en'
+      const buildUrl = this.$backendUrl + 'getContentById?id=' + content_id + '&lang=' + lang
+      // http://38.47.39.132:7001/cr-web-backend/api/v1/getContentById?id=01001001&lang=en
 
-      const lang = localStorage.getItem('lang') || 'en';
-      const buildUrl = this.$backendUrl + 'getContentById?id=' + id + '&lang=' + lang;
       try {
         const response = await axios({
           method: 'get',
           url: buildUrl,
           headers: {
-            Accept: '*/*'
-          }
+            'Content-Type': 'application/json'
+          },
+          timeout: 3000
         })
-        if (response.data.message === "Success") {
-          return response.data.data;
+        if (response.data.message === 'Success') {
+          return response.data.data
         } else {
-          console.error(response.data.message);
-          return null;
+          console.error(response.data.message)
+          return null
         }
       } catch (error) {
-        console.error("Error occurred:", error);
-        return null;
+        // return fall back data base on id
+        return this.$fallbackData.find((data) => data.id == content_id)
       }
-    },
+    }
   }
 }
 

@@ -5,9 +5,10 @@ export default {
   components: { PastoralTeamHighlightCard },
   data() {
     return {
-      firstItem: {},
-      secondItem: {},
-      thirdItem: {},
+      section6Item1: null,
+      section6Item2: null,
+      section6Item3: null,
+      section6: [],
       PastoralTeamHighlights: [
         {
           id: '1',
@@ -34,9 +35,12 @@ export default {
     }
   },
   async created() {
-    this.firstItem = await this.fetchData('01006001')
-    this.secondItem = await this.fetchData('01006002')
-    this.thirdItem = await this.fetchData('01006003')
+    this.section6Item1 = await this.fetchData('01006001')
+    this.section6Item2 = await this.fetchData('01006002')
+    this.section6Item3 = await this.fetchData('01006003')
+    if (this.section6Item1) {
+      this.section6.push(this.section6Item1, this.section6Item2, this.section6Item3)
+    }
   }
 }
 </script>
@@ -49,8 +53,8 @@ export default {
         Pastoral Team
       </p>
     </div>
-    <div class="w-4/5 flex flex-row flex-wrap items-center justify-center gap-6">
-      <template v-for="team in PastoralTeamHighlights" :key="team">
+    <div v-if="section6" class="w-4/5 flex flex-row flex-wrap items-center justify-center gap-6">
+      <template v-for="team in section6" :key="team.key">
         <PastoralTeamHighlightCard :item="team" />
       </template>
     </div>

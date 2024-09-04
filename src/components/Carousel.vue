@@ -7,7 +7,7 @@ export default {
   components: { CrButton },
   data() {
     return {
-      data: {}
+      data: null
     }
   },
   async created() {

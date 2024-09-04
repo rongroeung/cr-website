@@ -8,17 +8,17 @@ const home_page = {
     media: [
       {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
+        media_name: 'picture of boards'
       },
       {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
+        media_name: 'picture of boards'
       },
       {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
+        media_name: 'picture of boards'
       }
-    ],
+    ]
   },
   discipleship_journey: {
     id: '01002001',
@@ -30,92 +30,89 @@ const home_page = {
       'discipleship-skills',
       'biblical-doctrines'
     ],
-    media: null,
+    media: null
   },
-  discipleship_journey_cards:
-    [
-      {
-        id: '01003001',
-        title: 'connect',
-        sub_title: null,
-        media: {
-          media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'icon',
-        },
-        descriptions: [
-          'share-the-gospel-with-them',
-          'identify-their-spiritual-interest',
-          'clarify-the-gospel-and-remove-barriers',
-          'bring-them-to-a-decision-point-about-christ',
-          'thoroughly-follow-up-if-they-indicate-belief-and-repentance'
-        ]
+  discipleship_journey_cards: [
+    {
+      id: '01003001',
+      title: 'connect',
+      sub_title: null,
+      media: {
+        media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
+        media_name: 'icon'
       },
-      {
-        id: '01003002',
-        title: 'establish',
-        sub_title: null,
-        media: {
-          media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'icon',
-        },
-        descriptions: [
-          'helping-them-developing-a-right-relationship-with-god',
-          'helping-them-develop-a-right-relationship-with-self',
-          'helping-them-develop-a-right-relationship-with-others'
-        ]
+      descriptions: [
+        'share-the-gospel-with-them',
+        'identify-their-spiritual-interest',
+        'clarify-the-gospel-and-remove-barriers',
+        'bring-them-to-a-decision-point-about-christ',
+        'thoroughly-follow-up-if-they-indicate-belief-and-repentance'
+      ]
+    },
+    {
+      id: '01003002',
+      title: 'establish',
+      sub_title: null,
+      media: {
+        media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
+        media_name: 'icon'
       },
-      {
-        id: '01003003',
-        sub_title: null,
-        title: 'equip',
-        media: {
-          media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'icon',
-        },
-        descriptions: [
-          'training-them-to-evangelize-and-establish-others',
-          'leading-them-in-personal-ministry',
-          'helping-them-begin-to-understand-and-develop-vision',
-          'identifying-their-character-needs-and-helping-them-mature-and-christ-likeness'
-        ]
+      descriptions: [
+        'helping-them-developing-a-right-relationship-with-god',
+        'helping-them-develop-a-right-relationship-with-self',
+        'helping-them-develop-a-right-relationship-with-others'
+      ]
+    },
+    {
+      id: '01003003',
+      sub_title: null,
+      title: 'equip',
+      media: {
+        media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
+        media_name: 'icon'
       },
-      {
-        id: '01003004',
-        sub_title: null,
-        title: 'multiply',
-        media: {
-          media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'icon',
-        },
-        descriptions: [
-          'helping-them-begin-to-discern-their-unique-role-in-the-church-kingdom',
-          'developing-a-personalized-ministry-plan-with-them',
-          'connecting-them-with-people-and-opportunities'
-        ]
-      }
-    ],
+      descriptions: [
+        'training-them-to-evangelize-and-establish-others',
+        'leading-them-in-personal-ministry',
+        'helping-them-begin-to-understand-and-develop-vision',
+        'identifying-their-character-needs-and-helping-them-mature-and-christ-likeness'
+      ]
+    },
+    {
+      id: '01003004',
+      sub_title: null,
+      title: 'multiply',
+      media: {
+        media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
+        media_name: 'icon'
+      },
+      descriptions: [
+        'helping-them-begin-to-discern-their-unique-role-in-the-church-kingdom',
+        'developing-a-personalized-ministry-plan-with-them',
+        'connecting-them-with-people-and-opportunities'
+      ]
+    }
+  ],
   highlights_activities: [
     {
       id: '01004001',
       title: 'Certificate In Ministry Leadership',
       sub_title: 'The School of Missions',
       descriptions: ['The School of Missions is a...'],
-      media:
-      {
+      media: {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
-      },
+        media_name: 'picture of boards'
+      }
     },
     {
       id: '01005001',
       title: 'Worship Ministry',
       sub_title: 'Sunday Worship',
       descriptions: ['Our worship team exist...'],
-      media:
-      {
+      media: {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
-      },
+        media_name: 'picture of boards'
+      }
     }
   ],
   sunday_sermons: {
@@ -123,7 +120,8 @@ const home_page = {
     sub_title: null,
     title: 'Our Sunday Sermons',
     descriptions: null,
-    child: [ // mey need a new table for youtube video model
+    child: [
+      // mey need a new table for youtube video model
       {
         content_id: '01006001',
         title: 'Deacon Bryan Testimony',
@@ -132,8 +130,8 @@ const home_page = {
         publish_date: '17 June 2024',
         thumbnail: {
           media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'picture of boards',
-        },
+          media_name: 'picture of boards'
+        }
       },
       {
         content_id: '01006001',
@@ -143,8 +141,8 @@ const home_page = {
         publish_date: '17 June 2024',
         thumbnail: {
           media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'picture of boards',
-        },
+          media_name: 'picture of boards'
+        }
       },
       {
         content_id: '01006001',
@@ -154,8 +152,8 @@ const home_page = {
         publish_date: '17 June 2024',
         thumbnail: {
           media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'picture of boards',
-        },
+          media_name: 'picture of boards'
+        }
       },
       {
         content_id: '01006001',
@@ -165,8 +163,8 @@ const home_page = {
         publish_date: '17 June 2024',
         thumbnail: {
           media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-          media_name: 'picture of boards',
-        },
+          media_name: 'picture of boards'
+        }
       }
     ],
     media: null
@@ -179,8 +177,8 @@ const home_page = {
       descriptions: ['Pastor Rathana is the fruit...'],
       media: {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
-      },
+        media_name: 'picture of boards'
+      }
     },
     {
       id: '01007002',
@@ -189,8 +187,8 @@ const home_page = {
       descriptions: ['Pastor Rathana is the fruit...'],
       media: {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
-      },
+        media_name: 'picture of boards'
+      }
     },
     {
       id: '01007003',
@@ -199,8 +197,8 @@ const home_page = {
       descriptions: ['Pastor Rathana is the fruit...'],
       media: {
         media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        media_name: 'picture of boards',
-      },
+        media_name: 'picture of boards'
+      }
     }
   ],
   contact_us_map: {
@@ -220,16 +218,16 @@ const church_board = {
     descriptions: ['In the photo (L to R): Mrs. Sam...'],
     media: {
       media_url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-      media_name: 'picture of boards',
-    },
+      media_name: 'picture of boards'
+    }
   },
   church_board_member: {
     id: '03002001',
     title: null,
     sub_title: null,
     descriptions: ['Pastor Moeun Rathana | Chair Person', 'Mrs. Sous Sinoun | Vice Chair Person'],
-    media: null,
-  },
+    media: null
+  }
 }
 
 const pastoral_team = {
@@ -239,21 +237,20 @@ const pastoral_team = {
     title: 'Who We Are',
     sub_title: 'In 1934, a missionary from I...',
     descriptions: null,
-    media: null,
+    media: null
   },
   what_we_do: {
     id: '03002001',
     title: 'What We Do',
     sub_title: 'The key role of CNEC is to be t...',
     descriptions: null,
-    media: null,
+    media: null
   },
   our_beliefs: {
     id: '03003001',
     title: 'Our Beliefs',
     sub_title: null,
     descriptions: ['In the Holy Scriptures', 'One God eternally', 'Our Lord Jesus Christ,'],
-    media: null,
-  },
-
+    media: null
+  }
 }

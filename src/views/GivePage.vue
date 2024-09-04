@@ -62,6 +62,5 @@ export default {
     </div>
   </section>
 </template>
-  
-  <script scoped>
-</script>
+
+<script scoped></script>

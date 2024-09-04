@@ -5,7 +5,7 @@ export default {
   components: { PastoralTeamCard },
   data() {
     return {
-      data: {},
+      data: null,
       PastoralTeams: [
         {
           id: 1,
