@@ -8,7 +8,7 @@ export default {
     return {
       youtube: {
         profile_picture:
-          'https://yt3.googleusercontent.com/F8KfEmC8FjU5JgXby1P8lGrVJYeZsO2NP14bvJTG0Nq4UfYCHk03Y9KrMXpYOrbDAXOEr6JeTw=s160-c-k-c0x00ffffff-no-rj',
+          'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/channel_logo.jpg',
         profile_name: 'ccoc online'
       }
     }

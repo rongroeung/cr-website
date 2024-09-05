@@ -70,7 +70,6 @@ export default {
   },
   async created() {
     this.section2 = await this.fetchData('01002001') //discipleshipJourney
-    // this.section2 = this.$fallbackData.page1.section2
     this.section3Item1 = await this.fetchData('01003001') //connect
     this.section3Item2 = await this.fetchData('01003002') //establish
     this.section3Item3 = await this.fetchData('01003003') //equip

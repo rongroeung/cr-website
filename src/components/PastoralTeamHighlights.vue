@@ -13,21 +13,21 @@ export default {
         {
           id: '1',
           content: 'pastor-rathana-is-the-fruit-of-crossroads-ministry',
-          image: `${this.$assetsPath}/img/Rathana-Profile.png`,
+          image: `${this.$githubAssetsPath}/img/Rathana-Profile.png`,
           name: 'Pastor Moeun Rathana',
           role: 'senior-pastor'
         },
         {
           id: '2',
           content: 'pastor-rathana-is-the-fruit-of-crossroads-ministry',
-          image: `${this.$assetsPath}/img/Menghun-Profile.png`,
+          image: `${this.$githubAssetsPath}/img/Menghun-Profile.png`,
           name: 'Ptr. Chem Menghun',
           role: 'assistant-pastor'
         },
         {
           id: '3',
           content: 'pastor-rathana-is-the-fruit-of-crossroads-ministry',
-          image: `${this.$assetsPath}/img/Dany-Profile.png`,
+          image: `${this.$githubAssetsPath}/img/Dany-Profile.png`,
           name: 'Sis. Bin Dany',
           role: 'pastoral-team-member'
         }

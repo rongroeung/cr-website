@@ -8,7 +8,7 @@ export default {
         title: 'church-board-of-directors',
         description:
           'We come together as a community, bound by faith and purpose, to share in the leadership and stewardship of our beloved church. With hearts full of gratitude, we thank God for calling us, the alumni, to join hands and build up the body of Christ.',
-        image: `${this.$assetsPath}/img/Group-Photo---Church-Board-Members-2024.jpg`,
+        image: `${this.$githubAssetsPath}/img/Group-Photo---Church-Board-Members-2024.jpg`,
         imageDescription:
           'In the photo (L to R): Mrs. Sam Dalis, Mr. Gnonn Danet, Mrs. Sous Sinoun, Mrs. Chann Socheata, Mr. Norl Chanly, Mr. Theng Rathrongroeung, Pastor Moeun Rathana',
         Principles: [
