@@ -8,30 +8,7 @@ export default {
       section6Item1: null,
       section6Item2: null,
       section6Item3: null,
-      section6: [],
-      PastoralTeamHighlights: [
-        {
-          id: '1',
-          content: 'pastor-rathana-is-the-fruit-of-crossroads-ministry',
-          image: `${this.$githubAssetsPath}/img/Rathana-Profile.png`,
-          name: 'Pastor Moeun Rathana',
-          role: 'senior-pastor'
-        },
-        {
-          id: '2',
-          content: 'pastor-rathana-is-the-fruit-of-crossroads-ministry',
-          image: `${this.$githubAssetsPath}/img/Menghun-Profile.png`,
-          name: 'Ptr. Chem Menghun',
-          role: 'assistant-pastor'
-        },
-        {
-          id: '3',
-          content: 'pastor-rathana-is-the-fruit-of-crossroads-ministry',
-          image: `${this.$githubAssetsPath}/img/Dany-Profile.png`,
-          name: 'Sis. Bin Dany',
-          role: 'pastoral-team-member'
-        }
-      ]
+      section6: []
     }
   },
   async created() {
@@ -45,7 +22,7 @@ export default {
 }
 </script>
 <template>
-  <section class="flex-center flex-col bg-cr-gray py-20">
+  <section class="PastoralTeamHighlights flex-center flex-col bg-cr-gray py-20">
     <div class="h-fit w-4/5 mb-6">
       <p
         class="w-full md:w-2/4 text-center md:text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"

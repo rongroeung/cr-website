@@ -6,14 +6,16 @@ export default {
   data() {
     return {
       data: null,
-      PastoralTeams: [
+      senior_pastors: [
         {
           id: 1,
           image: `${this.$githubAssetsPath}/img/Rathana-Profile.png`,
           name: 'Pastor Moeun Rathana',
           description:
             'In the year 2008, Pastor Moeun Rathana stood at a crossroads—a juncture where earthly pursuits met the ethereal. With unwavering conviction, he responded to a divine calling that beckoned him beyond the familiar terrain of IT and Economics. His heart ablaze with purpose, Rathana embarked on a remarkable odyssey.<br/><br/>The Philippines became his sanctuary, its theological halls echoing with ancient wisdom. There, he pursued an M.Div. (Master of Divinity) in Pastoral Studies—a sacred quest that transcended mere academia. Guided by prayer and fueled by faith, he delved into Scripture, honing his understanding of God’s Word. By God’s grace, he emerged not only with academic honors but also with a theological award—an emblem of divine favor.<br/><br/>In 2017, Rathana returned to Cambodia, his spirit aflame. The mantle of pastorship settled upon his shoulders as he assumed leadership at Crossroads Church. His mission extended far beyond the pulpit; it was about holistic transformation. With fervor, he imparted God’s Word to young hearts, nurturing their souls and kindling hope. His passion was a beacon—a lighthouse guiding seekers toward abundant life.<br/><br/>And then, in the tender embrace of 2022, love wove its tapestry. San Phalyn, a kindred soul, joined him in matrimony. Together, they embarked on a shared ministry journey—a symphony of purpose, compassion, and unwavering commitment.<br/><br/>So let this story echo through the ages: Pastor Moeun Rathana, the bridge between heaven and earth, the steward of souls, and the weaver of God’s grace. His legacy—a testament to faith, service, and the transformative power of love—continues to resonate within the walls of Crossroads Church and beyond.'
-        },
+        }
+      ],
+      full_time_co_workers: [
         {
           id: 2,
           image: `${this.$githubAssetsPath}/img/Phalyn-Profile.png`,
@@ -41,7 +43,9 @@ export default {
           name: 'Sis. Bin Dany',
           description:
             'Sister Bin Dany became a valuable addition to the Crossroads pastoral team in February 2022. She undertakes the pastoral duties for the female dormitory, provides Bible teachings in the evenings, and coordinates the worship leaders. Her multifaceted role contributes significantly to the spiritual growth and harmony of the community.<br/><br/>Pastoral Team Member'
-        },
+        }
+      ],
+      part_time_co_workers: [
         {
           id: 6,
           image: `${this.$githubAssetsPath}/img/Chhoeum-Narongrith-Profile.png`,
@@ -59,15 +63,27 @@ export default {
 </script>
 
 <template>
-  <section class="h-fit w-full flex-center flex-col bg-cr-gray">
+  <section class="PastoralTeamPage h-fit w-full flex-center flex-col bg-cr-gray">
     <div class="image-header h-300-px w-full flex-center">
       <p class="text-white text-5xl" v-t="'pastoral-team'"></p>
     </div>
     <div class="content w-4/5 mx-auto my-20">
-      <p class="text-3xl font-bold text-gray-800 mb-8">Full-Time Pastors</p>
+      <p class="text-center text-3xl font-bold text-gray-800 mb-12">Senior Pastors</p>
       <div class="flex justify-center flex-wrap gap-20">
-        <template v-for="team in PastoralTeams" :key="team.id">
-          <PastoralTeamCard :item="team" />
+        <template v-for="item in senior_pastors" :key="item.id">
+          <PastoralTeamCard :item="item" />
+        </template>
+      </div>
+      <p class="text-center text-3xl font-bold text-gray-800 my-12">Full-Time Co-Workers</p>
+      <div class="flex justify-center flex-wrap gap-20">
+        <template v-for="item in full_time_co_workers" :key="item.id">
+          <PastoralTeamCard :item="item" />
+        </template>
+      </div>
+      <p class="text-center text-3xl font-bold text-gray-800 my-12">Part-Time Co-Workers</p>
+      <div class="flex justify-center flex-wrap gap-20">
+        <template v-for="item in part_time_co_workers" :key="item.id">
+          <PastoralTeamCard :item="item" />
         </template>
       </div>
     </div>

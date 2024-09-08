@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col items-center space-x-4 max-w-lg">
+  <div class="flex flex-col items-center space-x-4 max-w-34">
     <div class="w-180-px h-180-px">
       <img :src="item.image" :alt="item.name" class="w-full h-full rounded-full object-contain" />
     </div>

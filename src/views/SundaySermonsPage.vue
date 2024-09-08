@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg-secondary h-fit w-full flex-center flex-col">
+  <section class="SundaySermonsPage bg-secondary h-fit w-full flex-center flex-col">
     <div class="image-header h-300-px w-full flex-center">
       <p class="text-white text-5xl" v-t="'sunday_sermons'"></p>
     </div>

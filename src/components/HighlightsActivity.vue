@@ -8,20 +8,6 @@ export default {
     return {
       section4Item1: null,
       section4Item2: null
-      // certificateInMinistryLeadershipContent: {
-      //   headerTag: 'certificate-in-ministry-leadership',
-      //   title: 'the-school-of-missions',
-      //   descriptions: 'the-school-of-missions-is-a-theological-training',
-      //   image: '/src/assets/img/The-school-of-missions.jpg',
-      //   routeName: 'ministries'
-      // },
-      // worshipMinistryContent: {
-      //   headerTag: 'worship-ministry',
-      //   title: 'sunday-worship',
-      //   descriptions: 'our-worship-team-exists-to-not-only',
-      //   image: '/src/assets/img/sunday-worship.jpg',
-      //   routeName: 'worship-ministry'
-      // }
     }
   },
   async created() {
@@ -32,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg-cr-gray flex-center flex-col text-black">
+  <section class="HighlightsActivity bg-cr-gray flex-center flex-col text-black">
     <layout-2-columns
       v-if="section4Item1"
       key="1"

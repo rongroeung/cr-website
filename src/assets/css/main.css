@@ -108,7 +108,7 @@ body {
 
 .image-header {
   background-image: url(/src/assets/img/Coverpage-001.jpg);
-  background-position: center;
+  background-position: 80%;
 }
 
 .block-important {
@@ -121,4 +121,8 @@ body {
 
 .h-180-px {
   max-height: 180px;
+}
+
+.max-w-34{  
+  max-width: 34rem;
 }

@@ -12,60 +12,6 @@ export default {
       section3Item2: null,
       section3Item3: null,
       section3Item4: null
-      // discipleshipCardContents: [
-      //   {
-      //     id: 1,
-      //     icon: '/src/assets/icon/connect.svg',
-      //     title: 'connect',
-      //     descriptions: [
-      //       'share-the-gospel-with-them',
-      //       'identify-their-spiritual-interest',
-      //       'clarify-the-gospel-and-remove-barriers',
-      //       'bring-them-to-a-decision-point-about-christ',
-      //       'thoroughly-follow-up-if-they-indicate-belief-and-repentance'
-      //     ]
-      //   },
-      //   {
-      //     id: 2,
-      //     icon: '/src/assets/icon/establish.svg',
-      //     title: 'establish',
-      //     descriptions: [
-      //       'helping-them-developing-a-right-relationship-with-god',
-      //       'helping-them-develop-a-right-relationship-with-self',
-      //       'helping-them-develop-a-right-relationship-with-others'
-      //     ]
-      //   },
-      //   {
-      //     id: 3,
-      //     icon: '/src/assets/icon/equip.svg',
-      //     title: 'equip',
-      //     descriptions: [
-      //       'training-them-to-evangelize-and-establish-others',
-      //       'leading-them-in-personal-ministry',
-      //       'helping-them-begin-to-understand-and-develop-vision',
-      //       'identifying-their-character-needs-and-helping-them-mature-and-christ-likeness'
-      //     ]
-      //   },
-      //   {
-      //     id: 4,
-      //     icon: '/src/assets/icon/multiply.svg',
-      //     title: 'multiply',
-      //     descriptions: [
-      //       'helping-them-begin-to-discern-their-unique-role-in-the-church-kingdom',
-      //       'developing-a-personalized-ministry-plan-with-them',
-      //       'connecting-them-with-people-and-opportunities'
-      //     ]
-      //   }
-      // ],
-      // discipleshipJourney: {
-      //   title: 'our-discipleship_journey',
-      //   description: [
-      //     'devotional-disciples',
-      //     'discipleship-character',
-      //     'discipleship-skills',
-      //     'biblical-doctrines'
-      //   ]
-      // }
     }
   },
   async created() {
