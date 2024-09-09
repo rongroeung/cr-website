@@ -4,11 +4,11 @@
 
 # Table of content
 
-| Content                                                                                                        | Description                    |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| [project setup](#https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#project-setup)   | inilize development enviroment |
-| [commit message](#https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#commit-message) | convention for commit message  |
-| [text size](#https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#text-styling)        | global class for text style    |
+| Content                                                                                                       | Description                    |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| [project setup](https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#project-setup)   | inilize development enviroment |
+| [commit message](https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#commit-message) | convention for commit message  |
+| [text size](https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#text-styling)        | global class for text style    |
 
 ## Project Setup
 
