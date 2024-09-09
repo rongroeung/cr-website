@@ -22,18 +22,18 @@ export default {
 }
 </script>
 <template>
-  <section class="PastoralTeamHighlights flex-center flex-col bg-cr-gray py-20">
-    <div class="h-fit w-4/5 mb-6">
+  <section class="PastoralTeamHighlights h-full flex-center flex-col bg-cr-gray py-20">
+    <div class="w-4/5 mb-6">
       <p
         class="w-full md:w-2/4 text-center md:text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
       >
         Pastoral Team
       </p>
     </div>
-    <div v-if="section6" class="w-4/5 flex flex-row flex-wrap items-center justify-center gap-6">
-      <template v-for="team in section6" :key="team.key">
-        <PastoralTeamHighlightCard :item="team" />
-      </template>
+    <div v-if="section6" class="section6 w-4/5 flex flex-row flex-wrap justify-center gap-6">
+      <div v-for="item in section6" :key="item.id">
+        <PastoralTeamHighlightCard :item="item" />
+      </div>
     </div>
   </section>
 </template>

@@ -25,97 +25,97 @@ const fallbackData = [
     youtube: []
   },
   {
-    "id": "01003001",
-    "title": "connect",
-    "sub_title": null,
-    "description": [
+    id: '01003001',
+    title: 'connect',
+    sub_title: null,
+    description: [
       {
-        "id": "dt00005",
-        "text": "Share the gospel with them"
+        id: 'dt00005',
+        text: 'Share the gospel with them'
       },
       {
-        "id": "dt00006",
-        "text": "Identify their spiritual interest"
+        id: 'dt00006',
+        text: 'Identify their spiritual interest'
       },
       {
-        "id": "dt00007",
-        "text": "Clarify the gospel and remove barriers"
+        id: 'dt00007',
+        text: 'Clarify the gospel and remove barriers'
       },
       {
-        "id": "dt00008",
-        "text": "Bring them to a decision point about Christ"
+        id: 'dt00008',
+        text: 'Bring them to a decision point about Christ'
       },
       {
-        "id": "dt00009",
-        "text": "Thoroughly follow up if they indicate belief and repentance"
+        id: 'dt00009',
+        text: 'Thoroughly follow up if they indicate belief and repentance'
       }
     ],
-    "media": [
+    media: [
       {
-        "id": "md00004",
-        "url": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='36px'%20viewBox='0%20-960%20960%20960'%20width='36px'%20fill='%236B7280'%3e%3cpath%20d='M440-280H280q-83%200-141.5-58.5T80-480q0-83%2058.5-141.5T280-680h160v80H280q-50%200-85%2035t-35%2085q0%2050%2035%2085t85%2035h160v80ZM320-440v-80h320v80H320Zm200%20160v-80h160q50%200%2085-35t35-85q0-50-35-85t-85-35H520v-80h160q83%200%20141.5%2058.5T880-480q0%2083-58.5%20141.5T680-280H520Z'/%3e%3c/svg%3e",
-        "name": "icon"
+        id: 'md00004',
+        url: "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='36px'%20viewBox='0%20-960%20960%20960'%20width='36px'%20fill='%236B7280'%3e%3cpath%20d='M440-280H280q-83%200-141.5-58.5T80-480q0-83%2058.5-141.5T280-680h160v80H280q-50%200-85%2035t-35%2085q0%2050%2035%2085t85%2035h160v80ZM320-440v-80h320v80H320Zm200%20160v-80h160q50%200%2085-35t35-85q0-50-35-85t-85-35H520v-80h160q83%200%20141.5%2058.5T880-480q0%2083-58.5%20141.5T680-280H520Z'/%3e%3c/svg%3e",
+        name: 'icon'
       }
     ],
-    "youtube": []
+    youtube: []
   },
   {
-    "id": "01003002",
-    "title": "establish",
-    "sub_title": null,
-    "description": [
+    id: '01003002',
+    title: 'establish',
+    sub_title: null,
+    description: [
       {
-        "id": "dt00010",
-        "text": "Helping them developing a right relationship with God"
+        id: 'dt00010',
+        text: 'Helping them developing a right relationship with God'
       },
       {
-        "id": "dt00011",
-        "text": "Helping them develop a right relationship with self"
+        id: 'dt00011',
+        text: 'Helping them develop a right relationship with self'
       },
       {
-        "id": "dt00012",
-        "text": "Helping them develop a right relationship with others"
+        id: 'dt00012',
+        text: 'Helping them develop a right relationship with others'
       }
     ],
-    "media": [
+    media: [
       {
-        "id": "md00005",
-        "url": "http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg",
-        "name": "icon"
+        id: 'md00005',
+        url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
+        name: 'icon'
       }
     ],
-    "youtube": []
+    youtube: []
   },
   {
-    "id": "01003003",
-    "title": "equip",
-    "sub_title": null,
-    "description": [
+    id: '01003003',
+    title: 'equip',
+    sub_title: null,
+    description: [
       {
-        "id": "dt00013",
-        "text": "Training them to evangelize and establish others"
+        id: 'dt00013',
+        text: 'Training them to evangelize and establish others'
       },
       {
-        "id": "dt00014",
-        "text": "Leading them in personal ministry"
+        id: 'dt00014',
+        text: 'Leading them in personal ministry'
       },
       {
-        "id": "dt00015",
-        "text": "Helping them begin to understand and develop vision"
+        id: 'dt00015',
+        text: 'Helping them begin to understand and develop vision'
       },
       {
-        "id": "dt00016",
-        "text": "Identifying their character needs and helping them mature and Christ-likeness"
+        id: 'dt00016',
+        text: 'Identifying their character needs and helping them mature and Christ-likeness'
       }
     ],
-    "media": [
+    media: [
       {
-        "id": "md00006",
-        "url": "http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg",
-        "name": "icon"
+        id: 'md00006',
+        url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
+        name: 'icon'
       }
     ],
-    "youtube": []
+    youtube: []
   },
   {
     id: '01003004',
@@ -236,7 +236,7 @@ const fallbackData = [
     description: [
       {
         id: 'dt00022',
-        text: "Pastor Rathana is the fruit of Crossroads Ministry. He came to follow Jesus as his personal Lord and Savior in 2006 through Crossroads Ministry. In 2008 after receiving God's vision through a dream, he was commissioned to plant the church amongst University students. (Pastor Rathana holds a bachelor degree in IT and Economics.) Later on, in 2013, he went to the Philippines to pursue an M.Div. in Pastoral Studies. He graduated with honors and the Theological Award in 2017, And then, right/after his graduation he returned to Cambodia and was installed to be the pastor of the Crossroads Church in 2018 His passion is to reach the younger generation through preaching God's Word."
+        text: "Pastor Moeun Rathana, guided by God's calling, was commissioned to do church planting amongst the university students in 2008. Despite his IT and Economics degree, in 2013 he pursued M.Div. in Pastoral Studies in the Philippines, earning honors and a theological award. In 2017, he was installed to be the pastor of Crossroads Church."
       }
     ],
     media: [
@@ -255,7 +255,7 @@ const fallbackData = [
     description: [
       {
         id: 'dt00023',
-        text: "Pastor Rathana is the fruit of Crossroads Ministry. He came to follow Jesus as his personal Lord and Savior in 2006 through Crossroads Ministry. In 2008 after receiving God's vision through a dream, he was commissioned to plant the church amongst University students. (Pastor Rathana holds a bachelor degree in IT and Economics.) Later on, in 2013, he went to the Philippines to pursue an M.Div. in Pastoral Studies. He graduated with honors and the Theological Award in 2017, And then, right/after his graduation he returned to Cambodia and was installed to be the pastor of the Crossroads Church in 2018 His passion is to reach the younger generation through preaching God's Word."
+        text: 'He embarked on his full-time ministry with Crossroads in 2017, subsequently attending Phnom Penh Bible School. In 2021, he achieved a degree in theology. Presently, he holds the position of Assistant Pastor at the church, overseeing several ministries. Additionally, he fulfills the role of Pastor for the male dormitory.'
       }
     ],
     media: [
@@ -274,7 +274,7 @@ const fallbackData = [
     description: [
       {
         id: 'dt00024',
-        text: "Pastor Rathana is the fruit of Crossroads Ministry. He came to follow Jesus as his personal Lord and Savior in 2006 through Crossroads Ministry. In 2008 after receiving God's vision through a dream, he was commissioned to plant the church amongst University students. (Pastor Rathana holds a bachelor degree in IT and Economics.) Later on, in 2013, he went to the Philippines to pursue an M.Div. in Pastoral Studies. He graduated with honors and the Theological Award in 2017, And then, right/after his graduation he returned to Cambodia and was installed to be the pastor of the Crossroads Church in 2018 His passion is to reach the younger generation through preaching God's Word."
+        text: 'Sister Bin Dany became a valuable addition to the Crossroads pastoral team in 2022. She undertakes the pastoral duties for the female dormitory, provides Bible teachings in the evenings, and coordinates the worship leaders. Her multifaceted role contributes significantly to the spiritual growth and harmony of the community.'
       }
     ],
     media: [
