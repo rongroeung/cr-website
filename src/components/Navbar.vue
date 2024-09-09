@@ -146,7 +146,10 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('about')">
-          <router-link :to="{ name: 'about' }" v-t="'about'"></router-link>
+          <router-link
+            :to="{ name: isBelowTabletScreen ? '' : 'about' }"
+            v-t="'about'"
+          ></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -168,7 +171,10 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('ministries')">
-          <router-link :to="{ name: 'ministries' }" v-t="'ministries'"></router-link>
+          <router-link
+            :to="{ name: isBelowTabletScreen ? '' : 'ministries' }"
+            v-t="'ministries'"
+          ></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -190,7 +196,10 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('mission')">
-          <router-link :to="{ name: 'mission' }" v-t="'mission'"></router-link>
+          <router-link
+            :to="{ name: isBelowTabletScreen ? '' : 'mission' }"
+            v-t="'mission'"
+          ></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -219,7 +228,10 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('get-involved')">
-          <router-link :to="{ name: 'get-involved' }" v-t="'get-involved'"></router-link>
+          <router-link
+            :to="{ name: isBelowTabletScreen ? '' : 'get-involved' }"
+            v-t="'get-involved'"
+          ></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
@@ -248,7 +260,7 @@ export default {
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('news')">
-          <router-link :to="{ name: 'news' }" v-t="'news'"></router-link>
+          <router-link :to="{ name: isBelowTabletScreen ? '' : 'news' }" v-t="'news'"></router-link>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
