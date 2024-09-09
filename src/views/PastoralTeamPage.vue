@@ -65,7 +65,7 @@ export default {
 <template>
   <section class="PastoralTeamPage h-fit w-full flex-center flex-col bg-cr-gray">
     <div class="image-header h-300-px w-full flex-center">
-      <p class="text-white text-5xl" v-t="'pastoral-team'"></p>
+      <p class="text-4xl xl:text-5xl" v-t="'pastoral-team'"></p>
     </div>
     <div class="content w-4/5 mx-auto my-20">
       <p class="text-center text-3xl font-bold text-gray-800 mb-12">Senior Pastors</p>

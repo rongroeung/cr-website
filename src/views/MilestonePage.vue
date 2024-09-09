@@ -22,7 +22,7 @@ export default {
 <template>
   <section class="bg-secondary h-fit w-full flex-center flex-col">
     <div class="image-header h-300-px w-full flex-center">
-      <p class="text-white text-5xl" v-t="'milestone'"></p>
+      <p class="text-4xl xl:text-5xl" v-t="'milestone'"></p>
     </div>
     <div class="content w-4/5 flex-center my-20">
       <div

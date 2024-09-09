@@ -80,7 +80,7 @@ export default {
 <template>
   <section id="church_board" class="h-fit w-full flex-center flex-col bg-cr-gray text-black">
     <div class="image-header h-300-px w-full flex-center">
-      <p class="text-white text-5xl" v-t="'church-board'"></p>
+      <p class="text-4xl xl:text-5xl text-cr-gray" v-t="'church-board'"></p>
     </div>
     <div class="content w-4/5 mx-auto my-20">
       <p
