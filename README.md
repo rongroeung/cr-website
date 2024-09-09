@@ -1,4 +1,14 @@
-# Development Branch
+# Front-end Technical Documentation
+
+`By: Kosalvireak Kheoun`
+
+# Table of content
+
+| Content                                                                                                        | Description                    |
+| -------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| [project setup](#https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#project-setup)   | inilize development enviroment |
+| [commit message](#https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#commit-message) | convention for commit message  |
+| [text size](#https://github.com/rongroeung/cr-website/tree/development?tab=readme-ov-file#text-styling)        | global class for text style    |
 
 ## Project Setup
 
@@ -48,45 +58,4 @@ text-sm md:text-lg
 
 ```
 text-2xl md:text-4xl xl:text-5xl
-```
-
-### Conventional order of CSS properties
-
-```
-element {
-  /* I. Microcosm of All Properties */
-  content:           /* What it is. */
-  display:           /* Where or whether it is. */
-  position:              /* Relationships to others. */
-
-  /* A. Content Properties † */
-  background-image:   /* 1. Internal content styling ... */
-  background- ...
-  border:
-  opacity:
-
-  font-family:       /* 2. Typographic styling ...*/
-  font- ...
-  text- ...
-  color:
-
-  /* B. Display Properties */
-  box-sizing:            /* Ordered by Box Model ...*/
-  height:
-  width:
-  max- ...
-  padding:
-  margin:
-
-  /* C. Relational Properties */
-  float:
-  order:
-  z-index:
-
-  /* D. State Properties */
-  cursor:
-  animation:
-  transition:
-}
-
 ```
