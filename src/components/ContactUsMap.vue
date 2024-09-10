@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <section class="flex-center flex-col">
+  <section id="01007001" class="flex-center flex-col">
     <div class="h-60 w-4/5 flex-center flex-col sm:flex-row">
       <p
         v-if="section7"

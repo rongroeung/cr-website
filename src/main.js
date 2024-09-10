@@ -15,6 +15,7 @@ import { fetchDataMixin } from '@/util/mixin'
 
 // Register global component //
 import ComingSoon from './components/ComingSoon.vue'
+import ImagePreview from './components/ImagePreview.vue'
 
 const app = createApp(App)
 
@@ -27,6 +28,7 @@ app.config.globalProperties.$fallbackData = fallbackData
 
 // Bind global component //
 app.component('ComingSoon', ComingSoon)
+app.component('ImagePreview', ImagePreview)
 
 app.use(router)
 app.use(i18n)

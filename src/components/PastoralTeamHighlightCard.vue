@@ -12,7 +12,10 @@ export default {
 }
 </script>
 <template>
-  <div class="PastoralTeamHighlightCard h-full bg-white rounded-lg flex flex-col p-6 max-w-24">
+  <div
+    :id="item.id"
+    class="PastoralTeamHighlightCard h-full bg-white rounded-lg flex flex-col p-6 max-w-24"
+  >
     <div class="mb-8 text-sm text-gray-600 grow">{{ item.description[0].text }}</div>
     <div class="profile-section flex">
       <img :src="item.media[0].url" :alt="item.media[0].name" :class="cssClass" />

@@ -1,5 +1,5 @@
 <script>
-import Layout2Columns from '@/layouts/Layout2Columns.vue'
+import Layout2Columns from '../layouts/Layout2Columns.vue'
 import HighlightsActivityCard from './HighlightsActivityCard.vue'
 export default {
   name: 'HighlightsActivity',

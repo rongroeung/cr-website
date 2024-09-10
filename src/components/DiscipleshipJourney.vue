@@ -59,7 +59,7 @@ export default {
     </section>
     <section
       v-if="section3"
-      class="section3 w-4/5 flex flex-row flex-wrap justify-center border-1 text-black gap-6 pb-20"
+      class="section3 w-4/5 flex flex-row flex-wrap justify-center text-black gap-6 pb-20"
     >
       <div v-for="content in section3" :key="content.id">
         <DiscipleshipCard
