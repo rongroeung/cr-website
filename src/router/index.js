@@ -24,19 +24,20 @@ import SundaySermonsPage from '@/views/SundaySermonsPage.vue'
 import EventsPage from '@/views/EventsPage.vue'
 import ChurchNewsPage from '@/views/ChurchNewsPage.vue'
 import NotFoundPage from '@/views/NotFoundPage.vue'
+import Admin from '@/views/admin/Admin.vue'
 
-const navbarHeight = 80; //ref --navbar-height: 80px
+const navbarHeight = 80 //ref --navbar-height: 80px
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to) {
     if (to.hash) {
       // scroll to specific id by specify buttonRouteId <CrButton buttonRouter="home" buttonRouteId="discipleship_journey" />
       return {
         el: to.hash,
         behavior: 'smooth',
         left: 0,
-        top: navbarHeight,
+        top: navbarHeight
       }
     } else {
       return { top: 0 }
@@ -47,6 +48,11 @@ const router = createRouter({
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: NotFoundPage
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
     },
     {
       path: '/',

@@ -1,5 +1,4 @@
 <script>
-import router from '@/router'
 import CrButton from '@/components/CrButton.vue'
 export default {
   name: 'NotFoundPage',
