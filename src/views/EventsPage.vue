@@ -8,7 +8,7 @@ export default {
     <div class="image-header h-300-px w-full flex-center">
       <p class="text-4xl xl:text-5xl" v-t="'events'"></p>
     </div>
-    <div class="content w-full h-screen">
+    <div class="content w-full h-full">
       <ComingSoon />
     </div>
   </section>
