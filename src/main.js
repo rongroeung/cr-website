@@ -21,7 +21,8 @@ const app = createApp(App)
 // Bind global variable //
 app.config.globalProperties.$githubAssetsPath =
   'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets'
-app.config.globalProperties.$backendUrl = 'http://38.47.39.132:7001/cr-web-backend/api/v1/'
+app.config.globalProperties.$backendUrl =
+  'https://crossroadscambodia.church:7002/cr-web-backend/api/v1/'
 app.config.globalProperties.$fallbackData = fallbackData
 
 // Bind global component //
