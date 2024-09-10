@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: 'ComingSoon'
@@ -17,5 +16,4 @@ export default {
   </section>
 </template>
 
-<style>
-</style>
+<style></style>

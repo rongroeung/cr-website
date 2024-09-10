@@ -63,4 +63,4 @@ export default {
   </section>
 </template>
 
-<script scoped></script>
+<style scoped></style>

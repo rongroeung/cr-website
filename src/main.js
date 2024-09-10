@@ -1,30 +1,31 @@
-import './assets/css/main.css'
-
 import { createApp } from 'vue'
 import App from './App.vue'
+
+// Register plugin
 import router from './router'
 import 'flowbite'
 import i18n from '../src/lang/index'
+import './assets/css/main.css'
 
-// Register data and function
-import { fetchDataMixin } from '@/util/mixin'
+// Register data //
 import fallbackData from '@/util/fallbackData'
-// Register global component
-import ComingSoon from './components/ComingSoon.vue'
 
+// Register mixin //
+import { fetchDataMixin } from '@/util/mixin'
+
+// Register global component //
+import ComingSoon from './components/ComingSoon.vue'
 
 const app = createApp(App)
 
-// bind global variable
+// Bind global variable //
 app.config.globalProperties.$githubAssetsPath =
   'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets'
 app.config.globalProperties.$backendUrl = 'http://38.47.39.132:7001/cr-web-backend/api/v1/'
 app.config.globalProperties.$fallbackData = fallbackData
 
-
-// bind global component
-app.component('ComingSoon', ComingSoon);
-
+// Bind global component //
+app.component('ComingSoon', ComingSoon)
 
 app.use(router)
 app.use(i18n)

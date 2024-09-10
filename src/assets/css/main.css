@@ -26,6 +26,10 @@
   --text-9xl: 8rem;
 }
 
+/* Variables */
+
+/* Page CSS */
+
 html {
   font-size: 1rem;
   font-family:
@@ -63,17 +67,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* customize class */
+/* Page CSS */
+
+/* Display section */
+
 .flex-important {
   display: flex !important;
 }
 
-.h-carousel {
-  height: calc(100vh - 90px);
-}
-
-.h-110 {
-  height: 50rem;
+.block-important {
+  display: block !important;
 }
 
 .flex-center {
@@ -82,12 +85,23 @@ body {
   justify-content: center;
 }
 
-.duration-2000 {
-  transition-duration: 2000ms;
+/* Display section */
+
+/* Height and Width section */
+.h-carousel {
+  height: calc(100vh - 90px);
 }
 
-.cr-border-button {
-  border: 2px solid var(--text-color);
+.h-110 {
+  height: 50rem;
+}
+
+.h-300-px {
+  height: 300px;
+}
+
+.h-180-px {
+  max-height: 180px;
 }
 
 .w-17rem {
@@ -102,27 +116,25 @@ body {
   max-width: 30rem;
 }
 
-.h-300-px {
-  height: 300px;
+.w-180-px {
+  max-width: 180px;
 }
+
+.max-w-34 {
+  max-width: 34rem;
+}
+
+/* Height and Width section */
 
 .image-header {
   background-image: url(/src/assets/img/Coverpage-001.jpg);
   background-position: 80%;
 }
 
-.block-important {
-  display: block !important;
+.duration-2000 {
+  transition-duration: 2000ms;
 }
 
-.w-180-px {
-  max-width: 180px;
-}
-
-.h-180-px {
-  max-height: 180px;
-}
-
-.max-w-34{  
-  max-width: 34rem;
+.cr-border-button {
+  border: 2px solid var(--text-color);
 }
