@@ -7,11 +7,11 @@ export default {
   components: { CrButton },
   data() {
     return {
-      data: null
+      section1: null
     }
   },
   async created() {
-    this.data = await this.fetchData('01001001')
+    this.section1 = await this.fetchData('01001001')
   },
   mounted() {
     initFlowbite()
@@ -22,103 +22,63 @@ export default {
 <template>
   <div
     id="controls-carousel"
-    class="relative w-full flex flex-col"
+    class="relative w-full flex flex-col h-fit"
     data-carousel="slide"
     data-carousel-interval="8000"
   >
     <!-- Carousel wrapper -->
-    <div class="relative overflow-hidden h-64 md:h-96 lg:h-35rem xl:h-45rem 2xl:h-50rem">
-      <!-- Item 1 -->
-      <div class="carousel-item hidden linear" data-carousel-item="active">
-        <img
-          src="../assets/img/slideshow-01.jpg"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt="..."
-        />
-      </div>
-      <!-- Item 2 -->
-      <div class="carousel-item hidden linear" data-carousel-item>
-        <img
-          src="../assets/img/About--Cover-001.jpg"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt="..."
-        />
-      </div>
-      <!-- Item 3 -->
-      <div class="carousel-item hidden linear" data-carousel-item>
-        <img
-          src="../assets/img/About--Cover-002.jpg"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt="..."
-        />
-      </div>
+    <div
+      v-if="section1"
+      class="image-list relative overflow-hidden h-72 sm:h-96 lg:h-35rem xl:h-45rem h-carousel"
+    >
+      <template v-for="(image, index) in section1.media" :key="index">
+        <div class="carousel-item hidden linear" data-carousel-item>
+          <img
+            :src="image.url"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            :alt="image.name"
+          />
+        </div>
+      </template>
     </div>
-    <!-- Slider controls -->
-    <div class="center-content-wrapper">
-      <button
-        type="button"
-        class="absolute top-0 start-0 z-30 flex-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev
-      >
-        <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-        >
-          <svg
-            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 1 1 5l4 4"
-            />
-          </svg>
-          <span class="sr-only">Previous</span>
-        </span>
-      </button>
-      <!-- Inner Content -->
-      <div class="center-content">
-        <p
-          class="text-white text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7"
-          v-t="'rebuilding-cambodia'"
-        ></p>
-        <p
-          class="text-white sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7"
-          v-t="'love-god-love-other'"
-        ></p>
+    <!-- Inner Content -->
+
+    <div v-if="section1" class="center-content-wrapper">
+      <div :id="section1.id" class="center-content">
+        <p class="text-white text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7">
+          {{ section1.title }}
+        </p>
+        <p class="text-white sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7">
+          {{ section1.sub_title }}
+        </p>
         <CrButton buttonRouter="home" buttonRouteId="discipleship_journey" />
       </div>
+    </div>
+    <!-- Slider indicators -->
+    <div
+      class="absolute z-50 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse text-secondary"
+    >
       <button
         type="button"
-        class="absolute top-0 end-0 z-30 flex-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next
-      >
-        <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-        >
-          <svg
-            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 9 4-4-4-4"
-            />
-          </svg>
-          <span class="sr-only">Next</span>
-        </span>
-      </button>
+        class="w-3 h-3 rounded-full"
+        aria-current="true"
+        aria-label="Slide 1"
+        data-carousel-slide-to="0"
+      ></button>
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full"
+        aria-current="false"
+        aria-label="Slide 2"
+        data-carousel-slide-to="1"
+      ></button>
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full"
+        aria-current="false"
+        aria-label="Slide 3"
+        data-carousel-slide-to="2"
+      ></button>
     </div>
   </div>
 </template>

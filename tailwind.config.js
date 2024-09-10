@@ -10,11 +10,12 @@ export default {
       colors: {
         primary: '#f5a807',
         secondary: '#021b4b',
-        'cr-gray':'#f4f5f7',
+        'cr-gray': '#f4f5f7',
         'sub-primary': '#f5aa07c5',
         'sub-secondary': '#01153a'
       },
       height: {
+        '30rem': '30rem',
         '35rem': '35rem',
         '45rem': '45rem',
         '50rem': '50rem'

@@ -2,6 +2,7 @@
 export default {
   name: 'DiscipleshipCard',
   props: {
+    cardId: String,
     cardIcon: String,
     cardIconName: String,
     cardHeader: String,
@@ -11,7 +12,11 @@ export default {
 </script>
 
 <template>
-  <div class="h-full p-6 bg-white border rounded-lg shadow text-center" style="max-width: 17.8rem">
+  <div
+    :id="cardId"
+    class="h-full p-6 bg-white border rounded-lg shadow text-center"
+    style="max-width: 17.8rem"
+  >
     <div v-if="cardHeader" class="flex items-center">
       <img :src="cardIcon" :alt="cardIconName" class="w-12" />
       <p class="ms-2 text-base lg:text-xl uppercase font-bold">{{ cardHeader }}</p>

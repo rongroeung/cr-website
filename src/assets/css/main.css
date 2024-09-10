@@ -88,8 +88,12 @@ body {
 /* Display section */
 
 /* Height and Width section */
-.h-carousel {
-  height: calc(100vh - 90px);
+
+/* 2xl:h-carousel */
+@media (min-width: 1536px) {
+  .h-carousel {
+    height: calc(100vh - 80px) !important;
+  }
 }
 
 .h-110 {

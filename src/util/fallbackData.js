@@ -1,27 +1,27 @@
 const fallbackData = [
   {
-    "id": "01001001",
-    "title": "Rebuilding Cambodia",
-    "sub_title": "Love God. Love Others. Make Disciples",
-    "description": [],
-    "media": [
+    id: "01001001",
+    title: "Rebuilding Cambodia",
+    sub_title: "Love God. Love Others. Make Disciples",
+    description: [],
+    media: [
       {
-        "id": "md00001",
-        "url": "http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg",
-        "name": "picture of boards"
+        id: "md00001",
+        url: "https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-001.jpg?raw=true",
+        name: "Picture of CNEC boards during building ceremony"
       },
       {
-        "id": "md00002",
-        "url": "http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg",
-        "name": "picture of boards"
+        id: "md00002",
+        url: "https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-002.jpg?raw=true",
+        name: "Group Photo during building ceremony"
       },
       {
-        "id": "md00003",
-        "url": "http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg",
-        "name": "picture of boards"
+        id: "md00003",
+        url: "https://github.com/rongroeung/cr-website/blob/development/src/assets/img/slideshow-01.jpg?raw=true",
+        name: "Group photo training program"
       }
     ],
-    "youtube": []
+    youtube: []
   },
   {
     id: '01002001',
@@ -77,8 +77,8 @@ const fallbackData = [
     media: [
       {
         id: 'md00004',
-        url: "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='36px'%20viewBox='0%20-960%20960%20960'%20width='36px'%20fill='%236B7280'%3e%3cpath%20d='M440-280H280q-83%200-141.5-58.5T80-480q0-83%2058.5-141.5T280-680h160v80H280q-50%200-85%2035t-35%2085q0%2050%2035%2085t85%2035h160v80ZM320-440v-80h320v80H320Zm200%20160v-80h160q50%200%2085-35t35-85q0-50-35-85t-85-35H520v-80h160q83%200%20141.5%2058.5T880-480q0%2083-58.5%20141.5T680-280H520Z'/%3e%3c/svg%3e",
-        name: 'icon'
+        url: 'https://raw.githubusercontent.com/rongroeung/cr-website/b366376905cd209e698d4470a42108dac94b8f4d/src/assets/icon/connect.svg',
+        name: 'connect icon'
       }
     ],
     youtube: []
@@ -104,8 +104,8 @@ const fallbackData = [
     media: [
       {
         id: 'md00005',
-        url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        name: 'icon'
+        url: 'https://raw.githubusercontent.com/rongroeung/cr-website/b366376905cd209e698d4470a42108dac94b8f4d/src/assets/icon/establish.svg',
+        name: 'establish icon'
       }
     ],
     youtube: []
@@ -135,8 +135,8 @@ const fallbackData = [
     media: [
       {
         id: 'md00006',
-        url: 'http://38.47.39.132:7000/cr-photos/About--Cover-001-(3200x2100).jpg',
-        name: 'icon'
+        url: 'https://raw.githubusercontent.com/rongroeung/cr-website/b366376905cd209e698d4470a42108dac94b8f4d/src/assets/icon/equip.svg',
+        name: 'equip icon'
       }
     ],
     youtube: []
@@ -161,8 +161,8 @@ const fallbackData = [
     media: [
       {
         id: '0',
-        name: 'multiply',
-        url: "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='36px'%20viewBox='0%20-960%20960%20960'%20width='36px'%20fill='%236B7280'%3e%3cpath%20d='M0-240v-63q0-43%2044-70t116-27q13%200%2025%20.5t23%202.5q-14%2021-21%2044t-7%2048v65H0Zm240%200v-65q0-32%2017.5-58.5T307-410q32-20%2076.5-30t96.5-10q53%200%2097.5%2010t76.5%2030q32%2020%2049%2046.5t17%2058.5v65H240Zm540%200v-65q0-26-6.5-49T754-397q11-2%2022.5-2.5t23.5-.5q72%200%20116%2026.5t44%2070.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55%200-100.5%2015T325-320ZM160-440q-33%200-56.5-23.5T80-520q0-34%2023.5-57t56.5-23q34%200%2057%2023t23%2057q0%2033-23%2056.5T160-440Zm640%200q-33%200-56.5-23.5T720-520q0-34%2023.5-57t56.5-23q34%200%2057%2023t23%2057q0%2033-23%2056.5T800-440Zm-320-40q-50%200-85-35t-35-85q0-51%2035-85.5t85-34.5q51%200%2085.5%2034.5T600-600q0%2050-34.5%2085T480-480Zm0-80q17%200%2028.5-11.5T520-600q0-17-11.5-28.5T480-640q-17%200-28.5%2011.5T440-600q0%2017%2011.5%2028.5T480-560Zm1%20240Zm-1-280Z'/%3e%3c/svg%3e"
+        name: 'multiply icon',
+        url: "https://raw.githubusercontent.com/rongroeung/cr-website/b366376905cd209e698d4470a42108dac94b8f4d/src/assets/icon/multiply.svg"
       }
     ]
   },

@@ -20,7 +20,7 @@ export default {
     }
   },
   async created() {
-    this.fetchedData = await this.fetchData('01003001')
+    this.fetchedData = await this.fetchData('01002001')
     this.formData = Object.assign(this.fetchedData)
   }
 }
