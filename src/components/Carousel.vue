@@ -32,7 +32,7 @@ export default {
       class="image-list relative overflow-hidden h-72 sm:h-96 lg:h-35rem xl:h-45rem h-carousel"
     >
       <template v-for="(image, index) in section1.media" :key="index">
-        <div class="carousel-item hidden linear" data-carousel-item>
+        <div class="carousel-item hidden linear" :data-carousel-item="index == 0 ? 'active' : ''">
           <img
             :src="image.url"
             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
