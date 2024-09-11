@@ -66,14 +66,7 @@ const fetchDataMixin = {
         return null
       }
     },
-    async updateContentById() {
-      const contentObject = {
-        "id": "01008002",
-        "title": "Rebuild Male Dorm update",
-        "kh_title": "កសាងប្រទេសកម្ពុជាឡើងវិញ",
-        "sub_title": "Love God. Love Others. Make Disciples",
-        "kh_sub_title": "ស្រឡាញ់ព្រះ ស្រឡាញ់អ្នកដទៃ បង្កើតសិស"
-      }
+    async updateContentById(contentObject) {
       const buildUrl = this.$backendUrl + 'updateContentById?id=' + contentObject.id
       //https://crossroadscambodia.church:7002/cr-web-backend/api/v1/updateContentById?id=01001001
 
@@ -87,11 +80,9 @@ const fetchDataMixin = {
         timeout: 5000
       })
       if (response.data.code == 200) {
-        console.log("updateContentById", response.data.message);
-
-        // return response.data.data
+        this.$toast.success(response.data.message)
       } else {
-        console.error(response.data.message)
+        this.$toast.error(response.data.message)
       }
 
     },

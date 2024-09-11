@@ -6,7 +6,6 @@ export default {
   },
   data() {
     return {
-      fetchedData: null,
       formData: {
         id: '',
         title: '',
@@ -14,66 +13,12 @@ export default {
         description: [],
         media: [],
         youtube: []
-      },
-      data: {
-        id: '01001001',
-        title: 'Rebuilding Cambodia',
-        kh_title: 'កសាងប្រទេសកម្ពុជាឡើងវិញ',
-        sub_title: 'Love God. Love Others. Make Disciples',
-        kh_sub_title: 'ស្រឡាញ់ព្រះ ស្រឡាញ់អ្នកដទៃ បង្កើតសិស្ស',
-        description: [
-          {
-            id: 'dt00001',
-            text: 'Devotional disciples',
-            kh_text: 'សិស្សដែលស្ម័គ្រចិត្ត'
-          },
-          {
-            id: 'dt00002',
-            text: 'Discipleship character',
-            kh_text: 'ចរិតសិស្ស'
-          }
-        ],
-        media: [
-          {
-            id: 'md00001',
-            url: 'https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-001.jpg?raw=true',
-            name: 'Picture of CNEC boards during building ceremony'
-          },
-          {
-            id: 'md00002',
-            url: 'https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-002.jpg?raw=true',
-            name: 'Group Photo during building ceremony'
-          }
-        ],
-        youtube: [
-          {
-            id: 'yt00001',
-            title: 'Deacon Bryan Testimony',
-            video_url: 'https://www.youtube.com/watch?v=7sDG_CUmTQM',
-            duration: '36:09',
-            publish_date: '17 June 2024',
-            thumbnail_url:
-              'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/Deacon_Bryan_Testimony.png',
-            thumbnail_name: 'Deacon Bryan gave his testimony and translate by Pastor ratana'
-          },
-          {
-            id: 'yt00002',
-            title: 'Lazarus Resurrection',
-            video_url: 'https://www.youtube.com/watch?v=7sDG_CUmTQM',
-            duration: '12:09',
-            publish_date: '17 June 2024',
-            thumbnail_url:
-              'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets/img/Jesus_raise_lazarus_from_the_dead.png',
-            thumbnail_name: 'Lazarus Resurrection'
-          }
-        ]
       }
     }
   },
   methods: {
     async submitForm() {
-      await this.updateContentById()
-      console.log(this.formData)
+      await this.updateContentById(this.formData)
     },
     async getData() {
       this.formData = await this.getContentAllLangById(this.contentId)

@@ -6,6 +6,8 @@ import router from './router'
 import 'flowbite'
 import i18n from '../src/lang/index'
 import './assets/css/main.css'
+import ToastPlugin from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-bootstrap.css';
 
 // Register data //
 import fallbackData from '@/util/fallbackData'
@@ -30,6 +32,7 @@ app.config.globalProperties.$fallbackData = fallbackData
 app.component('ComingSoon', ComingSoon)
 app.component('ImagePreview', ImagePreview)
 
+app.use(ToastPlugin)
 app.use(router)
 app.use(i18n)
 app.mixin(fetchDataMixin)
