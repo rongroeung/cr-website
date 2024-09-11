@@ -12,9 +12,9 @@ export default {
     }
   },
   async created() {
-    this.section6Item1 = await this.fetchData('01006001')
-    this.section6Item2 = await this.fetchData('01006002')
-    this.section6Item3 = await this.fetchData('01006003')
+    this.section6Item1 = await this.getContentById('01006001')
+    this.section6Item2 = await this.getContentById('01006002')
+    this.section6Item3 = await this.getContentById('01006003')
     if (this.section6Item1) {
       this.section6.push(this.section6Item1, this.section6Item2, this.section6Item3)
     }

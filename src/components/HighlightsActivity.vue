@@ -11,8 +11,8 @@ export default {
     }
   },
   async created() {
-    this.section4Item1 = await this.fetchData('01004001') // Certificate In Ministry Leadership
-    this.section4Item2 = await this.fetchData('01004002') // Worship Ministry
+    this.section4Item1 = await this.getContentById('01004001') // Certificate In Ministry Leadership
+    this.section4Item2 = await this.getContentById('01004002') // Worship Ministry
   }
 }
 </script>
@@ -30,6 +30,7 @@ export default {
     >
       <template #left-content>
         <HighlightsActivityCard
+          :cardId="'01004001'"
           :cardTitle="section4Item1.title"
           :cardSubTitle="section4Item1.sub_title"
           :cardDescription="section4Item1.description[0].text"
@@ -53,6 +54,7 @@ export default {
       </template>
       <template #right-content>
         <HighlightsActivityCard
+          :cardId="'01004002'"
           :cardTitle="section4Item2.title"
           :cardSubTitle="section4Item2.sub_title"
           :cardDescription="section4Item2.description[0].text"

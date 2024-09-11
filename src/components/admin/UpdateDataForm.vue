@@ -71,11 +71,12 @@ export default {
     }
   },
   methods: {
-    submitForm() {
+    async submitForm() {
+      await this.updateContentById()
       console.log(this.formData)
     },
     async getData() {
-      this.formData = await this.fetchAllPropertyData(this.contentId)
+      this.formData = await this.getContentAllLangById(this.contentId)
     }
   },
   async created() {

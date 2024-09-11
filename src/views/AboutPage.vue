@@ -26,7 +26,7 @@ export default {
     }
   },
   async created() {
-    this.data = await this.fetchData('02001001')
+    this.data = await this.getContentById('02001001')
   }
 }
 </script>

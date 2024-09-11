@@ -11,7 +11,7 @@ export default {
     }
   },
   async created() {
-    this.section1 = await this.fetchData('01001001')
+    this.section1 = await this.getContentById('01001001')
   },
   mounted() {
     initFlowbite()
@@ -44,7 +44,7 @@ export default {
     <!-- Inner Content -->
 
     <div v-if="section1" class="center-content-wrapper">
-      <div :id="section1.id" class="center-content">
+      <div id="01001001" class="center-content">
         <p class="text-white text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7">
           {{ section1.title }}
         </p>

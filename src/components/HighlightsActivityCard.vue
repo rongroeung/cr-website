@@ -4,6 +4,7 @@ export default {
   name: 'HighlightsActivityCard',
   components: { CrButton },
   props: {
+    cardId: String,
     cardTitle: String,
     cardSubTitle: String,
     cardDescription: String,
@@ -14,10 +15,12 @@ export default {
 </script>
 
 <template>
-  <p v-if="cardTitle" class="text-sm text-gray-500 uppercase mb-4">{{ cardTitle }}</p>
-  <p v-if="cardSubTitle" class="text-2xl md:text-4xl xl:text-5xl mb-4">{{ cardSubTitle }}</p>
-  <div v-if="cardDescription" class="mb-14 text-sm md:text-lg">{{ cardDescription }}</div>
-  <CrButton v-if="cardRouteName" :buttonRoute="cardRouteName" />
+  <div :id="cardId">
+    <p class="text-sm text-gray-500 uppercase mb-4">{{ cardTitle }}</p>
+    <p class="text-2xl md:text-4xl xl:text-5xl mb-4">{{ cardSubTitle }}</p>
+    <div class="mb-14 text-sm md:text-lg">{{ cardDescription }}</div>
+    <CrButton :buttonRoute="cardRouteName" />
+  </div>
 </template>
 
 <script scoped></script>

@@ -9,7 +9,7 @@ export default {
     }
   },
   async created() {
-    this.section7 = await this.fetchData('01007001')
+    this.section7 = await this.getContentById('01007001')
   }
 }
 </script>

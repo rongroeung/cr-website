@@ -195,7 +195,7 @@ app.mixin(fetchDataMixin)
 
 We simply access mixin without import & register in component
 
-`const response = await this.fetchData('01002001')`
+`const response = await this.getContentById('01002001')`
 
 ### Components
 

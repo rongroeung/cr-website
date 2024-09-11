@@ -5,48 +5,37 @@ export default {
   components: { UpdateDataForm },
   data() {
     return {
-      contentIds: [
-        '01001001',
-        '01002001',
-        '01003001',
-        '01003002',
-        '01003003',
-        '01003004',
-        '01004001',
-        '01004002',
-        '01005001',
-        '01006001',
-        '01006002',
-        '01006003',
-        '01007001'
-      ],
-      contentIdsMapper: {
-        '01001001': 'home_carousel',
-        '01002001': 'discipleship_journey',
-        '01003001': '01003001',
-        '01003002': '01003002',
-        '01003003': '01003003',
-        '01003004': '01003004',
-        '01004001': 'certificate-in-ministry-leadership',
-        '01004002': 'worship-ministry',
-        '01005001': 'sunday_sermons',
-        '01006001': '01006001',
-        '01006002': '01006002',
-        '01006003': '01006003',
-        '01007001': '01007001'
-      },
+      content_ids: [],
       selectedContentId: '01001001',
-      // baseUrl: 'http://localhost:5173/'
-      baseUrl: 'https://crossroadscambodia.church/'
+      baseUrl: 'http://localhost:5173/'
+      // baseUrl: 'https://crossroadscambodia.church/'
+      // baseUrl: 'https://cr-website.onrender.com'
     }
   },
   computed: {
-    getSelectedContentId() {
-      return this.selectedContentId
-    },
     websiteUrl() {
-      return this.baseUrl + '#' + this.contentIdsMapper[this.selectedContentId]
+      return this.baseUrl + '#' + this.selectedContentId
     }
+  },
+  methods: {
+    scrollToTop() {
+      console.log('scrollToTop')
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Optional: for a smooth scrolling effect
+      })
+    }
+  },
+  watch: {
+    selectedContentId(newValue, oldValue) {
+      if (newValue != oldValue) {
+        this.scrollToTop()
+      }
+    }
+  },
+  async created() {
+    const response = await this.getAllContentId()
+    this.content_ids = response.content_id
   }
 }
 </script>
@@ -63,7 +52,7 @@ export default {
           id="contentId"
           class="text-sm block w-full rounded p-2 text-black"
         >
-          <template v-for="contentId in this.contentIds" :key="contentId.id">
+          <template v-for="contentId in this.content_ids" :key="contentId.id">
             <option :value="contentId">{{ contentId }}</option>
           </template>
         </select>
@@ -71,7 +60,7 @@ export default {
     </div>
     <div class="py-8 px-4 mx-auto max-w-screen-xl flex flex-col md:flex-row text-center">
       <UpdateDataForm
-        :contentId="getSelectedContentId"
+        :contentId="selectedContentId"
         :key="selectedContentId"
         class="w-full md:w-1/2 h-full"
       />

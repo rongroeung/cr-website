@@ -15,11 +15,11 @@ export default {
     }
   },
   async created() {
-    this.section2 = await this.fetchData('01002001') //discipleshipJourney
-    this.section3Item1 = await this.fetchData('01003001') //connect
-    this.section3Item2 = await this.fetchData('01003002') //establish
-    this.section3Item3 = await this.fetchData('01003003') //equip
-    this.section3Item4 = await this.fetchData('01003004') //multiply
+    this.section2 = await this.getContentById('01002001') //discipleshipJourney
+    this.section3Item1 = await this.getContentById('01003001') //connect
+    this.section3Item2 = await this.getContentById('01003002') //establish
+    this.section3Item3 = await this.getContentById('01003003') //equip
+    this.section3Item4 = await this.getContentById('01003004') //multiply
     if (this.section3Item1) {
       this.section3.push(
         this.section3Item1,

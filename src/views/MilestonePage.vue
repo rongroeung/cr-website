@@ -9,7 +9,7 @@ export default {
     }
   },
   async created() {
-    this.data = await this.fetchData('04001001')
+    this.data = await this.getContentById('04001001')
   },
   computed: {
     cssBefore() {
