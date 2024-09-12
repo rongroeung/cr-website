@@ -58,13 +58,13 @@ export default {
         </select>
       </form>
     </div>
-    <div class="py-8 px-4 mx-auto max-w-screen-xl flex flex-col md:flex-row text-center">
+    <div class="py-8 px-8 mx-auto flex flex-col md:flex-row text-center gap-8">
       <UpdateDataForm
         :contentId="selectedContentId"
         :key="selectedContentId"
         class="w-full md:w-1/2 h-full"
       />
-      <div class="w-full md:w-1/2 bg-white text-black h-screen">
+      <div class="w-full md:w-1/2 bg-white text-secondary h-screen rounded-lg">
         {{ websiteUrl }}
         <iframe :src="websiteUrl" title="description" width="100%" height="100%"></iframe>
       </div>

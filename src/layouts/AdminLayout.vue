@@ -1,20 +1,15 @@
 <script>
 import { RouterView } from 'vue-router'
 export default {
-  name: 'app',
+  name: 'AdminLayout',
   components: { RouterView }
 }
 </script>
 
 <template>
-  <div class="app">
+  <div class="AdminLayout">
     <RouterView />
   </div>
 </template>
 
-<style scoped>
-.app {
-  width: 100%;
-  max-width: var(--max-width);
-}
-</style>
+<style scoped></style>
