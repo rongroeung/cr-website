@@ -143,11 +143,11 @@ body {
   border: 2px solid var(--text-color);
 }
 
-.border-top{
+.border-top {
   border-top: 1px solid var(--primary-color);
   border-style: dashed;
 }
-.border-bottom{
+.border-bottom {
   border-bottom: 1px solid var(--primary-color);
   border-style: dashed;
 }

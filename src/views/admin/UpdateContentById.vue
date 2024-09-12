@@ -1,7 +1,7 @@
 <script>
 import UpdateDataForm from '@/components/admin/UpdateDataForm.vue'
 export default {
-  name: 'AdminPage',
+  name: 'UpdateContentById',
   components: { UpdateDataForm },
   data() {
     return {

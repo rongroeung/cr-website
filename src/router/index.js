@@ -24,9 +24,13 @@ import SundaySermonsPage from '../views/SundaySermonsPage.vue'
 import EventsPage from '../views/EventsPage.vue'
 import ChurchNewsPage from '../views/ChurchNewsPage.vue'
 import NotFoundPage from '../views/NotFoundPage.vue'
-import Admin from '../views/admin/Admin.vue'
+import UpdateContentById from '../views/admin/UpdateContentById.vue'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 import UserLayout from '@/layouts/UserLayout.vue'
+import AddNewContent from '@/views/admin/AddNewContent.vue'
+import AddNewDescription from '@/views/admin/AddNewDescription.vue'
+import AddNewMedia from '@/views/admin/AddNewMedia.vue'
+import AddNewYoutube from '@/views/admin/AddNewYoutube.vue'
 
 const navbarHeight = 80 //ref --navbar-height: 80px
 
@@ -51,9 +55,29 @@ const router = createRouter({
       component: AdminLayout,
       children: [
         {
-          path: '',
-          name: 'admin',
-          component: Admin
+          path: 'update-content-by-id',
+          name: 'update-content-by-id',
+          component: UpdateContentById
+        },
+        {
+          path: 'add-new-content',
+          name: 'add-new-content',
+          component: AddNewContent
+        },
+        {
+          path: 'add-new-description',
+          name: 'add-new-description',
+          component: AddNewDescription
+        },
+        {
+          path: 'add-new-media',
+          name: 'add-new-media',
+          component: AddNewMedia
+        },
+        {
+          path: 'add-new-youtube',
+          name: 'add-new-youtube',
+          component: AddNewYoutube
         }
       ]
     },

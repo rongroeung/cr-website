@@ -6,8 +6,8 @@ import router from './router'
 import 'flowbite'
 import i18n from '../src/lang/index'
 import './assets/css/main.css'
-import ToastPlugin from 'vue-toast-notification';
-import 'vue-toast-notification/dist/theme-bootstrap.css';
+import ToastPlugin from 'vue-toast-notification'
+import 'vue-toast-notification/dist/theme-bootstrap.css'
 
 // Register data //
 import fallbackData from '@/util/fallbackData'
