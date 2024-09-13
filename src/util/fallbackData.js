@@ -1,24 +1,24 @@
 const fallbackData = [
   {
-    id: "01001001",
-    title: "Rebuilding Cambodia",
-    sub_title: "Love God. Love Others. Make Disciples",
+    id: '01001001',
+    title: 'Rebuilding Cambodia',
+    sub_title: 'Love God. Love Others. Make Disciples',
     description: [],
     media: [
       {
-        id: "md00001",
-        url: "https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-001.jpg?raw=true",
-        name: "Picture of CNEC boards during building ceremony"
+        id: 'md00001',
+        url: 'https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-001.jpg?raw=true',
+        name: 'Picture of CNEC boards during building ceremony'
       },
       {
-        id: "md00002",
-        url: "https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-002.jpg?raw=true",
-        name: "Group Photo during building ceremony"
+        id: 'md00002',
+        url: 'https://github.com/rongroeung/cr-website/blob/development/src/assets/img/About--Cover-002.jpg?raw=true',
+        name: 'Group Photo during building ceremony'
       },
       {
-        id: "md00003",
-        url: "https://github.com/rongroeung/cr-website/blob/development/src/assets/img/slideshow-01.jpg?raw=true",
-        name: "Group photo training program"
+        id: 'md00003',
+        url: 'https://github.com/rongroeung/cr-website/blob/development/src/assets/img/slideshow-01.jpg?raw=true',
+        name: 'Group photo training program'
       }
     ],
     youtube: []
@@ -162,7 +162,7 @@ const fallbackData = [
       {
         id: '0',
         name: 'multiply icon',
-        url: "https://raw.githubusercontent.com/rongroeung/cr-website/b366376905cd209e698d4470a42108dac94b8f4d/src/assets/icon/multiply.svg"
+        url: 'https://raw.githubusercontent.com/rongroeung/cr-website/b366376905cd209e698d4470a42108dac94b8f4d/src/assets/icon/multiply.svg'
       }
     ]
   },

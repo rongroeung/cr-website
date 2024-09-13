@@ -43,8 +43,7 @@ const fetchDataMixin = {
           return null
         }
       } catch (error) {
-        // return fall back data base on id
-        return this.$fallbackData.find((data) => data.id == content_id)
+        return null
       }
     },
     async getContentAllLangById(content_id) {

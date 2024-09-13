@@ -25,12 +25,10 @@ export default {
     class="relative w-full flex flex-col h-fit"
     data-carousel="slide"
     data-carousel-interval="8000"
+    v-if="section1"
   >
     <!-- Carousel wrapper -->
-    <div
-      v-if="section1"
-      class="image-list relative overflow-hidden h-72 sm:h-96 lg:h-35rem xl:h-45rem h-carousel"
-    >
+    <div class="image-list relative overflow-hidden h-72 sm:h-96 lg:h-35rem xl:h-45rem h-carousel">
       <template v-for="(image, index) in section1.media" :key="index">
         <div class="carousel-item hidden linear" :data-carousel-item="index == 0 ? 'active' : ''">
           <img
@@ -43,7 +41,7 @@ export default {
     </div>
     <!-- Inner Content -->
 
-    <div v-if="section1" class="center-content-wrapper">
+    <div class="center-content-wrapper">
       <div id="01001001" class="center-content">
         <p class="text-white text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7">
           {{ section1.title }}

@@ -10,7 +10,6 @@ import ToastPlugin from 'vue-toast-notification'
 import 'vue-toast-notification/dist/theme-bootstrap.css'
 
 // Register data //
-import fallbackData from '@/util/fallbackData'
 
 // Register mixin //
 import { fetchDataMixin } from '@/util/mixin'
@@ -26,7 +25,6 @@ app.config.globalProperties.$githubAssetsPath =
   'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets'
 app.config.globalProperties.$backendUrl =
   'https://crossroadscambodia.church:7002/cr-web-backend/api/v1/'
-app.config.globalProperties.$fallbackData = fallbackData
 
 // Bind global component //
 app.component('ComingSoon', ComingSoon)
