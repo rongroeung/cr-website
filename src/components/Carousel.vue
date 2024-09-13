@@ -33,7 +33,7 @@ export default {
         <div class="carousel-item hidden linear" :data-carousel-item="index == 0 ? 'active' : ''">
           <img
             :src="image.url"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-auto h-100"
             :alt="image.name"
           />
         </div>

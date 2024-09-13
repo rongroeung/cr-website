@@ -64,7 +64,7 @@ export default {
         :key="selectedContentId"
         class="w-full md:w-1/2 h-full"
       />
-      <div class="w-full md:w-1/2 bg-white text-secondary h-screen rounded-lg">
+      <div class="w-full md:w-1/2 h-75rem bg-white text-secondary rounded-lg">
         {{ websiteUrl }}
         <iframe :src="websiteUrl" title="description" width="100%" height="100%"></iframe>
       </div>

@@ -15,6 +15,7 @@ export default {
       <div class="py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="flex items-start justify-center md:justify-start">
           <img
+            loading="lazy"
             src="../assets/img/crossroads-logo-01.png"
             alt="Crossroads Church Logo"
             class="navbar-height cursor-pointer"
@@ -80,16 +81,16 @@ export default {
         <p class="text-sm mb-6">&copy; 2024 Crossroads Church of Cambodia.</p>
         <div class="space-x-4 flex flex-row mb-6">
           <a target="_blank" href="https://facebook.com/onlinechurch.crossroads"
-            ><img src="../assets/icon/facebook.svg" alt="Facebook" class="h-6"
+            ><img loading="lazy" src="../assets/icon/facebook.svg" alt="Facebook" class="h-6"
           /></a>
           <a target="_blank" href="https://www.youtube.com/@ccoconline"
-            ><img src="../assets/icon/youtube.svg" alt="Youtube" class="h-6"
+            ><img loading="lazy" src="../assets/icon/youtube.svg" alt="Youtube" class="h-6"
           /></a>
           <a target="_blank" href="mailto:ccoconline7@gmail.com"
-            ><img src="../assets/icon/gmail.svg" alt="Email" class="h-6"
+            ><img loading="lazy" src="../assets/icon/gmail.svg" alt="Email" class="h-6"
           /></a>
           <a target="_blank" href="https://www.tiktok.com/@ccoconline"
-            ><img src="../assets/icon/tiktok.svg" alt="Tiktok" class="h-6"
+            ><img loading="lazy" src="../assets/icon/tiktok.svg" alt="Tiktok" class="h-6"
           /></a>
         </div>
       </div>

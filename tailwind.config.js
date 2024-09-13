@@ -18,7 +18,13 @@ export default {
         '30rem': '30rem',
         '35rem': '35rem',
         '45rem': '45rem',
-        '50rem': '50rem'
+        '50rem': '50rem',
+        '75rem': '75rem',
+      },
+      maxHeight: {
+        '75rem': '75rem',
+        '144': '36rem',
+        'screen-75': '75vh',
       },
       width: {
         '35rem': '35rem',

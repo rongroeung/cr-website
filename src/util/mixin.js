@@ -1,4 +1,5 @@
 import axios from 'axios'
+import fallbackData from './fallbackData'
 
 const windowResizeMixin = {
   data() {
@@ -27,24 +28,27 @@ const fetchDataMixin = {
       const buildUrl = this.$backendUrl + 'getContentById?id=' + content_id + '&lang=' + lang
       // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/getContentById?id=01001001&lang=en
 
-      try {
-        const response = await axios({
-          method: 'get',
-          url: buildUrl,
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          timeout: 5000
-        })
-        if (response.data.message === 'Success') {
-          return response.data.data
-        } else {
-          console.error(response.data.message)
-          return null
-        }
-      } catch (error) {
-        return null
-      }
+
+      // return fall back data base on id
+      return fallbackData.find((data) => data.id == content_id)
+
+      // try {
+      //   const response = await axios({
+      //     method: 'get',
+      //     url: buildUrl,
+      //     headers: {
+      //       'Content-Type': 'application/json'
+      //     }
+      //   })
+      //   if (response.data.message === 'Success') {
+      //     return response.data.data
+      //   } else {
+      //     console.error(response.data.message)
+      //     return null
+      //   }
+      // } catch (error) {
+      //   return null
+      // }
     },
     async getContentAllLangById(content_id) {
       const buildUrl = this.$backendUrl + 'getContentAllLangById?id=' + content_id
@@ -56,8 +60,7 @@ const fetchDataMixin = {
           url: buildUrl,
           headers: {
             'Content-Type': 'application/json'
-          },
-          timeout: 5000
+          }
         })
         if (response.data.message === 'Success') {
           return response.data.data
@@ -78,8 +81,7 @@ const fetchDataMixin = {
           headers: {
             'Content-Type': 'application/json'
           },
-          data: contentObject,
-          timeout: 5000
+          data: contentObject
         })
         if (response.data.code == 200) {
           this.$toast.success(response.data.message)
@@ -98,8 +100,7 @@ const fetchDataMixin = {
           url: buildUrl,
           headers: {
             'Content-Type': 'application/json'
-          },
-          timeout: 5000
+          }
         })
         if (response.data.message === 'Success') {
           return response.data.data

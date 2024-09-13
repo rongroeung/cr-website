@@ -102,7 +102,12 @@ export default {
         </ul>
       </div>
       <div class="flex-center flex-col">
-        <img :src="ChurchBoard.image" alt="Image of church board member" class="w-4/5" />
+        <img
+          loading="lazy"
+          :src="ChurchBoard.image"
+          alt="Image of church board member"
+          class="w-4/5"
+        />
         <p class="text-sm md:text-lg my-2">
           {{ ChurchBoard.imageDescription }}
         </p>

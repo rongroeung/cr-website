@@ -33,6 +33,13 @@ export default {
         <span v-else>←</span>
       </button>
       <nav>
+        <div class="navbar-logo-mobile">
+          <img
+            src="../assets/img/crossroads-logo-01.png"
+            alt="Crossroads Church Logo"
+            @click="onClickLogo()"
+          />
+        </div>
         <ul>
           <template v-for="navigation in navigationItems" :key="navigation">
             <li class="list-item">
@@ -59,7 +66,7 @@ export default {
 /* Left navigation panel */
 .admin-nav {
   width: 300px;
-  background-color: #2c3e50;
+  background-color: var(--sub-secondary-color);
   color: white;
   padding: 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -69,21 +76,35 @@ export default {
 
 /* Collapsed state - shrink to 50px */
 .admin-nav.collapsed {
-  width: 70px;
+  width: 65px;
 }
 
 /* Toggle button to collapse/expand the nav */
 .toggle-btn {
   position: absolute;
-  top: 10px;
-  right: -25px;
-  background-color: #34495e;
-  color: white;
+  right: 10px;
+  bottom: 10px;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
   border: none;
-  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: white;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.3s ease;
+  text-align: center;
+}
+
+.navbar-logo-mobile {
+  display: flex;
+  justify-content: center;
+}
+.navbar-logo-mobile img {
+  max-height: var(--navbar-height);
+  width: auto;
+  cursor: pointer;
+  padding: 3px 0;
 }
 
 .admin-nav ul {
@@ -113,18 +134,5 @@ export default {
   padding: 2rem;
   background-color: var(--secondary-color);
   overflow-y: auto;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-  .admin-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .admin-nav li {
-    margin: 5px 0;
-  }
 }
 </style>

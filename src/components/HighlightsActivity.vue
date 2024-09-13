@@ -38,7 +38,7 @@ export default {
         />
       </template>
       <template #right-content>
-        <img :src="section4Item1.media[0].url" :alt="section4Item1.media[0].name" />
+        <img loading="lazy" :src="section4Item1.media[0].url" :alt="section4Item1.media[0].name" />
       </template>
     </layout-2-columns>
     <layout-2-columns
@@ -50,7 +50,7 @@ export default {
       cssRight="lg:pe-0"
     >
       <template #left-content>
-        <img :src="section4Item2.media[0].url" :alt="section4Item2.media[0].name" />
+        <img loading="lazy" :src="section4Item2.media[0].url" :alt="section4Item2.media[0].name" />
       </template>
       <template #right-content>
         <HighlightsActivityCard

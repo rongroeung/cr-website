@@ -25,6 +25,7 @@ export default {
       <div class="relative">
         <!-- Image Video -->
         <img
+          loading="lazy"
           :src="video.thumbnail_url"
           :alt="video.thumbnail_name"
           class="w-80 rounded-lg object-cover"
@@ -39,6 +40,7 @@ export default {
       <div class="flex flex-row mt-2 gap-2">
         <!-- Profile Picture -->
         <img
+          loading="lazy"
           :src="youtube.profile_picture"
           :alt="youtube.profile_name"
           class="rounded-full max-h-10 max-w-10"

@@ -27,11 +27,11 @@ watchEffect(() => {
 <template>
   <div class="LanguageSwitcher">
     <div class="language mr-2" :class="isSeleted('kh') ? disableClass : ''">
-      <img src="../assets/img/kh-flag.png" />
+      <img loading="lazy" src="../assets/img/kh-flag.png" />
       <button @click="setLanguage('kh')" :disabled="isSeleted('kh')">ភាសាខ្មែរ</button>
     </div>
     <div class="language" :class="isSeleted('en') ? disableClass : ''">
-      <img src="../assets/img/us-flag.png" />
+      <img loading="lazy" src="../assets/img/us-flag.png" />
       <button @click="setLanguage('en')" :disabled="isSeleted('en')">English</button>
     </div>
   </div>

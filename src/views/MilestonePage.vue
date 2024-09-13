@@ -43,7 +43,11 @@ export default {
             class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
             <div class="flex-center flex-col mb-1">
-              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <img
+                loading="lazy"
+                src="../assets/img/About--Cover-001.jpg"
+                class="w-auto h-auto rounded mb-4"
+              />
               <div class="font-bold text-black text-start">
                 CNEC Singapore started Crossroads Ministry
               </div>
@@ -67,7 +71,11 @@ export default {
             class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
             <div class="flex-center flex-col mb-1">
-              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <img
+                loading="lazy"
+                src="../assets/img/About--Cover-001.jpg"
+                class="w-auto h-auto rounded mb-4"
+              />
               <div class="font-bold text-black text-start">
                 CNEC installed interim Local Board of Directors
               </div>
@@ -90,7 +98,11 @@ export default {
             class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
             <div class="flex-center flex-col mb-1">
-              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <img
+                loading="lazy"
+                src="../assets/img/About--Cover-001.jpg"
+                class="w-auto h-auto rounded mb-4"
+              />
               <div class="font-bold text-black text-start">
                 CNEC sent potential Local Leaders to Bible School
               </div>
@@ -114,7 +126,11 @@ export default {
             class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
             <div class="flex-center flex-col mb-1">
-              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <img
+                loading="lazy"
+                src="../assets/img/About--Cover-001.jpg"
+                class="w-auto h-auto rounded mb-4"
+              />
               <div class="font-bold text-black text-start">
                 CNEC installed an official Pastor Of the Crossroads Church
               </div>
@@ -137,7 +153,11 @@ export default {
             class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
             <div class="flex-center flex-col mb-1">
-              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <img
+                loading="lazy"
+                src="../assets/img/About--Cover-001.jpg"
+                class="w-auto h-auto rounded mb-4"
+              />
               <div class="font-bold text-black text-start">
                 CNEC installed Official Local Board f Directors & started New Building Project
               </div>
@@ -160,7 +180,11 @@ export default {
             class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
           >
             <div class="flex-center flex-col mb-1">
-              <img src="../assets/img/About--Cover-001.jpg" class="w-auto h-auto rounded mb-4" />
+              <img
+                loading="lazy"
+                src="../assets/img/About--Cover-001.jpg"
+                class="w-auto h-auto rounded mb-4"
+              />
               <div class="font-bold text-black text-start">
                 The New Crossroads Missions Centre is completely built
               </div>

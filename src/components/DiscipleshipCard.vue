@@ -18,7 +18,7 @@ export default {
     style="max-width: 17.8rem"
   >
     <div v-if="cardHeader" class="flex items-center">
-      <img :src="cardIcon" :alt="cardIconName" class="w-12" />
+      <img loading="lazy" :src="cardIcon" :alt="cardIconName" class="w-12" />
       <p class="ms-2 text-base lg:text-xl uppercase font-bold">{{ cardHeader }}</p>
     </div>
     <ol v-if="cardContents" class="list-decimal text-left text-sm sm:text-base m-2">

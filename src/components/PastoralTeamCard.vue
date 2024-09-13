@@ -10,7 +10,12 @@ export default {
 <template>
   <div class="flex flex-col items-center space-x-4 max-w-34">
     <div class="w-180-px h-180-px">
-      <img :src="item.image" :alt="item.name" class="w-full h-full rounded-full object-contain" />
+      <img
+        loading="lazy"
+        :src="item.image"
+        :alt="item.name"
+        class="w-full h-full rounded-full object-contain"
+      />
     </div>
     <div>
       <h2 class="text-xl font-semibold text-gray-800 my-4">{{ item.name }}</h2>

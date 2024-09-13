@@ -47,7 +47,7 @@ export default {
 
 <template>
   <div @click="smoothScrollToTop()" id="myBtn" ref="ScrollToTop" class="hidden" :class="cssStyle">
-    <img src="../assets/icon/top-arrow.svg" />
+    <img loading="lazy" src="../assets/icon/top-arrow.svg" />
   </div>
 </template>
 
