@@ -14,7 +14,7 @@ export default {
     </div>
     <div>
       <h2 class="text-xl font-semibold text-gray-800 my-4">{{ item.name }}</h2>
-      <p class="text-gray-600 text-sm md:text-lg leading-6" v-html="$t(item.description)"></p>
+      <p class="text-gray-600 text-sm md:text-lg leading-6" v-html="item.description"></p>
     </div>
   </div>
 </template>

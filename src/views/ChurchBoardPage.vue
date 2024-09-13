@@ -83,10 +83,9 @@ export default {
       <p class="text-4xl xl:text-5xl text-cr-gray" v-t="'church-board'"></p>
     </div>
     <div class="content w-4/5 mx-auto my-20">
-      <p
-        class="text-secondary text-2xl md:text-4xl xl:text-5xl text-center mb-2"
-        v-t="ChurchBoard.title"
-      ></p>
+      <p class="text-secondary text-2xl md:text-4xl xl:text-5xl text-center mb-2">
+        {{ ChurchBoard.title }}
+      </p>
       <p class="text-sm md:text-lg my-8">
         {{ ChurchBoard.description }}
       </p>
@@ -112,7 +111,7 @@ export default {
         <ul class="list-disc m-2">
           <template v-for="boardMember in ChurchBoard.BoardMembers" :key="boardMember">
             <li class="text-sm md:text-lg italic my-1">
-              {{ boardMember.name }} | <span v-t="boardMember.role"></span>
+              {{ boardMember.name }} | <span>{{ boardMember.role }}</span>
             </li>
           </template>
         </ul>

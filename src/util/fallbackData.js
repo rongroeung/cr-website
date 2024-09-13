@@ -317,6 +317,21 @@ const fallbackData = [
     description: [],
     media: [],
     youtube: []
+  },
+  {
+    id: '03002001',
+    title: 'Who We Are',
+    kh_title: 'តើយើងជានរណា',
+    description: [
+      {
+        text: 'In 1934, a missionary from Ireland and five American businessmen initiated something that no one had ventured into before.',
+        kh_text: ''
+      },
+      {
+        text: 'When no one was able to entrust financial resources to national workers, they did the complete opposite. These six people placed their trust in the locals and decided to provide financial support for a group of ordinary national co-workers. In the 20th century, such partnership was distinctive. Since then, it has become an effective missions strategy.',
+        kh_text: ''
+      }
+    ]
   }
 ]
 

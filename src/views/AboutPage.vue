@@ -39,12 +39,12 @@ export default {
     <div class="about-content text-gray-600 flex-center flex-col">
       <div class="my-20 w-4/5">
         <p class="text-3xl font-bold text-gray-800 mb-6">{{ whoWeAre.header }}</p>
-        <div class="text-sm sm:text-lg" v-html="$t(whoWeAre.content)"></div>
+        <div class="text-sm sm:text-lg" v-html="whoWeAre.content"></div>
       </div>
       <div class="bg-cr-gray flex-center">
         <div class="w-4/5 my-20">
           <p class="text-3xl font-bold text-gray-800 mb-6">{{ whatWeDo.header }}</p>
-          <div class="text-sm sm:text-lg" v-html="$t(whatWeDo.content)"></div>
+          <div class="text-sm sm:text-lg" v-html="whatWeDo.content"></div>
         </div>
       </div>
       <div class="w-4/5 my-20">
