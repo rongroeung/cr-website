@@ -7,9 +7,9 @@ export default {
     return {
       content_ids: [],
       selectedContentId: '01001001',
-      baseUrl: 'http://localhost:5173/',
+      // baseUrl: 'http://localhost:5173/',
       // baseUrl: 'https://crossroadscambodia.church/'
-      // baseUrl: 'https://cr-website.onrender.com/',
+      baseUrl: 'https://cr-website.onrender.com/',
       content_ids_mapper: {
         '01': '',
         '02': 'about/',
