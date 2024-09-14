@@ -1,6 +1,5 @@
 <script>
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-import router from '@/router'
 import Field from '@/util/constant'
 import { windowResizeMixin } from '@/util/mixin.js'
 export default {
@@ -56,13 +55,13 @@ export default {
       } else if (this.showNews && route == Field.NEWS) {
         RouteName = Field.NEWS
       }
-      if (RouteName) router.push({ name: RouteName })
+      if (RouteName) this.$router.push({ name: RouteName })
     },
     onClickLogo() {
-      router.push('/')
+      this.$router.push('/')
     },
     onClickLogoOnSideNav() {
-      router.push('/')
+      this.$router.push('/')
       this.$refs.sidebarActive.checked = false
     },
     closeSidebar() {

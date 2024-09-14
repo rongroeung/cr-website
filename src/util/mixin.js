@@ -30,25 +30,25 @@ const fetchDataMixin = {
 
 
       // return fall back data base on id
-      return fallbackData.find((data) => data.id == content_id)
+      // return fallbackData.find((data) => data.id == content_id)
 
-      // try {
-      //   const response = await axios({
-      //     method: 'get',
-      //     url: buildUrl,
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   })
-      //   if (response.data.message === 'Success') {
-      //     return response.data.data
-      //   } else {
-      //     console.error(response.data.message)
-      //     return null
-      //   }
-      // } catch (error) {
-      //   return null
-      // }
+      try {
+        const response = await axios({
+          method: 'get',
+          url: buildUrl,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        if (response.data.message === 'Success') {
+          return response.data.data
+        } else {
+          console.error(response.data.message)
+          return null
+        }
+      } catch (error) {
+        return null
+      }
     },
     async getContentAllLangById(content_id) {
       const buildUrl = this.$backendUrl + 'getContentAllLangById?id=' + content_id
@@ -108,6 +108,25 @@ const fetchDataMixin = {
       } catch (error) {
         this.$toast.error(error.response.data.message)
         return null
+      }
+    },
+    async addNewContent(contentObject) {
+      const buildUrl = this.$backendUrl + 'addNewContent'
+      // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/addNewContent
+      try {
+        const response = await axios({
+          method: 'post',
+          url: buildUrl,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: contentObject
+        })
+        if (response.data.code == 200) {
+          this.$toast.success(response.data.message)
+        }
+      } catch (error) {
+        this.$toast.error(error.response.data.message)
       }
     }
   }

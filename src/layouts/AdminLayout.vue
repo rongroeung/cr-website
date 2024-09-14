@@ -6,18 +6,21 @@ export default {
   data() {
     return {
       navigationItems: [
-        { route: 'add-new-content', name: 'AddNewContent' },
-        { route: 'add-new-description', name: 'AddNewDescription' },
-        { route: 'add-new-media', name: 'AddNewMedia' },
-        { route: 'add-new-youtube', name: 'AddNewYoutube' },
-        { route: 'update-content-by-id', name: 'UpdateContentById' }
+        { route: 'add-new-content', name: 'Add New Content' },
+        { route: 'add-new-description', name: 'Add New Description' },
+        { route: 'add-new-media', name: 'Add New Media' },
+        { route: 'add-new-youtube', name: 'Add New Youtube' },
+        { route: 'update-content-by-id', name: 'Update Content By Id' }
       ],
-      isCollapsed: false // State to manage collapsed navigation
+      isCollapsed: false
     }
   },
   methods: {
     toggleNav() {
-      this.isCollapsed = !this.isCollapsed // Toggle the collapsed state
+      this.isCollapsed = !this.isCollapsed
+    },
+    onClickLogo() {
+      this.$router.push('/')
     }
   }
 }
@@ -28,7 +31,6 @@ export default {
     <!-- Left Navigation -->
     <aside :class="{ collapsed: isCollapsed }" class="admin-nav">
       <button @click="toggleNav" class="toggle-btn">
-        <!-- Use an icon or text for toggle -->
         <span v-if="isCollapsed">→</span>
         <span v-else>←</span>
       </button>
@@ -60,10 +62,9 @@ export default {
 <style scoped>
 .AdminLayout {
   display: flex;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
 }
 
-/* Left navigation panel */
 .admin-nav {
   width: 300px;
   background-color: var(--sub-secondary-color);

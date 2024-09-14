@@ -1,5 +1,5 @@
 <script>
-import UpdateDataForm from '@/components/admin/UpdateDataForm.vue'
+import UpdateDataForm from '../../components/admin/UpdateDataForm.vue'
 export default {
   name: 'UpdateContentById',
   components: { UpdateDataForm },
@@ -7,14 +7,25 @@ export default {
     return {
       content_ids: [],
       selectedContentId: '01001001',
-      // baseUrl: 'http://localhost:5173/'
+      baseUrl: 'http://localhost:5173/',
       // baseUrl: 'https://crossroadscambodia.church/'
-      baseUrl: 'https://cr-website.onrender.com'
+      // baseUrl: 'https://cr-website.onrender.com/',
+      content_ids_mapper: {
+        '01': '',
+        '02': 'about/',
+        '03': 'church-board/',
+        '04': 'pastoral-team/',
+        '05': 'milestone/'
+      }
     }
   },
   computed: {
     websiteUrl() {
-      return this.baseUrl + '#' + this.selectedContentId
+      return this.baseUrl + this.content_ids_mapper[this.pageId] + '#' + this.selectedContentId
+      //http://localhost:5173/about/#02001001
+    },
+    pageId() {
+      return this.selectedContentId.slice(0, 2)
     }
   },
   methods: {
@@ -42,6 +53,8 @@ export default {
 
 <template>
   <section class="bg-secondary">
+    <p class="text-3xl md:text-4xl text-center">Update Content By Id</p>
+
     <div class="dropdown-form mt-8">
       <form class="max-w-sm mx-auto">
         <label for="contentId" class="block mb-2 text-sm font-medium text-cr-gray"

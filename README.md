@@ -89,7 +89,7 @@ refactor (refactoring production code)
 > For normal paragraph text
 
 ```
-text-sm md:text-lg
+text-sm md:text-lg leading-6 sm:leading-8
 ```
 
 > For heading text

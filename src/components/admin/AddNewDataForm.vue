@@ -2,30 +2,28 @@
 export default {
   name: 'AddNewDataForm',
   props: {
-    contentId: String
-  },
-  data() {
-    return {
-      formData: {
-        id: '',
-        title: '',
-        sub_title: '',
-        description: [],
-        media: [],
-        youtube: []
-      }
-    }
+    data: Object
   },
   methods: {
     async submitForm() {
-      await this.updateContentById(this.formData)
+      await this.addNewContent(this.data)
     },
-    async getData() {
-      this.formData = await this.getContentAllLangById(this.contentId)
+    addNewDescription() {
+      this.data.description.push({ text: '', kh_text: '' })
+    },
+    addNewMedia() {
+      this.data.media.push({ url: '', name: '' })
+    },
+    addNewYoutube() {
+      this.data.youtube.push({
+        title: '',
+        video_url: '',
+        duration: '',
+        publish_date: '',
+        thumbnail_url: '',
+        thumbnail_name: ''
+      })
     }
-  },
-  async created() {
-    this.getData()
   }
 }
 </script>
@@ -33,22 +31,20 @@ export default {
 <template>
   <div class="text-left p-4">
     <form @submit.prevent="submitForm" class="space-y-4">
-      <!-- Title -->
-      <div v-if="formData.title" class="flex flex-col">
-        <label for="title" class="font-medium">Title</label>
-        <input
-          type="text"
-          v-model="formData.title"
-          id="title"
-          class="border rounded p-2"
-          required
-        />
+      <div class="flex flex-col">
+        <label for="id" class="font-medium">Id</label>
+        <input type="text" v-model="data.id" id="id" class="border rounded p-2" required />
       </div>
-      <div v-if="formData.kh_title" class="flex flex-col">
+      <!-- Title -->
+      <div class="flex flex-col">
+        <label for="title" class="font-medium">Title</label>
+        <input type="text" v-model="data.title" id="title" class="border rounded p-2" required />
+      </div>
+      <div class="flex flex-col">
         <label for="kh_title" class="font-medium">Title Kh</label>
         <input
           type="text"
-          v-model="formData.kh_title"
+          v-model="data.kh_title"
           id="kh_title"
           class="border rounded p-2"
           required
@@ -56,24 +52,24 @@ export default {
       </div>
 
       <!-- Sub Title -->
-      <div v-if="formData.sub_title" class="flex flex-col">
+      <div class="flex flex-col">
         <label for="sub_title" class="font-medium">Sub Title</label>
-        <input type="text" v-model="formData.sub_title" id="sub_title" class="border rounded p-2" />
+        <input type="text" v-model="data.sub_title" id="sub_title" class="border rounded p-2" />
       </div>
-      <div v-if="formData.kh_sub_title" class="flex flex-col">
+      <div class="flex flex-col">
         <label for="kh_sub_title" class="font-medium">Sub Title Kh</label>
         <input
           type="text"
-          v-model="formData.kh_sub_title"
+          v-model="data.kh_sub_title"
           id="kh_sub_title"
           class="border rounded p-2"
         />
       </div>
 
       <!-- Description -->
-      <div v-if="formData.description.length" class="flex flex-col">
+      <div class="flex flex-col">
         <label class="font-medium">Description</label>
-        <div v-for="(desc, index) in formData.description" :key="index" class="flex flex-col mb-2">
+        <div v-for="(desc, index) in data.description" :key="index" class="flex flex-col mb-2">
           <div class="w-full flex-center mb-2">
             <p class="w-20">English</p>
             <input type="text" v-model="desc.text" class="border rounded p-2 w-full" />
@@ -82,13 +78,27 @@ export default {
             <p class="w-20">Khmer</p>
             <input type="text" v-model="desc.kh_text" class="border rounded p-2 w-full" />
           </div>
+
+          <button
+            @click="data.description.splice(index, 1)"
+            class="bg-red-500 text-white px-4 py-2 rounded w-24 ms-auto"
+          >
+            Remove
+          </button>
         </div>
+        <button
+          type="button"
+          @click="addNewDescription()"
+          class="bg-green-500 text-white px-4 py-2 rounded mt-4"
+        >
+          Add new description
+        </button>
       </div>
 
       <!-- Media -->
-      <div v-if="formData.media.length" class="flex flex-col">
+      <div class="flex flex-col">
         <label class="font-medium text-secondary">Media</label>
-        <div v-for="(mediaItem, index) in formData.media" :key="index" class="flex flex-col mb-2">
+        <div v-for="(mediaItem, index) in data.media" :key="index" class="flex flex-col mb-2">
           <div class="w-full flex-center mb-2">
             <p class="w-20">Url</p>
             <input
@@ -107,18 +117,27 @@ export default {
               class="border rounded p-2 w-full"
             />
           </div>
-
           <ImagePreview :src="mediaItem.url" :alt="mediaItem.name" />
+
+          <button
+            @click="data.media.splice(index, 1)"
+            class="bg-red-500 text-white px-4 py-2 rounded mb-4 w-24 ms-auto"
+          >
+            Remove
+          </button>
         </div>
+        <button
+          type="button"
+          @click="addNewMedia()"
+          class="bg-green-500 text-white px-4 py-2 rounded"
+        >
+          Add new media
+        </button>
       </div>
 
-      <div v-if="formData.youtube.length" class="flex flex-col">
+      <div class="flex flex-col">
         <label class="font-medium">Youtube</label>
-        <div
-          v-for="(youtubeItem, index) in formData.youtube"
-          :key="index"
-          class="flex flex-col mb-2"
-        >
+        <div v-for="(youtubeItem, index) in data.youtube" :key="index" class="flex flex-col mb-2">
           <!-- Title -->
           <div class="w-full flex-center mb-2">
             <p class="w-44">Title</p>
@@ -180,10 +199,23 @@ export default {
             />
           </div>
           <ImagePreview :src="youtubeItem.thumbnail_url" :alt="youtubeItem.thumbnail_name" />
+          <button
+            @click="data.youtube.splice(index, 1)"
+            class="bg-red-500 text-white px-4 py-2 rounded mb-4 w-24 ms-auto"
+          >
+            Remove
+          </button>
         </div>
+        <button
+          type="button"
+          @click="addNewYoutube()"
+          class="bg-green-500 text-white px-4 py-2 rounded"
+        >
+          Add new youtube
+        </button>
       </div>
       <div class="w-full flex items-end">
-        <button type="submit" class="bg-green-500 text-white w-full px-4 py-2 rounded ms-auto">
+        <button type="submit" class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto">
           Submit
         </button>
       </div>
