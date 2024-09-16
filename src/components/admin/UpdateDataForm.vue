@@ -76,11 +76,11 @@ export default {
         <div v-for="(desc, index) in formData.description" :key="index" class="flex flex-col mb-2">
           <div class="w-full flex-center mb-2">
             <p class="w-20">English</p>
-            <input type="text" v-model="desc.text" class="border rounded p-2 w-full" />
+            <textarea rows="3" v-model="desc.text" class="border rounded p-2 w-full"></textarea>
           </div>
           <div class="w-full flex-center mb-2">
             <p class="w-20">Khmer</p>
-            <input type="text" v-model="desc.kh_text" class="border rounded p-2 w-full" />
+            <textarea rows="3" v-model="desc.kh_text" class="border rounded p-2 w-full"></textarea>
           </div>
         </div>
       </div>
@@ -200,5 +200,12 @@ label {
 input {
   color: black;
   background-color: var(--cr-gray);
+}
+
+textarea {
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 </style>

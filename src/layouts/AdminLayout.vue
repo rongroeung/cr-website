@@ -34,7 +34,7 @@ export default {
         <span v-if="isCollapsed">→</span>
         <span v-else>←</span>
       </button>
-      <nav>
+      <nav :class="{ hidden: isCollapsed }" class="admin-nav-inner">
         <div class="navbar-logo-mobile">
           <img
             src="../assets/img/crossroads-logo-01.png"
@@ -64,12 +64,14 @@ export default {
   display: flex;
   height: 100vh;
 }
+.admin-nav-inner {
+  margin: 1rem;
+}
 
 .admin-nav {
   width: 300px;
   background-color: var(--sub-secondary-color);
   color: white;
-  padding: 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: width 0.3s ease; /* Smooth transition for width */
   position: relative;
@@ -77,13 +79,13 @@ export default {
 
 /* Collapsed state - shrink to 50px */
 .admin-nav.collapsed {
-  width: 65px;
+  width: 0px;
 }
 
 /* Toggle button to collapse/expand the nav */
 .toggle-btn {
   position: absolute;
-  right: 10px;
+  right: -55px;
   bottom: 10px;
   width: 45px;
   height: 45px;
@@ -114,8 +116,9 @@ export default {
 }
 
 .list-item {
+  height: 50px;
   margin: 10px 0;
-  padding: 15px 10px;
+  padding: 10px;
   border-radius: 5px;
   background-color: var(--secondary-color);
   text-decoration: none;
