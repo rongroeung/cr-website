@@ -29,8 +29,8 @@ export default {
     >
       <p class="text-5xl">{{ section1.title }}</p>
     </div>
-    <div id="02002001" v-if="section2" class="about-content text-gray-600 flex-center flex-col">
-      <div class="my-20 w-4/5">
+    <div class="about-content text-gray-600 flex-center flex-col">
+      <div id="02002001" v-if="section2" class="my-20 w-4/5">
         <p class="text-3xl font-bold text-gray-800 mb-6">{{ section2.title }}</p>
         <template v-for="content in section2.description" :key="content.id">
           <div class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">{{ content.text }}</div>

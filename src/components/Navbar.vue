@@ -312,8 +312,9 @@ export default {
 
 <style scoped>
 .Navbar {
-  height: var(--navbar-height);
   width: 100%;
+  max-width: var(--max-width);
+  height: var(--navbar-height);
   background-color: var(--secondary-color);
   font-size: 14px;
   display: flex;

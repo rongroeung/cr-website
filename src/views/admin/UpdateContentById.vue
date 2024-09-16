@@ -15,7 +15,15 @@ export default {
         '02': 'about/',
         '03': 'church-board/',
         '04': 'pastoral-team/',
-        '05': 'milestone/'
+        '05': 'milestone/',
+        '06': 'ministries/',
+        '07': 'campus-ministry/',
+        '08': 'worship-ministry/',
+        '09': 'sport-ministry/',
+        10: 'mission/',
+        11: 'church-outreach/',
+        12: 'micro-enterprise-project/',
+        13: 'certificate-in-ministry-leadership/'
       }
     }
   },
