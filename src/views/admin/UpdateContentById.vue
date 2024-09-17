@@ -38,11 +38,10 @@ export default {
   },
   methods: {
     scrollToTop() {
-      console.log('scrollToTop')
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Optional: for a smooth scrolling effect
-      })
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: 'smooth' // Optional: for a smooth scrolling effect
+      // })
     }
   },
   watch: {

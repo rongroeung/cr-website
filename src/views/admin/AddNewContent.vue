@@ -23,7 +23,7 @@ export default {
   <section class="bg-secondary">
     <p class="text-3xl md:text-4xl text-center">Add new content</p>
     <div class="h-fit w-full flex flex-wrap items-start">
-      <AddNewDataForm class="w-full md:w-1/2 h-full" :data="data" />
+      <AddNewDataForm class="w-full md:w-1/2 h-full" v-model="data" />
       <div
         class="w-full md:w-1/2 min-h-96 h-fit mt-12 p-4 bg-sub-secondary text-cr-gray rounded-lg"
       >

@@ -1,21 +1,42 @@
 <script>
+import TextInput from './TextInput.vue'
+import MediaInput from './MediaInput.vue'
+import YouTubeInput from './YouTubeInput.vue'
+import DescriptionInput from './DescriptionInput.vue'
 export default {
   name: 'AddNewDataForm',
+  components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },
   props: {
-    data: Object
+    modelValue: Object
+  },
+  computed: {
+    formData: {
+      get() {
+        return this.modelValue
+      },
+      set(formData) {
+        this.$emit('update:modelValue', formData)
+      }
+    }
   },
   methods: {
     async submitForm() {
-      await this.addNewContent(this.data)
+      await this.addNewContent(this.formData)
     },
     addNewDescription() {
-      this.data.description.push({ text: '', kh_text: '' })
+      this.formData.description.push({ text: '', kh_text: '' })
+    },
+    removeDescription(id) {
+      this.formData.description.splice(id, 1)
     },
     addNewMedia() {
-      this.data.media.push({ url: '', name: '' })
+      this.formData.media.push({ url: '', name: '' })
+    },
+    removeMedia(id) {
+      this.formData.media.splice(id, 1)
     },
     addNewYoutube() {
-      this.data.youtube.push({
+      this.formData.youtube.push({
         title: '',
         video_url: '',
         duration: '',
@@ -23,6 +44,19 @@ export default {
         thumbnail_url: '',
         thumbnail_name: ''
       })
+    },
+    removeYoutube(id) {
+      this.formData.youtube.splice(id, 1)
+    }
+  },
+  watch: {
+    formData: {
+      deep: true,
+      immediate: true,
+      handler(oldValue, newValue) {
+        if (oldValue == newValue) return
+        this.formData = this.modelValue
+      }
     }
   }
 }
@@ -31,61 +65,48 @@ export default {
 <template>
   <div class="text-left p-4">
     <form @submit.prevent="submitForm" class="space-y-4">
-      <div class="flex flex-col">
-        <label for="id" class="font-medium">Id</label>
-        <input type="text" v-model="data.id" id="id" class="border rounded p-2" required />
-      </div>
+      <TextInput v-if="formData.id" id="id" label="Id" v-model="formData.id" :required="true" />
       <!-- Title -->
-      <div class="flex flex-col">
-        <label for="title" class="font-medium">Title</label>
-        <input type="text" v-model="data.title" id="title" class="border rounded p-2" required />
-      </div>
-      <div class="flex flex-col">
-        <label for="kh_title" class="font-medium">Title Kh</label>
-        <input
-          type="text"
-          v-model="data.kh_title"
-          id="kh_title"
-          class="border rounded p-2"
-          required
-        />
-      </div>
+      <!-- Title -->
+      <TextInput
+        v-if="formData.title"
+        id="title"
+        label="Title"
+        v-model="formData.title"
+        :required="true"
+      />
+
+      <TextInput
+        v-if="formData.kh_title"
+        id="kh_title"
+        label="Title Kh"
+        v-model="formData.kh_title"
+        :required="true"
+      />
 
       <!-- Sub Title -->
-      <div class="flex flex-col">
-        <label for="sub_title" class="font-medium">Sub Title</label>
-        <input type="text" v-model="data.sub_title" id="sub_title" class="border rounded p-2" />
-      </div>
-      <div class="flex flex-col">
-        <label for="kh_sub_title" class="font-medium">Sub Title Kh</label>
-        <input
-          type="text"
-          v-model="data.kh_sub_title"
-          id="kh_sub_title"
-          class="border rounded p-2"
-        />
-      </div>
+      <TextInput
+        v-if="formData.sub_title !== 'null'"
+        id="sub_title"
+        label="Sub Title"
+        v-model="formData.sub_title"
+      />
+      <TextInput
+        v-if="formData.kh_sub_title !== 'null'"
+        id="kh_sub_title"
+        label="Sub Title Kh"
+        v-model="formData.kh_sub_title"
+      />
 
       <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium">Description</label>
-        <div v-for="(desc, index) in data.description" :key="index" class="flex flex-col mb-2">
-          <div class="w-full flex-center mb-2">
-            <p class="w-20">English</p>
-            <textarea rows="3" v-model="desc.text" class="border rounded p-2 w-full"> </textarea>
-          </div>
-          <div class="w-full flex-center mb-2">
-            <p class="w-20">Khmer</p>
-            <textarea rows="3" v-model="desc.kh_text" class="border rounded p-2 w-full"> </textarea>
-          </div>
-
-          <button
-            @click="data.description.splice(index, 1)"
-            class="bg-red-500 text-white px-4 py-2 rounded w-24 ms-auto"
-          >
-            Remove
-          </button>
-        </div>
+        <label class="font-medium text-primary">Description</label>
+        <DescriptionInput
+          v-if="formData.description.length"
+          :description="formData.description"
+          :remove-able="true"
+          @remove="removeDescription"
+        />
         <button
           type="button"
           @click="addNewDescription()"
@@ -97,35 +118,13 @@ export default {
 
       <!-- Media -->
       <div class="flex flex-col">
-        <label class="font-medium text-secondary">Media</label>
-        <div v-for="(mediaItem, index) in data.media" :key="index" class="flex flex-col mb-2">
-          <div class="w-full flex-center mb-2">
-            <p class="w-20">Url</p>
-            <input
-              type="text"
-              v-model="mediaItem.url"
-              placeholder="Media URL"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <div class="w-full flex-center mb-2">
-            <p class="w-20">Name</p>
-            <input
-              type="text"
-              v-model="mediaItem.name"
-              placeholder="Media Name"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <ImagePreview :src="mediaItem.url" :alt="mediaItem.name" />
-
-          <button
-            @click="data.media.splice(index, 1)"
-            class="bg-red-500 text-white px-4 py-2 rounded mb-4 w-24 ms-auto"
-          >
-            Remove
-          </button>
-        </div>
+        <label class="font-medium">Media</label>
+        <MediaInput
+          v-if="formData.media.length"
+          :media="formData.media"
+          :remove-able="true"
+          @remove="removeMedia"
+        />
         <button
           type="button"
           @click="addNewMedia()"
@@ -137,75 +136,12 @@ export default {
 
       <div class="flex flex-col">
         <label class="font-medium">Youtube</label>
-        <div v-for="(youtubeItem, index) in data.youtube" :key="index" class="flex flex-col mb-2">
-          <!-- Title -->
-          <div class="w-full flex-center mb-2">
-            <p class="w-44">Title</p>
-            <input
-              type="text"
-              v-model="youtubeItem.title"
-              placeholder="Youtube Title"
-              class="border rounded p-2 w-full w-full"
-            />
-          </div>
-          <!-- Video Link -->
-          <div class="w-full flex-center mb-2">
-            <p class="w-44">Video Link</p>
-            <input
-              type="text"
-              v-model="youtubeItem.video_url"
-              placeholder="Video Url"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <!-- Duration -->
-          <div class="w-full flex-center mb-2">
-            <p class="w-44">Duration</p>
-            <input
-              type="text"
-              v-model="youtubeItem.duration"
-              placeholder="Video Duration"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <!-- Publish Date -->
-          <div class="w-full flex-center mb-2">
-            <p class="w-44">Publish Date</p>
-            <input
-              type="text"
-              v-model="youtubeItem.publish_date"
-              placeholder="Video Publish Date"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <!-- Thumbnail Url -->
-          <div class="w-full flex-center mb-2">
-            <p class="w-44">Thumbnail Url</p>
-            <input
-              type="text"
-              v-model="youtubeItem.thumbnail_url"
-              placeholder="Thumbnail Url"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <!-- Thumbnail Name -->
-          <div class="w-full flex-center mb-2">
-            <p class="w-44">Thumbnail Name</p>
-            <input
-              type="text"
-              v-model="youtubeItem.thumbnail_name"
-              placeholder="Thumbnail name"
-              class="border rounded p-2 w-full"
-            />
-          </div>
-          <ImagePreview :src="youtubeItem.thumbnail_url" :alt="youtubeItem.thumbnail_name" />
-          <button
-            @click="data.youtube.splice(index, 1)"
-            class="bg-red-500 text-white px-4 py-2 rounded mb-4 w-24 ms-auto"
-          >
-            Remove
-          </button>
-        </div>
+        <YouTubeInput
+          v-if="formData.youtube.length"
+          :youtube="formData.youtube"
+          :remove-able="true"
+          @remove="removeYoutube"
+        />
         <button
           type="button"
           @click="addNewYoutube()"
