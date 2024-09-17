@@ -23,7 +23,7 @@ export default {
     async submitForm() {
       await this.addNewContent(this.formData)
     },
-    addNewDescription() {
+    addNewDesc() {
       this.formData.description.push({ text: '', kh_text: '' })
     },
     removeDescription(id) {
@@ -109,8 +109,8 @@ export default {
         />
         <button
           type="button"
-          @click="addNewDescription()"
-          class="bg-green-500 text-white px-4 py-2 rounded mt-4"
+          @click="addNewDesc()"
+          class="bg-green-500 text-white px-4 py-2 rounded"
         >
           Add new description
         </button>

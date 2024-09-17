@@ -1,8 +1,8 @@
 <template>
   <div class="description-input">
     <div v-for="(desc, index) in description" :key="index" class="flex flex-col mb-2">
-      <TextInput label="English" v-model="desc.text" :id="'description' + index" />
-      <TextInput label="Khmer" v-model="desc.kh_text" :id="'kh_description' + index" />
+      <TextareaInput label="English" v-model="desc.text" :id="'description' + index" />
+      <TextareaInput label="Khmer" v-model="desc.kh_text" :id="'kh_description' + index" />
       <button
         v-if="removeAble"
         @click="$emit('remove', index)"
@@ -16,7 +16,7 @@
 
 <script>
 import TextInput from './TextInput.vue'
-
+import TextareaInput from './TextareaInput.vue'
 export default {
   props: {
     description: {
@@ -29,7 +29,8 @@ export default {
     }
   },
   components: {
-    TextInput
+    TextInput,
+    TextareaInput
   }
 }
 </script>

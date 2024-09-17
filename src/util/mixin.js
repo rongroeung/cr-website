@@ -128,6 +128,44 @@ const fetchDataMixin = {
       } catch (error) {
         this.$toast.error(error.response.data.message)
       }
+    },
+    async addNewDescription(contentObject) {
+      const buildUrl = this.$backendUrl + 'addNewDescription'
+      // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/addNewDescription
+      try {
+        const response = await axios({
+          method: 'post',
+          url: buildUrl,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: contentObject
+        })
+        if (response.data.code == 200) {
+          this.$toast.success(response.data.message)
+        }
+      } catch (error) {
+        this.$toast.error(error.response.data.message)
+      }
+    },
+    async addNewMediaApi(contentObject) {
+      const buildUrl = this.$backendUrl + 'addNewMedia'
+      // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/addNewMedia
+      try {
+        const response = await axios({
+          method: 'post',
+          url: buildUrl,
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: contentObject
+        })
+        if (response.data.code == 200) {
+          this.$toast.success(response.data.message)
+        }
+      } catch (error) {
+        this.$toast.error(error.response.data.message)
+      }
     }
   }
 }

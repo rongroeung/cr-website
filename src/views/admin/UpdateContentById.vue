@@ -6,49 +6,21 @@ export default {
   data() {
     return {
       content_ids: [],
-      selectedContentId: '01001001',
-      // baseUrl: 'http://localhost:5173/',
-      // baseUrl: 'https://crossroadscambodia.church/'
-      baseUrl: 'https://cr-website.onrender.com/',
-      content_ids_mapper: {
-        '01': '',
-        '02': 'about/',
-        '03': 'church-board/',
-        '04': 'pastoral-team/',
-        '05': 'milestone/',
-        '06': 'ministries/',
-        '07': 'campus-ministry/',
-        '08': 'worship-ministry/',
-        '09': 'sport-ministry/',
-        10: 'mission/',
-        11: 'church-outreach/',
-        12: 'micro-enterprise-project/',
-        13: 'certificate-in-ministry-leadership/'
-      }
+      selectedContentId: '01001001'
     }
   },
   computed: {
     websiteUrl() {
-      return this.baseUrl + this.content_ids_mapper[this.pageId] + '#' + this.selectedContentId
+      return (
+        this.$websitePreviewUrl +
+        this.$content_ids_mapper[this.pageId] +
+        '#' +
+        this.selectedContentId
+      )
       //http://localhost:5173/about/#02001001
     },
     pageId() {
       return this.selectedContentId.slice(0, 2)
-    }
-  },
-  methods: {
-    scrollToTop() {
-      // window.scrollTo({
-      //   top: 0,
-      //   behavior: 'smooth' // Optional: for a smooth scrolling effect
-      // })
-    }
-  },
-  watch: {
-    selectedContentId(newValue, oldValue) {
-      if (newValue != oldValue) {
-        this.scrollToTop()
-      }
     }
   },
   async created() {

@@ -1,6 +1,8 @@
 <script>
+import ContentSection from '@/components/ContentSection.vue'
 export default {
   name: 'MinistriesPage',
+  components: { ContentSection },
   data() {
     return {
       section1: null,
@@ -30,25 +32,13 @@ export default {
     </div>
     <div class="content h-full text-black w-4/5">
       <div id="06002001" v-if="section2" class="my-20">
-        <p class="text-3xl font-bold text-gray-800 mb-6">{{ section2.title }}</p>
-        <p class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">{{ section2.sub_title }}</p>
-        <template v-for="content in section2.description" :key="content.id">
-          <div class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">- {{ content.text }}</div>
-        </template>
+        <ContentSection :section="section2" />
       </div>
       <div id="06003001" v-if="section3" class="my-20">
-        <p class="text-3xl font-bold text-gray-800 mb-6">{{ section3.title }}</p>
-        <p class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">{{ section3.sub_title }}</p>
-        <template v-for="content in section3.description" :key="content.id">
-          <div class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">- {{ content.text }}</div>
-        </template>
+        <ContentSection :section="section3" />
       </div>
       <div id="06004001" v-if="section4" class="my-20">
-        <p class="text-3xl font-bold text-gray-800 mb-6">{{ section4.title }}</p>
-        <p class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">{{ section4.sub_title }}</p>
-        <template v-for="content in section4.description" :key="content.id">
-          <div class="text-sm md:text-lg leading-6 sm:leading-8 mb-6">- {{ content.text }}</div>
-        </template>
+        <ContentSection :section="section4" />
       </div>
     </div>
   </section>
