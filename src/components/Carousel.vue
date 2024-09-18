@@ -53,6 +53,7 @@ export default {
 
 <template>
   <div
+    id="01001001"
     class="slideshow-container w-full h-72 sm:h-30rem lg:h-35rem xl:h-50rem h-carousel max-h-50rem"
   >
     <template v-if="section1">
@@ -65,7 +66,7 @@ export default {
         <div class="numbertext">{{ index + 1 }} / {{ images.length }}</div>
 
         <div class="center-content-wrapper">
-          <div id="01001001" class="center-content">
+          <div class="center-content">
             <p class="text-white text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7">
               {{ section1.title }}
             </p>

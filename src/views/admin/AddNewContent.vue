@@ -20,7 +20,7 @@ export default {
 }
 </script>
 <template>
-  <section class="bg-secondary">
+  <section>
     <p class="text-2xl md:text-3xl text-center">Add new content</p>
     <div class="h-fit w-full flex flex-wrap items-start">
       <AddNewDataForm class="w-full md:w-1/2 h-full" v-model="data" />

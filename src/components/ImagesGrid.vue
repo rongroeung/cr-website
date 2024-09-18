@@ -1,12 +1,8 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" v-if="images">
-    <img
-      v-for="(image, index) in images"
-      :key="index"
-      :src="image.url"
-      :alt="image.name"
-      class="w-full h-auto"
-    />
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <template v-for="(image, index) in images" :key="index">
+      <img :src="image.url" :alt="image.name" class="h-full object-cover" />
+    </template>
   </div>
 </template>
 

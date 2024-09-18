@@ -44,7 +44,7 @@ export default {
       <p class="text-sm md:text-lg font-semibold">Title: {{ sectionTitle }}</p>
       <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium text-primary">Media</label>
+        <label class="font-medium">Media</label>
         <MediaInput
           v-if="formData.media.length"
           :media="formData.media"

@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 label {
-  color: var(--primary-color);
+  /* color: var(--secondary-color); */
   font-size: medium;
   margin-bottom: 0.5rem;
 }

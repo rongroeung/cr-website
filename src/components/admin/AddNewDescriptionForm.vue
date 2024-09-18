@@ -45,7 +45,7 @@ export default {
       <p class="text-sm md:text-lg font-semibold">Title: {{ sectionTitle }}</p>
       <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium text-primary">Description</label>
+        <label class="font-medium">Description</label>
         <DescriptionInput
           v-if="formData.description.length"
           :description="formData.description"

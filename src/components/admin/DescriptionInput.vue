@@ -5,6 +5,7 @@
       <TextareaInput label="Khmer" v-model="desc.kh_text" :id="'kh_description' + index" />
       <button
         v-if="removeAble"
+        type="button"
         @click="$emit('remove', index)"
         class="bg-red-500 text-white px-4 py-2 rounded my-4 w-24 ms-auto"
       >

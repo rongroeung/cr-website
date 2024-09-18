@@ -78,7 +78,7 @@ export default {
 
       <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium text-primary">Description</label>
+        <label class="font-medium">Description</label>
         <DescriptionInput
           v-if="formData.description.length"
           :description="formData.description"
@@ -138,11 +138,6 @@ export default {
 </template>
 
 <style scoped>
-label {
-  color: var(--primary-color);
-  font-size: medium;
-  margin-bottom: 0.5rem;
-}
 input {
   color: black;
   background-color: var(--cr-gray);

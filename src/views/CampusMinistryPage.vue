@@ -27,12 +27,10 @@ export default {
     </div>
     <div class="content h-full text-black w-4/5">
       <div id="07002001" v-if="section2">
-        <ContentSection :section="section2" :showAsList="false" />
-        <ImagesGrid :images="section2.media" />
+        <ContentSection :section="section2" />
       </div>
       <div id="07003001" v-if="section3">
-        <ContentSection :section="section3" :showAsList="true" />
-        <ImagesGrid :images="section3.media" />
+        <ContentSection :section="section3" />
       </div>
     </div>
   </section>

@@ -31,14 +31,12 @@ export default {
 </script>
 
 <template>
-  <section class="bg-secondary">
+  <section>
     <p class="text-2xl md:text-3xl text-center">Update Content By Id</p>
 
     <div class="dropdown-form mt-8">
       <form class="max-w-sm mx-auto">
-        <label for="contentId" class="block mb-2 text-sm font-medium text-cr-gray"
-          >Select an section</label
-        >
+        <label for="contentId" class="block mb-2 text-sm font-medium">Select a section</label>
         <select
           v-model="selectedContentId"
           id="contentId"
@@ -56,7 +54,7 @@ export default {
         :key="selectedContentId"
         class="w-full md:w-1/2 h-full"
       />
-      <div class="w-full md:w-1/2 h-75rem bg-white text-secondary rounded-lg">
+      <div class="w-full md:w-1/2 h-75rem bg-white rounded-lg">
         {{ websiteUrl }}
         <iframe :src="websiteUrl" title="description" width="100%" height="100%"></iframe>
       </div>

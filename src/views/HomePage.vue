@@ -19,7 +19,7 @@ export default {
 </script> 
 
 <template>
-  <Carousel id="home_carousel" />
+  <Carousel />
   <DiscipleshipJourney id="discipleship_journey" />
   <HighlightsActivity id="highlights_activities" />
   <SundaySermons id="sunday_sermons" />

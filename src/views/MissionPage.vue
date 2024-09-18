@@ -1,19 +1,35 @@
 <script>
+import PageHeader from '@/components/PageHeader.vue'
+import ContentSection from '../components/ContentSection.vue'
+import ImagesGrid from '../components/ImagesGrid.vue'
 export default {
-  name: 'MissionPage'
+  name: 'MissionPage',
+  components: { ContentSection, PageHeader, ImagesGrid },
+  data() {
+    return {
+      section1: null,
+      section2: null
+    }
+  },
+  async created() {
+    this.section1 = await this.getContentById('10001001')
+    this.section2 = await this.getContentById('10002001')
+  }
 }
 </script>
 
 <template>
-  <section class="bg-secondary h-fit w-full flex-center flex-col">
-    <div class="image-header h-300-px w-full flex-center">
-      <p class="text-4xl xl:text-5xl" v-t="'mission'"></p>
+  <section class="bg-cr-gray h-fit w-full flex-center flex-col">
+    <div id="10001001" v-if="section1" class="w-full">
+      <PageHeader :section="section1" />
     </div>
-    <div class="content w-full h-full">
-      <ComingSoon />
+    <div class="content h-full text-black w-4/5">
+      <div id="10002001" v-if="section2">
+        <ContentSection :section="section2" />
+      </div>
     </div>
   </section>
 </template>
-  
-  <script scoped>
-</script>
+
+<style scoped>
+</style>

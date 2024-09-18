@@ -28,13 +28,7 @@ export default {
 </script>
 
 <style scoped>
-label {
-  color: var(--primary-color);
-  font-size: medium;
-  margin-bottom: 0.5rem;
-}
 input {
-  color: black;
   background-color: var(--cr-gray);
 }
 

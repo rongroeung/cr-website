@@ -6,11 +6,11 @@ export default {
   data() {
     return {
       navigationItems: [
-        { route: 'add-new-content', name: 'Add New Content' },
         { route: 'add-new-description', name: 'Add New Description' },
         { route: 'add-new-media', name: 'Add New Media' },
         { route: 'add-new-youtube', name: 'Add New Youtube' },
-        { route: 'update-content-by-id', name: 'Update Content By Id' }
+        { route: 'update-content-by-id', name: 'Update Content' },
+        { route: 'add-new-content', name: 'Add New Content' }
       ],
       isCollapsed: false
     }
@@ -21,6 +21,9 @@ export default {
     },
     onClickLogo() {
       this.$router.push('/')
+    },
+    currentRoute(route) {
+      return this.$route.name == route
     }
   }
 }
@@ -45,7 +48,11 @@ export default {
         <ul>
           <template v-for="navigation in navigationItems" :key="navigation">
             <li class="list-item">
-              <router-link :to="{ name: navigation.route }">{{ navigation.name }}</router-link>
+              <router-link
+                :to="{ name: navigation.route }"
+                :class="{ 'text-primary': currentRoute(navigation.route) }"
+                >{{ navigation.name }}</router-link
+              >
             </li>
           </template>
         </ul>
@@ -136,7 +143,9 @@ export default {
 .admin-content {
   flex: 1;
   padding: 2rem;
-  background-color: var(--secondary-color);
+  background-color: var(--border-color);
+  /* color: var(--secondary-color); */
+  color: black;
   overflow-y: auto;
 }
 </style>
