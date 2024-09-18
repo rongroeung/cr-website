@@ -65,38 +65,16 @@ export default {
 <template>
   <div class="text-left p-4">
     <form @submit.prevent="submitForm" class="space-y-4">
-      <TextInput v-if="formData.id" id="id" label="Id" v-model="formData.id" :required="true" />
+      <TextInput id="id" label="Id" v-model="formData.id" :required="true" />
       <!-- Title -->
       <!-- Title -->
-      <TextInput
-        v-if="formData.title"
-        id="title"
-        label="Title"
-        v-model="formData.title"
-        :required="true"
-      />
+      <TextInput id="title" label="Title" v-model="formData.title" :required="true" />
 
-      <TextInput
-        v-if="formData.kh_title"
-        id="kh_title"
-        label="Title Kh"
-        v-model="formData.kh_title"
-        :required="true"
-      />
+      <TextInput id="kh_title" label="Title Kh" v-model="formData.kh_title" :required="true" />
 
       <!-- Sub Title -->
-      <TextInput
-        v-if="formData.sub_title !== 'null'"
-        id="sub_title"
-        label="Sub Title"
-        v-model="formData.sub_title"
-      />
-      <TextInput
-        v-if="formData.kh_sub_title !== 'null'"
-        id="kh_sub_title"
-        label="Sub Title Kh"
-        v-model="formData.kh_sub_title"
-      />
+      <TextInput id="sub_title" label="Sub Title" v-model="formData.sub_title" />
+      <TextInput id="kh_sub_title" label="Sub Title Kh" v-model="formData.kh_sub_title" />
 
       <!-- Description -->
       <div class="flex flex-col">

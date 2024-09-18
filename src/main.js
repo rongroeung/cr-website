@@ -27,22 +27,23 @@ app.config.globalProperties.$backendUrl =
   'https://crossroadscambodia.church:7002/cr-web-backend/api/v1/'
 
 // app.config.globalProperties.$websitePreviewUrl = 'https://cr-website.onrender.com/'
-app.config.globalProperties.$websitePreviewUrl = 'http://localhost:5173/'
+// app.config.globalProperties.$websitePreviewUrl = 'http://localhost:5173/'
+app.config.globalProperties.$websitePreviewUrl = window.location.origin
 // app.config.globalProperties.$websitePreviewUrl = 'https://crossroadscambodia.church/'
 app.config.globalProperties.$content_ids_mapper = {
-  '01': '',
-  '02': 'about/',
-  '03': 'church-board/',
-  '04': 'pastoral-team/',
-  '05': 'milestone/',
-  '06': 'ministries/',
-  '07': 'campus-ministry/',
-  '08': 'worship-ministry/',
-  '09': 'sport-ministry/',
-  10: 'mission/',
-  11: 'church-outreach/',
-  12: 'micro-enterprise-project/',
-  13: 'certificate-in-ministry-leadership/'
+  '01': '/',
+  '02': '/about/',
+  '03': '/church-board/',
+  '04': '/pastoral-team/',
+  '05': '/milestone/',
+  '06': '/ministries/',
+  '07': '/campus-ministry/',
+  '08': '/worship-ministry/',
+  '09': '/sport-ministry/',
+  10: '/mission/',
+  11: '/church-outreach/',
+  12: '/micro-enterprise-project/',
+  13: '/certificate-in-ministry-leadership/'
 }
 
 
