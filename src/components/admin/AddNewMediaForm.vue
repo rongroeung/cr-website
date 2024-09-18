@@ -1,4 +1,3 @@
-
 <script>
 import MediaInput from './MediaInput.vue'
 export default {
@@ -14,8 +13,8 @@ export default {
         id: this.contentId,
         media: [
           {
-            text: '',
-            kh_text: ''
+            url: '',
+            name: ''
           }
         ]
       }
@@ -23,13 +22,13 @@ export default {
   },
   methods: {
     async submitForm() {
-      await this.addNewDescription(this.formData)
+      await this.addNewMediaApi(this.formData)
     },
-    addNewDesc() {
-      this.formData.description.push({ text: '', kh_text: '' })
+    addNewMedia() {
+      this.formData.media.push({ url: '', name: '' })
     },
-    removeDescription(id) {
-      this.formData.description.splice(id, 1)
+    removeMedia(id) {
+      this.formData.media.splice(id, 1)
     }
   },
   async created() {
@@ -45,19 +44,19 @@ export default {
       <p class="text-sm md:text-lg font-semibold">Title: {{ sectionTitle }}</p>
       <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium text-primary">Description</label>
-        <DescriptionInput
-          v-if="formData.description.length"
-          :description="formData.description"
+        <label class="font-medium text-primary">Media</label>
+        <MediaInput
+          v-if="formData.media.length"
+          :media="formData.media"
           :remove-able="true"
-          @remove="removeDescription"
+          @remove="removeMedia"
         />
         <button
           type="button"
-          @click="addNewDesc()"
+          @click="addNewMedia()"
           class="bg-green-500 text-white px-4 py-2 rounded"
         >
-          Add new description
+          Add new media
         </button>
       </div>
 
@@ -70,6 +69,4 @@ export default {
   </div>
 </template>
 
-
-<style>
-</style>
+<style></style>

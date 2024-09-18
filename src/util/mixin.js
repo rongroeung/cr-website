@@ -1,5 +1,4 @@
 import axios from 'axios'
-import fallbackData from './fallbackData'
 
 const windowResizeMixin = {
   data() {
@@ -27,7 +26,6 @@ const fetchDataMixin = {
       const lang = localStorage.getItem('lang') || 'en'
       const buildUrl = this.$backendUrl + 'getContentById?id=' + content_id + '&lang=' + lang
       // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/getContentById?id=01001001&lang=en
-
 
       // return fall back data base on id
       // return fallbackData.find((data) => data.id == content_id)

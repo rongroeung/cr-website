@@ -1,5 +1,5 @@
 <script>
-import AddNewDescriptionForm from '@/components/admin/AddNewDescriptionForm.vue'
+import AddNewDescriptionForm from '../../components/admin/AddNewDescriptionForm.vue'
 export default {
   name: 'AddNewDescription',
   components: { AddNewDescriptionForm },
