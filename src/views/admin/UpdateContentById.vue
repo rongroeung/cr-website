@@ -32,7 +32,7 @@ export default {
 
 <template>
   <section class="bg-secondary">
-    <p class="text-3xl md:text-4xl text-center">Update Content By Id</p>
+    <p class="text-2xl md:text-3xl text-center">Update Content By Id</p>
 
     <div class="dropdown-form mt-8">
       <form class="max-w-sm mx-auto">

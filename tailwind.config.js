@@ -22,8 +22,9 @@ export default {
         '75rem': '75rem',
       },
       maxHeight: {
+        '50rem': '50rem',
         '75rem': '75rem',
-        '144': '36rem',
+        '90rem': '90rem',
         'screen-75': '75vh',
       },
       width: {

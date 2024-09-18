@@ -30,7 +30,7 @@ export default {
 </script>
 <template>
   <section class="bg-secondary">
-    <p class="text-3xl md:text-4xl text-center">Add new Description to existing content</p>
+    <p class="text-2xl md:text-3xl text-center">Add new Description to existing content</p>
 
     <div class="dropdown-form mt-8">
       <form class="max-w-sm mx-auto">

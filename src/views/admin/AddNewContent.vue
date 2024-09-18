@@ -1,5 +1,5 @@
 <script>
-import AddNewDataForm from '@/components/admin/AddNewDataForm.vue'
+import AddNewDataForm from '../../components/admin/AddNewDataForm.vue'
 export default {
   name: 'AddNewContent',
   components: { AddNewDataForm },
@@ -21,7 +21,7 @@ export default {
 </script>
 <template>
   <section class="bg-secondary">
-    <p class="text-3xl md:text-4xl text-center">Add new content</p>
+    <p class="text-2xl md:text-3xl text-center">Add new content</p>
     <div class="h-fit w-full flex flex-wrap items-start">
       <AddNewDataForm class="w-full md:w-1/2 h-full" v-model="data" />
       <div

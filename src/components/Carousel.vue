@@ -52,7 +52,9 @@ export default {
 
 
 <template>
-  <div class="slideshow-container w-full h-72 sm:h-30rem lg:h-35rem xl:h-50rem">
+  <div
+    class="slideshow-container w-full h-72 sm:h-30rem lg:h-35rem xl:h-50rem h-carousel max-h-50rem"
+  >
     <template v-if="section1">
       <div
         v-for="(image, index) in images"
@@ -73,7 +75,11 @@ export default {
             <CrButton buttonRouter="home" buttonRouteId="discipleship_journey" />
           </div>
         </div>
-        <img :src="image.url" :alt="image.name" class="w-auto h-100 img-item" />
+        <img
+          :src="image.url"
+          :alt="image.name"
+          class="img-item w-full h-72 sm:h-30rem lg:h-35rem xl:h-50rem h-carousel max-h-50rem"
+        />
       </div>
     </template>
 
