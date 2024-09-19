@@ -86,17 +86,17 @@ export default {
       <p class="text-secondary text-2xl md:text-4xl xl:text-5xl text-center mb-2">
         {{ ChurchBoard.title }}
       </p>
-      <p class="text-sm md:text-lg leading-6 sm:leading-8 my-8">
+      <p class="text-sm leading-6 md:leading-8 md:text-lg my-8">
         {{ ChurchBoard.description }}
       </p>
-      <p class="text-sm md:text-lg leading-6 sm:leading-8 my-8">
+      <p class="text-sm leading-6 md:leading-8 md:text-lg my-8">
         Guiding Principles for Our Board:
       </p>
 
       <div class="p-4 pt-0">
         <ul class="list-disc m-2">
           <template v-for="principle in ChurchBoard.Principles" :key="principle">
-            <li class="text-sm md:text-lg leading-6 sm:leading-8 my-1">
+            <li class="text-sm leading-6 md:leading-8 md:text-lg my-1">
               <b>{{ principle.header }}</b
               >: {{ principle.content }}
             </li>
@@ -110,14 +110,14 @@ export default {
           alt="Image of church board member"
           class="w-4/5"
         />
-        <p class="text-sm md:text-lg leading-6 sm:leading-8 my-2">
+        <p class="text-sm leading-6 md:leading-8 md:text-lg my-2">
           {{ ChurchBoard.imageDescription }}
         </p>
       </div>
       <div class="p-4 pt-0">
         <ul class="list-disc m-2">
           <template v-for="boardMember in ChurchBoard.BoardMembers" :key="boardMember">
-            <li class="text-sm md:text-lg leading-6 sm:leading-8 italic my-1">
+            <li class="text-sm leading-6 md:leading-8 md:text-lg italic my-1">
               {{ boardMember.name }} | <span>{{ boardMember.role }}</span>
             </li>
           </template>

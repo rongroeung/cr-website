@@ -33,9 +33,9 @@ app.config.globalProperties.$websitePreviewUrl = window.location.origin
 app.config.globalProperties.$content_ids_mapper = {
   '01': '/',
   '02': '/about/',
-  '03': '/church-board/',
-  '04': '/pastoral-team/',
-  '05': '/milestone/',
+  '03': '/about/church-board/',
+  '04': '/about/pastoral-team/',
+  '05': '/about/milestone/',
   '06': '/ministries/',
   '07': '/ministries/campus-ministry/',
   '08': '/ministries/worship-ministry/',
