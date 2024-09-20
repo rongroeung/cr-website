@@ -4,10 +4,15 @@ import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
 import DescriptionInput from './DescriptionInput.vue'
 export default {
-  name: 'AddNewDataForm',
+  name: 'AddNewContentForm',
   components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },
   props: {
     modelValue: Object
+  },
+  data() {
+    return {
+      disableSubmit: false
+    }
   },
   computed: {
     formData: {
@@ -21,7 +26,9 @@ export default {
   },
   methods: {
     async submitForm() {
+      this.disableSubmit = true
       await this.addNewContent(this.formData)
+      this.disableSubmit = false
     },
     addNewDesc() {
       this.formData.description.push({ text: '', kh_text: '' })
@@ -128,8 +135,14 @@ export default {
           Add new youtube
         </button>
       </div>
-      <div class="w-full flex items-end">
-        <button type="submit" class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto">
+      <div class="w-full flex flex-col items-end">
+        <p v-if="disableSubmit">Loading...</p>
+        <button
+          type="submit"
+          :disabled="disableSubmit"
+          :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
+          class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto"
+        >
           Submit
         </button>
       </div>

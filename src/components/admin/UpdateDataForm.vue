@@ -11,6 +11,7 @@ export default {
   },
   data() {
     return {
+      disableSubmit: false,
       formData: {
         id: '',
         title: '',
@@ -23,7 +24,9 @@ export default {
   },
   methods: {
     async submitForm() {
+      this.disableSubmit = true
       await this.updateContentById(this.formData)
+      this.disableSubmit = false
     },
     async getData() {
       this.formData = await this.getContentAllLangById(this.contentId)
@@ -92,8 +95,14 @@ export default {
       <!-- YouTube -->
       <YouTubeInput v-if="formData.youtube.length" :youtube="formData.youtube" />
 
-      <div class="w-full flex items-end">
-        <button type="submit" class="bg-green-500 text-white w-full px-4 py-2 rounded ms-auto">
+      <div class="w-full flex flex-col items-end">
+        <p v-if="disableSubmit">Loading...</p>
+        <button
+          type="submit"
+          :disabled="disableSubmit"
+          :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
+          class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto"
+        >
           Submit
         </button>
       </div>
