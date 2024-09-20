@@ -44,7 +44,17 @@ app.config.globalProperties.$content_ids_mapper = {
   11: '/mission/church-outreach/',
   12: '/mission/micro-enterprise-project/',
   13: '/mission/certificate-in-ministry-leadership/',
-  14: '/mission/sponsor-a-child/'
+  14: '/mission/sponsor-a-child/',
+  15: '/get-involved/',
+  16: '/get-involved/short-term-missions/',
+  17: '/get-involved/professional-equipper/',
+  18: '/get/volunteer/',
+  19: '/get/give/',
+  20: '/news/',
+  21: '/news/sunday-sermons/',
+  22: '/news/events/',
+  23: '/news/church-news/',
+  24: '/contact/',
 }
 
 

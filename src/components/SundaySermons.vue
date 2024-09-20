@@ -29,7 +29,7 @@ export default {
           <YoutubeCard :video="video" />
         </template>
       </div>
-      <CrButton label="see-more" class="mt-6" buttonRoute="sunday_sermons" />
+      <CrButton label="see-more" class="mt-6" buttonRoute="sunday-sermons" />
     </div>
   </section>
 </template>

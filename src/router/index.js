@@ -214,8 +214,8 @@ const router = createRouter({
               component: NewsPage
             },
             {
-              path: 'sunday_sermons',
-              name: 'sunday_sermons',
+              path: 'sunday-sermons',
+              name: 'sunday-sermons',
               component: SundaySermonsPage
             },
             {

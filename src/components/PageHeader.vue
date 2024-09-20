@@ -3,7 +3,7 @@
     class="PageHeader image-header h-300-px w-full flex-center"
     :style="{ backgroundImage: `url(${section.media[0].url})` }"
   >
-    <p class="text-5xl">{{ section.title }}</p>
+    <p class="text-5xl text-white">{{ section.title }}</p>
   </div>
 </template>
 

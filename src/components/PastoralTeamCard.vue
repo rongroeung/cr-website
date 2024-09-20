@@ -17,7 +17,7 @@ export default {
         class="w-full h-full rounded-full object-contain"
       />
     </div>
-    <div class="text-black">
+    <div class="text-gray-600">
       <h2 class="text-xl font-semibold text-gray-800 my-4">{{ section.title }}</h2>
       <template v-for="content in section.description" :key="content.id">
         <div class="text-sm leading-6 md:leading-8 md:text-lg mb-4">{{ content.text }}</div>

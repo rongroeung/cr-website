@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+  <div class="flex flex-row flex-wrap justify-center">
     <template v-for="(image, index) in images" :key="index">
-      <img :src="image.url" :alt="image.name" class="h-full object-cover" />
+      <img :src="image.url" :alt="image.name" class="h-full w-full md:w-1/2 object-cover p-2" />
     </template>
   </div>
 </template>

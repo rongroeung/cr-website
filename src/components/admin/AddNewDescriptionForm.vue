@@ -44,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-left p-4">
+  <div class="text-left">
     <form @submit.prevent="submitForm" class="space-y-4">
       <p class="text-sm md:text-lg font-semibold">Title: {{ sectionTitle }}</p>
       <!-- Description -->

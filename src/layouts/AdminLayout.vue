@@ -93,7 +93,7 @@ export default {
 .toggle-btn {
   position: absolute;
   right: -55px;
-  bottom: 10px;
+  top: 10px;
   width: 45px;
   height: 45px;
   font-size: 18px;
@@ -143,8 +143,7 @@ export default {
 .admin-content {
   flex: 1;
   padding: 2rem;
-  background-color: var(--border-color);
-  /* color: var(--secondary-color); */
+  background-color: #c1c1c1;
   color: black;
   overflow-y: auto;
 }

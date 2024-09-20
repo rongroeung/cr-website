@@ -22,7 +22,7 @@ export default {
   <Carousel />
   <DiscipleshipJourney id="discipleship_journey" />
   <HighlightsActivity id="highlights_activities" />
-  <SundaySermons id="sunday_sermons" />
+  <SundaySermons id="sunday-sermons" />
   <PastoralTeamHighlights id="pastoral_team_highlights" />
   <ContactUsMap id="contact_us_map" />
 </template>

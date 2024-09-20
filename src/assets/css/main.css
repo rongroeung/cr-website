@@ -38,7 +38,7 @@ html {
 
 body {
   min-height: 100vh;
-  color: white;
+  color: #4B5563; /* text-gray-600 */
   background: var(--secondary-color);
   display: block;
   transition:
@@ -109,6 +109,10 @@ body {
 
 .max-w-34 {
   max-width: 34rem;
+}
+
+.w-2-px {
+  width: 3px;
 }
 
 /* Height and Width section */

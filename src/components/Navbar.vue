@@ -279,7 +279,7 @@ export default {
           class="sub-menu sub-menu-news"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showNews }"
         >
-          <router-link :to="{ name: 'sunday_sermons' }" v-t="'sunday_sermons'"></router-link>
+          <router-link :to="{ name: 'sunday-sermons' }" v-t="'sunday_sermons'"></router-link>
           <router-link :to="{ name: 'events' }" v-t="'events'"></router-link>
           <router-link :to="{ name: 'church-news' }" v-t="'church-news'"></router-link>
         </div>

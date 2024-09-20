@@ -1,6 +1,8 @@
 <script>
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   name: 'AboutPage',
+  components: { PageHeader },
   data() {
     return {
       data: null,
@@ -21,13 +23,8 @@ export default {
 
 <template>
   <section id="about-page" class="bg-white h-fit w-full flex-center flex-col">
-    <div
-      id="02001001"
-      v-if="section1"
-      class="image-header h-300-px w-full flex-center"
-      :style="{ backgroundImage: `url(${section1.media[0].url})` }"
-    >
-      <p class="text-5xl">{{ section1.title }}</p>
+    <div id="02001001" v-if="section1" class="w-full">
+      <PageHeader :section="section1" />
     </div>
     <div class="about-content text-gray-600 flex-center flex-col">
       <div id="02002001" v-if="section2" class="my-20 w-4/5">

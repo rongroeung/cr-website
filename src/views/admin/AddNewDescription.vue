@@ -1,8 +1,10 @@
 <script>
 import AddNewDescriptionForm from '../../components/admin/AddNewDescriptionForm.vue'
+import { adminResizeIframeMixin } from '@/util/mixin'
 export default {
   name: 'AddNewDescription',
   components: { AddNewDescriptionForm },
+  mixins: [adminResizeIframeMixin],
   data() {
     return {
       content_ids: [],
@@ -46,13 +48,18 @@ export default {
         </select>
       </form>
     </div>
-    <div class="py-8 px-8 mx-auto flex flex-col md:flex-row text-center gap-8">
-      <AddNewDescriptionForm
-        :contentId="selectedContentId"
-        :key="selectedContentId"
-        class="w-full md:w-1/2 h-full"
-      />
-      <div class="w-full md:w-1/2 h-75rem bg-white rounded-lg">
+    <div class="py-8 mx-auto flex text-center gap-4 h-full">
+      <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
+        <AddNewDescriptionForm
+          :contentId="selectedContentId"
+          :key="selectedContentId"
+          class="w-full h-full"
+        />
+      </div>
+      <!-- Divider Line -->
+      <div class="resizer bg-primary w-2-px cursor-col-resize" @mousedown="startResizing"></div>
+      <!-- Right Column -->
+      <div class="bg-white rounded-lg" :style="{ width: `${100 - leftColumnWidth}%` }">
         {{ websiteUrl }}
         <iframe :src="websiteUrl" title="description" width="100%" height="100%"></iframe>
       </div>

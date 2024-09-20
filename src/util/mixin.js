@@ -20,6 +20,34 @@ const windowResizeMixin = {
   }
 }
 
+const adminResizeIframeMixin = {
+
+  data() {
+    return {
+      leftColumnWidth: 50
+    }
+  },
+  methods: {
+    startResizing(event) {
+      document.addEventListener('mousemove', this.resize)
+      document.addEventListener('mouseup', this.stopResizing)
+    },
+    resize(event) {
+      // Calculate the new width of the left column based on the mouse position
+      const containerWidth = this.$el.offsetWidth
+      const newLeftColumnWidth = (event.clientX / containerWidth) * 100
+      if (newLeftColumnWidth >= 10 && newLeftColumnWidth <= 90) {
+        this.leftColumnWidth = newLeftColumnWidth
+      }
+    },
+    stopResizing() {
+      document.removeEventListener('mousemove', this.resize)
+      document.removeEventListener('mouseup', this.stopResizing)
+    }
+  }
+
+}
+
 const fetchDataMixin = {
   methods: {
     async getContentById(content_id) {
@@ -168,4 +196,4 @@ const fetchDataMixin = {
   }
 }
 
-export { windowResizeMixin, fetchDataMixin }
+export { windowResizeMixin, fetchDataMixin, adminResizeIframeMixin }
