@@ -54,25 +54,16 @@ export default {
           </ul>
         </div>
         <div>
-          <router-link :to="{ name: 'mission' }" v-t="'mission'" :class="cssHeader"></router-link>
+          <router-link :to="{ name: 'news' }" v-t="'news'" :class="cssHeader"></router-link>
           <ul class="mt-3">
             <li>
-              <router-link :to="{ name: 'church-outreach' }" v-t="'church-outreach'"></router-link>
+              <router-link :to="{ name: 'sunday-sermons' }" v-t="'sunday-sermons'"></router-link>
             </li>
             <li>
-              <router-link
-                :to="{ name: 'micro-enterprise-project' }"
-                v-t="'micro-enterprise-project'"
-              ></router-link>
+              <router-link :to="{ name: 'events' }" v-t="'events'"></router-link>
             </li>
             <li>
-              <router-link
-                :to="{ name: 'certificate-in-ministry-leadership' }"
-                v-t="'certificate-in-ministry-leadership'"
-              ></router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'sponsor-a-child' }" v-t="'sponsor-a-child'"></router-link>
+              <router-link :to="{ name: 'church-news' }" v-t="'church-news'"></router-link>
             </li>
           </ul>
         </div>

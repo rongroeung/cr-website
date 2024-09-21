@@ -28,6 +28,7 @@ export default {
         'screen-75': '75vh',
       },
       width: {
+        '49': '49%',
         '35rem': '35rem',
         '45rem': '45rem',
         '50rem': '50rem'

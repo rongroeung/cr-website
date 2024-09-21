@@ -1,54 +1,32 @@
 <script>
 import AddNewMediaForm from '../../components/admin/AddNewMediaForm.vue'
+import SelectContentIds from '../../components/SelectContentIds.vue'
 import { adminResizeIframeMixin } from '@/util/mixin'
 export default {
   name: 'AddNewMedia',
-  components: { AddNewMediaForm },
+  components: { AddNewMediaForm, SelectContentIds },
   mixins: [adminResizeIframeMixin],
   data() {
+    // this data and methods must have in a parent component that use SelectContentIds because we need to manage the data to form and iframe
     return {
-      content_ids: [],
-      selectedContentId: '01001001'
+      selectedContentId: '01001001',
+      websiteUrl: this.$websitePreviewUrl
     }
   },
-  computed: {
-    websiteUrl() {
-      return (
-        this.$websitePreviewUrl +
-        this.$content_ids_mapper[this.pageId] +
-        '#' +
-        this.selectedContentId
-      )
-    },
-    pageId() {
-      return this.selectedContentId.slice(0, 2)
+  methods: {
+    handleSelectContentIds(values) {
+      this.selectedContentId = values.selectedContentId
+      this.websiteUrl = values.websiteUrl
     }
-  },
-  async created() {
-    const response = await this.getAllContentId()
-    this.content_ids = response.content_id
   }
 }
 </script>
 <template>
   <section>
     <p class="text-2xl md:text-3xl text-center">Add new Media to existing content</p>
-
-    <div class="dropdown-form mt-8">
-      <form class="max-w-sm mx-auto">
-        <label for="contentId" class="block mb-2 text-sm font-medium">Select a section</label>
-        <select
-          v-model="selectedContentId"
-          id="contentId"
-          class="text-sm block w-full rounded p-2 text-black"
-        >
-          <template v-for="contentId in this.content_ids" :key="contentId.id">
-            <option :value="contentId">{{ contentId }}</option>
-          </template>
-        </select>
-      </form>
-    </div>
+    <SelectContentIds @update:values="handleSelectContentIds" />
     <div class="py-8 mx-auto flex text-center gap-4 h-full">
+      <!-- Left Column -->
       <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
         <AddNewMediaForm
           :contentId="selectedContentId"
