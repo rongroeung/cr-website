@@ -52,6 +52,13 @@ body {
 
 /* Page CSS */
 
+/* HTML element CSS */
+p {
+  text-align: center;
+}
+
+/* HTML element CSS */
+
 /* Display section */
 
 .flex-important {

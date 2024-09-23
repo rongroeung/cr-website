@@ -19,7 +19,7 @@ export default {
     <div id="01007001" class="h-60 w-4/5 flex-center flex-col sm:flex-row">
       <p
         v-if="section7"
-        class="w-full md:w-2/4 text-2xl text-center md:text-start md:text-4xl xl:text-5xl mb-4 sm:mb-0 text-gray-400"
+        class="w-full md:w-2/4 text-2xl md:text-start md:text-4xl xl:text-5xl mb-4 sm:mb-0 text-white"
       >
         {{ section7.title }}
       </p>

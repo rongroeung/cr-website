@@ -19,8 +19,8 @@ export default {
     <div class="mb-8 text-sm text-gray-600 grow leading-6">{{ item.description[0].text }}</div>
     <div class="profile-section flex">
       <img loading="lazy" :src="item.media[0].url" :alt="item.media[0].name" :class="cssClass" />
-      <div class="flex flex-col justify-center">
-        <p class="text-secondary text-md">{{ item.title }}</p>
+      <div class="flex flex-col justify-center text-left">
+        <p class="text-secondary text-md text-left">{{ item.title }}</p>
         <p class="uppercase text-md text-gray-500 font-semibold">{{ item.sub_title }}</p>
       </div>
     </div>

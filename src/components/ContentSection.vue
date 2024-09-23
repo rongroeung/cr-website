@@ -1,7 +1,9 @@
 <template>
   <div class="ContentSection my-20">
-    <p v-if="section.title" class="text-3xl font-bold text-gray-800 mb-6">{{ section.title }}</p>
-    <p v-if="section.sub_title" class="text-sm leading-6 md:leading-8 md:text-lg mb-6">
+    <p v-if="section.title" class="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">
+      {{ section.title }}
+    </p>
+    <p v-if="section.sub_title" class="text-sm leading-6 md:leading-8 md:text-lg mb-6 text-left">
       {{ section.sub_title }}
     </p>
     <div v-for="content in section.description" :key="content.id" :class="dynamicClass">

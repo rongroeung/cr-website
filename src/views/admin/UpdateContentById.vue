@@ -28,7 +28,7 @@ export default {
 
     <SelectContentIds @update:values="handleSelectContentIds" />
 
-    <div class="py-8 mx-auto flex text-center gap-4 h-full">
+    <div class="py-8 mx-auto flex flex-row text-center gap-4 h-full mt-6">
       <!-- Left Column -->
       <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
         <UpdateDataForm
@@ -37,16 +37,17 @@ export default {
           class="w-full h-full"
         />
       </div>
-      <div class="resizer bg-primary w-2-px cursor-col-resize me-5">
+      <div class="resizer bg-primary w-2-px h-auto cursor-col-resize relative mx-2">
+        <!-- Divider Line -->
+        <div @mousedown="startResizing" @touchstart="startResizing" class=""></div>
+
         <button
-          class="btn btn-danger bg-primary pe-4 py-2"
+          class="resize-btn btn btn-danger bg-primary text-center"
           @mousedown="startResizing"
           @touchstart="startResizing"
         >
-          Hello
+          <span>↔</span>
         </button>
-        <!-- Divider Line -->
-        <div @mousedown="startResizing" @touchstart="startResizing"></div>
       </div>
 
       <!-- Right Column -->
@@ -58,4 +59,20 @@ export default {
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.resize-btn {
+  position: absolute;
+  right: -20px;
+  top: -45px;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+</style>
