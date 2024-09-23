@@ -1,10 +1,9 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue'
 import ContentSection from '../components/ContentSection.vue'
-import ImagesGrid from '../components/ImagesGrid.vue'
 export default {
   name: 'MicroEnterpriseProjectsPage',
-  components: { ContentSection, PageHeader, ImagesGrid },
+  components: { ContentSection, PageHeader },
   data() {
     return {
       section1: null,
@@ -31,15 +30,14 @@ export default {
       <div id="12002001" v-if="section2">
         <ContentSection :section="section2" />
       </div>
-      <div id="12003001" v-if="section2">
-        <ContentSection :section="section2" />
+      <div id="12003001" v-if="section3">
+        <ContentSection :section="section3" />
       </div>
-      <div id="12004001" v-if="section2">
-        <ContentSection :section="section2" />
+      <div id="12004001" v-if="section4">
+        <ContentSection :section="section4" />
       </div>
     </div>
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

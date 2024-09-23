@@ -37,9 +37,17 @@ export default {
           class="w-full h-full"
         />
       </div>
-
-      <!-- Divider Line -->
-      <div class="resizer bg-primary w-2-px cursor-col-resize" @mousedown="startResizing"></div>
+      <div class="resizer bg-primary w-2-px cursor-col-resize me-5">
+        <button
+          class="btn btn-danger bg-primary pe-4 py-2"
+          @mousedown="startResizing"
+          @touchstart="startResizing"
+        >
+          Hello
+        </button>
+        <!-- Divider Line -->
+        <div @mousedown="startResizing" @touchstart="startResizing"></div>
+      </div>
 
       <!-- Right Column -->
       <div class="bg-white rounded-lg" :style="{ width: `${100 - leftColumnWidth}%` }">
@@ -50,5 +58,4 @@ export default {
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
