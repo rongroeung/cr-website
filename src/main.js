@@ -54,9 +54,8 @@ app.config.globalProperties.$content_ids_mapper = {
   21: '/news/sunday-sermons/',
   22: '/news/events/',
   23: '/news/church-news/',
-  24: '/contact/',
+  24: '/contact/'
 }
-
 
 // Bind global component //
 app.component('ComingSoon', ComingSoon)

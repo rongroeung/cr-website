@@ -1,19 +1,44 @@
 <script>
 import { windowResizeMixin } from '@/util/mixin'
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   name: 'MilestonePage',
+  components: { PageHeader },
   mixins: [windowResizeMixin],
   data() {
     return {
-      data: null
+      section1: null,
+      section2: []
     }
   },
   async created() {
-    this.data = await this.getContentById('04001001')
+    this.section1 = await this.getContentById('05001001')
+
+    // Fetch all content IDs
+    const response = await this.getAllContentId()
+    const allContentIds = response.content_id
+
+    const milestoneSectionIds = this.filterSectionIds(allContentIds, '050020')
+    this.section2 = await this.fetchMilestoneById(milestoneSectionIds)
   },
   computed: {
     cssBefore() {
       return this.width < 768 ? 'card-wrapper' : 'card-wrapper-right' // width data in mixin
+    }
+  },
+  methods: {
+    filterSectionIds(contentIds, sectionPrefix) {
+      return contentIds.filter((id) => id.startsWith(sectionPrefix))
+    },
+    async fetchMilestoneById(ids) {
+      let milestones = []
+      for (let id of ids) {
+        let milestone = await this.getContentById(id)
+        if (milestone) {
+          milestones.push(milestone)
+        }
+      }
+      return milestones
     }
   }
 }
@@ -21,176 +46,43 @@ export default {
 
 <template>
   <section class="bg-secondary h-fit w-full flex-center flex-col">
-    <div class="image-header h-300-px w-full flex-center">
-      <p class="text-4xl xl:text-5xl" v-t="'milestone'"></p>
+    <div id="05001001" v-if="section1" class="w-full">
+      <PageHeader :section="section1" />
     </div>
     <div class="content w-4/5 flex-center my-20">
       <div
         class="space-y-8 relative before:absolute before:inset-0 before:ml-8 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent"
       >
-        <!-- Item #1 -->
-        <div
-          class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-        >
-          <!-- Icon -->
+        <template v-for="(section, index) in section2" :key="section.id">
           <div
-            class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
+            :id="section.id"
+            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group text-white font-semibold"
           >
-            2000
-          </div>
-          <!-- Card -->
-          <div
-            class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
-          >
-            <div class="flex-center flex-col mb-1">
-              <img
-                loading="lazy"
-                src="../assets/img/About--Cover-001.jpg"
-                class="w-auto h-auto rounded mb-4"
-              />
-              <div class="font-bold text-black text-start">
-                CNEC Singapore started Crossroads Ministry
+            <!-- Icon for year -->
+            <div
+              class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
+            >
+              {{ section.title }}
+            </div>
+            <!-- Card -->
+            <div
+              :class="index % 2 == 0 ? 'card-wrapper' : cssBefore"
+              class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
+            >
+              <div class="flex-center flex-col mb-1">
+                <img
+                  loading="lazy"
+                  class="w-auto h-auto rounded mb-4"
+                  :src="section.media[0].url"
+                  :alt="section.media[0].name"
+                />
+                <div class="font-bold text-black text-start">
+                  {{ section.sub_title }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Item #2 -->
-        <div
-          class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-        >
-          <!-- Icon -->
-          <div
-            class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
-          >
-            2011
-          </div>
-          <!-- Card -->
-          <div
-            :class="cssBefore"
-            class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
-          >
-            <div class="flex-center flex-col mb-1">
-              <img
-                loading="lazy"
-                src="../assets/img/About--Cover-001.jpg"
-                class="w-auto h-auto rounded mb-4"
-              />
-              <div class="font-bold text-black text-start">
-                CNEC installed interim Local Board of Directors
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item #3 -->
-        <div
-          class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-        >
-          <!-- Icon -->
-          <div
-            class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
-          >
-            2013
-          </div>
-          <!-- Card -->
-          <div
-            class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
-          >
-            <div class="flex-center flex-col mb-1">
-              <img
-                loading="lazy"
-                src="../assets/img/About--Cover-001.jpg"
-                class="w-auto h-auto rounded mb-4"
-              />
-              <div class="font-bold text-black text-start">
-                CNEC sent potential Local Leaders to Bible School
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item #4 -->
-        <div
-          class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-        >
-          <!-- Icon -->
-          <div
-            class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
-          >
-            2017
-          </div>
-          <!-- Card -->
-          <div
-            :class="cssBefore"
-            class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
-          >
-            <div class="flex-center flex-col mb-1">
-              <img
-                loading="lazy"
-                src="../assets/img/About--Cover-001.jpg"
-                class="w-auto h-auto rounded mb-4"
-              />
-              <div class="font-bold text-black text-start">
-                CNEC installed an official Pastor Of the Crossroads Church
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item #5 -->
-        <div
-          class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-        >
-          <!-- Icon -->
-          <div
-            class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
-          >
-            2020
-          </div>
-          <!-- Card -->
-          <div
-            class="card-wrapper w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
-          >
-            <div class="flex-center flex-col mb-1">
-              <img
-                loading="lazy"
-                src="../assets/img/About--Cover-001.jpg"
-                class="w-auto h-auto rounded mb-4"
-              />
-              <div class="font-bold text-black text-start">
-                CNEC installed Official Local Board f Directors & started New Building Project
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Item #6 -->
-        <div
-          class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-        >
-          <!-- Icon -->
-          <div
-            class="flex items-center justify-center w-16 h-16 rounded-full border border-white bg-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"
-          >
-            2022
-          </div>
-          <!-- Card -->
-          <div
-            :class="cssBefore"
-            class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
-          >
-            <div class="flex-center flex-col mb-1">
-              <img
-                loading="lazy"
-                src="../assets/img/About--Cover-001.jpg"
-                class="w-auto h-auto rounded mb-4"
-              />
-              <div class="font-bold text-black text-start">
-                The New Crossroads Missions Centre is completely built
-              </div>
-            </div>
-          </div>
-        </div>
+        </template>
       </div>
     </div>
   </section>
