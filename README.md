@@ -6,12 +6,44 @@
 
 | Content                                 | Description                            |
 | --------------------------------------- | -------------------------------------- |
+| [Website Admin](#crossroads-admin)      | For Admin User                         |
 | [Project Setup](#project-setup)         | Inilize development enviroment         |
 | [Project Plugin](#project-plugin)       | Essential dependency for project       |
 | [Folder Structure](#folder-structure)   | Project structure                      |
 | [Commit Message](#commit-message)       | Convention for commit message          |
 | [Text Sizing](#text-styling)            | Global class for text size             |
 | [Global Properties](#global-properties) | Global css, variable, mixin, component |
+
+## Crossroads Admin
+
+We allow website admin to make change to most of the data via https://crossroadscambodia.church/admin
+
+### Key terms admin must know
+
+### Admin Eligibility
+
+Available funtions are
+
+#### Update content
+
+( delete description, media, youtube and add new description, media, youtube )
+
+#### Add new content
+
+For Developer Only, some page need to add new code to handle new data. Some page will auto push new data to current UI ( PastoralTeam Page, Milestone Page ).
+
+```
+data: {
+  id: '',               required
+  title: '',            required
+  kh_title: '',         required
+  sub_title: '',        optional
+  kh_sub_title: '',     optional
+  description: [],      optional
+  media: [],            optional
+  youtube: []           optional
+}
+```
 
 ## Project Setup
 
