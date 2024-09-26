@@ -1,10 +1,14 @@
 <script>
 import { loadScript } from '@paypal/paypal-js'
+import PageHeader from '@/components/PageHeader.vue'
 export default {
   name: 'GivePage',
+  components: { PageHeader },
   data() {
     return {
-      amount: 10
+      amount: 10,
+      section1: null,
+      section2: null
     }
   },
   mounted() {
@@ -37,18 +41,43 @@ export default {
       .catch((err) => {
         console.error('Failed to load the PayPal JS SDK script', err)
       })
+  },
+  async created() {
+    this.section1 = await this.getContentById('19001001')
+    this.section2 = await this.getContentById('19002001')
   }
 }
 </script>
 
 <template>
-  <section class="bg-secondary h-fit w-full flex-center flex-col text-white">
-    <div class="image-header h-300-px w-full flex-center">
-      <p class="text-5xl" v-t="'give'"></p>
+  <section class="bg-cr-gray h-fit w-full flex-center flex-col text-white">
+    <div id="19001001" v-if="section1" class="w-full">
+      <PageHeader :section="section1" />
     </div>
-    <div class="content w-4/5 flex-center flex-col mx-auto my-20">
-      <div class="mb-6">
-        <label for="large-input" class="block mb-2 text-lg font-medium">Amount in $</label>
+    <div class="content flex-center flex-col mx-auto mt-10 md:mt-20 mb-20">
+      <div id="19002001" v-if="section2" class="flex-center flex-col">
+        <p
+          class="w-4/5 text-secondary text-2xl md:leading-snug md:text-4xl text-center font-normal mb-10 md:mb-20"
+        >
+          {{ section2.title }}
+        </p>
+        <div class="flex-center mb-20 w-full md:w-4/5 h-64 md:h-30rem">
+          <iframe
+            width="100%"
+            height="100%"
+            :src="section2.media[0].url"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="w-4/5 mb-6">
+        <label for="large-input" class="block mb-2 text-lg font-medium text-secondary"
+          >Amount in $</label
+        >
         <input
           type="text"
           id="large-input"

@@ -20,9 +20,23 @@ We allow website admin to make change to most of the data via https://crossroads
 
 ### Key terms admin must know
 
+#### Give Page
+
+Give Page https://crossroadscambodia.church/get-involved/give
+
+Video are dynamic and store in media.url of content id #19002001
+
+We can't use normal youtube URL. We need to get embedded url by
+
+    Youtube video > Share > Embed > Copy only url
+
+i.e. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
+
+Url must include ```/embed/```
+
 ### Admin Eligibility
 
-Available funtions are
+Available functions are
 
 #### Update content
 
@@ -30,7 +44,7 @@ Available funtions are
 
 #### Add new content
 
-For Developer Only, some page need to add new code to handle new data. Some page will auto push new data to current UI ( PastoralTeam Page, Milestone Page ).
+For Developer Only, some page need to add new code to handle new data. Some page will auto push new data to current UI ( PastoralTeam Page, Milestone Page, Contact Page ).
 
 ```
 data: {

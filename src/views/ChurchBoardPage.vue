@@ -8,12 +8,14 @@ export default {
     return {
       section1: null,
       section2: null,
+      section2item2: null,
       section3: null
     }
   },
   async created() {
     this.section1 = await this.getContentById('03001001')
     this.section2 = await this.getContentById('03002001')
+    this.section2item2 = await this.getContentById('03002002')
     this.section3 = await this.getContentById('03003001')
   },
   methods: {
@@ -40,13 +42,15 @@ export default {
         <p class="text-sm leading-6 md:leading-8 md:text-lg my-8 text-left">
           {{ section2.sub_title }}
         </p>
+      </div>
+      <div v-if="section2item2" id="03002002">
         <p class="text-sm leading-6 md:leading-8 md:text-lg my-8 text-left">
-          Guiding Principles for Our Board:
+          {{ section2item2.title }}
         </p>
 
         <div class="p-4 pt-0">
           <ul class="list-disc m-2 font-normal">
-            <template v-for="description in section2.description" :key="description">
+            <template v-for="description in section2item2.description" :key="description">
               <li class="text-sm leading-6 md:leading-8 md:text-lg my-1">
                 <b>{{ header(description.text) }}:</b>{{ text(description.text) }}
               </li>
@@ -54,6 +58,7 @@ export default {
           </ul>
         </div>
       </div>
+
       <div v-if="section3" id="03003001">
         <div class="flex-center flex-col">
           <img
@@ -62,14 +67,14 @@ export default {
             :alt="section3.media[0].name"
             class="w-4/5"
           />
-          <p class="text-sm leading-6 md:leading-8 md:text-lg my-2">
+          <p class="text-sm leading-6 my-2">
             {{ section3.title }}
           </p>
         </div>
         <div class="p-4 pt-0">
-          <ul class="list-disc m-2">
+          <ul class="list-disc m-2 italic">
             <template v-for="description in section3.description" :key="description">
-              <li class="text-sm leading-6 md:leading-8 md:text-lg italic my-1">
+              <li class="text-sm leading-6 md:leading-8 md:text-lg my-1">
                 {{ description.text }}
               </li>
             </template>
