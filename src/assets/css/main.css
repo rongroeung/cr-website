@@ -32,13 +32,13 @@
 
 html {
   font-size: 1rem;
-  font-family: "Siemreap", sans-serif;
+  font-family: 'Siemreap', sans-serif;
   font-weight: 400;
 }
 
 body {
   min-height: 100vh;
-  color: #4B5563; /* text-gray-600 */
+  color: #4b5563; /* text-gray-600 */
   background: var(--secondary-color);
   display: block;
   transition:
@@ -123,11 +123,6 @@ p {
 }
 
 /* Height and Width section */
-
-.image-header {
-  background-image: url(/src/assets/img/Coverpage-001.jpg);
-  background-position: 80%;
-}
 
 .duration-2000 {
   transition-duration: 2000ms;

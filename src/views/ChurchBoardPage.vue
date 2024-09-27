@@ -1,9 +1,8 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue'
-import ContentSection from '@/components/ContentSection.vue'
 export default {
   name: 'ChurchBoardPage',
-  components: { PageHeader, ContentSection },
+  components: { PageHeader },
   data() {
     return {
       section1: null,

@@ -16,7 +16,7 @@ export default {
         <div class="flex items-start justify-center md:justify-start">
           <img
             loading="lazy"
-            src="../assets/img/crossroads-logo-01.png"
+            src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
             alt="Crossroads Church Logo"
             class="navbar-height cursor-pointer"
           />

@@ -1,10 +1,9 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue'
 import ContentSection from '../components/ContentSection.vue'
-import ImagesGrid from '../components/ImagesGrid.vue'
 export default {
   name: 'ChurchesOutreachPage',
-  components: { ContentSection, PageHeader, ImagesGrid },
+  components: { ContentSection, PageHeader },
   data() {
     return {
       section1: null,
@@ -46,5 +45,4 @@ export default {
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

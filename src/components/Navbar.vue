@@ -108,7 +108,7 @@ export default {
       </div>
       <div class="navbar-logo-mobile">
         <img
-          src="../assets/img/crossroads-logo-01.png"
+          src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
           alt="Crossroads Church Logo"
           @click="onClickLogo()"
         />
@@ -143,7 +143,7 @@ export default {
       <div class="navbar-logo-desktop">
         <img
           loading="lazy"
-          src="../assets/img/crossroads-logo-01.png"
+          src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
           alt=""
           @click="onClickLogoOnSideNav()"
         />

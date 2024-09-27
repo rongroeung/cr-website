@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import TextInput from './TextInput.vue'
 import TextareaInput from './TextareaInput.vue'
 export default {
   props: {
@@ -30,7 +29,6 @@ export default {
     }
   },
   components: {
-    TextInput,
     TextareaInput
   }
 }

@@ -16,15 +16,58 @@
 
 ## Crossroads Admin
 
-We allow website admin to make change to most of the data via https://crossroadscambodia.church/admin
+We allow website admin to make change to most of the data via admin panel https://crossroadscambodia.church/admin
 
 ### Key terms admin must know
+
+#### Content Id
+
+It represent a section id and a content object id `XXYYYZZZ`
+
+`XX` : Page Id
+
+`YYY` : Section Id
+
+`ZZZ` : Item Id (item inside content)
+
+    i.e 03002002, 12005001
+
+Page Id
+
+    01: home,
+    02: about,
+    03: hurch-board,
+    04: pastoral-team,
+    05: milestone,
+    06: ministries,
+    07: campus-ministry,
+    08: worship-ministry,
+    09: sport-ministry,
+    10: mission,
+    11: church-outreach,
+    12: micro-enterprise-project,
+    13: certificate-in-ministry-leadership,
+    14: sponsor-a-child,
+    15: get-involved,
+    16: short-term-missions,
+    17: professional-equipper,
+    18: volunteer,
+    19: give,
+    20: news,
+    21: sunday-sermons,
+    22: events,
+    23: church-news,
+    24: contact
+
+We can find `content_id` belong to specific section by open `DevTools` by `Ctrl + Shift + i` or `Right click > Inspect` we need to know this id to update content in admin panel
+
+![Content Id image](/src/assets/img/content_id.png)
 
 #### Give Page
 
 Give Page https://crossroadscambodia.church/get-involved/give
 
-Video are dynamic and store in media.url of content id #19002001
+Video are changeable and store in media.url of content_id #19002001
 
 We can't use normal youtube URL. We need to get embedded url by
 
@@ -32,7 +75,7 @@ We can't use normal youtube URL. We need to get embedded url by
 
 i.e. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
 
-Url must include ```/embed/```
+Url must include `/embed/`
 
 ### Admin Eligibility
 
@@ -44,58 +87,46 @@ Available functions are
 
 #### Add new content
 
-For Developer Only, some page need to add new code to handle new data. Some page will auto push new data to current UI ( PastoralTeam Page, Milestone Page, Contact Page ).
+For Developer Only, some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page ).
 
-```
-data: {
-  id: '',               required
-  title: '',            required
-  kh_title: '',         required
-  sub_title: '',        optional
-  kh_sub_title: '',     optional
-  description: [],      optional
-  media: [],            optional
-  youtube: []           optional
-}
-```
+    content: {
+      id: ,               required
+      title: '',            required
+      kh_title: '',         required
+      sub_title: '',        optional
+      kh_sub_title: '',     optional
+      description: [],      optional
+      media: [],            optional
+      youtube: []           optional
+    }
 
 ## Project Setup
 
-```sh
-npm install
-```
+    npm install
 
 ### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
+    npm run dev
 
 ### Compile and Minify for Production
 
-```sh
-npm run build
-```
+    npm run build
 
 ### Lint with [ESLint](https://eslint.org/)
 
 (for analyze code)
 
-```sh
-npm run lint
-```
+    npm run lint
 
 ## Project plugin
 
-```
-  VueJs (Option API) for entire structure.
-  Vue Router for manage route.
-  Vite for development server.
-  Tailwind CSS for base styling.
-  Flowbite for Tailwind UI components.
-  Axios for http request to back-end.
-  Vue-i18n for front-end localization. (support English and Khmer)
-```
+    VueJs (Option API) for entire structure.
+    Vue Router for manage route.
+    Vite for development server.
+    Tailwind CSS for base styling.
+    Flowbite for Tailwind UI components.
+    Axios for http request to back-end.
+    Vue-i18n for front-end localization. (support English and Khmer)
 
 ## Folder structure
 
@@ -122,27 +153,21 @@ npm run lint
 
 ## Commit Message
 
-```
-feat (new feature)
-fix (bug fix)
-docs (changes to documentation)
-style (formatting, missing semi colons, etc; no code change)
-refactor (refactoring production code)
-```
+    feat (new feature)
+    fix (bug fix)
+    docs (changes to documentation)
+    style (formatting, missing semi colons, etc; no code change)
+    refactor (refactoring production code)
 
 ## Text Styling
 
 > For normal paragraph text
 
-```
-text-sm leading-6 md:leading-8 md:text-lg
-```
+    text-sm leading-6 md:leading-8 md:text-lg
 
 > For heading text
 
-```
-text-3xl md:text-4xl xl:text-5xl
-```
+    text-3xl md:text-4xl xl:text-5xl
 
 ## Global Properties
 
@@ -156,19 +181,17 @@ Try to use class from Tailwinds CSS, but for some cases that will be used in man
 
 Dev must create custom class according to each section i.e
 
-```
-/* Display section */
+    /* Display section */
 
-.flex-important {
-  display: flex !important;
-}
+    .flex-important {
+      display: flex !important;
+    }
 
-/* Height and Width section */
+    /* Height and Width section */
 
-.max-w-34 {
-  max-width: 34rem;
-}
-```
+    .max-w-34 {
+      max-width: 34rem;
+    }
 
 #### Extend custom colors, height, width, from Tailwind CSS
 
@@ -176,15 +199,13 @@ Since we have main.css for custom styling, Dev should only extend colors... Glob
 
 `tailwind.config.js`
 
-```
-colors: {
-  primary: '#f5a807',
-  secondary: '#021b4b',
-  'cr-gray':'#f4f5f7',
-  'sub-primary': '#f5aa07c5',
-  'sub-secondary': '#01153a'
-},
-```
+    colors: {
+      primary: '#f5a807',
+      secondary: '#021b4b',
+      'cr-gray':'#f4f5f7',
+      'sub-primary': '#f5aa07c5',
+      'sub-secondary': '#01153a'
+    },
 
 #### Scope style
 
@@ -192,19 +213,16 @@ colors: {
 
 Each .vue file has it's local style. Make use of it for specific component without affect other components. It's make component has the same look across application.
 
-```
-<style scoped>
-.cr-button {
-  color: white;
-}
-.cr-button-hover:hover {
-  color: var(--secondary-color);
-  background-color: var(--text-color);
-  transition: 0.3s;
-}
-</style>
-
-```
+    <style scoped>
+    .cr-button {
+      color: white;
+    }
+    .cr-button-hover:hover {
+      color: var(--secondary-color);
+      background-color: var(--text-color);
+      transition: 0.3s;
+    }
+    </style>
 
 ### Variables
 
@@ -212,13 +230,11 @@ We sometimes tent to create a global variable to use across application so that 
 
 `src/main.js`
 
-```
-// Register data //
-import fallbackData from '@/util/fallbackData'
+    // Register data //
+    import fallbackData from '@/util/fallbackData'
 
-app.config.globalProperties.$backendUrl = 'http://38.47.39.132:7001/'
-app.config.globalProperties.$fallbackData = fallbackData
-```
+    app.config.globalProperties.$backendUrl = 'http://38.47.39.132:7001/'
+    app.config.globalProperties.$fallbackData = fallbackData
 
 We simply access global variable by keyword `this.`
 
@@ -232,12 +248,10 @@ Inside mixin there are data, methods, computed ... just like .vue component
 
 `src/main.js`
 
-```
-// Register mixin //
-import { fetchDataMixin } from '@/util/mixin'
+    // Register mixin //
+    import { fetchDataMixin } from '@/util/mixin'
 
-app.mixin(fetchDataMixin)
-```
+    app.mixin(fetchDataMixin)
 
 We simply access mixin without import & register in component
 
@@ -249,12 +263,10 @@ When register a component as global component any where can use without import a
 
 `src/main.js`
 
-```
-// Register global component //
-import ComingSoon from './components/ComingSoon.vue'
+    // Register global component //
+    import ComingSoon from './components/ComingSoon.vue'
 
-app.component('ComingSoon', ComingSoon)
-```
+    app.component('ComingSoon', ComingSoon)
 
 We simply access without import & register in component
 

@@ -40,7 +40,7 @@ export default {
       <nav :class="{ hidden: isCollapsed }" class="admin-nav-inner">
         <div class="navbar-logo-mobile">
           <img
-            src="../assets/img/crossroads-logo-01.png"
+            src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
             alt="Crossroads Church Logo"
             @click="onClickLogo()"
           />

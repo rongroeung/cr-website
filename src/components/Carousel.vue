@@ -44,7 +44,7 @@ export default {
       }, 7000) // Auto-slide every 7 seconds
     }
   },
-  beforeDestroy() {
+  beforeUnmount() {
     clearInterval(this.autoSlideInterval) // Clean up when component is destroyed
   }
 }
