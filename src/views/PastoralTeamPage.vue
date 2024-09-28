@@ -18,8 +18,8 @@ export default {
     const response = await this.getAllContentId()
     const allContentIds = response.content_id
 
-    // Filter IDs for Senior Pastors (starts with 040020)
-    const seniorPastorsIds = this.filterSectionIds(allContentIds, '040020')
+    // Filter IDs for Senior Pastors (starts with 04002)
+    const seniorPastorsIds = this.filterSectionIds(allContentIds, '04002')
     this.senior_pastors = await this.fetchUsersByIds(seniorPastorsIds)
 
     // Filter IDs for Full-Time Co-Workers (starts with 040030)
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     filterSectionIds(contentIds, sectionPrefix) {
-      // Filter content IDs that start with the section prefix (e.g., 040020 for Senior Pastors)
+      // Filter content IDs that start with the section prefix (e.g., 04002 for Senior Pastors)
       return contentIds.filter((id) => id.startsWith(sectionPrefix))
     },
     async fetchUsersByIds(ids) {

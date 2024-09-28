@@ -7,7 +7,7 @@
 | Content                                 | Description                            |
 | --------------------------------------- | -------------------------------------- |
 | [Website Admin](#crossroads-admin)      | For Admin User                         |
-| [Project Setup](#project-setup)         | Inilize development enviroment         |
+| [Project Setup](#project-setup)         | Initialize development environment         |
 | [Project Plugin](#project-plugin)       | Essential dependency for project       |
 | [Folder Structure](#folder-structure)   | Project structure                      |
 | [Commit Message](#commit-message)       | Convention for commit message          |
@@ -19,6 +19,45 @@
 We allow website admin to make change to most of the data via admin panel https://crossroadscambodia.church/admin
 
 ### Key terms admin must know
+
+#### Data structure
+```
+content: {
+    id: ,                 required
+    title: '',            required
+    kh_title: '',         required
+    sub_title: '',        optional
+    kh_sub_title: '',     optional
+    description: [],      optional
+    media: [],            optional
+    youtube: []           optional
+}
+```
+
+```
+description: {
+    text: '',               English description
+    kh_text: '',            Khmer description
+}
+```
+
+```
+media: {
+    url: '',                image url
+    name: '',               description image (use for <img alt="..."/>)
+}
+```
+
+```
+youtube: {
+    title: '',              video's title
+    video_url: '',          video's link
+    duration: '',           video's duration
+    publish_date: '',       video post data
+    thumbnail_url: '',      video thumbnail image url
+    thumbnail_name: ''      describe thumbnail image  (use for <img alt="..."/>)
+}
+```
 
 #### Content Id
 
@@ -36,7 +75,7 @@ Page Id
 
     01: home,
     02: about,
-    03: hurch-board,
+    03: church-board,
     04: pastoral-team,
     05: milestone,
     06: ministries,
@@ -77,28 +116,46 @@ i.e. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
 
 Url must include `/embed/`
 
+----
 ### Admin Eligibility
 
-Available functions are
+Available functions are  [Update content](#update-content) , [Add new content](#add-new-content-for-developer-only)
 
 #### Update content
 
 ( delete description, media, youtube and add new description, media, youtube )
 
-#### Add new content
+#### Add new content [For Developer Only](#add-new-content-for-developer-only)
 
-For Developer Only, some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page ).
+Some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page, etc ).
 
-    content: {
-      id: ,               required
-      title: '',            required
-      kh_title: '',         required
-      sub_title: '',        optional
-      kh_sub_title: '',     optional
-      description: [],      optional
-      media: [],            optional
-      youtube: []           optional
-    }
+## Auto render content
+
+New content consider as an item  `ZZZ` <==  `XXYYYZZZ`
+
+When add new item ( auto render content ) to a section we must know exactly what id we currently on. leading id `XXYYY` can't be change, we only change item id `ZZZ` we render ascending order thus check existing content before add new.
+
+Below is a leading 5 digits id of each section of pages
+
+[PastoralTeam Page](#https://crossroadscambodia.church/about/pastoral-team)
+
+This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-Workers
+
+    Senior Pastors          : 04002
+    Full-Time Co-Workers    : 04003
+    Part-Time Co-Workers    : 04004
+
+[Milestone Page](#https://crossroadscambodia.church/about/milestone)
+
+    Milestone   : 05002
+
+[News Page](#https://crossroadscambodia.church/news)
+
+    News        : 20002
+
+[Contact Page](#https://crossroadscambodia.church/contact)
+
+    Contact         : 24002
 
 ## Project Setup
 

@@ -18,7 +18,7 @@ export default {
     const response = await this.getAllContentId()
     const allContentIds = response.content_id
 
-    const milestoneSectionIds = this.filterSectionIds(allContentIds, '050020')
+    const milestoneSectionIds = this.filterSectionIds(allContentIds, '05002')
     this.section2 = await this.fetchMilestoneById(milestoneSectionIds)
   },
   computed: {

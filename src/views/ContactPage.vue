@@ -16,7 +16,7 @@ export default {
     const response = await this.getAllContentId()
     const allContentIds = response.content_id
 
-    const contactSectionId = this.filterSectionIds(allContentIds, '240020')
+    const contactSectionId = this.filterSectionIds(allContentIds, '24002')
     this.section2 = await this.fetchContactById(contactSectionId)
   },
   methods: {
