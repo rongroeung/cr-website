@@ -72,7 +72,11 @@ export default {
         <p class="text-sm mb-6">&copy; 2024 The Crossroads Church of Cambodia.</p>
         <div class="space-x-4 flex flex-row mb-6">
           <a target="_blank" href="https://facebook.com/onlinechurch.crossroads"
-            ><img loading="lazy" src="../assets/icon/facebook.svg" alt="Facebook" class="h-6"
+            ><img
+              loading="lazy"
+              src="https://crossroadscambodia.church/cr-drive/icon/facebook.svg"
+              alt="Facebook"
+              class="h-6"
           /></a>
           <a target="_blank" href="https://www.youtube.com/@ccoconline"
             ><img loading="lazy" src="../assets/icon/youtube.svg" alt="Youtube" class="h-6"
