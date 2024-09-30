@@ -226,6 +226,12 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
 
     text-3xl md:text-4xl xl:text-5xl
 
+### Text bold
+
+used this website to generate bold text, and simply copy and paste to admin form
+
+    https://lingojam.com/BoldTextGenerator
+
 ## Global Properties
 
 ### Css class
