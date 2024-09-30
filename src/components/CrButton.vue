@@ -31,7 +31,7 @@ export default {
     <router-link
       :to="{ name: buttonRoute, hash: getHash }"
       v-t="label"
-      class="w-full h-full span-text uppercase font-semibold flex-center text-center text-sm"
+      class="w-full h-full span-text uppercase font-semibold flex-center text-center text-xs md:text-sm"
     ></router-link>
   </div>
 </template>

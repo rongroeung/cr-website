@@ -1,6 +1,6 @@
 <template>
   <div class="PageHeader h-300-px w-full flex-center" :style="bannerBgImage(section.media[0].url)">
-    <p class="text-5xl text-white">{{ section.title }}</p>
+    <p class="text-3xl md:text-4xl lg:text-5xl text-white">{{ section.title }}</p>
   </div>
 </template>
 

@@ -5,9 +5,9 @@
       :id="id"
       :value="modelValue"
       :placeholder="placeholder"
-      :rows="rows"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="onInput"
       class="border rounded p-2"
+      ref="textarea"
     ></textarea>
   </div>
 </template>
@@ -23,6 +23,21 @@ export default {
       default: 3
     },
     placeholder: String
+  },
+  mounted() {
+    // Auto resize on component mount if content is pre-filled
+    this.resizeTextarea()
+  },
+  methods: {
+    onInput(event) {
+      this.$emit('update:modelValue', event.target.value)
+      this.resizeTextarea()
+    },
+    resizeTextarea() {
+      const textarea = this.$refs.textarea
+      textarea.style.height = 'auto' // Reset height
+      textarea.style.height = textarea.scrollHeight + 'px' // Set new height based on content
+    }
   }
 }
 </script>
@@ -35,7 +50,8 @@ input {
 textarea {
   color: black;
   width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
+  height: auto;
+  min-height: 40px;
+  overflow-y: hidden;
 }
 </style>

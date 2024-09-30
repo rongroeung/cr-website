@@ -26,6 +26,10 @@ export default {
   },
   methods: {
     async submitForm() {
+      if (this.formData.id.length !== 8) {
+        this.$toast.warning('Id should be 8 characters')
+        return
+      }
       this.disableSubmit = true
       await this.addNewContent(this.formData)
       this.disableSubmit = false
@@ -72,7 +76,7 @@ export default {
 <template>
   <div class="text-left p-4">
     <form @submit.prevent="submitForm" class="space-y-4">
-      <TextInput id="id" label="Id" v-model="formData.id" :required="true" />
+      <TextInput id="id" label="Id" v-model="formData.id" :required="true" type="number" />
       <!-- Title -->
       <!-- Title -->
       <TextInput id="title" label="Title" v-model="formData.title" :required="true" />

@@ -1,6 +1,9 @@
 <template>
   <div class="ContentSection my-20">
-    <p v-if="section.title" class="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">
+    <p
+      v-if="section.title"
+      class="text-xl md:text-2xl xl:text-3xl font-bold text-gray-800 mb-6 text-center md:text-left"
+    >
       {{ section.title }}
     </p>
     <p v-if="section.sub_title" class="text-sm leading-6 md:leading-8 md:text-lg mb-6 text-left">
