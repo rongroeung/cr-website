@@ -1,5 +1,5 @@
 <template>
-  <div class="ContentSection my-20">
+  <div class="ContentSection" :class="margin">
     <p
       v-if="section.title"
       class="text-xl md:text-2xl xl:text-3xl font-bold text-gray-800 mb-6 text-center md:text-left"
@@ -25,6 +25,10 @@ export default {
     section: {
       type: Object,
       required: true
+    },
+    margin: {
+      type: String,
+      default: 'my-20'
     }
   },
   computed: {

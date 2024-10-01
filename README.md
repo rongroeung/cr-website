@@ -129,6 +129,15 @@ Available functions are  [Update content](#update-content) , [Add new content](#
 
 Some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page, etc ).
 
+Below is the restrict content fields, some field are reserve for specific use case so make sure you know what you doing.
+
+#### [Events page](#https://crossroadscambodia.church/news/events) 
+
+    sub_title : event location
+    description: first description must be event date
+
+
+
 ## Auto render content
 
 New content consider as an item  `ZZZ` <==  `XXYYYZZZ`
@@ -147,15 +156,28 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
 
 [Milestone Page](#https://crossroadscambodia.church/about/milestone)
 
-    Milestone   : 05002
+    Milestone               : 05002
+
+[Volunteer Page](#https://crossroadscambodia.church/get-involved/volunteer)
+
+    opportunities item      : 18003
 
 [News Page](#https://crossroadscambodia.church/news)
 
-    News        : 20002
+    News                    : 20002
+
+[Sunday Sermons Page](#https://crossroadscambodia.church/news/sunday-sermons)
+
+    SundaySermons           : 21002
+
+
+[Events Page](#https://crossroadscambodia.church/news/events)
+
+    Events                  : 22002
 
 [Contact Page](#https://crossroadscambodia.church/contact)
 
-    Contact         : 24002
+    Contact                 : 24002
 
 ## Project Setup
 
