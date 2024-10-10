@@ -23,25 +23,10 @@ export default {
 
     // Fetch all content IDs
     const response = await this.getAllContentId()
-    const allContentIds = response.content_id
 
-    const contactSectionId = this.filterSectionIds(allContentIds, '18003')
-    this.section3 = await this.fetchItemById(contactSectionId)
-  },
-  methods: {
-    filterSectionIds(contentIds, sectionPrefix) {
-      return contentIds.filter((id) => id.startsWith(sectionPrefix))
-    },
-    async fetchItemById(ids) {
-      let items = []
-      for (let id of ids) {
-        let item = await this.getContentById(id)
-        if (item) {
-          items.push(item)
-        }
-      }
-      return items
-    }
+    const contactSectionId = this.filterContentStartWithId(response.content_id, '18003')
+
+    this.section3 = await this.fetchContentByIds(contactSectionId)
   }
 }
 </script>

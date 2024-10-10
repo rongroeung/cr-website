@@ -1,37 +1,48 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue'
 import NewsItem from '@/components/NewsItem.vue'
+import Pagination from '@/components/Pagination.vue'
 export default {
   name: 'NewsPage',
-  components: { PageHeader, NewsItem },
+  components: { PageHeader, NewsItem, Pagination },
   data() {
     return {
       section1: null,
-      section2: null
+      contentIds: null,
+      ItemToBeShow: null,
+      currentPage: 1
     }
   },
   async created() {
     this.section1 = await this.getContentById('20001001')
     // Fetch all content IDs
     const response = await this.getAllContentId()
-    const allContentIds = response.content_id
+    // Filter IDs for News (starts with 20002)
+    this.contentIds = this.filterContentStartWithId(response.content_id, '20002')
 
-    const contactSectionId = this.filterSectionIds(allContentIds, '20002')
-    this.section2 = await this.fetchContactById(contactSectionId)
+    this.fetchItem()
+  },
+  computed: {
+    totalItem() {
+      return this.contentIds ? this.contentIds.length : 0
+    },
+    totalPage() {
+      const number = Math.ceil(this.totalItem / this.$numberOfNewsAndEventsItemPerPage)
+      return number == 0 ? 1 : number
+    },
+    IdItemsToBeShow() {
+      const start = (this.currentPage - 1) * this.$numberOfNewsAndEventsItemPerPage
+      const end = start + this.$numberOfNewsAndEventsItemPerPage
+      return this.contentIds ? this.contentIds.slice(start, end) : []
+    }
   },
   methods: {
-    filterSectionIds(contentIds, sectionPrefix) {
-      return contentIds.filter((id) => id.startsWith(sectionPrefix))
+    onSelectPage(page) {
+      this.currentPage = page
+      this.fetchItem()
     },
-    async fetchContactById(ids) {
-      let contacts = []
-      for (let id of ids) {
-        let contact = await this.getContentById(id)
-        if (contact) {
-          contacts.push(contact)
-        }
-      }
-      return contacts
+    async fetchItem() {
+      this.ItemToBeShow = await this.fetchContentByIds(this.IdItemsToBeShow)
     }
   }
 }
@@ -42,10 +53,13 @@ export default {
     <div id="20001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg-cr-gray flex-center flex-col w-full h-full py-14">
-      <template v-for="section in section2" :key="section.id">
+    <div class="bg-cr-gray flex-center flex-col w-full h-full pt-14">
+      <template v-for="section in ItemToBeShow" :key="section.id">
         <NewsItem :section="section" />
       </template>
+      <div class="flex my-14">
+        <Pagination :totalPage="totalPage" @on-select-page="onSelectPage" />
+      </div>
     </div>
   </section>
 </template>

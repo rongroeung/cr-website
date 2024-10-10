@@ -20,15 +20,12 @@ import ImagePreview from './components/ImagePreview.vue'
 const app = createApp(App)
 
 // Bind global variable //
-app.config.globalProperties.$githubAssetsPath =
-  'https://raw.githubusercontent.com/rongroeung/cr-website/development/src/assets'
 app.config.globalProperties.$backendUrl =
   'https://crossroadscambodia.church:7002/cr-web-backend/api/v1/'
 
-// app.config.globalProperties.$websitePreviewUrl = 'https://cr-website.onrender.com/'
-// app.config.globalProperties.$websitePreviewUrl = 'http://localhost:5173/'
+app.config.globalProperties.$numberOfSundaySermonPerPage = 2
+app.config.globalProperties.$numberOfNewsAndEventsItemPerPage = 1
 app.config.globalProperties.$websitePreviewUrl = window.location.origin
-// app.config.globalProperties.$websitePreviewUrl = 'https://crossroadscambodia.church/'
 app.config.globalProperties.$content_ids_mapper = {
   '01': '/',
   '02': '/about/',
@@ -55,6 +52,7 @@ app.config.globalProperties.$content_ids_mapper = {
   23: '/news/church-news/',
   24: '/contact/'
 }
+
 
 // Bind global component //
 app.component('ImagePreview', ImagePreview)

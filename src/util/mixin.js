@@ -71,6 +71,19 @@ const adminResizeIframeMixin = {
 
 const fetchDataMixin = {
   methods: {
+    filterContentStartWithId(contentIds, sectionPrefix) {
+      return contentIds.filter((id) => id.startsWith(sectionPrefix))
+    },
+    async fetchContentByIds(ids) {
+      let contents = []
+      for (let id of ids) {
+        let content = await this.getContentById(id)
+        if (content) {
+          contents.push(content)
+        }
+      }
+      return contents
+    },
     async getContentById(content_id) {
       const lang = localStorage.getItem('lang') || 'en'
       const buildUrl = this.$backendUrl + 'getContentById?id=' + content_id + '&lang=' + lang
@@ -137,6 +150,7 @@ const fetchDataMixin = {
         this.$toast.error(error.response.data.message)
       }
     },
+
     async getAllContentId() {
       const buildUrl = this.$backendUrl + 'getAllContentId'
       // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/getAllContentId
