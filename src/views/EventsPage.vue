@@ -16,22 +16,22 @@ export default {
     const response = await this.getAllContentId()
     const allContentIds = response.content_id
 
-    const contactSectionId = this.filterSectionIds(allContentIds, '22002')
-    this.section2 = await this.fetchContactById(contactSectionId)
+    const contactSectionId = this.filterContentStartWithId(allContentIds, '22002')
+    this.section2 = await this.fetchContentByIds(contactSectionId)
   },
   methods: {
-    filterSectionIds(contentIds, sectionPrefix) {
-      return contentIds.filter((id) => id.startsWith(sectionPrefix))
+    filterContentStartWithId(allIds, sectionPrefix) {
+      return allIds.filter((id) => id.startsWith(sectionPrefix))
     },
-    async fetchContactById(ids) {
-      let contacts = []
+    async fetchContentByIds(ids) {
+      let contents = []
       for (let id of ids) {
-        let contact = await this.getContentById(id)
-        if (contact) {
-          contacts.push(contact)
+        let content = await this.getContentById(id)
+        if (content) {
+          contents.push(content)
         }
       }
-      return contacts
+      return contents
     }
   }
 }

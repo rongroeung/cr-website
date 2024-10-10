@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: 'EventItem',
@@ -26,6 +25,11 @@ export default {
 
 <template>
   <div :id="section.id" class="w-full md:w-1/2 flex flex-col items-start p-6 text-black">
+    <!-- Title -->
+    <h1 class="text-xl md:text-2xl font-bold text-gray-800 my-3 text-center w-full">
+      {{ section.title }}
+    </h1>
+
     <!-- Image -->
     <img
       :src="section.media[0].url"
@@ -39,11 +43,6 @@ export default {
       <span>{{ section.description[0].text }}</span>
     </div>
 
-    <!-- Title -->
-    <h1 class="text-xl md:text-2xl font-bold text-gray-800 my-3 text-center md:text-left">
-      {{ section.title }}
-    </h1>
-
     <!-- Location -->
     <div class="flex items-center text-gray-600 mb-3">
       <img src="../assets/icon/location.svg" alt="click icon" class="mr-2" />
@@ -51,16 +50,16 @@ export default {
     </div>
 
     <!-- Description -->
-    <template v-for="(description, index) in section.description" :key="index">
-      <div v-if="index == 1" :class="dynamicClass">
-        <div class="text-sm leading-6 md:leading-8 md:text-lg">
-          {{ description.text }}
+    <div class="ps-1">
+      <template v-for="(description, index) in section.description" :key="index">
+        <div v-if="index == 1" :class="dynamicClass">
+          <div class="text-sm leading-6 md:leading-8 md:text-lg">
+            {{ description.text }}
+          </div>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
   </div>
 </template>
 
-
-<style>
-</style>
+<style></style>

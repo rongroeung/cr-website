@@ -1,10 +1,9 @@
 <script>
 import PageHeader from '../components/PageHeader.vue'
 import ContentSection from '../components/ContentSection.vue'
-import AddNewContentForm from '@/components/admin/AddNewContentForm.vue'
 export default {
   name: 'CertificateInMinistryPage',
-  components: { PageHeader, ContentSection, AddNewContentForm },
+  components: { PageHeader, ContentSection },
   data() {
     return {
       section1: null,
@@ -22,29 +21,28 @@ export default {
     const response = await this.getAllContentId()
     const allContentIds = response.content_id
 
-    const section2Ids = this.filterSectionIds(allContentIds, '13002')
-    this.section2 = await this.fetchItemByIds(section2Ids)
+    const section2Ids = this.filterContentStartWithId(allContentIds, '13002')
+    this.section2 = await this.fetchContentByIds(section2Ids)
 
-    const section3Ids = this.filterSectionIds(allContentIds, '13003')
-    this.section3 = await this.fetchItemByIds(section3Ids)
+    const section3Ids = this.filterContentStartWithId(allContentIds, '13003')
+    this.section3 = await this.fetchContentByIds(section3Ids)
 
-    const section4Ids = this.filterSectionIds(allContentIds, '13004')
-    this.section4 = await this.fetchItemByIds(section4Ids)
+    const section4Ids = this.filterContentStartWithId(allContentIds, '13004')
+    this.section4 = await this.fetchContentByIds(section4Ids)
   },
   methods: {
-    filterSectionIds(contentIds, sectionPrefix) {
-      return contentIds.filter((id) => id.startsWith(sectionPrefix))
+    filterContentStartWithId(allIds, sectionPrefix) {
+      return allIds.filter((id) => id.startsWith(sectionPrefix))
     },
-
-    async fetchItemByIds(ids) {
-      let items = []
+    async fetchContentByIds(ids) {
+      let contents = []
       for (let id of ids) {
-        let item = await this.getContentById(id)
-        if (item) {
-          items.push(item)
+        let content = await this.getContentById(id)
+        if (content) {
+          contents.push(content)
         }
       }
-      return items
+      return contents
     }
   }
 }

@@ -18,8 +18,8 @@ export default {
     const response = await this.getAllContentId()
     const allContentIds = response.content_id
 
-    const milestoneSectionIds = this.filterSectionIds(allContentIds, '05002')
-    this.section2 = await this.fetchMilestoneById(milestoneSectionIds)
+    const milestoneSectionIds = this.filterContentStartWithId(allContentIds, '05002')
+    this.section2 = await this.fetchContentByIds(milestoneSectionIds)
   },
   computed: {
     cssBefore() {
@@ -27,18 +27,18 @@ export default {
     }
   },
   methods: {
-    filterSectionIds(contentIds, sectionPrefix) {
-      return contentIds.filter((id) => id.startsWith(sectionPrefix))
+    filterContentStartWithId(allIds, sectionPrefix) {
+      return allIds.filter((id) => id.startsWith(sectionPrefix))
     },
-    async fetchMilestoneById(ids) {
-      let milestones = []
+    async fetchContentByIds(ids) {
+      let contents = []
       for (let id of ids) {
-        let milestone = await this.getContentById(id)
-        if (milestone) {
-          milestones.push(milestone)
+        let content = await this.getContentById(id)
+        if (content) {
+          contents.push(content)
         }
       }
-      return milestones
+      return contents
     }
   }
 }
