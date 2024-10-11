@@ -28,27 +28,44 @@ export default {
   <div class="text-left p-4">
     <form @submit.prevent="submitForm" class="space-y-4">
       <!-- Name -->
-      <TextInput id="name" label="Your Name" v-model="formData.name" :required="true" />
+      <TextInput
+        id="name"
+        label="Your-Name"
+        :translate="true"
+        v-model="formData.name"
+        :required="true"
+      />
 
       <!-- Email -->
-      <TextInput id="email" label="Your Email" v-model="formData.email" :required="true" />
+      <TextInput
+        id="email"
+        label="Your-Email"
+        :translate="true"
+        v-model="formData.email"
+        :required="true"
+      />
 
       <!-- Mobile -->
-      <TextInput id="mobile" label="Your Mobile" v-model="formData.mobile" :required="true" />
+      <TextInput
+        id="mobile"
+        label="Your-Mobile"
+        :translate="true"
+        v-model="formData.mobile"
+        :required="true"
+      />
 
       <!-- Role -->
       <TextInput
         id="role"
-        label="What ministry or role are you interested in?"
+        label="What-ministry-or-role-are-you-interested-in"
+        :translate="true"
         v-model="formData.role"
         :required="true"
       />
 
       <!-- Description -->
       <div class="flex flex-col my-4">
-        <label for="description" class="font-medium"
-          >What would you like us to know about you?</label
-        >
+        <label for="description" class="font-medium mb-2" v-t="'What-would-you-like'"></label>
         <textarea
           id="description"
           v-model="formData.description"
@@ -65,9 +82,8 @@ export default {
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
           class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto"
-        >
-          Submit
-        </button>
+          v-t="'submit'"
+        ></button>
       </div>
     </form>
   </div>

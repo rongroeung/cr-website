@@ -31,6 +31,7 @@ import AddNewContent from '@/views/admin/AddNewContent.vue'
 import AddNewDescription from '@/views/admin/AddNewDescription.vue'
 import AddNewMedia from '@/views/admin/AddNewMedia.vue'
 import AddNewYoutube from '@/views/admin/AddNewYoutube.vue'
+import LoginPage from '@/views/admin/LoginPage.vue'
 
 const navbarHeight = 80 //ref --navbar-height: 80px
 
@@ -50,6 +51,10 @@ const router = createRouter({
     }
   },
   routes: [
+    {
+      path: '/login',
+      component: LoginPage
+    },
     {
       path: '/admin',
       component: AdminLayout,
@@ -240,5 +245,14 @@ const router = createRouter({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('adminToken');
+  if (to.path.startsWith('/admin') && !token) {
+    next('/login'); // Redirect to login if not authenticated
+  } else {
+    next(); // Proceed to the route
+  }
+});
 
 export default router

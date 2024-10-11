@@ -24,6 +24,10 @@ export default {
     },
     currentRoute(route) {
       return this.$route.name == route
+    },
+    logout() {
+      localStorage.removeItem('adminToken')
+      this.$router.push('/login')
     }
   }
 }
@@ -37,6 +41,7 @@ export default {
         <span v-if="isCollapsed">→</span>
         <span v-else>←</span>
       </button>
+
       <nav :class="{ hidden: isCollapsed }" class="admin-nav-inner">
         <div class="navbar-logo-mobile">
           <img
@@ -56,6 +61,9 @@ export default {
             </li>
           </template>
         </ul>
+        <button @click="logout()" class="logout-btn mt-10">
+          <span class="p-2 border border-3 rounded bg-primary">← Logout</span>
+        </button>
       </nav>
     </aside>
 

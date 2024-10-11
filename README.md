@@ -7,7 +7,7 @@
 | Content                                            | Description                                |
 | -------------------------------------------------- | ------------------------------------------ |
 | [Website Admin and Eligibility](#crossroads-admin) | For Admin User                             |
-| [Special Page](#special-page)                      | Page with different strucure of data       |
+| [Special Page](#special-page)                      | Page with different structure of data       |
 | [Auto render content](#auto-render-content)        | Content that render without need of coding |
 | [Project Setup](#project-setup)                    | Initialize development environment         |
 | [Project Plugin](#project-plugin)                  | Essential dependency for project           |

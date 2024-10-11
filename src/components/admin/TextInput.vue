@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col mb-4">
-    <label :for="id" class="font-medium">{{ label }}</label>
+    <label v-if="translate" :for="id" class="font-medium" v-t="label"></label>
+    <label v-else :for="id" class="font-medium">{{ label }}</label>
+
     <input
       :id="id"
       :type="type"
@@ -25,6 +27,10 @@ export default {
     },
     placeholder: String,
     required: {
+      type: Boolean,
+      default: false
+    },
+    translate: {
       type: Boolean,
       default: false
     }

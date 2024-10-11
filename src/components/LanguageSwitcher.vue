@@ -12,7 +12,7 @@ const setLanguage = (newLang) => {
   window.location.reload()
 }
 
-const isSeleted = (lang) => {
+const select = (lang) => {
   return localStorage.getItem('lang') == lang
 }
 
@@ -26,13 +26,13 @@ watchEffect(() => {
 
 <template>
   <div class="LanguageSwitcher">
-    <div class="language mr-2" :class="isSeleted('kh') ? disableClass : ''">
+    <div class="language mr-2" :class="select('kh') ? disableClass : ''">
       <img loading="lazy" src="../assets/img/kh-flag.png" />
-      <button @click="setLanguage('kh')" :disabled="isSeleted('kh')">ភាសាខ្មែរ</button>
+      <button @click="setLanguage('kh')" :disabled="select('kh')">ភាសាខ្មែរ</button>
     </div>
-    <div class="language" :class="isSeleted('en') ? disableClass : ''">
+    <div class="language" :class="select('en') ? disableClass : ''">
       <img loading="lazy" src="../assets/img/us-flag.png" />
-      <button @click="setLanguage('en')" :disabled="isSeleted('en')">English</button>
+      <button @click="setLanguage('en')" :disabled="select('en')">English</button>
     </div>
   </div>
 </template>

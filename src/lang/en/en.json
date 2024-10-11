@@ -55,5 +55,11 @@
   "get-pdf": "Get PDF",
   "Global": "Global",
   "Local": "Local",
-  "Amount-In-USD": "Amount In $"
+  "Amount-In-USD": "Amount In $",
+  "What-would-you-like":"What would you like us to know about you?",
+  "What-ministry-or-role-are-you-interested-in":"What ministry or role are you interested in?",
+  "Your-Name":"Your Name",
+  "Your-Email":"Your Email",
+  "Your-Mobile":"Your Mobile",
+  "submit":"Submit"
 }
