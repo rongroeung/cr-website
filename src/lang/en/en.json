@@ -40,9 +40,9 @@
   "multiply": "Multiply",
   "sunday-worship": "Sunday Worship",
   "senior-pastor": "Senior Pastor",
-  "Senior Pastors":"Senior Pastors",
-  "Full-Time Co-Workers":"Full-Time Co-Workers",
-  "Part-Time Co-Workers":"Part-Time Co-Workers",
+  "Senior Pastors": "Senior Pastors",
+  "Full-Time Co-Workers": "Full-Time Co-Workers",
+  "Part-Time Co-Workers": "Part-Time Co-Workers",
   "assistant-pastor": "Assistant Pastor",
   "pastoral-team-member": "Pastoral Team Member",
   "want-to-get-in-touch": "Want To Get In Touch?",
@@ -51,6 +51,9 @@
   "back-to-homepage": "Back to Homepage",
   "Our-Page-is-Coming-Soon": "Our Page is Coming Soon...",
   "We-working-on-something-awesome": "We're working on something awesome!",
-  "Join-Now":"Join Now",
-  "get-pdf": "Get PDF"
+  "Join-Now": "Join Now",
+  "get-pdf": "Get PDF",
+  "Global": "Global",
+  "Local": "Local",
+  "Amount-In-USD": "Amount In $"
 }

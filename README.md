@@ -4,15 +4,17 @@
 
 # Table of content
 
-| Content                                 | Description                            |
-| --------------------------------------- | -------------------------------------- |
-| [Website Admin](#crossroads-admin)      | For Admin User                         |
-| [Project Setup](#project-setup)         | Initialize development environment         |
-| [Project Plugin](#project-plugin)       | Essential dependency for project       |
-| [Folder Structure](#folder-structure)   | Project structure                      |
-| [Commit Message](#commit-message)       | Convention for commit message          |
-| [Text Sizing](#text-styling)            | Global class for text size             |
-| [Global Properties](#global-properties) | Global css, variable, mixin, component |
+| Content                                            | Description                                |
+| -------------------------------------------------- | ------------------------------------------ |
+| [Website Admin and Eligibility](#crossroads-admin) | For Admin User                             |
+| [Special Page](#special-page)                      | Page with different strucure of data       |
+| [Auto render content](#auto-render-content)        | Content that render without need of coding |
+| [Project Setup](#project-setup)                    | Initialize development environment         |
+| [Project Plugin](#project-plugin)                  | Essential dependency for project           |
+| [Folder Structure](#folder-structure)              | Project structure                          |
+| [Commit Message](#commit-message)                  | Convention for commit message              |
+| [Text Sizing](#text-styling)                       | Global class for text size                 |
+| [Global Properties](#global-properties)            | Global css, variable, mixin, component     |
 
 ## Crossroads Admin
 
@@ -21,6 +23,7 @@ We allow website admin to make change to most of the data via admin panel https:
 ### Key terms admin must know
 
 #### Data structure
+
 ```
 content: {
     id: ,                 required
@@ -102,7 +105,26 @@ We can find `content_id` belong to specific section by open `DevTools` by `Ctrl 
 
 ![Content Id image](/src/assets/img/content_id.png)
 
-#### Give Page
+Available functions are [Update content](#update-content) , [Add new content](#add-new-content-for-developer-only)
+
+#### Update content
+
+( delete description, media, youtube and add new description, media, youtube )
+
+#### Add new content [For Developer Only](#add-new-content-for-developer-only)
+
+Some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page, etc ).
+
+Below is the restrict content fields, some field are reserve for specific use case so make sure you know what you doing.
+
+#### [Events page](#https://crossroadscambodia.church/news/events)
+
+    sub_title : event location
+    description: first description must be event date
+
+## Special Page
+
+### Give Page
 
 Give Page https://crossroadscambodia.church/get-involved/give
 
@@ -116,31 +138,17 @@ i.e. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
 
 Url must include `/embed/`
 
-----
-### Admin Eligibility
+### Paypal `cliend_id`
 
-Available functions are  [Update content](#update-content) , [Add new content](#add-new-content-for-developer-only)
+We use paypal embeded button in our give page and it need `cliend_id`
 
-#### Update content
+so `client_id` store in title field of `content_id` `19003001`
 
-( delete description, media, youtube and add new description, media, youtube )
-
-#### Add new content [For Developer Only](#add-new-content-for-developer-only)
-
-Some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page, etc ).
-
-Below is the restrict content fields, some field are reserve for specific use case so make sure you know what you doing.
-
-#### [Events page](#https://crossroadscambodia.church/news/events) 
-
-    sub_title : event location
-    description: first description must be event date
-
-
+QR code image for give page store in `media[0]` field of the same object which is `content_id` `19003001`
 
 ## Auto render content
 
-New content consider as an item  `ZZZ` <==  `XXYYYZZZ`
+New content consider as an item `ZZZ` <== `XXYYYZZZ`
 
 When add new item ( auto render content ) to a section we must know exactly what id we currently on. leading id `XXYYY` can't be change, we only change item id `ZZZ` we render ascending order thus check existing content before add new.
 
@@ -169,7 +177,6 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
 [Sunday Sermons Page](#https://crossroadscambodia.church/news/sunday-sermons)
 
     SundaySermons           : 21002
-
 
 [Events Page](#https://crossroadscambodia.church/news/events)
 

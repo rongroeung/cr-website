@@ -2,6 +2,9 @@
 import { loadScript } from '@paypal/paypal-js'
 export default {
   name: 'PayPal',
+  props: {
+    client_id: String
+  },
   data() {
     return {
       amount: 10
@@ -9,8 +12,7 @@ export default {
   },
   mounted() {
     loadScript({
-      'client-id':
-        'AY-e_qtzOzSbzXLtTxAFqgAf8tAQ9_abzCInSlB0Hp2JVwTcGzCKiasYMKJ7jjzqRp9wrg8vjeAY7YGZ'
+      'client-id': this.client_id
     })
       .then((paypal) => {
         paypal
@@ -44,7 +46,11 @@ export default {
 <template>
   <div class="Paypal w-full md:w-3/5 lg:w-1/2">
     <div class="form-control w-full mb-6">
-      <label for="number" class="block mb-2 text-lg font-medium text-secondary">Amount in $</label>
+      <label
+        for="number"
+        class="block mb-2 text-lg font-medium text-secondary"
+        v-t="'Amount-In-USD'"
+      ></label>
       <input
         type="number"
         id="number"

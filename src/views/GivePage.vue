@@ -8,6 +8,7 @@ export default {
     return {
       section1: null,
       section2: null,
+      section3: null,
       isGlobalPage: true,
       cssTab:
         'w-1/2 md:w-2/5 inline-block px-4 py-3 text-lg text-gray-500 hover:text-gray-700 bg-white hover:bg-gray-200 cursor-pointer',
@@ -18,6 +19,7 @@ export default {
   async created() {
     this.section1 = await this.getContentById('19001001')
     this.section2 = await this.getContentById('19002001')
+    this.section3 = await this.getContentById('19003001')
   }
 }
 </script>
@@ -52,23 +54,18 @@ export default {
           <li
             :class="[isGlobalPage ? cssSelectedTab : cssTab, 'rounded-l-lg']"
             @click="isGlobalPage = true"
-          >
-            Global
-          </li>
+            v-t="'Global'"
+          ></li>
           <li
             :class="[!isGlobalPage ? cssSelectedTab : cssTab, 'rounded-r-lg']"
             @click="isGlobalPage = false"
-          >
-            Local
-          </li>
+            v-t="'Local'"
+          ></li>
         </ul>
-        <div class="Paypal w-full h-fit flex-center">
-          <Paypal v-if="isGlobalPage" />
+        <div v-if="section3" class="Paypal w-full h-fit flex-center">
+          <Paypal v-if="isGlobalPage" :client_id="section3.title" />
           <div v-else class="w-full md:w-4/5">
-            <img
-              src="https://crossroadscambodia.church/cr-drive/cr-photos/give-qr-001.jpg"
-              alt="ABA QR code image"
-            />
+            <img :src="section3.media[0].url" :alt="section3.media[0].name" />
           </div>
         </div>
       </div>
