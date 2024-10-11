@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: 'NewsItem',
@@ -16,9 +15,7 @@ export default {
   },
   methods: {
     isLongDescription(text) {
-      // You can customize the condition for "long" descriptions (e.g., by word count, character count, etc.)
-      // Here, we'll check if the text exceeds 100 characters, you can adjust this based on your needs.
-      return text.length > 100 // or define your own logic for "long"
+      return text.length > 100
     }
   }
 }
@@ -51,6 +48,4 @@ export default {
   </div>
 </template>
 
-
-<style>
-</style>
+<style></style>

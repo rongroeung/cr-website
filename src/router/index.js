@@ -53,6 +53,7 @@ const router = createRouter({
     {
       path: '/admin',
       component: AdminLayout,
+      redirect: { name: 'update-content-by-id' },
       children: [
         {
           path: 'update-content-by-id',

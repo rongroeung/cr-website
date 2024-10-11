@@ -1,8 +1,5 @@
-
 <script>
-import PastoralTeamHighlightCard from './PastoralTeamHighlightCard.vue'
 export default {
-  components: { PastoralTeamHighlightCard },
   name: 'Pagination',
   props: {
     totalPage: {
@@ -13,9 +10,9 @@ export default {
   data() {
     return {
       cssText:
-        'flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-200 hover:text-gray-700 cursor-pointer',
+        'flex items-center justify-center px-4 h-10 leading-tight text-gray-500 hover:text-gray-700 bg-white hover:bg-gray-200 cursor-pointer',
       cssSelectedText:
-        'Selected flex items-center justify-center px-4 h-10 leading-tight text-white border border-gray-300 bg-gray-400 border-blue-300 hover:bg-gray-600 cursor-pointer',
+        'Selected flex items-center justify-center px-4 h-10 leading-tight text-white bg-gray-400 hover:bg-gray-500 cursor-pointer',
       currentPage: 1
     }
   },
@@ -47,6 +44,4 @@ export default {
   </nav>
 </template>
 
-
-<style>
-</style>
+<style></style>

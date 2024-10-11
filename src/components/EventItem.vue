@@ -15,9 +15,7 @@ export default {
   },
   methods: {
     isLongDescription(text) {
-      // You can customize the condition for "long" descriptions (e.g., by word count, character count, etc.)
-      // Here, we'll check if the text exceeds 100 characters, you can adjust this based on your needs.
-      return text.length > 100 // or define your own logic for "long"
+      return text.length > 100
     }
   }
 }
@@ -45,7 +43,7 @@ export default {
 
     <!-- Location -->
     <div class="flex items-center text-gray-600 mb-3">
-      <img src="../assets/icon/location.svg" alt="click icon" class="mr-2" />
+      <img src="../assets/icon/location.svg" alt="click icon" />
       <span>{{ section.sub_title }}</span>
     </div>
 
