@@ -10,9 +10,9 @@ export default {
       section2: null,
       isGlobalPage: true,
       cssTab:
-        'w-2/5 inline-block px-4 py-3 text-lg text-gray-500 hover:text-gray-700 bg-white hover:bg-gray-200 cursor-pointer',
+        'w-1/2 md:w-2/5 inline-block px-4 py-3 text-lg text-gray-500 hover:text-gray-700 bg-white hover:bg-gray-200 cursor-pointer',
       cssSelectedTab:
-        'Selected w-2/5 inline-block px-4 py-3 text-lg text-white bg-gray-400 hover:bg-gray-500 active cursor-pointer'
+        'Selected w-1/2 md:w-2/5 inline-block px-4 py-3 text-lg text-white bg-gray-400 hover:bg-gray-500 active cursor-pointer'
     }
   },
   async created() {
@@ -62,12 +62,14 @@ export default {
             Local
           </li>
         </ul>
-        <Paypal v-if="isGlobalPage" />
-        <div v-else>
-          <img
-            src="https://crossroadscambodia.church/cr-drive/cr-photos/give-qr-001.jpg"
-            alt="ABA QR code image"
-          />
+        <div class="Paypal w-full h-fit flex-center">
+          <Paypal v-if="isGlobalPage" />
+          <div v-else class="w-full md:w-4/5">
+            <img
+              src="https://crossroadscambodia.church/cr-drive/cr-photos/give-qr-001.jpg"
+              alt="ABA QR code image"
+            />
+          </div>
         </div>
       </div>
     </div>

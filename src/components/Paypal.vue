@@ -42,17 +42,17 @@ export default {
 </script>
 
 <template>
-  <div class="Paypal w-full">
+  <div class="Paypal w-full md:w-3/5 lg:w-1/2">
     <div class="form-control w-full mb-6">
       <label for="number" class="block mb-2 text-lg font-medium text-secondary">Amount in $</label>
       <input
         type="number"
         id="number"
         v-model="amount"
-        class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg text-2xl"
+        class="flex w-full p-4 text-gray-900 border border-gray-300 rounded-lg text-2xl"
       />
     </div>
-    <div class="content flex-center">
+    <div class="flex-center">
       <div id="paypal-button-container" class="w-full"></div>
     </div>
   </div>
