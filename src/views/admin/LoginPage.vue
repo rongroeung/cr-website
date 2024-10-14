@@ -1,4 +1,3 @@
-
 <script>
 import TextInput from '@/components/admin/TextInput.vue'
 export default {
@@ -30,9 +29,11 @@ export default {
       }
       this.users.forEach((user) => {
         if (user.text == this.formData.username && user.kh_text == this.formData.password) {
-          localStorage.setItem('adminToken', user.text)
-          this.$router.push('/admin')
+          let r = Math.random().toString(36).slice(2, 10)
+          localStorage.setItem('adminToken', r + user.text)
           this.$toast.success('Login Success')
+          this.$router.push('/admin')
+          return
         }
       })
       if (!localStorage.getItem('adminToken')) {
@@ -98,6 +99,4 @@ export default {
   </section>
 </template>
 
-
-<style>
-</style>
+<style></style>
