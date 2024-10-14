@@ -1,41 +1,51 @@
 <template>
   <div class="youtube-input">
     <div v-for="(youtubeItem, index) in youtube" :key="index" class="flex flex-col mb-2">
+      <b class="text-secondary">Youtube {{ index + 1 }}</b>
+
+      <TextInput id="title" label="Title" v-model="youtubeItem.title" :required="true" />
+
+      <!-- Title KH -->
+      <TextInput id="kh_title" label="Title Kh" v-model="youtubeItem.kh_title" :required="true" />
+
+      <!-- Video URL -->
       <TextInput
-        label="Title"
-        v-model="youtubeItem.title"
-        placeholder="YouTube Title"
-        :id="'youtube_title_' + index"
-      />
-      <TextInput
-        label="Video Link"
+        id="video_url"
+        label="Video URL"
         v-model="youtubeItem.video_url"
-        placeholder="Video URL"
-        :id="'youtube_video_url_' + index"
+        :required="true"
       />
+
+      <!-- Video Duration -->
       <TextInput
-        label="Duration"
+        id="duration"
+        label="Video Duration"
         v-model="youtubeItem.duration"
-        placeholder="Video Duration"
-        :id="'youtube_duration_' + index"
+        :required="true"
       />
+
+      <!-- Video Publish Date -->
       <TextInput
-        label="Publish Date"
+        id="publish_date"
+        label="Video Publish Date"
         v-model="youtubeItem.publish_date"
-        placeholder="Publish Date"
-        :id="'youtube_publish_date_' + index"
+        :required="true"
       />
+
+      <!-- Video Thumbnail Url -->
       <TextInput
-        label="Thumbnail URL"
+        id="thumbnail_url"
+        label="Video Thumbnail Url"
         v-model="youtubeItem.thumbnail_url"
-        placeholder="Thumbnail URL"
-        :id="'youtube_thumbnail_url_' + index"
+        :required="true"
       />
+
+      <!-- Video Thumbnail Describe -->
       <TextInput
-        label="Thumbnail Name"
+        id="thumbnail_name"
+        label="Video Thumbnail Describe"
         v-model="youtubeItem.thumbnail_name"
-        placeholder="Thumbnail Name"
-        :id="'youtube_thumbnail_name_' + index"
+        :required="true"
       />
       <ImagePreview
         :src="youtubeItem.thumbnail_url"
@@ -45,6 +55,7 @@
       <button
         v-if="removeAble"
         @click="$emit('remove', index)"
+        type="button"
         class="bg-red-500 text-white px-4 py-2 rounded my-4 w-24 ms-auto"
       >
         Remove

@@ -78,8 +78,9 @@ export default {
     <form @submit.prevent="submitForm" class="space-y-4">
       <TextInput id="id" label="Id" v-model="formData.id" :required="true" type="number" />
       <!-- Title -->
-      <!-- Title -->
       <TextInput id="title" label="Title" v-model="formData.title" :required="true" />
+
+      <!-- Title KH -->
 
       <TextInput id="kh_title" label="Title Kh" v-model="formData.kh_title" :required="true" />
 

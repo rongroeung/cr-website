@@ -1,4 +1,3 @@
-
 <script>
 import DescriptionInput from './DescriptionInput.vue'
 export default {
@@ -80,6 +79,4 @@ export default {
   </div>
 </template>
 
-
-<style>
-</style>
+<style></style>

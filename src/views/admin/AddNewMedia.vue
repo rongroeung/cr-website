@@ -7,7 +7,7 @@ export default {
   components: { AddNewMediaForm, SelectContentIds },
   mixins: [adminResizeIframeMixin],
   data() {
-    // this data and methods must have in a parent component that use SelectContentIds because we need to manage the data to form and iframe
+    // this data (selectedContentId, websiteUrl )and methods (handleSelectContentIds) must have in a parent component that use SelectContentIds because we need to manage the data to form and iframe
     return {
       selectedContentId: '01001001',
       websiteUrl: this.$websitePreviewUrl
@@ -25,7 +25,7 @@ export default {
   <section>
     <p class="text-2xl md:text-3xl text-center">Add new Media to existing content</p>
     <SelectContentIds @update:values="handleSelectContentIds" />
-    <div class="py-8 mx-auto flex text-center gap-4 h-full">
+    <div class="py-8 mx-auto flex text-center gap-4 h-screen max-h-90rem">
       <!-- Left Column -->
       <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
         <AddNewMediaForm

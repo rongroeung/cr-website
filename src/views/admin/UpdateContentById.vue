@@ -28,7 +28,7 @@ export default {
 
     <SelectContentIds @update:values="handleSelectContentIds" />
 
-    <div class="py-8 mx-auto flex flex-row text-center gap-4 h-full mt-6">
+    <div class="py-8 mx-auto flex flex-row text-center gap-4 h-screen max-h-90rem mt-6">
       <!-- Left Column -->
       <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
         <UpdateDataForm

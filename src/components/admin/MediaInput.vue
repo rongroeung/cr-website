@@ -1,6 +1,7 @@
 <template>
   <div class="media-input">
     <div v-for="(mediaItem, index) in media" :key="index" class="flex flex-col mb-2">
+      <b class="text-secondary">Media {{ index + 1 }}</b>
       <TextInput
         label="Url"
         v-model="mediaItem.url"
