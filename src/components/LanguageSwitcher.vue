@@ -26,13 +26,23 @@ watchEffect(() => {
 
 <template>
   <div class="LanguageSwitcher">
-    <div class="language mr-2" :class="select('kh') ? disableClass : ''">
+    <div
+      @click="setLanguage('kh')"
+      :disabled="select('kh')"
+      class="language mr-2"
+      :class="select('kh') ? disableClass : ''"
+    >
       <img loading="lazy" src="../assets/img/kh-flag.png" />
-      <button @click="setLanguage('kh')" :disabled="select('kh')">ភាសាខ្មែរ</button>
+      <button>ភាសាខ្មែរ</button>
     </div>
-    <div class="language" :class="select('en') ? disableClass : ''">
+    <div
+      @click="setLanguage('en')"
+      :disabled="select('en')"
+      class="language"
+      :class="select('en') ? disableClass : ''"
+    >
       <img loading="lazy" src="../assets/img/us-flag.png" />
-      <button @click="setLanguage('en')" :disabled="select('en')">English</button>
+      <button>English</button>
     </div>
   </div>
 </template>

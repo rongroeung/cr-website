@@ -89,7 +89,7 @@ export default {
         </div>
         <button
           type="submit"
-          class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded text-sm w-full px-5 py-2.5"
+          class="text-white bg-green-600 hover:bg-green-700 font-medium rounded text-sm w-full px-5 py-2.5"
         >
           Submit
         </button>
