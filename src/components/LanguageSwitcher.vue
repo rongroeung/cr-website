@@ -7,6 +7,10 @@ const { locale } = useI18n()
 const disableClass = 'cursor-not-allowed	text-gray-500'
 
 const setLanguage = (newLang) => {
+  const storedLang = localStorage.getItem('lang')
+  if (storedLang == newLang) {
+    return
+  }
   locale.value = newLang
   localStorage.setItem('lang', newLang)
   window.location.reload()
@@ -32,8 +36,8 @@ watchEffect(() => {
       class="language mr-2"
       :class="select('kh') ? disableClass : ''"
     >
-      <img loading="lazy" src="../assets/img/kh-flag.png" />
-      <button>ភាសាខ្មែរ</button>
+      <img :disabled="select('kh')" loading="lazy" src="../assets/img/kh-flag.png" />
+      <button :disabled="select('kh')">ភាសាខ្មែរ</button>
     </div>
     <div
       @click="setLanguage('en')"
@@ -41,8 +45,8 @@ watchEffect(() => {
       class="language"
       :class="select('en') ? disableClass : ''"
     >
-      <img loading="lazy" src="../assets/img/us-flag.png" />
-      <button>English</button>
+      <img :disabled="select('en')" loading="lazy" src="../assets/img/us-flag.png" />
+      <button :disabled="select('en')">English</button>
     </div>
   </div>
 </template>

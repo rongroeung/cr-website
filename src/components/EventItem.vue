@@ -43,7 +43,7 @@ export default {
 
     <!-- Location -->
     <div class="flex items-center text-gray-600 mb-3">
-      <img src="../assets/icon/location.svg" alt="click icon" />
+      <img src="../assets/icon/location.svg" alt="click icon" class="mr-2" />
       <span>{{ section.sub_title }}</span>
     </div>
 
