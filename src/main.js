@@ -23,8 +23,8 @@ const app = createApp(App)
 app.config.globalProperties.$backendUrl =
   'https://crossroadscambodia.church:7002/cr-web-backend/api/v1/'
 
-app.config.globalProperties.$numberOfSundaySermonPerPage = 2
-app.config.globalProperties.$numberOfNewsAndEventsItemPerPage = 1
+app.config.globalProperties.$numberOfSundaySermonPerPage = 8
+app.config.globalProperties.$numberOfNewsAndEventsItemPerPage = 4
 app.config.globalProperties.$websitePreviewUrl = window.location.origin
 app.config.globalProperties.$content_ids_mapper = {
   '01': '/',

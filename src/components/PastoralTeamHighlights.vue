@@ -26,9 +26,8 @@ export default {
     <div class="w-4/5 mb-6">
       <p
         class="w-full md:w-2/4 text-center md:text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
-      >
-        Pastoral Team
-      </p>
+        v-t="'pastoral-team'"
+      ></p>
     </div>
     <div v-if="section6" class="section6 w-4/5 flex flex-row flex-wrap justify-center gap-6">
       <div v-for="item in section6" :key="item.id">
