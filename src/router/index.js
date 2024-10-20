@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { getItemWithExpiry } from '@/util/mixin.js'
 import HomePage from '../views/HomePage.vue'
 import AboutPage from '../views/AboutPage.vue'
 import CampusMinistryPage from '../views/CampusMinistryPage.vue'
@@ -247,7 +248,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem('adminToken');
+  // const token = localStorage.getItem('adminToken');
+  const token = getItemWithExpiry('adminToken');
   if (to.path.startsWith('/admin') && !token) {
     next('/login'); // Redirect to login if not authenticated
   } else {

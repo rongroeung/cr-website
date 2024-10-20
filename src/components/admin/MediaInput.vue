@@ -1,6 +1,8 @@
 <template>
-  <div class="media-input">
-    <div v-for="(mediaItem, index) in media" :key="index" class="flex flex-col mb-2">
+  <div class="media-input flex flex-col border-rounded-sub-primary">
+    <label class="font-medium text-center text-2xl">Media</label>
+
+    <div v-for="(mediaItem, index) in media" :key="index" class="mb-2 p-3">
       <b class="text-secondary">Media {{ index + 1 }}</b>
       <TextInput
         label="Url"
@@ -15,14 +17,16 @@
         :id="'media_name_' + index"
       />
       <ImagePreview :src="mediaItem.url" :alt="mediaItem.name" class="mt-2" />
-      <button
-        v-if="removeAble"
-        @click="$emit('remove', index)"
-        type="button"
-        class="bg-red-500 text-white px-4 py-2 rounded my-4 w-24 ms-auto"
-      >
-        Remove
-      </button>
+      <div class="w-full flex items-end my-4">
+        <button
+          v-if="removeAble"
+          @click="$emit('remove', index)"
+          type="button"
+          class="bg-red-500 text-white px-4 py-2 rounded w-24 ms-auto"
+        >
+          Remove
+        </button>
+      </div>
     </div>
   </div>
 </template>

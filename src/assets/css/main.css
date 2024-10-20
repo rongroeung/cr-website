@@ -144,3 +144,9 @@ p {
 .border-1 {
   border: 1px solid var(--text-color);
 }
+
+.border-rounded-sub-primary{
+  border: 2px solid var(--sub-primary-color);
+  border-radius: 0.25rem;
+}
+

@@ -3,9 +3,10 @@ import TextInput from './TextInput.vue'
 import TextareaInput from './TextareaInput.vue'
 import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
+import DescriptionInput from './DescriptionInput.vue'
 export default {
   name: 'UpdateDataForm',
-  components: { TextInput, TextareaInput, MediaInput, YouTubeInput },
+  components: { TextInput, TextareaInput, MediaInput, YouTubeInput, DescriptionInput },
   props: {
     contentId: String
   },
@@ -76,18 +77,11 @@ export default {
       />
 
       <!-- Description -->
-      <div v-if="formData.description.length" class="flex flex-col">
-        <label class="font-medium text-primary">Description</label>
-        <div v-for="(desc, index) in formData.description" :key="index" class="flex flex-col mb-2">
-          <TextareaInput v-if="desc.text" id="description" label="English" v-model="desc.text" />
-          <TextareaInput
-            v-if="desc.kh_text"
-            id="kh_description"
-            label="Khmer"
-            v-model="desc.kh_text"
-          />
-        </div>
-      </div>
+      <DescriptionInput
+        v-if="formData.description.length"
+        :description="formData.description"
+        :remove-able="false"
+      />
 
       <!-- Media -->
       <MediaInput v-if="formData.media.length" :media="formData.media" />

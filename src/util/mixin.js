@@ -69,6 +69,29 @@ const adminResizeIframeMixin = {
   }
 }
 
+function setItemWithExpiry(key, value, ttl) {
+  const now = new Date();
+  const item = {
+    value: value,
+    expiry: now.getTime() + ttl,  // ttl is in milliseconds
+  };
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+function getItemWithExpiry(key) {
+  const itemStr = localStorage.getItem(key);
+  if (!itemStr) {
+    return null;
+  }
+  const item = JSON.parse(itemStr);
+  const now = new Date();
+  if (now.getTime() > item.expiry) {
+    localStorage.removeItem(key);
+    return null;
+  }
+  return item.value;
+}
+
 const fetchDataMixin = {
   methods: {
     filterContentStartWithId(contentIds, sectionPrefix) {
@@ -88,9 +111,6 @@ const fetchDataMixin = {
       const lang = localStorage.getItem('lang') || 'en'
       const buildUrl = this.$backendUrl + 'getContentById?id=' + content_id + '&lang=' + lang
       // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/getContentById?id=01001001&lang=en
-
-      // return fall back data base on id
-      // return fallbackData.find((data) => data.id == content_id)
 
       try {
         const response = await axios({
@@ -250,4 +270,6 @@ const fetchDataMixin = {
   }
 }
 
-export { windowResizeMixin, fetchDataMixin, adminResizeIframeMixin }
+
+
+export { windowResizeMixin, fetchDataMixin, adminResizeIframeMixin, setItemWithExpiry, getItemWithExpiry }

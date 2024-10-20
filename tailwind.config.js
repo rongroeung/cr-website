@@ -27,6 +27,9 @@ export default {
         '90rem': '90rem',
         'screen-75': '75vh',
       },
+      minHeight: {
+        '90rem': '90rem',
+      },
       width: {
         '49': '49%',
         '35rem': '35rem',

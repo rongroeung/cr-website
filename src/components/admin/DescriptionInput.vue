@@ -1,6 +1,8 @@
 <template>
-  <div class="description-input">
+  <div class="description-input flex flex-col w-full p-3 border-rounded-sub-primary">
+    <label class="font-medium text-center text-2xl">Description</label>
     <div v-for="(desc, index) in description" :key="index" class="flex flex-col mb-2">
+      <b class="text-secondary">Description {{ index + 1 }}</b>
       <TextareaInput label="English" v-model="desc.text" :id="'description' + index" />
       <TextareaInput label="Khmer" v-model="desc.kh_text" :id="'kh_description' + index" />
       <button

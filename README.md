@@ -323,10 +323,8 @@ We sometimes tent to create a global variable to use across application so that 
 `src/main.js`
 
     // Register data //
-    import fallbackData from '@/util/fallbackData'
 
     app.config.globalProperties.$backendUrl = 'http://38.47.39.132:7001/'
-    app.config.globalProperties.$fallbackData = fallbackData
 
 We simply access global variable by keyword `this.`
 

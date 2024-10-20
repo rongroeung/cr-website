@@ -1,6 +1,7 @@
 <template>
-  <div class="youtube-input">
-    <div v-for="(youtubeItem, index) in youtube" :key="index" class="flex flex-col mb-2">
+  <div class="youtube-input flex flex-col border-rounded-sub-primary">
+    <label class="font-medium text-center text-2xl">Youtube</label>
+    <div v-for="(youtubeItem, index) in youtube" :key="index" class="mb-2 p-3">
       <b class="text-secondary">Youtube {{ index + 1 }}</b>
 
       <TextInput id="title" label="Title" v-model="youtubeItem.title" :required="true" />
@@ -52,14 +53,16 @@
         :alt="youtubeItem.thumbnail_name"
         class="mt-2"
       />
-      <button
-        v-if="removeAble"
-        @click="$emit('remove', index)"
-        type="button"
-        class="bg-red-500 text-white px-4 py-2 rounded my-4 w-24 ms-auto"
-      >
-        Remove
-      </button>
+      <div class="w-full flex items-end my-4">
+        <button
+          v-if="removeAble"
+          @click="$emit('remove', index)"
+          type="button"
+          class="bg-red-500 text-white px-4 py-2 w-24 rounded ms-auto"
+        >
+          Remove
+        </button>
+      </div>
     </div>
   </div>
 </template>

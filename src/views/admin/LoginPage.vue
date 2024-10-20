@@ -1,5 +1,6 @@
 <script>
 import TextInput from '@/components/admin/TextInput.vue'
+import { setItemWithExpiry, getItemWithExpiry } from '@/util/mixin'
 export default {
   name: 'LoginPage',
   components: { TextInput },
@@ -30,13 +31,13 @@ export default {
       this.users.forEach((user) => {
         if (user.text == this.formData.username && user.kh_text == this.formData.password) {
           let r = Math.random().toString(36).slice(2, 10)
-          localStorage.setItem('adminToken', r + user.text)
+          setItemWithExpiry('adminToken', `${r}${user.text}`, 86400000) // 1 day in milliseconds
           this.$toast.success('Login Success')
           this.$router.push('/admin')
           return
         }
       })
-      if (!localStorage.getItem('adminToken')) {
+      if (!getItemWithExpiry('adminToken')) {
         this.$toast.error('Login Failed')
       }
       this.disableSubmit = false

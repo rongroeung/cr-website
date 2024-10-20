@@ -89,57 +89,48 @@ export default {
       <TextInput id="kh_sub_title" label="Sub Title Kh" v-model="formData.kh_sub_title" />
 
       <!-- Description -->
-      <div class="flex flex-col">
-        <label class="font-medium">Description</label>
-        <DescriptionInput
-          v-if="formData.description.length"
-          :description="formData.description"
-          :remove-able="true"
-          @remove="removeDescription"
-        />
-        <button
-          type="button"
-          @click="addNewDesc()"
-          class="bg-green-500 text-white px-4 py-2 rounded"
-        >
-          Add new description
-        </button>
-      </div>
+      <DescriptionInput
+        v-if="formData.description.length"
+        :description="formData.description"
+        :remove-able="true"
+        @remove="removeDescription"
+      />
+      <button
+        type="button"
+        @click="addNewDesc()"
+        class="bg-green-500 text-white px-4 py-2 rounded w-full"
+      >
+        Add new description
+      </button>
 
       <!-- Media -->
-      <div class="flex flex-col">
-        <label class="font-medium">Media</label>
-        <MediaInput
-          v-if="formData.media.length"
-          :media="formData.media"
-          :remove-able="true"
-          @remove="removeMedia"
-        />
-        <button
-          type="button"
-          @click="addNewMedia()"
-          class="bg-green-500 text-white px-4 py-2 rounded"
-        >
-          Add new media
-        </button>
-      </div>
+      <MediaInput
+        v-if="formData.media.length"
+        :media="formData.media"
+        :remove-able="true"
+        @remove="removeMedia"
+      />
+      <button
+        type="button"
+        @click="addNewMedia()"
+        class="bg-green-500 text-white px-4 py-2 rounded w-full"
+      >
+        Add new media
+      </button>
 
-      <div class="flex flex-col">
-        <label class="font-medium">Youtube</label>
-        <YouTubeInput
-          v-if="formData.youtube.length"
-          :youtube="formData.youtube"
-          :remove-able="true"
-          @remove="removeYoutube"
-        />
-        <button
-          type="button"
-          @click="addNewYoutube()"
-          class="bg-green-500 text-white px-4 py-2 rounded"
-        >
-          Add new youtube
-        </button>
-      </div>
+      <YouTubeInput
+        v-if="formData.youtube.length"
+        :youtube="formData.youtube"
+        :remove-able="true"
+        @remove="removeYoutube"
+      />
+      <button
+        type="button"
+        @click="addNewYoutube()"
+        class="bg-green-500 text-white px-4 py-2 rounded w-full"
+      >
+        Add new youtube
+      </button>
       <div class="w-full flex flex-col items-end">
         <p v-if="disableSubmit">Loading...</p>
         <button
