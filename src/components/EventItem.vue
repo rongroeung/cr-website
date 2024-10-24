@@ -50,7 +50,7 @@ export default {
     <!-- Description -->
     <div class="ps-1">
       <template v-for="(description, index) in section.description" :key="index">
-        <div v-if="index == 1" :class="dynamicClass">
+        <div v-if="index !== 0" :class="dynamicClass">
           <div class="text-sm leading-6 md:leading-8 md:text-lg">
             {{ description.text }}
           </div>
