@@ -10,17 +10,20 @@ export default {
       section1: null,
       contentIds: null,
       ItemToBeShow: null,
-      currentPage: 1
+      currentPage: 1,
+      selectedOption: 'date-desc'
     }
   },
   async created() {
     this.section1 = await this.getContentById('22001001')
-    // Fetch all content IDs
-    const response = await this.getAllContentId()
-
-    this.contentIds = this.filterContentStartWithId(response.content_id, '22002')
-
-    this.fetchItem()
+    this.onCreateProcess()
+  },
+  watch: {
+    selectedOption(oldValue, newValue) {
+      if (oldValue != newValue) {
+        this.onCreateProcess()
+      }
+    }
   },
   computed: {
     totalItem() {
@@ -39,13 +42,18 @@ export default {
   methods: {
     onSelectPage(page) {
       this.currentPage = page
-      console.log(this.currentPage)
-
       this.fetchItem()
     },
     async fetchItem() {
       this.ItemToBeShow = await this.fetchContentByIds(this.IdItemsToBeShow)
-      console.log(this.ItemToBeShow)
+    },
+    async onCreateProcess() {
+      // Fetch all content IDs
+      const response = await this.getAllContentId(this.selectedOption)
+
+      this.contentIds = this.filterContentStartWithId(response.content_id, '22002')
+
+      this.fetchItem()
     }
   }
 }
@@ -56,7 +64,18 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="bg-cr-gray w-full h-full flex-col flex-center">
-      <div class="w-4/5 flex justify-center items-start flex-row flex-wrap mt-14">
+      <div class="w-4/5 flex items-center mb-4 mt-8 justify-end">
+        <p class="text-black text-md mr-3">Sort by:</p>
+        <select
+          id="sort"
+          v-model="selectedOption"
+          class="text-white bg-secondary font-medium rounded-lg text-sm px-3 py-2 text-center flex-center"
+        >
+          <option value="date-desc" selected>Newest</option>
+          <option value="date-asc">Oldest</option>
+        </select>
+      </div>
+      <div class="w-full md:w-4/5 flex justify-center items-start flex-row flex-wrap mt-0">
         <template v-for="section in ItemToBeShow" :key="section.id">
           <EventItem :section="section" />
         </template>
@@ -68,4 +87,4 @@ export default {
   </section>
 </template>
 
-<script scoped></script>
+<style scoped></style>

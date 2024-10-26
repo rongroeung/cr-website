@@ -9,12 +9,21 @@ export default {
     return {
       section1: null,
       section2: null,
-      currentPage: 1
+      currentPage: 1,
+      selectedOption: 'newest'
     }
   },
   async created() {
     this.section1 = await this.getContentById('21001001')
-    this.section2 = await this.getContentById('21002001')
+    // fetch and sort Item
+    this.processSortYoutube()
+  },
+  watch: {
+    selectedOption(oldValue, newValue) {
+      if (oldValue != newValue) {
+        this.processSortYoutube()
+      }
+    }
   },
   computed: {
     totalItem() {
@@ -34,6 +43,18 @@ export default {
   methods: {
     onSelectPage(page) {
       this.currentPage = page
+    },
+    async processSortYoutube() {
+      this.section2 = await this.getContentById('21002001')
+      if (this.selectedOption == 'newest') {
+        this.section2.youtube.sort((a, b) => {
+          return new Date(b.publish_date) - new Date(a.publish_date)
+        })
+      } else {
+        this.section2.youtube.sort((a, b) => {
+          return new Date(a.publish_date) - new Date(b.publish_date)
+        })
+      }
     }
   }
 }
@@ -45,7 +66,18 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="bg-cr-gray w-full h-full flex-col flex-center">
-      <div v-if="section2" class="flex-center flex-wrap gap-6 mt-20 mb-10">
+      <div class="w-4/5 flex items-center my-8 justify-end">
+        <p class="text-black text-md mr-3">Sort by:</p>
+        <select
+          id="sort"
+          v-model="selectedOption"
+          class="text-white bg-secondary font-medium rounded-lg text-sm px-3 py-2 text-center flex-center"
+        >
+          <option value="newest" selected>Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+      <div v-if="section2" class="flex-center flex-wrap gap-6 mb-10">
         <template v-for="video in ItemToBeShow" :key="video.id">
           <YoutubeCard :video="video" />
         </template>

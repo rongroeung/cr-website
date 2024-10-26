@@ -1,4 +1,28 @@
 import axios from 'axios'
+import moment from 'moment'
+import 'moment/locale/km';
+
+
+function formatDateForBackend(date) {
+  if (date == null) return;
+  return moment(date).format('YYYY-MM-DD HH:mm:ss') + '.000';
+}
+
+function formatDateForDateInput(date) {
+  if (date == null) return;
+  date.split(":00.000")
+  return moment(date).format('YYYY-MM-DDTHH:mm')
+}
+
+function formatDateForDisplay(date) {
+  if (date == null) return;
+
+  const lang = localStorage.getItem('lang');
+  if (lang === 'kh') {
+    moment.locale('km'); // Set Khmer locale
+  }
+  return moment(date).format('LLLL'); // Format the date
+}
 
 const windowResizeMixin = {
   data() {
@@ -171,9 +195,14 @@ const fetchDataMixin = {
       }
     },
 
-    async getAllContentId() {
-      const buildUrl = this.$backendUrl + 'getAllContentId'
+    async getAllContentId(sort = '') {
+      let buildUrl = this.$backendUrl + 'getAllContentId'
       // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/getAllContentId
+
+      // Add sort parameter if provided date-desc or date-asc
+      if (sort) {
+        buildUrl += '?sort=' + sort
+      }
 
       try {
         const response = await axios({
@@ -272,4 +301,4 @@ const fetchDataMixin = {
 
 
 
-export { windowResizeMixin, fetchDataMixin, adminResizeIframeMixin, setItemWithExpiry, getItemWithExpiry }
+export { windowResizeMixin, fetchDataMixin, adminResizeIframeMixin, setItemWithExpiry, getItemWithExpiry, formatDateForBackend, formatDateForDateInput, formatDateForDisplay }

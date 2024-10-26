@@ -4,6 +4,7 @@ import TextareaInput from './TextareaInput.vue'
 import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
 import DescriptionInput from './DescriptionInput.vue'
+import { formatDateForBackend, formatDateForDateInput, formatDateForDisplay } from '@/util/mixin'
 export default {
   name: 'UpdateDataForm',
   components: { TextInput, TextareaInput, MediaInput, YouTubeInput, DescriptionInput },
@@ -17,10 +18,12 @@ export default {
         id: '',
         title: '',
         sub_title: '',
+        create_time: '',
         description: [],
         media: [],
         youtube: []
-      }
+      },
+      dateInput: null
     }
   },
   methods: {
@@ -31,9 +34,23 @@ export default {
     },
     async getData() {
       this.formData = await this.getContentAllLangById(this.contentId)
-    },
-    isEmpty(data) {
-      return data || data == 'null'
+      if (this.formData.create_time != null) {
+        this.dateInput = formatDateForDateInput(this.formData.create_time)
+      }
+    }
+  },
+  computed: {
+    getDate() {
+      return this.dateInput == null
+        ? 'Preview Date'
+        : formatDateForDisplay(this.formData.create_time)
+    }
+  },
+  watch: {
+    dateInput(oldValue, newValue) {
+      if (oldValue != newValue) {
+        this.formData.create_time = formatDateForBackend(this.dateInput)
+      }
     }
   },
   async created() {
@@ -46,35 +63,30 @@ export default {
   <div class="text-left">
     <form @submit.prevent="submitForm" class="space-y-4">
       <!-- Title -->
-      <TextInput
-        v-if="formData.title"
-        id="title"
-        label="Title"
-        v-model="formData.title"
-        :required="true"
-      />
+      <TextInput id="title" label="Title" v-model="formData.title" :required="true" />
 
-      <TextInput
-        v-if="formData.kh_title"
-        id="kh_title"
-        label="Title Kh"
-        v-model="formData.kh_title"
-        :required="true"
-      />
+      <TextInput id="kh_title" label="Title Kh" v-model="formData.kh_title" :required="true" />
 
       <!-- Sub Title -->
-      <TextInput
-        v-if="isEmpty(formData.sub_title)"
-        id="sub_title"
-        label="Sub Title"
-        v-model="formData.sub_title"
-      />
-      <TextInput
-        v-if="isEmpty(formData.kh_sub_title)"
-        id="kh_sub_title"
-        label="Sub Title Kh"
-        v-model="formData.kh_sub_title"
-      />
+      <TextInput id="sub_title" label="Sub Title" v-model="formData.sub_title" />
+      <TextInput id="kh_sub_title" label="Sub Title Kh" v-model="formData.kh_sub_title" />
+
+      <!-- Create Time -->
+      <div class="flex flex-col mb-4">
+        <label for="create_time" class="font-medium mb-2">Date of News / Event</label>
+        <input
+          type="datetime-local"
+          id="create_time"
+          v-model="dateInput"
+          class="border rounded p-2"
+        />
+        <p
+          class="h-45-px border bg-white rounded mt-2 ps-2 flex items-center"
+          :class="{ 'opacity-50': !dateInput }"
+        >
+          {{ getDate }}
+        </p>
+      </div>
 
       <!-- Description -->
       <DescriptionInput

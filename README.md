@@ -138,13 +138,17 @@ i.e. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
 
 Url must include `/embed/`
 
-### Paypal `cliend_id`
+### Paypal
 
 We use paypal embeded button in our give page and it need `cliend_id`
 
 so `client_id` store in title field of `content_id` `19003001`
 
 QR code image for give page store in `media[0]` field of the same object which is `content_id` `19003001`
+
+### Sunday Sermons
+
+`Video Publish Date` must follow this format `17 June 2024` and `18 February 2024`
 
 ## Auto render content
 

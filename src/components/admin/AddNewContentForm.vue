@@ -3,15 +3,19 @@ import TextInput from './TextInput.vue'
 import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
 import DescriptionInput from './DescriptionInput.vue'
+
+import { formatDateForBackend, formatDateForDisplay } from '@/util/mixin'
 export default {
   name: 'AddNewContentForm',
   components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },
   props: {
+    // We get data model from parent because we need to display JSON format
     modelValue: Object
   },
   data() {
     return {
-      disableSubmit: false
+      disableSubmit: false,
+      dateInput: null
     }
   },
   computed: {
@@ -22,6 +26,9 @@ export default {
       set(formData) {
         this.$emit('update:modelValue', formData)
       }
+    },
+    getDate() {
+      return this.dateInput == null ? 'Preview Date' : formatDateForDisplay(this.dateInput)
     }
   },
   methods: {
@@ -68,6 +75,11 @@ export default {
         if (oldValue == newValue) return
         this.formData = this.modelValue
       }
+    },
+    dateInput(oldValue, newValue) {
+      if (oldValue != newValue) {
+        this.formData.create_time = formatDateForBackend(this.dateInput)
+      }
     }
   }
 }
@@ -87,6 +99,23 @@ export default {
       <!-- Sub Title -->
       <TextInput id="sub_title" label="Sub Title" v-model="formData.sub_title" />
       <TextInput id="kh_sub_title" label="Sub Title Kh" v-model="formData.kh_sub_title" />
+
+      <!-- Create Time -->
+      <div class="flex flex-col mb-4">
+        <label for="create_time" class="font-medium mb-2">Date of News / Event</label>
+        <input
+          type="datetime-local"
+          id="create_time"
+          v-model="dateInput"
+          class="border rounded p-2"
+        />
+        <p
+          class="h-45-px border bg-white rounded mt-2 ps-2 flex items-center"
+          :class="{ 'opacity-50': !dateInput }"
+        >
+          {{ getDate }}
+        </p>
+      </div>
 
       <!-- Description -->
       <DescriptionInput

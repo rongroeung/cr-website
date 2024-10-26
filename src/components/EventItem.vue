@@ -1,4 +1,5 @@
 <script>
+import { formatDateForDisplay } from '@/util/mixin.js'
 export default {
   name: 'EventItem',
   props: {
@@ -11,6 +12,9 @@ export default {
         this.isLongDescription(content.text)
       )
       return hasLongDescription ? 'mb-4' : 'mb-2'
+    },
+    getDate() {
+      return formatDateForDisplay(this.section.create_time)
     }
   },
   methods: {
@@ -36,9 +40,9 @@ export default {
     />
 
     <!-- Date -->
-    <div class="flex items-center text-gray-600">
+    <div class="flex items-center text-gray-600 mb-2">
       <img src="../assets/icon/clock.svg" alt="click icon" class="mr-2" />
-      <span>{{ section.description[0].text }}</span>
+      <span>{{ getDate }}</span>
     </div>
 
     <!-- Location -->
@@ -50,10 +54,8 @@ export default {
     <!-- Description -->
     <div class="ps-1">
       <template v-for="(description, index) in section.description" :key="index">
-        <div v-if="index !== 0" :class="dynamicClass">
-          <div class="text-sm leading-6 md:leading-8 md:text-lg">
-            {{ description.text }}
-          </div>
+        <div class="text-sm leading-6 md:leading-8 md:text-lg" :class="dynamicClass">
+          {{ description.text }}
         </div>
       </template>
     </div>
