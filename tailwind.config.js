@@ -15,6 +15,10 @@ export default {
         'sub-secondary': '#01153a'
       },
       height: {
+        '13.43rem': '13.43rem',
+        '14.7rem': '14.7rem',
+        '21rem': '21rem',
+        '25.25rem': '25.25rem',
         '30rem': '30rem',
         '35rem': '35rem',
         '45rem': '45rem',

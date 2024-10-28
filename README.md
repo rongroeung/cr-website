@@ -249,6 +249,16 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
     style (formatting, missing semi colons, etc; no code change)
     refactor (refactoring production code)
 
+## Image Sizing
+
+>   1550 x 1050
+
+    h-full w-full lg:w-49 h-14.7rem md:h-25.25rem object-cover
+
+>   1024 x 576
+
+    h-full w-full h-13.43rem md:h-21rem object-cover
+
 ## Text Styling
 
 > For normal paragraph text

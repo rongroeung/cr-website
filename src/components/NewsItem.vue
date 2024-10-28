@@ -36,11 +36,11 @@ export default {
     <img
       :src="section.media[0].url"
       :alt="section.media[0].name"
-      class="w-full max-w-4xl object-cover rounded-lg shadow-lg mb-6"
+      class="w-full h-13.43rem md:h-25.25rem object-cover rounded-lg shadow-lg"
     />
 
     <!-- Date -->
-    <div class="flex items-center text-gray-600 mb-4">
+    <div class="flex items-center text-gray-600 mb-4 mt-6">
       <img src="../assets/icon/clock.svg" alt="click icon" class="mr-2" />
       <span>{{ getDate }}</span>
     </div>
