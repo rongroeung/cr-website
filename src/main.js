@@ -22,6 +22,8 @@ const app = createApp(App)
 // Bind global variable //
 app.config.globalProperties.$backendUrl =
   'https://crossroadscambodia.church:7002/cr-web-backend/api/v1/'
+app.config.globalProperties.$logoUrl =
+  'https://crossroadscambodia.church:7004/filebrowser/api/public/dl/L6DbQPV9/base-content/cr-photos/cr-logo-001.png?inline=true'
 
 app.config.globalProperties.$numberOfSundaySermonPerPage = 8
 app.config.globalProperties.$numberOfNewsAndEventsItemPerPage = 4

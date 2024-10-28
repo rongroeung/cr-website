@@ -50,7 +50,7 @@ export default {
   <section class="bg-secondary h-screen w-full flex-center flex-col text-white">
     <div class="flex-center mb-10">
       <img
-        src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
+        :src="this.$logoUrl"
         alt="Crossroads Church Logo"
         class="w-auto h-24 cursor-pointer"
         @click="onClickLogo()"

@@ -44,11 +44,7 @@ export default {
 
       <nav :class="{ hidden: isCollapsed }" class="admin-nav-inner">
         <div class="navbar-logo-mobile">
-          <img
-            src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
-            alt="Crossroads Church Logo"
-            @click="onClickLogo()"
-          />
+          <img :src="this.$logoUrl" alt="Crossroads Church Logo" @click="onClickLogo()" />
         </div>
         <ul>
           <template v-for="navigation in navigationItems" :key="navigation">

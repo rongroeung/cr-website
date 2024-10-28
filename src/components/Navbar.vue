@@ -107,11 +107,7 @@ export default {
         </svg>
       </div>
       <div class="navbar-logo-mobile">
-        <img
-          src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
-          alt="Crossroads Church Logo"
-          @click="onClickLogo()"
-        />
+        <img :src="this.$logoUrl" alt="Crossroads Church Logo" @click="onClickLogo()" />
       </div>
       <label for="sidebar-active" class="open-sidebar-button">
         <svg
@@ -141,12 +137,7 @@ export default {
         </svg>
       </label>
       <div class="navbar-logo-desktop">
-        <img
-          loading="lazy"
-          src="https://crossroadscambodia.church/cr-drive/cr-photos/cr-logo-001.png"
-          alt=""
-          @click="onClickLogoOnSideNav()"
-        />
+        <img loading="lazy" :src="this.$logoUrl" alt="" @click="onClickLogoOnSideNav()" />
       </div>
       <div class="dropdown-menu">
         <span class="dropdown-menu-inline" @click="handleNavbarClick('about')">
