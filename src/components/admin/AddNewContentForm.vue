@@ -48,7 +48,7 @@ export default {
       this.formData.description.splice(id, 1)
     },
     addNewMedia() {
-      this.formData.media.push({ url: '', name: '' })
+      this.formData.media.push({ url: '', name: '', note: '' })
     },
     removeMedia(id) {
       this.formData.media.splice(id, 1)

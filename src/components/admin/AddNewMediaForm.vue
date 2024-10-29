@@ -15,7 +15,8 @@ export default {
         media: [
           {
             url: '',
-            name: ''
+            name: '',
+            note: ''
           }
         ]
       }
@@ -28,7 +29,7 @@ export default {
       this.disableSubmit = false
     },
     addNewMedia() {
-      this.formData.media.push({ url: '', name: '' })
+      this.formData.media.push({ url: '', name: '', note: '' })
     },
     removeMedia(id) {
       this.formData.media.splice(id, 1)
@@ -57,7 +58,7 @@ export default {
         <button
           type="button"
           @click="addNewMedia()"
-          class="bg-green-500 text-white px-4 py-2 rounded"
+          class="bg-green-500 text-white px-4 py-2 rounded mt-4"
         >
           Add new media
         </button>
