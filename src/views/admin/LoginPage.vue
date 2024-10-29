@@ -56,8 +56,8 @@ export default {
         @click="onClickLogo()"
       />
     </div>
-    <div class="md:w-80 bg-gray mb-24">
-      <form class="max-w-md" @submit.prevent="submitForm">
+    <div class="w-80 bg-gray mb-24">
+      <form @submit.prevent="submitForm">
         <div class="mb-5">
           <TextInput
             id="username"

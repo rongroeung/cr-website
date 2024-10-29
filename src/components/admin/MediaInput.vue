@@ -16,6 +16,12 @@
         placeholder="Media Name"
         :id="'media_name_' + index"
       />
+      <TextInput
+        label="Note"
+        v-model="mediaItem.note"
+        placeholder="Media note"
+        :id="'media_note_' + index"
+      />
       <ImagePreview :src="mediaItem.url" :alt="mediaItem.name" class="mt-2" />
       <div class="w-full flex items-end my-4">
         <button
