@@ -98,7 +98,7 @@ p {
   max-height: 180px;
 }
 
-.h-45-px{
+.h-45-px {
   height: 45.2px;
 }
 .w-17rem {
@@ -148,8 +148,7 @@ p {
   border: 1px solid var(--text-color);
 }
 
-.border-rounded-sub-primary{
+.border-rounded-sub-primary {
   border: 2px solid var(--sub-primary-color);
   border-radius: 0.25rem;
 }
-

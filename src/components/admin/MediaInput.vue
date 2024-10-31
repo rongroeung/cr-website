@@ -39,7 +39,7 @@
 
 <script>
 import TextInput from './TextInput.vue'
-import ImagePreview from '../ImagePreview.vue'
+import ImagePreview from '@/components/ImagePreview.vue'
 
 export default {
   props: {

@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: 'SelectContentIds',
@@ -52,7 +51,6 @@ export default {
 }
 </script>
 
-
 <template>
   <div class="SelectContentIds dropdown-form mt-8">
     <form class="max-w-sm mx-auto">
@@ -70,5 +68,4 @@ export default {
   </div>
 </template>
 
-<style>
-</style>
+<style></style>

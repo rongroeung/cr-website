@@ -1,9 +1,6 @@
 <script>
-import ContentSection from '../components/ContentSection.vue'
-import PageHeader from '../components/PageHeader.vue'
 export default {
   name: 'MinistriesPage',
-  components: { ContentSection, PageHeader },
   data() {
     return {
       section1: null,

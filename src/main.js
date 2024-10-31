@@ -2,12 +2,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // Register plugin
-import router from './router'
 import 'flowbite'
-import i18n from '../src/lang/index'
-import './assets/css/main.css'
-import ToastPlugin from 'vue-toast-notification'
 import 'vue-toast-notification/dist/theme-bootstrap.css'
+import ToastPlugin from 'vue-toast-notification'
+
+import router from '@/router'
+import i18n from '@/lang'
+import '@/assets/css/main.css'
 
 // Register data //
 
@@ -15,7 +16,9 @@ import 'vue-toast-notification/dist/theme-bootstrap.css'
 import { fetchDataMixin } from '@/util/mixin'
 
 // Register global component //
-import ImagePreview from './components/ImagePreview.vue'
+import ImagePreview from '@/components/ImagePreview.vue'
+import ContentSection from '@/components/ContentSection.vue'
+import PageHeader from '@/components/PageHeader.vue'
 
 const app = createApp(App)
 
@@ -55,9 +58,10 @@ app.config.globalProperties.$content_ids_mapper = {
   24: '/contact/'
 }
 
-
 // Bind global component //
 app.component('ImagePreview', ImagePreview)
+app.component('ContentSection', ContentSection)
+app.component('PageHeader', PageHeader)
 
 app.use(ToastPlugin)
 app.use(router)

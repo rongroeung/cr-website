@@ -1,27 +1,26 @@
 import axios from 'axios'
 import moment from 'moment'
-import 'moment/locale/km';
-
+import 'moment/locale/km'
 
 function formatDateForBackend(date) {
-  if (date == null) return;
-  return moment(date).format('YYYY-MM-DD HH:mm:ss') + '.000';
+  if (date == null) return
+  return moment(date).format('YYYY-MM-DD HH:mm:ss') + '.000'
 }
 
 function formatDateForDateInput(date) {
-  if (date == null) return;
-  date.split(":00.000")
+  if (date == null) return
+  date.split(':00.000')
   return moment(date).format('YYYY-MM-DDTHH:mm')
 }
 
 function formatDateForDisplay(date) {
-  if (date == null) return;
+  if (date == null) return
 
-  const lang = localStorage.getItem('lang');
+  const lang = localStorage.getItem('lang')
   if (lang === 'kh') {
-    moment.locale('km'); // Set Khmer locale
+    moment.locale('km') // Set Khmer locale
   }
-  return moment(date).format('LLLL'); // Format the date
+  return moment(date).format('LLLL') // Format the date
 }
 
 const windowResizeMixin = {
@@ -94,26 +93,26 @@ const adminResizeIframeMixin = {
 }
 
 function setItemWithExpiry(key, value, ttl) {
-  const now = new Date();
+  const now = new Date()
   const item = {
     value: value,
-    expiry: now.getTime() + ttl,  // ttl is in milliseconds
-  };
-  localStorage.setItem(key, JSON.stringify(item));
+    expiry: now.getTime() + ttl // ttl is in milliseconds
+  }
+  localStorage.setItem(key, JSON.stringify(item))
 }
 
 function getItemWithExpiry(key) {
-  const itemStr = localStorage.getItem(key);
+  const itemStr = localStorage.getItem(key)
   if (!itemStr) {
-    return null;
+    return null
   }
-  const item = JSON.parse(itemStr);
-  const now = new Date();
+  const item = JSON.parse(itemStr)
+  const now = new Date()
   if (now.getTime() > item.expiry) {
-    localStorage.removeItem(key);
-    return null;
+    localStorage.removeItem(key)
+    return null
   }
-  return item.value;
+  return item.value
 }
 
 const fetchDataMixin = {
@@ -299,6 +298,13 @@ const fetchDataMixin = {
   }
 }
 
-
-
-export { windowResizeMixin, fetchDataMixin, adminResizeIframeMixin, setItemWithExpiry, getItemWithExpiry, formatDateForBackend, formatDateForDateInput, formatDateForDisplay }
+export {
+  windowResizeMixin,
+  fetchDataMixin,
+  adminResizeIframeMixin,
+  setItemWithExpiry,
+  getItemWithExpiry,
+  formatDateForBackend,
+  formatDateForDateInput,
+  formatDateForDisplay
+}

@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: 'ContactItem',
@@ -35,6 +34,4 @@ export default {
   </div>
 </template>
 
-
-<style>
-</style>
+<style></style>

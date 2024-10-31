@@ -1,11 +1,9 @@
 <script>
-import PageHeader from '@/components/PageHeader.vue'
-import ContentSection from '@/components/ContentSection.vue'
-import ContactItem from './ContactItem.vue'
+import ContactItem from '@/views/ContactItem.vue'
 import VolunteerForm from '@/components/VolunteerForm.vue'
 export default {
   name: 'VolunteerPage',
-  components: { PageHeader, ContentSection, ContactItem, VolunteerForm },
+  components: { ContactItem, VolunteerForm },
   data() {
     return {
       section1: null,

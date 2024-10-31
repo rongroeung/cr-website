@@ -1,7 +1,7 @@
 <script>
-import AddNewDescriptionForm from '../../components/admin/AddNewDescriptionForm.vue'
+import AddNewDescriptionForm from '@/components/admin/AddNewDescriptionForm.vue'
 import { adminResizeIframeMixin } from '@/util/mixin'
-import SelectContentIds from '../../components/SelectContentIds.vue'
+import SelectContentIds from '@/components/SelectContentIds.vue'
 
 export default {
   name: 'AddNewDescription',

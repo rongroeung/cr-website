@@ -7,18 +7,18 @@
 | Content                                            | Description                                |
 | -------------------------------------------------- | ------------------------------------------ |
 | [Website Admin and Eligibility](#crossroads-admin) | For Admin User                             |
-| [Special Page](#special-page)                      | Page with different structure of data       |
+| [Special Page](#special-page)                      | Page with different structure of data      |
 | [Auto render content](#auto-render-content)        | Content that render without need of coding |
 | [Project Setup](#project-setup)                    | Initialize development environment         |
 | [Project Plugin](#project-plugin)                  | Essential dependency for project           |
 | [Folder Structure](#folder-structure)              | Project structure                          |
 | [Commit Message](#commit-message)                  | Convention for commit message              |
-| [Text Sizing](#text-styling)                       | Global class for text size                 |
+| [Global Sizing](#global-styling)                   | Global class for text, image size          |
 | [Global Properties](#global-properties)            | Global css, variable, mixin, component     |
 
 ## Crossroads Admin
 
-We allow website admin to make change to most of the data via admin panel https://crossroadscambodia.church/admin
+We allow website admin to make change to most of the data via admin site https://crossroadscambodia.church/admin
 
 ### Key terms admin must know
 
@@ -31,6 +31,7 @@ content: {
     kh_title: '',         required
     sub_title: '',        optional
     kh_sub_title: '',     optional
+    create_time: '',     optional
     description: [],      optional
     media: [],            optional
     youtube: []           optional
@@ -48,6 +49,7 @@ description: {
 media: {
     url: '',                image url
     name: '',               description image (use for <img alt="..."/>)
+    note: '',               for additional note to each image
 }
 ```
 
@@ -64,15 +66,15 @@ youtube: {
 
 #### Content Id
 
-It represent a section id and a content object id `XXYYYZZZ`
+structure of the entire content id `XXYYYZZZ`
 
 `XX` : Page Id
 
 `YYY` : Section Id
 
-`ZZZ` : Item Id (item inside content)
+`ZZZ` : Content Id
 
-    i.e 03002002, 12005001
+    e.g 03002002 mean: page 03 ( page church-board), section 002, and content 002
 
 Page Id
 
@@ -101,42 +103,31 @@ Page Id
     23: church-news,
     24: contact
 
-We can find `content_id` belong to specific section by open `DevTools` by `Ctrl + Shift + i` or `Right click > Inspect` we need to know this id to update content in admin panel
+We can find `content_id` that belong to any text in `DevTools` by `Ctrl + Shift + i` or `Right click > Inspect` we need to know this id to update content in admin panel
 
 ![Content Id image](/src/assets/img/content_id.png)
 
-Available functions are [Update content](#update-content) , [Add new content](#add-new-content-for-developer-only)
+### Available functions are [Update content](#update-content) , [Add new content](#add-new-content-for-developer-only)
 
 #### Update content
 
 ( delete description, media, youtube and add new description, media, youtube )
 
-#### Add new content [For Developer Only](#add-new-content-for-developer-only)
+#### Add new content
 
 Some page need to add new code to handle new content. Some page will automatically push new content to current UI ( PastoralTeam Page, Milestone Page, Contact Page, etc ).
 
-Below is the restrict content fields, some field are reserve for specific use case so make sure you know what you doing.
-
-#### [Events page](#https://crossroadscambodia.church/news/events)
-
-    sub_title : event location
-    description: first description must be event date
-
 ## Special Page
 
-### Give Page
+### [Give Page](#https://crossroadscambodia.church/get-involved/give)
 
-Give Page https://crossroadscambodia.church/get-involved/give
+Video are changeable and store in media.url of content_id `#19002001`
 
-Video are changeable and store in media.url of content_id #19002001
-
-We can't use normal youtube URL. We need to get embedded url by
+We can't use normal youtube URL. We need to get embedded url
 
     Youtube video > Share > Embed > Copy only url
 
-i.e. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
-
-Url must include `/embed/`
+e.g. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
 
 ### Paypal
 
@@ -144,17 +135,21 @@ We use paypal embeded button in our give page and it need `cliend_id`
 
 so `client_id` store in title field of `content_id` `19003001`
 
-QR code image for give page store in `media[0]` field of the same object which is `content_id` `19003001`
+QR code image for give page store in `media[0].url` field of the same object
 
 ### Sunday Sermons
 
-`Video Publish Date` must follow this format `17 June 2024` and `18 February 2024`
+`Video Publish Date` must follow this format `17 June 2024` or `18 February 2024` if not, sort by `latest` or `newest` doesn't work
 
 ## Auto render content
 
-New content consider as an item `ZZZ` <== `XXYYYZZZ`
+We support add new content to some page listed below, newest content display below previous content.
 
-When add new item ( auto render content ) to a section we must know exactly what id we currently on. leading id `XXYYY` can't be change, we only change item id `ZZZ` we render ascending order thus check existing content before add new.
+We require to know the previous content id: An id contain leading id and last 3 digits id
+
+leading id `XXYYY` can't be change, we only increase 3 digits `ZZZ`.
+
+e.g latest content is `04002004` new content id must be `04002005`
 
 Below is a leading 5 digits id of each section of pages
 
@@ -249,17 +244,19 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
     style (formatting, missing semi colons, etc; no code change)
     refactor (refactoring production code)
 
-## Image Sizing
+## Global Sizing
 
->   1550 x 1050
+### Image Sizing
+
+> 1550 x 1050
 
     h-full w-full lg:w-49 h-14.7rem md:h-25.25rem object-cover
 
->   1024 x 576
+> 1024 x 576
 
     h-full w-full h-13.43rem md:h-21rem object-cover
 
-## Text Styling
+### Text Styling
 
 > For normal paragraph text
 
@@ -368,7 +365,7 @@ When register a component as global component any where can use without import a
 `src/main.js`
 
     // Register global component //
-    import ComingSoon from './components/ComingSoon.vue'
+    import ComingSoon from '@/components/components/ComingSoon.vue'
 
     app.component('ComingSoon', ComingSoon)
 

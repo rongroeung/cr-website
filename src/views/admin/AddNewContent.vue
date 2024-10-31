@@ -1,5 +1,5 @@
 <script>
-import AddNewContentForm from '../../components/admin/AddNewContentForm.vue'
+import AddNewContentForm from '@/components/admin/AddNewContentForm.vue'
 export default {
   name: 'AddNewContent',
   components: { AddNewContentForm },

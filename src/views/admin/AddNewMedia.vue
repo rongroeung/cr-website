@@ -1,6 +1,6 @@
 <script>
-import AddNewMediaForm from '../../components/admin/AddNewMediaForm.vue'
-import SelectContentIds from '../../components/SelectContentIds.vue'
+import AddNewMediaForm from '@/components/admin/AddNewMediaForm.vue'
+import SelectContentIds from '@/components/SelectContentIds.vue'
 import { adminResizeIframeMixin } from '@/util/mixin'
 export default {
   name: 'AddNewMedia',

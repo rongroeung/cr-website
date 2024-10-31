@@ -1,31 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { getItemWithExpiry } from '@/util/mixin.js'
-import HomePage from '../views/HomePage.vue'
-import AboutPage from '../views/AboutPage.vue'
-import CampusMinistryPage from '../views/CampusMinistryPage.vue'
-import CertificateInMinistryPage from '../views/CertificateInMinistryPage.vue'
-import ChurchBoardPage from '../views/ChurchBoardPage.vue'
-import ChurchOutreachPage from '../views/ChurchOutreachPage.vue'
-import ContactPage from '../views/ContactPage.vue'
-import GetInvolvedPage from '../views/GetInvolvedPage.vue'
-import MicroEnterpriseProjectsPage from '../views/MicroEnterpriseProjectsPage.vue'
-import MilestonePage from '../views/MilestonePage.vue'
-import MinistriesPage from '../views/MinistriesPage.vue'
-import MissionPage from '../views/MissionPage.vue'
-import PastoralTeamPage from '../views/PastoralTeamPage.vue'
-import SponsorAChildPage from '../views/SponsorAChildPage.vue'
-import WorshipMinistryPage from '../views/WorshipMinistryPage.vue'
-import SportMinistryPage from '../views/SportMinistryPage.vue'
-import ShortTermMissionsPage from '../views/ShortTermMissionsPage.vue'
-import ProfessionalEquipperPage from '../views/ProfessionalEquipperPage.vue'
-import VolunteerPage from '../views/VolunteerPage.vue'
-import GivePage from '../views/GivePage.vue'
-import NewsPage from '../views/NewsPage.vue'
-import SundaySermonsPage from '../views/SundaySermonsPage.vue'
-import EventsPage from '../views/EventsPage.vue'
-import ChurchNewsPage from '../views/ChurchNewsPage.vue'
-import NotFoundPage from '../views/NotFoundPage.vue'
-import UpdateContentById from '../views/admin/UpdateContentById.vue'
+import HomePage from '@/views/HomePage.vue'
+import AboutPage from '@/views/AboutPage.vue'
+import CampusMinistryPage from '@/views/CampusMinistryPage.vue'
+import CertificateInMinistryPage from '@/views/CertificateInMinistryPage.vue'
+import ChurchBoardPage from '@/views/ChurchBoardPage.vue'
+import ChurchOutreachPage from '@/views/ChurchOutreachPage.vue'
+import ContactPage from '@/views/ContactPage.vue'
+import GetInvolvedPage from '@/views/GetInvolvedPage.vue'
+import MicroEnterpriseProjectsPage from '@/views/MicroEnterpriseProjectsPage.vue'
+import MilestonePage from '@/views/MilestonePage.vue'
+import MinistriesPage from '@/views/MinistriesPage.vue'
+import MissionPage from '@/views/MissionPage.vue'
+import PastoralTeamPage from '@/views/PastoralTeamPage.vue'
+import SponsorAChildPage from '@/views/SponsorAChildPage.vue'
+import WorshipMinistryPage from '@/views/WorshipMinistryPage.vue'
+import SportMinistryPage from '@/views/SportMinistryPage.vue'
+import ShortTermMissionsPage from '@/views/ShortTermMissionsPage.vue'
+import ProfessionalEquipperPage from '@/views/ProfessionalEquipperPage.vue'
+import VolunteerPage from '@/views/VolunteerPage.vue'
+import GivePage from '@/views/GivePage.vue'
+import NewsPage from '@/views/NewsPage.vue'
+import SundaySermonsPage from '@/views/SundaySermonsPage.vue'
+import EventsPage from '@/views/EventsPage.vue'
+import ChurchNewsPage from '@/views/ChurchNewsPage.vue'
+import NotFoundPage from '@/views/NotFoundPage.vue'
+import UpdateContentById from '@/views/admin/UpdateContentById.vue'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 import UserLayout from '@/layouts/UserLayout.vue'
 import AddNewContent from '@/views/admin/AddNewContent.vue'
@@ -249,12 +249,12 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   // const token = localStorage.getItem('adminToken');
-  const token = getItemWithExpiry('adminToken');
+  const token = getItemWithExpiry('adminToken')
   if (to.path.startsWith('/admin') && !token) {
-    next('/login'); // Redirect to login if not authenticated
+    next('/login') // Redirect to login if not authenticated
   } else {
-    next(); // Proceed to the route
+    next() // Proceed to the route
   }
-});
+})
 
 export default router

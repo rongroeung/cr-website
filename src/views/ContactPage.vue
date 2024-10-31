@@ -1,9 +1,8 @@
 <script>
-import PageHeader from '@/components/PageHeader.vue'
-import ContactItem from './ContactItem.vue'
+import ContactItem from '@/views/ContactItem.vue'
 export default {
   name: 'ContactPage',
-  components: { PageHeader, ContactItem },
+  components: { ContactItem },
   data() {
     return {
       section1: null,

@@ -1,5 +1,5 @@
 <script>
-import UpdateDataForm from '../../components/admin/UpdateDataForm.vue'
+import UpdateDataForm from '@/components/admin/UpdateDataForm.vue'
 import SelectContentIds from '@/components/SelectContentIds.vue'
 import { adminResizeIframeMixin } from '@/util/mixin'
 export default {

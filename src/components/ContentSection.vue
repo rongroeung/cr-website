@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import ImagesGrid from './ImagesGrid.vue'
+import ImagesGrid from '@/components/ImagesGrid.vue'
 export default {
   name: 'ContentSection',
   components: { ImagesGrid },
@@ -50,5 +50,4 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

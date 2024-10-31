@@ -1,6 +1,6 @@
 <script>
-import CrButton from './CrButton.vue'
-import YoutubeCard from './YoutubeCard.vue'
+import CrButton from '@/components/CrButton.vue'
+import YoutubeCard from '@/components/YoutubeCard.vue'
 export default {
   name: 'SundaySermons',
   components: { CrButton, YoutubeCard },

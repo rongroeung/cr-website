@@ -1,13 +1,12 @@
 <script>
 import TextInput from './TextInput.vue'
-import TextareaInput from './TextareaInput.vue'
 import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
 import DescriptionInput from './DescriptionInput.vue'
 import { formatDateForBackend, formatDateForDateInput, formatDateForDisplay } from '@/util/mixin'
 export default {
   name: 'UpdateDataForm',
-  components: { TextInput, TextareaInput, MediaInput, YouTubeInput, DescriptionInput },
+  components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },
   props: {
     contentId: String
   },

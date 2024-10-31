@@ -1,6 +1,6 @@
 <script>
 import AddNewYoutubeForm from '@/components/admin/AddNewYoutubeForm.vue'
-import SelectContentIds from '../../components/SelectContentIds.vue'
+import SelectContentIds from '@/components/SelectContentIds.vue'
 import { adminResizeIframeMixin } from '@/util/mixin'
 export default {
   name: 'AddNewYoutube',
