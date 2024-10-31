@@ -43,10 +43,6 @@ export default {
 </script>
 
 <style scoped>
-input {
-  background-color: var(--cr-gray);
-}
-
 textarea {
   color: black;
   width: 100%;

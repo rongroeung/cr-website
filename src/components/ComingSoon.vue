@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <template>
-  <section class="h-30rem w-full bg-cr-gray py-20 flex-center flex-col">
+  <section class="h-30rem w-full bg--color-cr-gray-lighter py-20 flex-center flex-col">
     <h2
       class="text-3xl md:text-4xl xl:text-5xl text-secondary text-center mb-8"
       v-t="'Our-Page-is-Coming-Soon'"

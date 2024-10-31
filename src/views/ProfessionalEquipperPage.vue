@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg-cr-gray h-fit w-full flex-center flex-col">
+  <section class="bg--color-cr-gray-lighter h-fit w-full flex-center flex-col">
     <div id="17001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>

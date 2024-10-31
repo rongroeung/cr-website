@@ -2,7 +2,7 @@
   <div class="ContentSection" :class="margin">
     <p
       v-if="section.title"
-      class="text-xl md:text-2xl xl:text-3xl font-bold text-gray-800 mb-6 text-center md:text-left"
+      class="text-xl md:text-2xl xl:text-3xl font-bold text--color-cr-gray-darker mb-6 text-center md:text-left"
     >
       {{ section.title }}
     </p>

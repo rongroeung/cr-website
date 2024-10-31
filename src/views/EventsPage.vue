@@ -63,7 +63,7 @@ export default {
     <div id="22001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg-cr-gray w-full h-full flex-col flex-center">
+    <div class="bg--color-cr-gray-lighter w-full h-full flex-col flex-center">
       <div class="w-4/5 flex items-center mb-4 mt-8 justify-end">
         <p class="text-black text-md mr-3">Sort by:</p>
         <select

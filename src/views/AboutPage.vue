@@ -30,15 +30,15 @@ export default {
       <div id="02002001" v-if="section2" class="w-4/5">
         <ContentSection :section="section2" />
       </div>
-      <div id="02003001" v-if="section3" class="bg-cr-gray flex-center">
+      <div id="02003001" v-if="section3" class="bg--color-cr-gray-lighter flex-center">
         <ContentSection :section="section3" class="w-4/5" />
       </div>
       <div id="02004001" v-if="section4" class="w-4/5">
         <ContentSection :section="section4" />
       </div>
-      <div id="02005001" v-if="section5" class="bg-cr-gray w-full flex-center">
+      <div id="02005001" v-if="section5" class="bg--color-cr-gray-lighter w-full flex-center">
         <div class="w-4/5 flex-col my-20">
-          <p class="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">
+          <p class="text-3xl font-bold text--cr-gray-darker mb-6 text-center md:text-left">
             {{ section5.title }}
           </p>
           <ul class="list-disc m-2 flex justify-center flex-wrap gap-6">

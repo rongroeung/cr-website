@@ -46,6 +46,5 @@ label {
 }
 input {
   color: black;
-  background-color: var(--cr-gray);
 }
 </style>

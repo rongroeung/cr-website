@@ -29,7 +29,10 @@ export default {
 </script>
 
 <template>
-  <section id="church_board" class="h-fit w-full flex-center flex-col bg-cr-gray text-black">
+  <section
+    id="church_board"
+    class="h-fit w-full flex-center flex-col bg--color-cr-gray-lighter text-black"
+  >
     <div id="03001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>

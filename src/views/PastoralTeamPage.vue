@@ -50,7 +50,7 @@ export default {
 </script>
 
 <template>
-  <section class="PastoralTeamPage bg-cr-gray h-fit w-full flex-center flex-col">
+  <section class="PastoralTeamPage bg--color-cr-gray-lighter h-fit w-full flex-center flex-col">
     <div id="04001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>

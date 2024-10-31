@@ -92,7 +92,6 @@ export default {
 <style scoped>
 input {
   color: black;
-  background-color: var(--cr-gray);
 }
 
 textarea {

@@ -21,7 +21,7 @@ export default {
     <div id="23001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg-cr-gray content w-full h-full">
+    <div class="bg--color-cr-gray-lighter content w-full h-full">
       <div class="flex justify-center items-center h-35rem">
         <div
           id="23002001"
