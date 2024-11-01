@@ -69,7 +69,7 @@ export default {
       <button
         type="button"
         @click="addNewYoutubeObject()"
-        class="bg-green-500 w-full text-white px-4 py-2 rounded"
+        class="bg-green-500 w-full px-4 py-2 rounded"
       >
         Add new youtube
       </button>
@@ -80,7 +80,7 @@ export default {
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto"
+          class="bg-blue-500 w-full px-4 py-2 rounded ms-auto"
         >
           Submit
         </button>

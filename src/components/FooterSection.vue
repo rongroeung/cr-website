@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <footer class="bg-secondary text-white">
+  <footer class="bg-secondary">
     <div class="container w-4/5 mx-auto px-6">
       <div class="py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="flex items-start justify-center md:justify-start">

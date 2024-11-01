@@ -34,9 +34,7 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="w-full h-full flex-center">
-      <div
-        class="bg--color-cr-gray-lighter flex justify-center items-start flex-row flex-wrap mb-20"
-      >
+      <div class="bg-cr-gray-light flex justify-center items-start flex-row flex-wrap mb-20">
         <div id="18002001" v-if="section2" class="w-4/5">
           <ContentSection :section="section2" :margin="'mt-20 mb-10'" />
         </div>

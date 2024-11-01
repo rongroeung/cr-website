@@ -23,9 +23,9 @@ export default {
     </div>
 
     <!-- Content -->
-    <div class="ml-0 md:ml-4 text-left w-full h-full">
+    <div class="ml-0 md:ml-4 text-left w-full h-full text-cr-gray-darker">
       <p class="font-bold text-lg text-left mb-2">{{ section.title }}</p>
-      <ul class="text-gray-400">
+      <ul>
         <div v-for="description in section.description" :key="description">
           <li>{{ description.text }}</li>
         </div>

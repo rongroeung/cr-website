@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-  <div :id="cardId">
-    <p class="text-sm text-gray-500 uppercase mb-4 text-left">{{ cardTitle }}</p>
+  <div :id="cardId" class="text-cr-gray-darker">
+    <p class="text-sm text-cr-gray-dark uppercase mb-4 text-left">{{ cardTitle }}</p>
     <p class="text-2xl md:text-4xl xl:text-5xl mb-4 text-left">{{ cardSubTitle }}</p>
     <div class="mb-14 text-sm leading-6 md:leading-8 md:text-lg">{{ cardDescription }}</div>
     <CrButton :buttonRoute="cardRouteName" />

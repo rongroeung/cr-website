@@ -16,12 +16,14 @@ export default {
     :id="item.id"
     class="PastoralTeamHighlightCard h-full bg-white rounded-lg flex flex-col p-6 max-w-24"
   >
-    <div class="mb-8 text-sm text-gray-600 grow leading-6">{{ item.description[0].text }}</div>
+    <div class="mb-8 text-sm text-cr-gray-dark grow leading-6">
+      {{ item.description[0].text }}
+    </div>
     <div class="profile-section flex">
       <img loading="lazy" :src="item.media[0].url" :alt="item.media[0].name" :class="cssClass" />
       <div class="flex flex-col justify-center text-left">
-        <p class="text-secondary text-md text-left">{{ item.title }}</p>
-        <p class="uppercase text-md text-gray-500 font-semibold">{{ item.sub_title }}</p>
+        <p class="text-cr-gray-darker text-md text-left">{{ item.title }}</p>
+        <p class="uppercase text-md text-cr-gray-dark font-semibold">{{ item.sub_title }}</p>
       </div>
     </div>
   </div>

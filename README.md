@@ -2,7 +2,7 @@
 
 `By: Kosalvireak Kheoun`
 
-# Table of content
+# Table of content for Admin
 
 | Content                                            | Description                                |
 | -------------------------------------------------- | ------------------------------------------ |
@@ -15,6 +15,17 @@
 | [Commit Message](#commit-message)                  | Convention for commit message              |
 | [Global Sizing](#global-styling)                   | Global class for text, image size          |
 | [Global Properties](#global-properties)            | Global css, variable, mixin, component     |
+
+# Table of content for Developer
+
+| Content                                            | Description                                |
+| -------------------------------------------------- | ------------------------------------------ |
+| [Project Setup](#project-setup)                    | Initialize development environment         |
+| [Project Plugin](#project-plugin)                  | Essential dependency for project           |
+| [Folder Structure](#folder-structure)              | Project structure                          |
+| [Global Styling](#global-styling)                   | Global class for text, image size          |
+| [Global Properties](#global-properties)            | Global css, variable, mixin, component     |
+
 
 ## Crossroads Admin
 
@@ -236,15 +247,21 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
     └── App.vue
     └── main.js
 
-## Commit Message
+## Global Styling
 
-    feat (new feature)
-    fix (bug fix)
-    docs (changes to documentation)
-    style (formatting, missing semi colons, etc; no code change)
-    refactor (refactoring production code)
+### text and background color
 
-## Global Sizing
+Below are the color that being use in project. Please refer to `main.css`
+
+    --primary-color: #f5a807;
+    --secondary-color: #021b4b;
+    --sub-primary-color: #f5aa07c5;
+    --sub-secondary-color: #01153a;
+
+    --color-cr-gray-darker: #1f2937; 
+    --color-cr-gray-dark: #6b7280;
+    --color-cr-gray-light: #f4f5f7;
+    white: #FFFFFF
 
 ### Image Sizing
 

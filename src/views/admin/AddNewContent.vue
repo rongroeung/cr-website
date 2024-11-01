@@ -25,7 +25,7 @@ export default {
     <div class="h-fit w-full flex flex-wrap items-start">
       <AddNewContentForm class="w-full md:w-1/2 h-full" v-model="data" />
       <div
-        class="w-full md:w-1/2 min-h-96 h-fit mt-12 p-4 bg-sub-secondary text--color-cr-gray-lighter rounded-lg"
+        class="w-full md:w-1/2 min-h-96 h-fit mt-12 p-4 bg-sub-secondary text--color-cr-gray-light rounded-lg"
       >
         <p class="text-center">Json preview</p>
         <pre class="text-wrap">{{ data }}</pre>

@@ -2,15 +2,20 @@
   <div class="ContentSection" :class="margin">
     <p
       v-if="section.title"
-      class="text-xl md:text-2xl xl:text-3xl font-bold text--color-cr-gray-darker mb-6 text-center md:text-left"
+      class="text-xl md:text-2xl xl:text-3xl font-bold text-cr-gray-darker mb-6 text-center md:text-left"
     >
       {{ section.title }}
     </p>
-    <p v-if="section.sub_title" class="text-sm leading-6 md:leading-8 md:text-lg mb-6 text-left">
+    <p
+      v-if="section.sub_title"
+      class="text-sm leading-6 md:leading-8 md:text-lg mb-6 text-left text-cr-gray-darker"
+    >
       {{ section.sub_title }}
     </p>
     <div v-for="content in section.description" :key="content.id" :class="dynamicClass">
-      <div class="text-sm leading-6 md:leading-8 md:text-lg">{{ content.text }}</div>
+      <div class="text-sm leading-6 md:leading-8 md:text-lg text-cr-gray-darker">
+        {{ content.text }}
+      </div>
     </div>
     <ImagesGrid v-if="section.media.length" :images="section.media" />
   </div>

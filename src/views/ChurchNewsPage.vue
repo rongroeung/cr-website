@@ -21,7 +21,7 @@ export default {
     <div id="23001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg--color-cr-gray-lighter content w-full h-full">
+    <div class="bg-cr-gray-light content w-full h-full text-cr-gray-darker">
       <div class="flex justify-center items-center h-35rem">
         <div
           id="23002001"
@@ -53,7 +53,7 @@ export default {
           </div>
           <a href="https://t.me/crossroadscommunity" target="_blank">
             <button
-              class="mt-4 w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition ease-in-out"
+              class="mt-4 w-full px-4 py-2 bg-secondary rounded-md hover:bg-sub-secondary text-cr-gray-light transition ease-in-out"
               v-t="'Join-Now'"
             ></button>
           </a>

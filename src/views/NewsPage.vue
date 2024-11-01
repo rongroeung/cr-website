@@ -65,13 +65,13 @@ export default {
     <div id="20001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg--color-cr-gray-lighter flex-center flex-col w-full h-full pt-14">
+    <div class="bg-cr-gray-light flex-center flex-col w-full h-full pt-14">
       <div class="w-4/5 flex items-center mb-4 mt-8 justify-end">
-        <p class="text-black text-md mr-3">Sort by:</p>
+        <p class="text-cr-gray-darker text-md mr-3">Sort by:</p>
         <select
           id="sort"
           v-model="selectedOption"
-          class="text-white bg-secondary font-medium rounded-lg text-sm px-3 py-2 text-center flex-center"
+          class="bg-secondary font-medium rounded-lg text-sm px-3 py-2 text-center flex-center"
         >
           <option value="date-desc" selected>Newest</option>
           <option value="date-asc">Oldest</option>

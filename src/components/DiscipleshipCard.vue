@@ -14,14 +14,19 @@ export default {
 <template>
   <div
     :id="cardId"
-    class="h-full p-6 bg-white border rounded-lg shadow text-center"
+    class="h-full p-6 bg-cr-gray-light border rounded-lg shadow text-center"
     style="max-width: 17.8rem"
   >
     <div v-if="cardHeader" class="flex items-center">
       <img loading="lazy" :src="cardIcon" :alt="cardIconName" class="w-12" />
-      <p class="ms-2 text-base lg:text-xl uppercase font-bold">{{ cardHeader }}</p>
+      <p class="ms-2 text-base lg:text-xl uppercase font-bold text-cr-gray-darker">
+        {{ cardHeader }}
+      </p>
     </div>
-    <ol v-if="cardContents" class="list-decimal text-left text-sm sm:text-base m-2">
+    <ol
+      v-if="cardContents"
+      class="list-decimal text-left text-sm sm:text-base m-2 text-cr-gray-darker"
+    >
       <template v-for="content in cardContents" :key="content.id">
         <li>{{ content.text }}</li>
       </template>

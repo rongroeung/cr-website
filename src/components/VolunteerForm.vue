@@ -81,7 +81,7 @@ export default {
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto"
+          class="bg-secondary w-full px-4 py-2 rounded ms-auto"
           v-t="'submit'"
         ></button>
       </div>
@@ -90,12 +90,7 @@ export default {
 </template>
 
 <style scoped>
-input {
-  color: black;
-}
-
 textarea {
-  color: black;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;

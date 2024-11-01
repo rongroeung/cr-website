@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <section class="HighlightsActivity bg--color-cr-gray-lighter flex-center flex-col text-black">
+  <section class="HighlightsActivity bg-cr-gray-light flex-center flex-col text-black">
     <layout-2-columns
       v-if="section4Item1"
       key="1"

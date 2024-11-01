@@ -47,12 +47,14 @@ export default {
         />
 
         <!-- Description -->
-        <div class="flex flex-col w-17rem">
-          <p class="text-black text-sm font-semibold truncate text-left">{{ video.title }}</p>
-          <p class="text-gray-400 text-xs mt-2 text-left">
+        <div class="flex flex-col w-17rem text-cr-gray-dark">
+          <p class="text-cr-gray-darker text-sm font-semibold truncate text-left">
+            {{ video.title }}
+          </p>
+          <p class="text-xs mt-2 text-left">
             {{ youtube.profile_name }}
           </p>
-          <p class="text-gray-400 text-xs mt-2 flex">
+          <p class="text-xs mt-2 flex">
             {{ video.publish_date }}
           </p>
         </div>

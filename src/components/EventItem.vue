@@ -28,7 +28,7 @@ export default {
 <template>
   <div :id="section.id" class="w-full md:w-1/2 flex flex-col items-start p-6 text-black">
     <!-- Title -->
-    <h1 class="text-xl md:text-2xl font-bold text-gray-800 my-3 text-center w-full">
+    <h1 class="text-xl md:text-2xl font-bold text-cr-gray-darker my-3 text-center w-full">
       {{ section.title }}
     </h1>
 
@@ -40,13 +40,13 @@ export default {
     />
 
     <!-- Date -->
-    <div class="flex items-center text-gray-600 mb-2 mt-6">
+    <div class="flex items-center text-cr-gray-dark mb-2 mt-6">
       <img src="../assets/icon/clock.svg" alt="click icon" class="mr-2" />
       <span>{{ getDate }}</span>
     </div>
 
     <!-- Location -->
-    <div class="flex items-center text-gray-600 mb-3">
+    <div class="flex items-center text-cr-gray-dark mb-3">
       <img src="../assets/icon/location.svg" alt="click icon" class="mr-2" />
       <span>{{ section.sub_title }}</span>
     </div>

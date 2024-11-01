@@ -31,7 +31,7 @@ export default {
 <template>
   <section
     id="church_board"
-    class="h-fit w-full flex-center flex-col bg--color-cr-gray-lighter text-black"
+    class="h-fit w-full flex-center flex-col bg-cr-gray-light text-cr-gray-darker"
   >
     <div id="03001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />

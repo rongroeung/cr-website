@@ -47,7 +47,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg-secondary h-screen w-full flex-center flex-col text-white">
+  <section class="bg-secondary h-screen w-full flex-center flex-col">
     <div class="flex-center mb-10">
       <img
         :src="this.$logoUrl"
@@ -85,12 +85,12 @@ export default {
               v-model="showPassword"
               class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
             />
-            <label for="remember" class="ms-2 text-sm font-medium text-white">Show Password</label>
+            <label for="remember" class="ms-2 text-sm font-medium">Show Password</label>
           </div>
         </div>
         <button
           type="submit"
-          class="text-white bg-green-600 hover:bg-green-700 font-medium rounded text-sm w-full px-5 py-2.5"
+          class="bg-green-600 hover:bg-green-700 font-medium rounded text-sm w-full px-5 py-2.5"
         >
           Submit
         </button>

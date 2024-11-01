@@ -56,7 +56,6 @@ watchEffect(() => {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  color: white;
 }
 
 .language {

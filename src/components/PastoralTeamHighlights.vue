@@ -22,12 +22,10 @@ export default {
 }
 </script>
 <template>
-  <section
-    class="PastoralTeamHighlights h-full flex-center flex-col bg--color-cr-gray-lighter py-20"
-  >
+  <section class="PastoralTeamHighlights h-full flex-center flex-col bg-cr-gray-light py-20">
     <div class="w-4/5 mb-6">
       <p
-        class="w-full md:w-2/4 text-center md:text-start text-black text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
+        class="w-full md:w-2/4 text-center md:text-start text-cr-gray-darker text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
         v-t="'pastoral-team'"
       ></p>
     </div>

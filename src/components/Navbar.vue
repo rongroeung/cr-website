@@ -334,7 +334,6 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  color: var(--text-color);
   transition: 0.25s;
   text-transform: uppercase;
 }
@@ -386,7 +385,7 @@ export default {
   cursor: pointer;
 }
 nav svg {
-  fill: var(--text-color);
+  fill: var(--color-cr-gray-light);
 }
 #sidebar-active {
   display: none;

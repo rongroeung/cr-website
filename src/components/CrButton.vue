@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div class="cr-button flex-center cursor-pointer" :class="cssClass">
+  <div class="cr-button text-cr-gray-light flex-center cursor-pointer" :class="cssClass">
     <router-link
       :to="{ name: buttonRoute, hash: getHash }"
       v-t="label"
@@ -37,9 +37,6 @@ export default {
 </template>
 
 <style scoped>
-.cr-button {
-  color: white;
-}
 .cr-button-hover:hover {
   color: var(--secondary-color);
   background-color: var(--text-color);

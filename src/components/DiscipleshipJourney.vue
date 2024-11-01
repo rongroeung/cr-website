@@ -35,11 +35,7 @@ export default {
 
 <template>
   <section class="bg-secondary h-fit flex-center flex-col">
-    <section
-      v-if="section2"
-      id="01002001"
-      class="section2 w-4/5 flex flex-col items-center text-white py-20"
-    >
+    <section v-if="section2" id="01002001" class="section2 w-4/5 flex flex-col items-center py-20">
       <p class="text-2xl md:text-4xl xl:text-5xl pb-6">{{ section2.title }}</p>
       <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
         <template v-for="content in section2.description" :key="content.id">

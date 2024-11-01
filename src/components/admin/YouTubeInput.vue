@@ -58,7 +58,7 @@
           v-if="removeAble"
           @click="$emit('remove', index)"
           type="button"
-          class="bg-red-500 text-white px-4 py-2 w-24 rounded ms-auto"
+          class="bg-red-500 px-4 py-2 w-24 rounded ms-auto"
         >
           Remove
         </button>

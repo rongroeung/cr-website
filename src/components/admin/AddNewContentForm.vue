@@ -124,11 +124,7 @@ export default {
         :remove-able="true"
         @remove="removeDescription"
       />
-      <button
-        type="button"
-        @click="addNewDesc()"
-        class="bg-green-500 text-white px-4 py-2 rounded w-full"
-      >
+      <button type="button" @click="addNewDesc()" class="bg-green-500 px-4 py-2 rounded w-full">
         Add new description
       </button>
 
@@ -139,11 +135,7 @@ export default {
         :remove-able="true"
         @remove="removeMedia"
       />
-      <button
-        type="button"
-        @click="addNewMedia()"
-        class="bg-green-500 text-white px-4 py-2 rounded w-full"
-      >
+      <button type="button" @click="addNewMedia()" class="bg-green-500 px-4 py-2 rounded w-full">
         Add new media
       </button>
 
@@ -153,11 +145,7 @@ export default {
         :remove-able="true"
         @remove="removeYoutube"
       />
-      <button
-        type="button"
-        @click="addNewYoutube()"
-        class="bg-green-500 text-white px-4 py-2 rounded w-full"
-      >
+      <button type="button" @click="addNewYoutube()" class="bg-green-500 px-4 py-2 rounded w-full">
         Add new youtube
       </button>
       <div class="w-full flex flex-col items-end">
@@ -166,7 +154,7 @@ export default {
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-blue-500 text-white w-full px-4 py-2 rounded ms-auto"
+          class="bg-blue-500 w-full px-4 py-2 rounded ms-auto"
         >
           Submit
         </button>
@@ -176,12 +164,7 @@ export default {
 </template>
 
 <style scoped>
-input {
-  color: black;
-}
-
 textarea {
-  color: black;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;

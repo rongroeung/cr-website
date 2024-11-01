@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg--color-cr-gray-lighter h-fit w-full flex-center flex-col">
+  <section class="bg-cr-gray-light h-fit w-full flex-center flex-col">
     <div id="17001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
@@ -38,7 +38,7 @@ export default {
       <div id="17003001" v-if="section3">
         <p
           v-if="section3.title"
-          class="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left"
+          class="text-3xl font-bold text-cr-gray-darker mb-6 text-center md:text-left"
         >
           {{ section3.title }}
         </p>

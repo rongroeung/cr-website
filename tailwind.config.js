@@ -12,10 +12,6 @@ export default {
         secondary: '#021b4b',
         'sub-primary': '#f5aa07c5',
         'sub-secondary': '#01153a',
-        '--color-cr-gray-darker': '#1f2937',
-        '--color-cr-gray-dark': '#6b7280',
-        '--color-cr-gray-light': '#9ca3af',
-        '--color-cr-gray-lighter': '#f3f4f6'
       },
       height: {
         '13.43rem': '13.43rem',

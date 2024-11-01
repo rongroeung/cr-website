@@ -56,7 +56,7 @@ export default {
         <template v-for="(section, index) in section2" :key="section.id">
           <div
             :id="section.id"
-            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group text-white font-semibold"
+            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group font-semibold"
           >
             <!-- Icon for year -->
             <div
@@ -67,7 +67,7 @@ export default {
             <!-- Card -->
             <div
               :class="index % 2 == 0 ? 'card-wrapper' : cssBefore"
-              class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-white p-4 rounded border border-slate-200 text-black shadow"
+              class="w-[calc(100%-6rem)] md:w-[calc(50%-4rem)] bg-cr-gray-light p-4 rounded border border-slate-200 text-black shadow"
             >
               <div class="flex-center flex-col mb-1">
                 <img
@@ -76,7 +76,7 @@ export default {
                   :src="section.media[0].url"
                   :alt="section.media[0].name"
                 />
-                <div class="font-bold text-black text-start">
+                <div class="font-bold text-cr-gray-darker text-start">
                   {{ section.sub_title }}
                 </div>
               </div>

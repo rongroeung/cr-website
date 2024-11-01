@@ -50,19 +50,22 @@ export default {
 </script>
 
 <template>
-  <section class="PastoralTeamPage bg--color-cr-gray-lighter h-fit w-full flex-center flex-col">
+  <section class="PastoralTeamPage bg-cr-gray-light h-fit w-full flex-center flex-col">
     <div id="04001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
     <div class="content w-4/5 mx-auto my-20">
-      <p class="text-center text-3xl font-bold text-gray-800 mb-12" v-t="'Senior Pastors'"></p>
+      <p
+        class="text-center text-3xl font-bold text-cr-gray-darker mb-12"
+        v-t="'Senior Pastors'"
+      ></p>
       <div class="flex justify-center flex-wrap gap-20">
         <template v-for="item in senior_pastors" :key="item.id">
           <PastoralTeamCard :section="item" />
         </template>
       </div>
       <p
-        class="text-center text-3xl font-bold text-gray-800 my-12"
+        class="text-center text-3xl font-bold text-cr-gray-darker my-12"
         v-t="'Full-Time Co-Workers'"
       ></p>
       <div class="flex justify-center flex-wrap gap-20">
@@ -71,7 +74,7 @@ export default {
         </template>
       </div>
       <p
-        class="text-center text-3xl font-bold text-gray-800 my-12"
+        class="text-center text-3xl font-bold text-cr-gray-darker my-12"
         v-t="'Part-Time Co-Workers'"
       ></p>
       <div class="flex justify-center flex-wrap gap-20">

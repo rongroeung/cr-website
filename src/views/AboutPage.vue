@@ -26,24 +26,28 @@ export default {
     <div id="02001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="about-content text-gray-600 flex-center flex-col">
+    <div class="about-content text-cr-gray-dark flex-center flex-col">
       <div id="02002001" v-if="section2" class="w-4/5">
         <ContentSection :section="section2" />
       </div>
-      <div id="02003001" v-if="section3" class="bg--color-cr-gray-lighter flex-center">
+      <div id="02003001" v-if="section3" class="bg-cr-gray-light flex-center">
         <ContentSection :section="section3" class="w-4/5" />
       </div>
       <div id="02004001" v-if="section4" class="w-4/5">
         <ContentSection :section="section4" />
       </div>
-      <div id="02005001" v-if="section5" class="bg--color-cr-gray-lighter w-full flex-center">
+      <div id="02005001" v-if="section5" class="bg-cr-gray-light w-full flex-center">
         <div class="w-4/5 flex-col my-20">
-          <p class="text-3xl font-bold text--cr-gray-darker mb-6 text-center md:text-left">
+          <p
+            class="text-xl md:text-2xl xl:text-3xl font-bold text-cr-gray-darker mb-6 text-center md:text-left"
+          >
             {{ section5.title }}
           </p>
           <ul class="list-disc m-2 flex justify-center flex-wrap gap-6">
             <template v-for="content in section5.description" :key="content.id">
-              <li class="text-sm leading-6 md:leading-8 md:text-lg h-fit w-full sm:w-2/5">
+              <li
+                class="text-sm leading-6 md:leading-8 md:text-lg h-fit w-full sm:w-2/5 text-cr-gray-darker"
+              >
                 {{ content.text }}
               </li>
             </template>

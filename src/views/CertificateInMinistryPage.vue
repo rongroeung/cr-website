@@ -8,7 +8,7 @@ export default {
       section3: null,
       section4: null,
       section5: null,
-      cssClass: 'text-xl xl:text-2xl font-bold text-gray-800 mb-2 text-center'
+      cssClass: 'text-xl xl:text-2xl font-bold text-cr-gray-darker mb-2 text-center'
     }
   },
   async created() {
@@ -50,7 +50,7 @@ export default {
     <div id="13001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg--color-cr-gray-lighter flex-center flex-col h-full text-black">
+    <div class="bg-cr-gray-light flex-center flex-col h-full text-black">
       <div class="w-4/5">
         <template v-for="section in section2" :key="section.id">
           <div v-if="section.id == '13002001'" class="flex-center flex-col mt-10">

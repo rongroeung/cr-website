@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg--color-cr-gray-lighter mt-20">
+  <section class="bg-cr-gray-light mt-20">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm flex-center flex-col text-center my-20">
         <h1 class="text-7xl tracking-tight font-extrabold lg:text-9xl text-secondary">404</h1>

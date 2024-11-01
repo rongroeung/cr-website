@@ -44,7 +44,4 @@ label {
   font-size: medium;
   margin-bottom: 0.5rem;
 }
-input {
-  color: black;
-}
 </style>

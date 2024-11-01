@@ -66,10 +66,10 @@ export default {
 
         <div class="center-content-wrapper">
           <div class="center-content">
-            <p class="text-white text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7">
+            <p class="text-2xl md:text-3xl xl:text-4xl mb-4 lg:mb-5 xl:mb-7">
               {{ section1.title }}
             </p>
-            <p class="text-white sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7">
+            <p class="sm:text-xl xl:text-2xl mb-4 lg:mb-5 xl:mb-7">
               {{ section1.sub_title }}
             </p>
             <CrButton buttonRouter="home" buttonRouteId="discipleship_journey" />
@@ -136,7 +136,7 @@ export default {
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
+  color: var(--color-cr-gray-light);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -152,11 +152,11 @@ export default {
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--primary-color);
 }
 
 .text {
-  color: #f2f2f2;
+  color: var(--color-cr-gray-light);
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -169,7 +169,7 @@ export default {
   object-fit: cover;
 }
 .numbertext {
-  color: #f2f2f2;
+  color: var(--color-cr-gray-light);
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
