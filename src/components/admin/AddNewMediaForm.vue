@@ -55,7 +55,11 @@ export default {
           :remove-able="true"
           @remove="removeMedia"
         />
-        <button type="button" @click="addNewMedia()" class="bg-green-500 px-4 py-2 rounded mt-4">
+        <button
+          type="button"
+          @click="addNewMedia()"
+          class="bg-green-500 text-cr-gray-light px-4 py-2 rounded mt-4"
+        >
           Add new media
         </button>
       </div>
@@ -66,7 +70,7 @@ export default {
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-blue-500 w-full px-4 py-2 rounded ms-auto"
+          class="w-full px-4 py-2 rounded ms-auto"
         >
           Submit
         </button>

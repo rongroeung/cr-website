@@ -186,3 +186,7 @@ label{
   color: var(--color-cr-gray-darker);
 }
 
+button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--color-cr-gray-light);
+}

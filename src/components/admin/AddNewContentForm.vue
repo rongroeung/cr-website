@@ -124,7 +124,11 @@ export default {
         :remove-able="true"
         @remove="removeDescription"
       />
-      <button type="button" @click="addNewDesc()" class="bg-green-500 px-4 py-2 rounded w-full">
+      <button
+        type="button"
+        @click="addNewDesc()"
+        class="bg-green-500 text-cr-gray-light px-4 py-2 rounded w-full"
+      >
         Add new description
       </button>
 
@@ -135,7 +139,11 @@ export default {
         :remove-able="true"
         @remove="removeMedia"
       />
-      <button type="button" @click="addNewMedia()" class="bg-green-500 px-4 py-2 rounded w-full">
+      <button
+        type="button"
+        @click="addNewMedia()"
+        class="bg-green-500 text-cr-gray-light px-4 py-2 rounded w-full"
+      >
         Add new media
       </button>
 
@@ -145,7 +153,11 @@ export default {
         :remove-able="true"
         @remove="removeYoutube"
       />
-      <button type="button" @click="addNewYoutube()" class="bg-green-500 px-4 py-2 rounded w-full">
+      <button
+        type="button"
+        @click="addNewYoutube()"
+        class="bg-green-500 text-cr-gray-light px-4 py-2 rounded w-full"
+      >
         Add new youtube
       </button>
       <div class="w-full flex flex-col items-end">
