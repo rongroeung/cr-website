@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col mb-4">
-    <label v-if="translate" :for="id" class="font-medium" v-t="label"></label>
-    <label v-else :for="id" class="font-medium">{{ label }}</label>
+    <label v-if="translate" :for="id" class="font-medium" :class="labelCss" v-t="label"></label>
+    <label v-else :for="id" class="font-medium" :class="labelCss">{{ label }}</label>
 
     <input
       :id="id"
@@ -21,6 +21,7 @@ export default {
     modelValue: String,
     id: String,
     label: String,
+    labelCss: String,
     type: {
       type: String,
       default: 'text'
@@ -40,7 +41,6 @@ export default {
 
 <style scoped>
 label {
-  /* color: var(--secondary-color); */
   font-size: medium;
   margin-bottom: 0.5rem;
 }

@@ -34,6 +34,10 @@
   color: var(--color-cr-gray-light);
 }
 
+.bg-cr-primary{
+  background-color: var(--primary-color) !important;
+}
+
 .bg-cr-gray-darker{
   background-color: var(--color-cr-gray-darker);
 }

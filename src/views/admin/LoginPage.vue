@@ -62,6 +62,7 @@ export default {
           <TextInput
             id="username"
             label="Username"
+            labelCss="text-cr-gray-light"
             placeholder="username"
             v-model="formData.username"
             :required="true"
@@ -71,6 +72,7 @@ export default {
           <TextInput
             id="password"
             label="Password"
+            labelCss="text-cr-gray-light"
             :type="showPassword ? 'text' : 'password'"
             placeholder="••••••"
             v-model="formData.password"
@@ -85,13 +87,12 @@ export default {
               v-model="showPassword"
               class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
             />
-            <label for="remember" class="ms-2 text-sm font-medium">Show Password</label>
+            <label for="remember" class="ms-2 text-sm font-medium label-cr-gray-light"
+              >Show Password</label
+            >
           </div>
         </div>
-        <button
-          type="submit"
-          class="bg-green-600 hover:bg-green-700 font-medium rounded text-sm w-full px-5 py-2.5"
-        >
+        <button type="submit" class="bg-cr-primary font-medium rounded text-sm w-full px-5 py-2.5">
           Submit
         </button>
         <p v-if="disableSubmit" class="text-end my-2">Loading...</p>
@@ -100,4 +101,8 @@ export default {
   </section>
 </template>
 
-<style></style>
+<style scoped>
+.label-cr-gray-light {
+  color: var(--color-cr-gray-light) !important;
+}
+</style>
