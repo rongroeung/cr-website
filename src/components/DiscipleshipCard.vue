@@ -19,18 +19,18 @@ export default {
   >
     <div v-if="cardHeader" class="flex items-center">
       <img loading="lazy" :src="cardIcon" :alt="cardIconName" class="w-12" />
-      <p class="ms-2 text-base lg:text-xl uppercase font-bold text-cr-gray-darker">
+      <p class="ms-2 text-base lg:text-lg uppercase font-bold text-cr-gray-darker">
         {{ cardHeader }}
       </p>
     </div>
-    <ol
+    <ul
       v-if="cardContents"
-      class="list-decimal text-left text-sm sm:text-base m-2 text-cr-gray-darker"
+      class="list-decimal ps-4 text-left text-sm leading-6 m-2 text-cr-gray-darker"
     >
       <template v-for="content in cardContents" :key="content.id">
         <li>{{ content.text }}</li>
       </template>
-    </ol>
+    </ul>
   </div>
 </template>
 
