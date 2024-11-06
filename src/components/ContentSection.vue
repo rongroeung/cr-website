@@ -12,10 +12,11 @@
     >
       {{ section.sub_title }}
     </p>
-    <div v-for="content in section.description" :key="content.id" :class="dynamicClass">
-      <div class="text-sm leading-6 md:leading-8 md:text-lg text-cr-gray-darker">
-        {{ content.text }}
-      </div>
+    <div v-for="description in section.description" :key="description.id" :class="dynamicClass">
+      <div
+        class="text-sm leading-6 md:leading-8 md:text-lg text-cr-gray-darker"
+        v-html="description.text"
+      ></div>
     </div>
     <ImagesGrid v-if="section.media.length" :images="section.media" />
   </div>
