@@ -14,17 +14,11 @@ export default {
   },
   async created() {
     this.section1 = await this.getContentById('18001001')
-
     this.section2 = await this.getContentById('18002001')
-
     this.section4 = await this.getContentById('18004001')
 
     // Fetch all content IDs
-    const response = await this.getAllContentId()
-
-    const contactSectionId = this.filterContentStartWithId(response.content_id, '18003')
-
-    this.section3 = await this.fetchContentByIds(contactSectionId)
+    this.section3 = await this.getAllContentStartByIds('18003')
   }
 }
 </script>

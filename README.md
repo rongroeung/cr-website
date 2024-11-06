@@ -176,6 +176,14 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
 
     Milestone               : 05002
 
+[Ministries Page](#https://crossroadscambodia.church/ministries)
+
+    Ministries               : 06002
+
+[Campus Ministry Page](#https://crossroadscambodia.church/ministries/campus-ministry)
+
+    Campus Ministry          : 07002
+
 [Volunteer Page](#https://crossroadscambodia.church/get-involved/volunteer)
 
     opportunities item      : 18003

@@ -14,37 +14,15 @@ export default {
   },
   async created() {
     this.section1 = await this.getContentById('04001001')
-    // Fetch all content IDs
-    const response = await this.getAllContentId()
-    const allContentIds = response.content_id
 
     // Filter IDs for Senior Pastors (starts with 04002)
-    const seniorPastorsIds = this.filterSectionIds(allContentIds, '04002')
-    this.senior_pastors = await this.fetchUsersByIds(seniorPastorsIds)
+    this.senior_pastors = await this.getAllContentStartByIds('04002')
 
     // Filter IDs for Full-Time Co-Workers (starts with 040030)
-    const fullTimeCoWorkersIds = this.filterSectionIds(allContentIds, '040030')
-    this.full_time_co_workers = await this.fetchUsersByIds(fullTimeCoWorkersIds)
+    this.full_time_co_workers = await this.getAllContentStartByIds('04003')
 
     // Filter IDs for Part-Time Co-Workers (starts with 040040)
-    const partTimeCoWorkersIds = this.filterSectionIds(allContentIds, '040040')
-    this.part_time_co_workers = await this.fetchUsersByIds(partTimeCoWorkersIds)
-  },
-  methods: {
-    filterSectionIds(contentIds, sectionPrefix) {
-      // Filter content IDs that start with the section prefix (e.g., 04002 for Senior Pastors)
-      return contentIds.filter((id) => id.startsWith(sectionPrefix))
-    },
-    async fetchUsersByIds(ids) {
-      let users = []
-      for (let id of ids) {
-        let user = await this.getContentById(id)
-        if (user) {
-          users.push(user)
-        }
-      }
-      return users
-    }
+    this.part_time_co_workers = await this.getAllContentStartByIds('04004')
   }
 }
 </script>

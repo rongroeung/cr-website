@@ -15,30 +15,11 @@ export default {
     this.section1 = await this.getContentById('05001001')
 
     // Fetch all content IDs
-    const response = await this.getAllContentId()
-    const allContentIds = response.content_id
-
-    const milestoneSectionIds = this.filterContentStartWithId(allContentIds, '05002')
-    this.section2 = await this.fetchContentByIds(milestoneSectionIds)
+    this.section2 = await this.getAllContentStartByIds('05002')
   },
   computed: {
     cssBefore() {
       return this.width < 768 ? 'card-wrapper' : 'card-wrapper-right' // width data in mixin
-    }
-  },
-  methods: {
-    filterContentStartWithId(allIds, sectionPrefix) {
-      return allIds.filter((id) => id.startsWith(sectionPrefix))
-    },
-    async fetchContentByIds(ids) {
-      let contents = []
-      for (let id of ids) {
-        let content = await this.getContentById(id)
-        if (content) {
-          contents.push(content)
-        }
-      }
-      return contents
     }
   }
 }

@@ -116,7 +116,24 @@ function getItemWithExpiry(key) {
 }
 
 const fetchDataMixin = {
+  data() {
+    return {
+      allContentIds: []
+    }
+  },
   methods: {
+    async getAllContentStartByIds(id) {
+      if (this.allContentIds.length == 0) {
+        const response = await this.getAllContentId()
+        this.allContentIds = response.content_id
+      }
+      const filteredContentIds = this.filterContentStartWithId(this.allContentIds, id)
+      const contents = await this.fetchContentByIds(filteredContentIds)
+
+      if (!contents) return null;
+
+      return contents
+    },
     filterContentStartWithId(contentIds, sectionPrefix) {
       return contentIds.filter((id) => id.startsWith(sectionPrefix))
     },

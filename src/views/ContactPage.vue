@@ -6,17 +6,14 @@ export default {
   data() {
     return {
       section1: null,
-      section2: []
+      contacts: []
     }
   },
   async created() {
     this.section1 = await this.getContentById('24001001')
     // Fetch all content IDs
-    const response = await this.getAllContentId()
 
-    const contactSectionId = this.filterContentStartWithId(response.content_id, '24002')
-
-    this.section2 = await this.fetchContentByIds(contactSectionId)
+    this.contacts = await this.getAllContentStartByIds('24002')
   }
 }
 </script>
@@ -27,8 +24,8 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="content w-4/5 h-full flex-center flex-row flex-wrap my-20">
-      <template v-for="section in section2" :key="section">
-        <ContactItem :section="section" />
+      <template v-for="contact in contacts" :key="contact">
+        <ContactItem :section="contact" />
       </template>
     </div>
   </section>

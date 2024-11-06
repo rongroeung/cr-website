@@ -1,5 +1,5 @@
 <template>
-  <div class="ContentSection" :class="margin">
+  <div :id="section.id || ''" class="ContentSection" :class="margin">
     <p
       v-if="section.title"
       class="text-xl md:text-2xl xl:text-3xl font-bold text-cr-gray-darker mb-6 text-center md:text-left"
