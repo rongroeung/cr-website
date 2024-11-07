@@ -9,18 +9,31 @@
         v-if="removeAble"
         type="button"
         @click="$emit('remove', index)"
-        class="bg-red-500 px-4 py-2 rounded my-4 w-24 ms-auto"
+        class="bg-red-500 text-cr-gray-light px-4 py-2 rounded my-4 w-24 ms-auto"
       >
         Remove
+      </button>
+      <button
+        v-if="removeInApi"
+        type="button"
+        @click="removeDescFromContent(desc.id)"
+        class="bg-red-500 text-cr-gray-light px-4 py-2 rounded my-4 min-w-50 h-10 ms-auto flex-center"
+      >
+        <Loader v-if="isLoading" />
+        <span v-else>Remove from Content</span>
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import Loader from '../Loader.vue'
 import TextareaInput from './TextareaInput.vue'
 export default {
   props: {
+    contentId: {
+      type: String
+    },
     description: {
       type: Array,
       required: true
@@ -28,10 +41,29 @@ export default {
     removeAble: {
       type: Boolean,
       required: false
+    },
+    removeInApi: {
+      type: Boolean,
+      required: false
     }
   },
   components: {
-    TextareaInput
+    TextareaInput,
+    Loader
+  },
+  data() {
+    return {
+      isLoading: false
+    }
+  },
+  methods: {
+    async removeDescFromContent(descId) {
+      this.isLoading = true
+      const response = await this.removeDescriptionFromContentApi(descId, this.contentId)
+      if (response) {
+        this.isLoading = false
+      }
+    }
   }
 }
 </script>

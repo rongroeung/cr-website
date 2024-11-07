@@ -92,6 +92,8 @@ export default {
         v-if="formData.description.length"
         :description="formData.description"
         :remove-able="false"
+        :contentId="contentId"
+        :remove-in-api="true"
       />
 
       <!-- Media -->

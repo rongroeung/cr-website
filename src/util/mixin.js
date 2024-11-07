@@ -130,7 +130,7 @@ const fetchDataMixin = {
       const filteredContentIds = this.filterContentStartWithId(this.allContentIds, id)
       const contents = await this.fetchContentByIds(filteredContentIds)
 
-      if (!contents) return null;
+      if (!contents) return null
 
       return contents
     },
@@ -310,6 +310,30 @@ const fetchDataMixin = {
         }
       } catch (error) {
         this.$toast.error(error.response.data.message)
+      }
+    },
+
+    async removeDescriptionFromContentApi(descId, contentId) {
+      const buildUrl =
+        this.$backendUrl + 'removeDescription?id=' + descId + '&content_id=' + contentId
+      // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/removeDescription?id={id}&content_id={content_id}
+      try {
+        const response = await axios({
+          method: 'get',
+          url: buildUrl,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        if (response.data.code == 200) {
+          this.$toast.success(response.data.message)
+          return true
+        }
+      } catch (error) {
+        const message = error.response.data.message
+        const errorMessage = error.response.data.error
+        this.$toast.error(message + ' ' + errorMessage)
+        return false
       }
     }
   }
