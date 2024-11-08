@@ -4,18 +4,13 @@ export default {
   data() {
     return {
       section1: null,
-      section2: null,
-      section3Item1: null,
-      section3Item2: null,
-      section3Item3: null
+      contents: []
     }
   },
   async created() {
     this.section1 = await this.getContentById('11001001')
-    this.section2 = await this.getContentById('11002001')
-    this.section3Item1 = await this.getContentById('11003001')
-    this.section3Item2 = await this.getContentById('11003002')
-    this.section3Item3 = await this.getContentById('11003003')
+
+    this.contents = await this.getAllContentStartByIds('11002')
   }
 }
 </script>
@@ -26,18 +21,9 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="content h-full text-black w-4/5">
-      <div id="1102001" v-if="section2">
-        <ContentSection :section="section2" />
-      </div>
-      <div id="1103001" v-if="section3Item1">
-        <ContentSection :section="section3Item1" />
-      </div>
-      <div id="1103002" v-if="section3Item2">
-        <ContentSection :section="section3Item2" />
-      </div>
-      <div id="1103003" v-if="section3Item3">
-        <ContentSection :section="section3Item3" />
-      </div>
+      <template v-for="content in contents" :key="content.id">
+        <ContentSection :section="content" />
+      </template>
     </div>
   </section>
 </template>

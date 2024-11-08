@@ -4,16 +4,12 @@ export default {
   data() {
     return {
       section1: null,
-      section2: null,
-      section3: null,
-      section4: null
+      contents: []
     }
   },
   async created() {
     this.section1 = await this.getContentById('17001001')
-    this.section2 = await this.getContentById('17002001')
-    this.section3 = await this.getContentById('17003001')
-    this.section4 = await this.getContentById('17004001')
+    this.contents = await this.getAllContentStartByIds('17002')
   },
   methods: {
     header(description) {
@@ -32,7 +28,10 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="content h-full text-black w-4/5">
-      <div id="17002001" v-if="section2">
+      <template v-for="content in contents" :key="content.id">
+        <ContentSection :section="content" />
+      </template>
+      <!-- <div id="17002001" v-if="section2">
         <ContentSection :section="section2" />
       </div>
       <div id="17003001" v-if="section3">
@@ -62,7 +61,7 @@ export default {
         <div v-for="content in section4.description" :key="content.id" :class="dynamicClass">
           <div class="text-sm leading-6 md:leading-8 md:text-lg mb-4">{{ content.text }}</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
