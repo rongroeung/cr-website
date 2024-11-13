@@ -4,6 +4,15 @@ import HighlightsActivityCard from '@/components/HighlightsActivityCard.vue'
 export default {
   name: 'HighlightsActivity',
   components: { Layout2Columns, HighlightsActivityCard },
+  /*************  ✨ Codeium Command ⭐  *************/
+  /**
+   * The data object for HighlightsActivity component
+   *
+   * @typedef {Object} Data
+   * @property {Object} section4Item1 - The first HighlightsActivity item. It is null initially and will be populated with the content of id '01004001' in the created lifecycle hook.
+   * @property {Object} section4Item2 - The second HighlightsActivity item. It is null initially and will be populated with the content of id '01004002' in the created lifecycle hook.
+   */
+  /******  9676b3da-4375-460b-b9a7-4d14a823d133  *******/
   data() {
     return {
       section4Item1: null,
@@ -38,7 +47,12 @@ export default {
         />
       </template>
       <template #right-content>
-        <img loading="lazy" :src="section4Item1.media[0].url" :alt="section4Item1.media[0].name" />
+        <img
+          loading="lazy"
+          :src="section4Item1.media[0].url"
+          :alt="section4Item1.media[0].name"
+          class="h-full w-full h-14.7rem md:h-25.25rem object-cover"
+        />
       </template>
     </layout-2-columns>
     <layout-2-columns
@@ -50,7 +64,12 @@ export default {
       cssRight="lg:pe-0"
     >
       <template #left-content>
-        <img loading="lazy" :src="section4Item2.media[0].url" :alt="section4Item2.media[0].name" />
+        <img
+          loading="lazy"
+          :src="section4Item2.media[0].url"
+          :alt="section4Item2.media[0].name"
+          class="h-full w-full h-14.7rem md:h-25.25rem object-cover"
+        />
       </template>
       <template #right-content>
         <HighlightsActivityCard
