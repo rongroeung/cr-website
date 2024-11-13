@@ -8,12 +8,12 @@ export default {
   data() {
     return {
       data: {
-        id: '00000000',
-        title: 'Hello',
-        kh_title: 'hahah',
-        sub_title: 'hahha',
-        kh_sub_title: '123',
-        description: [{ text: 'hello' }],
+        id: '',
+        title: '',
+        kh_title: '',
+        sub_title: '',
+        kh_sub_title: '',
+        description: [],
         media: [],
         youtube: []
       }
