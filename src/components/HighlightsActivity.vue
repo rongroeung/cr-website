@@ -34,7 +34,7 @@ export default {
           :cardTitle="section4Item1.title"
           :cardSubTitle="section4Item1.sub_title"
           :cardDescription="section4Item1.description[0].text"
-          cardRouteName="ministries"
+          cardRouteName="certificate-in-ministry-leadership"
         />
       </template>
       <template #right-content>
