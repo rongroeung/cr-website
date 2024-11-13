@@ -184,9 +184,12 @@ export default {
           class="sub-menu sub-menu-ministries"
           :class="{ hidden: isBelowTabletScreen, 'flex-important': showMinistries }"
         >
+          <router-link :to="{ name: 'sunday-fellowship' }" v-t="'sunday-fellowship'"></router-link>
           <router-link :to="{ name: 'campus-ministry' }" v-t="'campus-ministry'"></router-link>
-          <router-link :to="{ name: 'worship-ministry' }" v-t="'worship-ministry'"></router-link>
-          <router-link :to="{ name: 'sport-ministry' }" v-t="'sport-ministry'"></router-link>
+          <router-link
+            :to="{ name: 'sport-ministry' }"
+            v-t="'Sports Ministry Outreach'"
+          ></router-link>
         </div>
       </div>
       <div class="dropdown-menu">
@@ -404,7 +407,7 @@ nav svg {
   display: none;
   flex-direction: column;
   top: 100%;
-  width: 260px;
+  width: 274px;
   background-color: var(--secondary-color);
 }
 .sub-menu a {

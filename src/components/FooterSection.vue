@@ -44,8 +44,8 @@ export default {
 
             <li>
               <router-link
-                :to="{ name: 'worship-ministry' }"
-                v-t="'worship-ministry'"
+                :to="{ name: 'sunday-fellowship' }"
+                v-t="'sunday-fellowship'"
               ></router-link>
             </li>
             <li>

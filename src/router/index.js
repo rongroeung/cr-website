@@ -14,7 +14,6 @@ import MinistriesPage from '@/views/MinistriesPage.vue'
 import MissionPage from '@/views/MissionPage.vue'
 import PastoralTeamPage from '@/views/PastoralTeamPage.vue'
 import SponsorAChildPage from '@/views/SponsorAChildPage.vue'
-import WorshipMinistryPage from '@/views/WorshipMinistryPage.vue'
 import SportMinistryPage from '@/views/SportMinistryPage.vue'
 import ShortTermMissionsPage from '@/views/ShortTermMissionsPage.vue'
 import ProfessionalEquipperPage from '@/views/ProfessionalEquipperPage.vue'
@@ -33,6 +32,7 @@ import AddNewDescription from '@/views/admin/AddNewDescription.vue'
 import AddNewMedia from '@/views/admin/AddNewMedia.vue'
 import AddNewYoutube from '@/views/admin/AddNewYoutube.vue'
 import LoginPage from '@/views/admin/LoginPage.vue'
+import SundayFellowshipPage from '@/views/SundayFellowshipPage.vue'
 
 const navbarHeight = 80 //ref --navbar-height: 80px
 
@@ -141,9 +141,9 @@ const router = createRouter({
               component: CampusMinistryPage
             },
             {
-              path: 'worship-ministry',
-              name: 'worship-ministry',
-              component: WorshipMinistryPage
+              path: 'sunday-fellowship',
+              name: 'sunday-fellowship',
+              component: SundayFellowshipPage
             },
             {
               path: 'sport-ministry',

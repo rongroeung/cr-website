@@ -18,14 +18,13 @@
 
 # Table of content for Developer
 
-| Content                                            | Description                                |
-| -------------------------------------------------- | ------------------------------------------ |
-| [Project Setup](#project-setup)                    | Initialize development environment         |
-| [Project Plugin](#project-plugin)                  | Essential dependency for project           |
-| [Folder Structure](#folder-structure)              | Project structure                          |
-| [Global Styling](#global-styling)                   | Global class for text, image size          |
-| [Global Properties](#global-properties)            | Global css, variable, mixin, component     |
-
+| Content                                 | Description                            |
+| --------------------------------------- | -------------------------------------- |
+| [Project Setup](#project-setup)         | Initialize development environment     |
+| [Project Plugin](#project-plugin)       | Essential dependency for project       |
+| [Folder Structure](#folder-structure)   | Project structure                      |
+| [Global Styling](#global-styling)       | Global class for text, image size      |
+| [Global Properties](#global-properties) | Global css, variable, mixin, component |
 
 ## Crossroads Admin
 
@@ -96,7 +95,7 @@ Page Id
     05: milestone,
     06: ministries,
     07: campus-ministry,
-    08: worship-ministry,
+    08: sunday-fellowship,
     09: sport-ministry,
     10: mission,
     11: church-outreach,
@@ -266,7 +265,7 @@ Below are the color that being use in project. Please refer to `main.css`
     --sub-primary-color: #f5aa07c5;
     --sub-secondary-color: #01153a;
 
-    --color-cr-gray-darker: #1f2937; 
+    --color-cr-gray-darker: #1f2937;
     --color-cr-gray-dark: #6b7280;
     --color-cr-gray-light: #f4f5f7;
     white: #FFFFFF

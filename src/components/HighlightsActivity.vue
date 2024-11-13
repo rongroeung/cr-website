@@ -44,7 +44,7 @@ export default {
     <layout-2-columns
       v-if="section4Item2"
       key="2"
-      id="worship-ministry"
+      id="sunday-fellowship"
       cssWrapper="w-4/5 py-12"
       cssLeft="lg:ps-0"
       cssRight="lg:pe-0"
@@ -58,7 +58,7 @@ export default {
           :cardTitle="section4Item2.title"
           :cardSubTitle="section4Item2.sub_title"
           :cardDescription="section4Item2.description[0].text"
-          cardRouteName="worship-ministry"
+          cardRouteName="sunday-fellowship"
         />
       </template>
     </layout-2-columns>
