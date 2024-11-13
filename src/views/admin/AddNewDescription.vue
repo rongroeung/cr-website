@@ -24,7 +24,7 @@ export default {
 </script>
 <template>
   <section>
-    <p class="text-2xl md:text-3xl text-center">Add new Description to existing content</p>
+    <p class="text-2xl md:text-3xl text-center">Add new Description</p>
 
     <SelectContentIds @update:values="handleSelectContentIds" />
 
@@ -38,7 +38,17 @@ export default {
         />
       </div>
       <!-- Divider Line -->
-      <div class="resizer bg-primary w-2-px cursor-col-resize" @mousedown="startResizing"></div>
+      <div class="resizer bg-primary w-2-px h-auto cursor-col-resize relative mx-2 mt-6">
+        <div @mousedown="startResizing" @touchstart="startResizing" class=""></div>
+
+        <button
+          class="resize-btn btn btn-danger bg-primary text-center"
+          @mousedown="startResizing"
+          @touchstart="startResizing"
+        >
+          <span>↔</span>
+        </button>
+      </div>
       <!-- Right Column -->
       <div class="bg-white rounded-lg" :style="{ width: `${100 - leftColumnWidth}%` }">
         {{ websiteUrl }}

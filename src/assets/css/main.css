@@ -194,3 +194,19 @@ button[type="submit"] {
   background-color: var(--secondary-color);
   color: var(--color-cr-gray-light);
 }
+
+.resize-btn {
+  position: absolute;
+  right: -20px;
+  top: -45px;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+}

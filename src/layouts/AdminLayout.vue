@@ -6,11 +6,11 @@ export default {
   data() {
     return {
       navigationItems: [
+        { route: 'add-new-content', name: 'Add New Content' },
         { route: 'add-new-description', name: 'Add New Description' },
         { route: 'add-new-media', name: 'Add New Media' },
         { route: 'add-new-youtube', name: 'Add New Youtube' },
-        { route: 'update-content-by-id', name: 'Update Content' },
-        { route: 'add-new-content', name: 'Add New Content' }
+        { route: 'update-content', name: 'Update Content' }
       ],
       isCollapsed: false
     }
@@ -48,10 +48,11 @@ export default {
         </div>
         <ul>
           <template v-for="navigation in navigationItems" :key="navigation">
-            <li class="list-item">
+            <li>
               <router-link
                 :to="{ name: navigation.route }"
                 :class="{ 'text-primary': currentRoute(navigation.route) }"
+                class="list-item"
                 >{{ navigation.name }}</router-link
               >
             </li>

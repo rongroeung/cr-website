@@ -123,11 +123,9 @@ const fetchDataMixin = {
   },
   methods: {
     async getAllContentStartByIds(id) {
-      if (this.allContentIds.length == 0) {
-        const response = await this.getAllContentId()
-        this.allContentIds = response.content_id
-      }
-      const filteredContentIds = this.filterContentStartWithId(this.allContentIds, id)
+      const response = await this.getAllContentId()
+      const content_ids = response.content_id
+      const filteredContentIds = this.filterContentStartWithId(content_ids, id)
       const contents = await this.fetchContentByIds(filteredContentIds)
 
       if (!contents) return null
