@@ -28,7 +28,7 @@ export default {
           {{ section5.title }}
         </p>
       </div>
-      <div class="flex-center flex-wrap gap-6">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
         <template v-for="video in section5.youtube" :key="video.id">
           <YoutubeCard :video="video" />
         </template>
