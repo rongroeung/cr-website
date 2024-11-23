@@ -47,7 +47,7 @@ export default {
 </script>
 
 <template>
-  <section class="bg-secondary h-screen w-full flex-center flex-col">
+  <section class="bg-secondary h-screen max-h-screen w-full flex-center flex-col login-screen">
     <div class="flex-center mb-10">
       <img
         :src="this.$logoUrl"
@@ -104,6 +104,9 @@ export default {
 </template>
 
 <style scoped>
+.login-screen {
+  overflow-x: hidden;
+}
 .label-cr-gray-light {
   color: var(--color-cr-gray-light) !important;
 }

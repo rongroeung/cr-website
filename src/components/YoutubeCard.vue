@@ -16,19 +16,15 @@ export default {
 }
 </script>
 <template>
-  <a
-    class="col-span-12 sm:col-span-6 md:col-span-3 cursor-pointer"
-    target="_blank"
-    :href="video.video_url"
-  >
-    <div class="w-80 flex flex-col">
+  <a class="cursor-pointer" target="_blank" :href="video.video_url">
+    <div class="w-full flex flex-col">
       <div class="relative">
         <!-- Image Video -->
         <img
           loading="lazy"
           :src="video.thumbnail_url"
           :alt="video.thumbnail_name"
-          class="w-80 rounded-lg object-cover"
+          class="w-full rounded-lg object-cover"
           style="height: 180px"
         />
 

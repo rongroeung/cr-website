@@ -11,9 +11,9 @@ export default {
       section3: null,
       isGlobalPage: true,
       cssTab:
-        'w-1/2 md:w-2/5 inline-block px-4 py-3 text-lg text-cr-gray-darker hover:text-gray-700 bg-cr-gray-light hover:bg-gray-200 cursor-pointer',
+        'w-1/2 md:w-2/5 inline-block px-4 py-2 md:py-3 text-lg text-cr-gray-darker hover:text-gray-700 bg-cr-gray-light hover:bg-gray-200 cursor-pointer',
       cssSelectedTab:
-        'Selected w-1/2 md:w-2/5 inline-block px-4 py-3 text-lg  bg-cr-gray-dark hover:bg-gray-500 active cursor-pointer'
+        'Selected w-1/2 md:w-2/5 inline-block px-4 py-2 md:py-3 text-lg  bg-cr-gray-dark hover:bg-gray-500 active cursor-pointer'
     }
   },
   async created() {
@@ -36,7 +36,7 @@ export default {
         >
           {{ section2.title }}
         </p>
-        <div class="flex-center mb-10 md:mb-20 w-full md:w-4/5 h-64 md:h-30rem">
+        <div class="flex-center mb-10 md:mb-20 w-11/12 md:w-4/5 h-64 md:h-30rem">
           <iframe
             width="100%"
             height="100%"

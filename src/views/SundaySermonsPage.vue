@@ -77,10 +77,8 @@ export default {
           <option value="oldest">Oldest</option>
         </select>
       </div>
-      <div v-if="section2" class="flex-center flex-wrap gap-6 mb-10">
-        <template v-for="video in ItemToBeShow" :key="video.id">
-          <YoutubeCard :video="video" />
-        </template>
+      <div v-if="section2" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <YoutubeCard v-for="video in ItemToBeShow" :key="video.id" :video="video" />
       </div>
       <div class="flex mb-20">
         <Pagination :totalPage="totalPage" @on-select-page="onSelectPage" />

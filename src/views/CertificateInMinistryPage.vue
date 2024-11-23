@@ -50,11 +50,15 @@ export default {
     <div id="13001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="bg-cr-gray-light flex-center flex-col h-full text-black">
+    <div class="bg-cr-gray-light flex-center flex-col w-full h-full text-black">
       <div class="w-4/5">
         <template v-for="section in section2" :key="section.id">
           <div v-if="section.id == '13002001'" class="flex-center flex-col mt-10">
-            <img :src="section.media[0].url" :alt="section.media[0].name" class="w-32 h-32 mb-10" />
+            <img
+              :src="section.media[0].url"
+              :alt="section.media[0].name"
+              class="w-48 h-auto mb-10"
+            />
             <p :class="cssClass">
               {{ section.title }}
             </p>
