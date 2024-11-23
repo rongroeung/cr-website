@@ -73,4 +73,8 @@ export default {
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+#paypal-form-fields-container-7DXNCEKJAMG3L {
+  width: 19.75rem !important;
+}
+</style>

@@ -141,6 +141,12 @@ e.g. https://www.youtube.com/embed/7QTDW1hW2ck?si=Grn_CRvssTqOBiPw
 
 ### Paypal
 
+--updated-- Currently we simply use paypal button
+
+https://www.paypal.com/mep/dashboard > Pay links & buttons > Payment Button > Create It
+
+![Content Id image](/src/assets/img/paypal.png)
+
 We use paypal embeded button in our give page and it need `cliend_id`
 
 so `client_id` store in title field of `content_id` `19003001`

@@ -210,3 +210,11 @@ button[type="submit"] {
   transition: all 0.3s ease;
   text-align: center;
 }
+
+/* for paypal */
+
+@media (max-width: 640px) {
+ .css-to8mgr {
+    width: 19.75rem !important;
+  }
+}
