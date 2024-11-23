@@ -20,7 +20,7 @@ export default {
     <div class="text-cr-gray-dark">
       <h2 class="text-xl font-semibold text-cr-gray-darker my-4">{{ section.title }}</h2>
       <template v-for="content in section.description" :key="content.id">
-        <div class="text-sm leading-6 md:leading-8 md:text-lg mb-4">{{ content.text }}</div>
+        <div class="text-sm leading-6 md:leading-8 md:text-lg mb-4" v-html="content.text"></div>
       </template>
     </div>
   </div>

@@ -76,9 +76,10 @@ export default {
         <div class="p-4 pt-0">
           <ul class="list-disc m-2 italic">
             <template v-for="description in section3.description" :key="description">
-              <li class="text-sm leading-6 md:leading-8 md:text-lg my-1">
-                {{ description.text }}
-              </li>
+              <li
+                class="text-sm leading-6 md:leading-8 md:text-lg my-1"
+                v-html="description.text"
+              ></li>
             </template>
           </ul>
         </div>

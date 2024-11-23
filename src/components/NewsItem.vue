@@ -50,7 +50,7 @@ export default {
 
     <!-- Description -->
     <div v-for="description in section.description" :key="description.id" :class="dynamicClass">
-      <div class="text-sm leading-6 md:leading-8 md:text-lg">{{ description.text }}</div>
+      <div class="text-sm leading-6 md:leading-8 md:text-lg" v-html="description.text"></div>
     </div>
   </div>
 </template>

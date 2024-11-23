@@ -31,37 +31,6 @@ export default {
       <template v-for="content in contents" :key="content.id">
         <ContentSection :section="content" />
       </template>
-      <!-- <div id="17002001" v-if="section2">
-        <ContentSection :section="section2" />
-      </div>
-      <div id="17003001" v-if="section3">
-        <p
-          v-if="section3.title"
-          class="text-3xl font-bold text-cr-gray-darker mb-6 text-center md:text-left"
-        >
-          {{ section3.title }}
-        </p>
-        <p
-          v-if="section3.sub_title"
-          class="text-sm leading-6 md:leading-8 md:text-lg mb-6 text-left"
-        >
-          {{ section3.sub_title }}
-        </p>
-        <div class="p-4 pt-0">
-          <ul class="list-disc m-2 font-normal">
-            <template v-for="description in section3.description" :key="description">
-              <li class="text-sm leading-6 md:leading-8 md:text-lg my-1">
-                <b>{{ header(description.text) }}:</b>{{ text(description.text) }}
-              </li>
-            </template>
-          </ul>
-        </div>
-      </div>
-      <div id="17004001" v-if="section4" class="mb-20">
-        <div v-for="content in section4.description" :key="content.id" :class="dynamicClass">
-          <div class="text-sm leading-6 md:leading-8 md:text-lg mb-4">{{ content.text }}</div>
-        </div>
-      </div> -->
     </div>
   </section>
 </template>

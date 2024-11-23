@@ -54,9 +54,11 @@ export default {
     <!-- Description -->
     <div class="ps-1">
       <template v-for="(description, index) in section.description" :key="index">
-        <div class="text-sm leading-6 md:leading-8 md:text-lg" :class="dynamicClass">
-          {{ description.text }}
-        </div>
+        <div
+          class="text-sm leading-6 md:leading-8 md:text-lg"
+          :class="dynamicClass"
+          v-html="description.text"
+        ></div>
       </template>
     </div>
   </div>
