@@ -50,7 +50,7 @@ export default {
         </div>
       </div>
       <div class="give-section w-4/5">
-        <ul class="flex-center text-sm font-medium text-center mb-10 md:mb-20 w-full">
+        <ul class="flex-center text-sm font-medium text-center w-full">
           <li
             :class="[isGlobalPage ? cssSelectedTab : cssTab, 'rounded-l-lg']"
             @click="isGlobalPage = true"
@@ -63,9 +63,9 @@ export default {
           ></li>
         </ul>
         <div v-if="section3" class="Paypal w-full h-fit flex-center">
-          <Paypal v-if="isGlobalPage" :client_id="section3.title" />
-          <div v-else class="w-full md:w-4/5">
-            <img :src="section3.media[0].url" :alt="section3.media[0].name" />
+          <Paypal v-show="isGlobalPage" class="mt-8 md:mt-16 text-cr-gray-darker" />
+          <div v-show="!isGlobalPage" class="max-w-screen-lg mt-10 md:mt-20">
+            <img :src="section3.media[0].url" :alt="section3.media[0].name" class="h-100" />
           </div>
         </div>
       </div>
