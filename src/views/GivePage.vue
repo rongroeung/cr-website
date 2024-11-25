@@ -62,11 +62,30 @@ export default {
             v-t="'Local'"
           ></li>
         </ul>
+
         <div v-if="section3" class="Paypal w-full h-fit flex-center">
-          <Paypal v-show="isGlobalPage" class="mt-8 md:mt-16 text-cr-gray-darker" />
-          <div v-show="!isGlobalPage" class="max-w-screen-lg mt-10 md:mt-20">
-            <img :src="section3.media[0].url" :alt="section3.media[0].name" class="h-100" />
-          </div>
+          <transition
+            enter-active-class="transition-opacity duration-300 ease-out"
+            enter-from-class="opacity-0"
+            enter-to-class="opacity-100"
+            leave-active-class="transition-opacity duration-300 ease-in"
+            leave-from-class="opacity-100"
+            leave-to-class="opacity-0"
+          >
+            <Paypal v-show="isGlobalPage" class="mt-8 md:mt-16 text-cr-gray-darker" />
+          </transition>
+          <transition
+            enter-active-class="transition-opacity duration-300 ease-out"
+            enter-from-class="opacity-0"
+            enter-to-class="opacity-100"
+            leave-active-class="transition-opacity duration-300 ease-in"
+            leave-from-class="opacity-100"
+            leave-to-class="opacity-0"
+          >
+            <div v-show="!isGlobalPage" class="max-w-screen-lg mt-10 md:mt-20">
+              <img :src="section3.media[0].url" :alt="section3.media[0].name" class="h-100" />
+            </div>
+          </transition>
         </div>
       </div>
     </div>

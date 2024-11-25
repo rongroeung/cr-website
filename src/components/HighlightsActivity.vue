@@ -4,15 +4,6 @@ import HighlightsActivityCard from '@/components/HighlightsActivityCard.vue'
 export default {
   name: 'HighlightsActivity',
   components: { Layout2Columns, HighlightsActivityCard },
-  /*************  ✨ Codeium Command ⭐  *************/
-  /**
-   * The data object for HighlightsActivity component
-   *
-   * @typedef {Object} Data
-   * @property {Object} section4Item1 - The first HighlightsActivity item. It is null initially and will be populated with the content of id '01004001' in the created lifecycle hook.
-   * @property {Object} section4Item2 - The second HighlightsActivity item. It is null initially and will be populated with the content of id '01004002' in the created lifecycle hook.
-   */
-  /******  9676b3da-4375-460b-b9a7-4d14a823d133  *******/
   data() {
     return {
       section4Item1: null,

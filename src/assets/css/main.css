@@ -16,7 +16,7 @@
   --max-width: 1920px;
   --color-cr-gray-darker: #1f2937; /* text-gray-800 */
   --color-cr-gray-dark: #6b7280; /* text-gray-600 */
-  --color-cr-gray-light: #f4f5f7; 
+  --color-cr-gray-light: #f4f5f7;
 }
 
 /* Variables */
@@ -34,11 +34,11 @@
   color: var(--color-cr-gray-light);
 }
 
-.bg-cr-primary{
+.bg-cr-primary {
   background-color: var(--primary-color) !important;
 }
 
-.bg-cr-gray-darker{
+.bg-cr-gray-darker {
   background-color: var(--color-cr-gray-darker);
 }
 .bg-cr-gray-dark {
@@ -48,7 +48,6 @@
 .bg-cr-gray-light {
   background-color: var(--color-cr-gray-light);
 }
-
 
 /* Page CSS */
 
@@ -178,19 +177,19 @@ p {
 
 input {
   background-color: var(--color-cr-gray-light);
-  color: var(--color-cr-gray-darker)
+  color: var(--color-cr-gray-darker);
 }
 
 textarea {
   background-color: var(--color-cr-gray-light);
-  color: var(--color-cr-gray-darker)
-}
-
-label{
   color: var(--color-cr-gray-darker);
 }
 
-button[type="submit"] {
+label {
+  color: var(--color-cr-gray-darker);
+}
+
+button[type='submit'] {
   background-color: var(--secondary-color);
   color: var(--color-cr-gray-light);
 }
@@ -214,7 +213,7 @@ button[type="submit"] {
 /* for paypal */
 
 @media (max-width: 640px) {
- .css-to8mgr {
+  .css-to8mgr {
     width: 19.75rem !important;
   }
 }
