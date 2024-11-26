@@ -21,11 +21,15 @@ export default {
 </script>
 
 <template>
-  <section id="layout-2-columns" class="flex flex-row items-center min-h-96" :class="wrapClass">
-    <div class="left-content w-full lg:w-2/4 p-6" :class="cssLeft">
+  <section
+    id="layout-2-columns"
+    class="flex flex-row items-center min-h-96 w-4/5 py-8 md:py-12"
+    :class="wrapClass"
+  >
+    <div class="left-content w-full lg:w-2/4 px-0 p-6 lg:ps-0" :class="cssLeft">
       <slot name="left-content"></slot>
     </div>
-    <div class="right-content w-full lg:w-2/4 p-6" :class="cssRight">
+    <div class="right-content w-full lg:w-2/4 px-0 p-6 lg:pe-0" :class="cssRight">
       <slot name="right-content"></slot>
     </div>
   </section>

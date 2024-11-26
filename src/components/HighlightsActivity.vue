@@ -24,9 +24,8 @@ export default {
       key="1"
       id="certificate-in-ministry-leadership"
       :wrapReverse="true"
-      cssWrapper="w-4/5 py-12 pb-0"
-      cssLeft="pb-0 lg:ps-0"
-      cssRight="lg:pe-0"
+      cssWrapper="pb-none"
+      cssLeft="pb-0 "
     >
       <template #left-content>
         <HighlightsActivityCard
@@ -46,14 +45,7 @@ export default {
         />
       </template>
     </layout-2-columns>
-    <layout-2-columns
-      v-if="section4Item2"
-      key="2"
-      id="sunday-fellowship"
-      cssWrapper="w-4/5 py-12"
-      cssLeft="lg:ps-0"
-      cssRight="lg:pe-0"
-    >
+    <layout-2-columns v-if="section4Item2" key="2" id="sunday-fellowship">
       <template #left-content>
         <img
           loading="lazy"

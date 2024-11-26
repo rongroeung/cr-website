@@ -379,7 +379,7 @@ export default {
 }
 .navbar-search-icon-mobile {
   display: block;
-  padding: 30px;
+  padding: 10px 30px;
 }
 .navbar-search-icon-desktop {
   display: flex;
@@ -505,7 +505,7 @@ nav svg {
   .open-sidebar-button,
   .close-sidebar-button {
     display: block;
-    padding: 30px;
+    padding: 10px 30px;
     cursor: pointer;
   }
   #sidebar-active:checked ~ .links-container {
@@ -520,8 +520,16 @@ nav svg {
     z-index: 9999;
   }
 }
-/* Media query below mobile-screen */
-@media (max-width: 500px) {
+/* Media query for mobile-screen */
+
+@media (max-width: 640px) {
+  .Navbar {
+    height: var(--navbar-height-mobile);
+  }
+  .navbar-logo-mobile img {
+    max-height: var(--navbar-height-mobile);
+  }
+  /*medium*/
   .links-container {
     width: 100%;
   }

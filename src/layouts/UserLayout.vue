@@ -22,4 +22,11 @@ export default {
 .UserLayout {
   margin-top: var(--navbar-height);
 }
+
+@media (max-width: 640px) {
+  /*medium*/
+  .UserLayout {
+    margin-top: var(--navbar-height-mobile);
+  }
+}
 </style>

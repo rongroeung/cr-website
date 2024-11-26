@@ -13,6 +13,7 @@
   --sub-primary-color: #f5aa07c5;
   --sub-secondary-color: #01153a;
   --navbar-height: 80px;
+  --navbar-height-mobile: 60px;
   --max-width: 1920px;
   --color-cr-gray-darker: #1f2937; /* text-gray-800 */
   --color-cr-gray-dark: #6b7280; /* text-gray-600 */
@@ -210,9 +211,13 @@ button[type='submit'] {
   text-align: center;
 }
 
+.pb-none{
+  padding-bottom: 0 !important;
+}
+
 /* for paypal */
 
-@media (max-width: 640px) {
+@media (max-width: 640px) { /*medium*/
   .css-to8mgr {
     width: 19.75rem !important;
   }

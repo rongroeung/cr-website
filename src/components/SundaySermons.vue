@@ -15,7 +15,7 @@ export default {
 }
 </script>
 <template>
-  <section class="SundaySermons flex-center flex-col bg-white py-20">
+  <section class="SundaySermons flex-center flex-col bg-white py-12 md:py-20">
     <div
       v-if="section5"
       id="01005001"

@@ -35,7 +35,11 @@ export default {
 
 <template>
   <section class="bg-secondary h-fit flex-center flex-col">
-    <section v-if="section2" id="01002001" class="section2 w-4/5 flex flex-col items-center py-20">
+    <section
+      v-if="section2"
+      id="01002001"
+      class="section2 w-4/5 flex flex-col items-center py-12 md:py-20"
+    >
       <p class="text-2xl md:text-4xl xl:text-5xl pb-6">{{ section2.title }}</p>
       <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
         <template v-for="content in section2.description" :key="content.id">
@@ -55,17 +59,17 @@ export default {
     </section>
     <section
       v-if="section3"
-      class="section3 w-4/5 flex flex-row flex-wrap justify-center text-black gap-6 pb-20"
+      class="section3 w-4/5 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-black pb-12 md:pb-20"
     >
-      <div v-for="content in section3" :key="content.id">
-        <DiscipleshipCard
-          :cardId="content.id"
-          :cardIcon="content.media[0].url"
-          :cardIconName="content.media[0].name"
-          :cardHeader="content.title"
-          :cardContents="content.description"
-        />
-      </div>
+      <DiscipleshipCard
+        v-for="content in section3"
+        :key="content.id"
+        :cardId="content.id"
+        :cardIcon="content.media[0].url"
+        :cardIconName="content.media[0].name"
+        :cardHeader="content.title"
+        :cardContents="content.description"
+      />
     </section>
   </section>
 </template>
