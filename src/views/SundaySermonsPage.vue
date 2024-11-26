@@ -77,7 +77,7 @@ export default {
           <option value="oldest">Oldest</option>
         </select>
       </div>
-      <div v-if="section2" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div v-if="section2" class="w-4/5 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <YoutubeCard v-for="video in ItemToBeShow" :key="video.id" :video="video" />
       </div>
       <div class="flex mb-20">

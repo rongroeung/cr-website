@@ -4,7 +4,7 @@
       <img
         :src="image.url"
         :alt="image.name"
-        class="h-full w-full lg:w-49 h-14.7rem md:h-25.25rem object-cover"
+        class="h-80 w-full lg:w-49 h-14.7rem md:h-25.25rem object-cover"
       />
     </template>
   </div>

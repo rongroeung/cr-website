@@ -25,7 +25,7 @@ export default {
         <ContentSection :section="content" />
       </template>
     </div>
-    <section
+    <!-- <section
       class="relative w-full h-screen bg-cover bg-center"
       style="background-image: url('path-to-background-image.jpg')"
     >
@@ -56,7 +56,6 @@ export default {
             <a href="#sermon1" class="text-white text-2xl font-bold">Play Video</a>
           </div>
         </div>
-        <!-- Repeat for other sermons -->
       </div>
     </section>
     <section class="bg-gray-200 py-12">
@@ -67,7 +66,6 @@ export default {
           <p class="text-2xl">Verse 1: You are my light, my salvation...</p>
           <p class="text-2xl">Chorus: Lift your hands and praise His name...</p>
           <p class="text-2xl">Verse 2: In your presence, we find peace...</p>
-          <!-- Add more verses here -->
         </div>
       </div>
     </section>
@@ -98,7 +96,6 @@ export default {
               <p class="text-lg">"God healed me after a long battle with illness..."</p>
               <a href="#testimony1" class="text-blue-500">Read More</a>
             </div>
-            <!-- Repeat for other testimonies -->
           </div>
         </div>
       </div>
@@ -111,7 +108,6 @@ export default {
           <p class="text-lg mb-4">Join us for a powerful time of worship and praise!</p>
           <p class="text-lg font-bold">Date: Sunday, 10 AM</p>
         </div>
-        <!-- Repeat for other events -->
       </div>
     </section>
     <section class="bg-green-100 py-12">
@@ -124,7 +120,7 @@ export default {
           >Donate Now</a
         >
       </div>
-    </section>
+    </section> -->
   </section>
 </template>
 

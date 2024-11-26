@@ -59,17 +59,19 @@ export default {
     </section>
     <section
       v-if="section3"
-      class="section3 w-4/5 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-black pb-12 md:pb-20"
+      class="section3 h-fit w-4/5 flex items-center justify-center flex-col text-black pb-12 md:pb-20"
     >
-      <DiscipleshipCard
-        v-for="content in section3"
-        :key="content.id"
-        :cardId="content.id"
-        :cardIcon="content.media[0].url"
-        :cardIconName="content.media[0].name"
-        :cardHeader="content.title"
-        :cardContents="content.description"
-      />
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <DiscipleshipCard
+          v-for="content in section3"
+          :key="content.id"
+          :cardId="content.id"
+          :cardIcon="content.media[0].url"
+          :cardIconName="content.media[0].name"
+          :cardHeader="content.title"
+          :cardContents="content.description"
+        />
+      </div>
     </section>
   </section>
 </template>
