@@ -147,11 +147,13 @@ https://www.paypal.com/mep/dashboard > Pay links & buttons > Payment Button > Cr
 
 ![Content Id image](/src/assets/img/paypal.png)
 
-We use paypal embeded button in our give page and it need `cliend_id`
+## Deprecated
 
-so `client_id` store in title field of `content_id` `19003001`
+    We use paypal embeded button in our give page and it need `cliend_id`
 
-QR code image for give page store in `media[0].url` field of the same object
+    so `client_id` store in title field of `content_id` `19003001`
+
+    QR code image for give page store in `media[0].url` field of the same object
 
 ### Sunday Sermons
 
@@ -247,16 +249,21 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
     |   ├── icon
     |   ├── img
     ├── components
+    |   ├── admin               // components used in admin page
+    |   ├── ...                 // all user's components
     ├── lang
     |   ├── en
     |   ├── kh
     ├── layouts
+    |   ├── ...                 // components for layout
     ├── router
+    |   ├── index.js
     ├── util
     |   ├── constant.js
-    |   ├── fallbackData.js
     |   ├── mixin.js
-    └── views
+    ├── views
+    |   ├── admin              // admin views
+    |   ├── ...                // user views
     └── App.vue
     └── main.js
 
@@ -296,11 +303,11 @@ Below are the color that being use in project. Please refer to `main.css`
 
     text-3xl md:text-4xl xl:text-5xl
 
-### Text bold
+### Description
 
-used this website to generate bold text, and simply copy and paste to admin form
+most of the description are render in html format `v-html` so we can easy style using html tag
 
-    https://lingojam.com/BoldTextGenerator
+    <b> Hello </b> Admin
 
 ## Global Properties
 

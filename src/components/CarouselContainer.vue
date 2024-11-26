@@ -1,7 +1,7 @@
 <script>
 import CrButton from '@/components/CrButton.vue'
 export default {
-  name: 'Carousel',
+  name: 'CarouselContainer',
   components: { CrButton },
   data() {
     return {
