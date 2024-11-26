@@ -16,8 +16,8 @@ export default {
 }
 </script>
 <template>
-  <a class="cursor-pointer" target="_blank" :href="video.video_url">
-    <div class="w-full flex flex-col">
+  <a class="cursor-pointer flex-center flex-col" target="_blank" :href="video.video_url">
+    <div class="w-11/12 sm:w-full">
       <div class="relative">
         <!-- Image Video -->
         <img

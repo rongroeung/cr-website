@@ -42,7 +42,7 @@ export default {
           loading="lazy"
           :src="section4Item1.media[0].url"
           :alt="section4Item1.media[0].name"
-          class="h-full w-full h-14.7rem md:h-25.25rem object-cover"
+          class="w-full h-48 md:h-25.25rem object-cover"
         />
       </template>
     </layout-2-columns>
@@ -59,7 +59,7 @@ export default {
           loading="lazy"
           :src="section4Item2.media[0].url"
           :alt="section4Item2.media[0].name"
-          class="h-full w-full h-14.7rem md:h-25.25rem object-cover"
+          class="w-full h-48 md:h-25.25rem object-cover"
         />
       </template>
       <template #right-content>

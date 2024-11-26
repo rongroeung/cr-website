@@ -46,7 +46,11 @@ export default {
       <h2 class="text-3xl text-center mb-8">Recent Worship Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="relative overflow-hidden rounded-lg shadow-lg">
-          <img src="path-to-sermon-thumbnail.jpg" alt="Sermon 1" class="w-full h-56 object-cover" />
+          <img
+            src="https://crossroadscambodia.church:7004/filebrowser/api/public/dl/2hGEn6qQ/base-content/cr-photos/sunday-sermons-001.png?inline=true"
+            alt="Sermon 1"
+            class="w-full h-56 object-cover"
+          />
           <div class="absolute inset-0 bg-black opacity-30"></div>
           <div class="absolute inset-0 flex justify-center items-center">
             <a href="#sermon1" class="text-white text-2xl font-bold">Play Video</a>

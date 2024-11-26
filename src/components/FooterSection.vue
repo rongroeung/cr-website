@@ -39,17 +39,20 @@ export default {
           ></router-link>
           <ul class="mt-3">
             <li>
-              <router-link :to="{ name: 'campus-ministry' }" v-t="'campus-ministry'"></router-link>
-            </li>
-
-            <li>
               <router-link
                 :to="{ name: 'sunday-fellowship' }"
                 v-t="'sunday-fellowship'"
               ></router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'sport-ministry' }" v-t="'sport-ministry'"></router-link>
+              <router-link :to="{ name: 'campus-ministry' }" v-t="'campus-ministry'"></router-link>
+            </li>
+
+            <li>
+              <router-link
+                :to="{ name: 'sport-ministry' }"
+                v-t="'Sports Ministry Outreach'"
+              ></router-link>
             </li>
           </ul>
         </div>
