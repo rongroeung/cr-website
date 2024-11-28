@@ -11,7 +11,7 @@ export default {
         primary: '#f5a807',
         secondary: '#021b4b',
         'sub-primary': '#f5aa07c5',
-        'sub-secondary': '#01153a',
+        'sub-secondary': '#01153a'
       },
       height: {
         '13.43rem': '13.43rem',

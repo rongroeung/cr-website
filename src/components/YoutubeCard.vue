@@ -19,13 +19,12 @@ export default {
   <a class="cursor-pointer flex-center flex-col" target="_blank" :href="video.video_url">
     <div class="w-11/12 sm:w-full">
       <div class="relative">
-        <!-- Image Video -->
+        <!-- thumnail Size: 320x180-->
         <img
           loading="lazy"
           :src="video.thumbnail_url"
           :alt="video.thumbnail_name"
-          class="w-full rounded-lg object-cover"
-          style="height: 180px"
+          class="cr-img-sm-16-9 rounded-lg"
         />
 
         <p class="absolute right-2 bottom-2 bg-gray-700 text-gray-100 text-xs px-1 py rounded-sm">

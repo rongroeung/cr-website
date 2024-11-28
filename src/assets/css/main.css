@@ -12,12 +12,14 @@
   --secondary-color: #021b4b;
   --sub-primary-color: #f5aa07c5;
   --sub-secondary-color: #01153a;
-  --navbar-height: 80px;
-  --navbar-height-mobile: 60px;
-  --max-width: 1920px;
   --color-cr-gray-darker: #1f2937; /* text-gray-800 */
   --color-cr-gray-dark: #6b7280; /* text-gray-600 */
   --color-cr-gray-light: #f4f5f7;
+
+  --max-width-img-sm: 20rem; /*320px*/
+  --navbar-height: 80px;
+  --navbar-height-mobile: 60px;
+  --max-width: 1920px;
 }
 
 /* Variables */
@@ -148,7 +150,13 @@ p {
   width: 3px;
 }
 
-/* Height and Width section */
+/* end Height and Width section */
+
+.cr-img-sm-16-9 {
+  max-width: var(--max-width-img-sm);
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
 
 .duration-2000 {
   transition-duration: 2000ms;
@@ -211,13 +219,14 @@ button[type='submit'] {
   text-align: center;
 }
 
-.pb-none{
+.pb-none {
   padding-bottom: 0 !important;
 }
 
 /* for paypal */
 
-@media (max-width: 640px) { /*medium*/
+@media (max-width: 640px) {
+  /*medium*/
   .css-to8mgr {
     width: 19.75rem !important;
   }

@@ -28,7 +28,7 @@ export default {
           {{ section5.title }}
         </p>
       </div>
-      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         <YoutubeCard v-for="video in section5.youtube" :key="video.id" :video="video" />
       </div>
       <CrButton label="see-more" class="mt-6" buttonRoute="sunday-sermons" />
