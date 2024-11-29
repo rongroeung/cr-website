@@ -32,9 +32,9 @@ export default {
     </div>
     <div class="content w-4/5 flex-center my-20">
       <div
-        class="space-y-8 relative before:absolute before:inset-0 before:ml-8 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent"
+        class="space-y-8 relative before:absolute before:inset-0 before:ml-8 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent w-full"
       >
-        <template v-for="(section, index) in section2" :key="section.id">
+        <template v-for="(section, index) in section2" :key="index">
           <div
             :id="section.id"
             class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group font-semibold"
@@ -53,7 +53,7 @@ export default {
               <div class="flex-center flex-col mb-1">
                 <img
                   loading="lazy"
-                  class="w-auto h-auto rounded mb-4"
+                  class="cr-img-md-3-2 rounded mb-4"
                   :src="section.media[0].url"
                   :alt="section.media[0].name"
                 />

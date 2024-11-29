@@ -285,13 +285,15 @@ Below are the color that being use in project. Please refer to `main.css`
 
 ### Image Sizing
 
-> 1550 x 1050
+`md = 770px`
+`sm = 320px`
 
-    h-full w-full lg:w-49 h-14.7rem md:h-25.25rem object-cover
+Util class
 
-> 1024 x 576
+`cr-img-md-16-9` ratio `16/9` used in news, event
 
-    h-full w-full h-13.43rem md:h-21rem object-cover
+`cr-img-md-3-2` ratio `3/2` used in content section, milestone. home page
+
 
 ### Text Styling
 

@@ -39,7 +39,7 @@ export default {
     <img
       :src="section.media[0].url"
       :alt="section.media[0].name"
-      class="w-full h-13.43rem md:h-25.25rem object-cover rounded-lg shadow-lg"
+      class="cr-img-md-16-9 rounded-lg shadow-lg"
     />
 
     <!-- Date -->

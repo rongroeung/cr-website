@@ -1,11 +1,7 @@
 <template>
-  <div class="flex flex-row flex-wrap justify-center gap-4">
+  <div class="flex flex-center flex-row flex-wrap">
     <template v-for="(image, index) in images" :key="index">
-      <img
-        :src="image.url"
-        :alt="image.name"
-        class="h-80 w-full lg:w-49 h-14.7rem md:h-25.25rem object-cover"
-      />
+      <img :src="image.url" :alt="image.name" class="w-full lg:w-1/2 cr-img-md-3-2 p-2" />
     </template>
   </div>
 </template>

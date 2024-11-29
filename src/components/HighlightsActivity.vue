@@ -41,7 +41,7 @@ export default {
           loading="lazy"
           :src="section4Item1.media[0].url"
           :alt="section4Item1.media[0].name"
-          class="w-full h-48 md:h-25.25rem object-cover md:ps-6"
+          class="cr-img-md-3-2 md:ps-6"
         />
       </template>
     </layout-2-columns>
@@ -51,7 +51,7 @@ export default {
           loading="lazy"
           :src="section4Item2.media[0].url"
           :alt="section4Item2.media[0].name"
-          class="w-full h-48 md:h-25.25rem object-cover md:pe-6"
+          class="cr-img-md-3-2 md:pe-6"
         />
       </template>
       <template #right-content>
