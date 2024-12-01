@@ -1,5 +1,5 @@
 <template>
-  <div class="description-input flex flex-col w-full p-3 border-rounded-sub-primary">
+  <div class="description-input flex flex-col w-full">
     <label class="font-medium text-center text-2xl">Description</label>
     <div v-for="(desc, index) in description" :key="index" class="flex flex-col mb-2">
       <b class="text-secondary">Description {{ index + 1 }}</b>

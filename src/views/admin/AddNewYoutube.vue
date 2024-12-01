@@ -1,11 +1,11 @@
 <script>
 import AddNewYoutubeForm from '@/components/admin/AddNewYoutubeForm.vue'
 import SelectContentIds from '@/components/SelectContentIds.vue'
-import { adminResizeIframeMixin } from '@/util/mixin'
+
+import DynamicShadow from '@/components/DynamicShadow.vue'
 export default {
   name: 'AddNewYoutube',
-  components: { AddNewYoutubeForm, SelectContentIds },
-  mixins: [adminResizeIframeMixin],
+  components: { AddNewYoutubeForm, SelectContentIds, DynamicShadow },
   data() {
     // this data (selectedContentId, websiteUrl )and methods (handleSelectContentIds) must have in a parent component that use SelectContentIds because we need to manage the data to form and iframe
     return {
@@ -23,36 +23,23 @@ export default {
 </script>
 <template>
   <section>
-    <p class="text-2xl md:text-3xl text-center">Add new Youtube</p>
+    <DynamicShadow text="Add new Youtube" />
     <SelectContentIds @update:values="handleSelectContentIds" />
-    <div class="py-8 mx-auto flex text-center gap-4 h-screen max-h-90rem">
-      <!-- Left Column -->
-      <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
+    <ResizableContainer>
+      <template #left_container>
         <AddNewYoutubeForm
           :contentId="selectedContentId"
           :key="selectedContentId"
           class="w-full h-full"
         />
-      </div>
-
-      <!-- Divider Line -->
-      <div class="resizer bg-primary w-2-px h-auto cursor-col-resize relative mx-2 mt-6">
-        <div @mousedown="startResizing" @touchstart="startResizing" class=""></div>
-
-        <button
-          class="resize-btn btn btn-danger bg-primary text-center"
-          @mousedown="startResizing"
-          @touchstart="startResizing"
-        >
-          <span>↔</span>
-        </button>
-      </div>
-      <!-- Right Column -->
-      <div class="bg-white rounded-lg" :style="{ width: `${100 - leftColumnWidth}%` }">
-        {{ websiteUrl }}
-        <iframe :src="websiteUrl" title="description" width="100%" height="100%"></iframe>
-      </div>
-    </div>
+      </template>
+      <template #right_container>
+        <div class="h-full bg-white rounded-lg">
+          {{ websiteUrl }}
+          <iframe :src="websiteUrl" title="description" width="100%" height="100%"></iframe>
+        </div>
+      </template>
+    </ResizableContainer>
   </section>
 </template>
 

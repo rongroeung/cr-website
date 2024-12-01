@@ -1,8 +1,8 @@
 <template>
-  <div class="media-input flex flex-col border-rounded-sub-primary">
+  <div class="media-input flex flex-col">
     <label class="font-medium text-center text-2xl">Media</label>
 
-    <div v-for="(mediaItem, index) in media" :key="index" class="mb-2 p-3">
+    <div v-for="(mediaItem, index) in media" :key="index" class="mb-2">
       <b class="text-secondary">Media {{ index + 1 }}</b>
       <TextInput
         label="Url"

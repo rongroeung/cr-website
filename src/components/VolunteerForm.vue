@@ -81,7 +81,7 @@ export default {
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-secondary w-full px-4 py-2 rounded ms-auto"
+          class="bg-secondary w-full px-4 py-2 rounded ms-auto mb-10"
           v-t="'submit'"
         ></button>
       </div>

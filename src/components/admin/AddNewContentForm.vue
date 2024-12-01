@@ -86,7 +86,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-left p-4">
+  <div class="text-left">
     <form @submit.prevent="submitForm" class="space-y-4">
       <TextInput id="id" label="Id" v-model="formData.id" :required="true" type="number" />
       <!-- Title -->
@@ -166,7 +166,7 @@ export default {
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-blue-500 w-full px-4 py-2 rounded ms-auto"
+          class="bg-blue-500 w-full px-4 py-2 rounded ms-auto mb-10"
         >
           Submit
         </button>

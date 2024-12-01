@@ -19,6 +19,7 @@ import { fetchDataMixin } from '@/util/mixin'
 import ImagePreview from '@/components/ImagePreview.vue'
 import ContentSection from '@/components/ContentSection.vue'
 import PageHeader from '@/components/PageHeader.vue'
+import ResizableContainer from '@/components/ResizableContainer.vue'
 
 const app = createApp(App)
 
@@ -62,6 +63,7 @@ app.config.globalProperties.$content_ids_mapper = {
 app.component('ImagePreview', ImagePreview)
 app.component('ContentSection', ContentSection)
 app.component('PageHeader', PageHeader)
+app.component('ResizableContainer', ResizableContainer)
 
 app.use(ToastPlugin)
 app.use(router)
