@@ -38,8 +38,7 @@ export default {
 
 <style scoped>
 .cr-button-hover:hover {
-  color: var(--secondary-color);
-  background-color: var(--text-color);
+  color: var(--color-cr-gray-light-hover);
   transition: 0.3s;
 }
 </style>

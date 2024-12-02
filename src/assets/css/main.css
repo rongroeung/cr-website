@@ -12,9 +12,12 @@
   --secondary-color: #021b4b;
   --sub-primary-color: #f5aa07c5;
   --sub-secondary-color: #01153a;
+
   --color-cr-gray-darker: #1f2937; /* text-gray-800 */
   --color-cr-gray-dark: #6b7280; /* text-gray-600 */
-  --color-cr-gray-light: #f4f5f7;
+
+  --color-cr-gray-light: #f3f4f6; /* text-gray-100 */
+  --color-cr-gray-light-hover: #d1d5db; /* text-gray-300 */
 
   --max-width-img-sm: 20rem; /*320px*/
   --max-width-img-md: 48.125rem; /*770px*/
