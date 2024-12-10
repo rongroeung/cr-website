@@ -1,5 +1,6 @@
 <script>
 import TextInput from './admin/TextInput.vue'
+import emailjs from '@emailjs/browser'
 export default {
   name: 'AddNewContentForm',
   components: { TextInput },
@@ -12,13 +13,62 @@ export default {
         role: '',
         description: ''
       },
-      disableSubmit: false
+      disableSubmit: false,
+      statusMessage: ''
     }
   },
   methods: {
     async submitForm() {
       this.disableSubmit = true
-      this.disableSubmit = false
+      this.statusMessage = ''
+      this.messageClass = ''
+
+      const templateParams = {
+        from_name: this.formData.name,
+        from_email: this.formData.email,
+        message:
+          this.formData.mobile +
+          ' descriptoin: ' +
+          this.formData.description +
+          ' role: ' +
+          this.formData.role
+      }
+
+      emailjs.init({
+        publicKey: 'NBUw0ugIqWNRRmFF_'
+      })
+
+      emailjs
+        .send(
+          'service_69e1qwv', // Replace with your EmailJS service ID
+          'template_77estnt', // Replace with your EmailJS template ID
+          templateParams
+        )
+        .then(
+          (response) => {
+            // Success handling
+            this.statusMessage = 'Email sent successfully!'
+            this.messageClass = 'success-message'
+
+            // Reset form
+            this.name = ''
+            this.email = ''
+            this.message = ''
+            if (response.statusMessage == 200) this.$toast.success(this.statusMessage)
+            console.log('response', response)
+          },
+          (error) => {
+            // Error handling
+            console.error('Email send failed:', error)
+            this.statusMessage = 'Failed to send email. Please try again.'
+            this.messageClass = 'error-message'
+            this.$toast.error(error)
+          }
+        )
+        .finally(() => {
+          // Re-enable submit button
+          this.disableSubmit = false
+        })
     }
   }
 }
@@ -84,6 +134,9 @@ export default {
           class="bg-secondary w-full px-4 py-2 rounded ms-auto mb-10"
           v-t="'submit'"
         ></button>
+      </div>
+      <div v-if="statusMessage" :class="messageClass">
+        {{ statusMessage }}
       </div>
     </form>
   </div>

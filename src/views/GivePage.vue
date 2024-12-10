@@ -29,7 +29,7 @@ export default {
     <div id="19001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="content flex-center flex-col mx-auto my-10 md:my-20">
+    <div class="content flex-center flex-col mx-auto my-10 md:my-20 bg-cr-gray-light">
       <div id="19002001" v-if="section2" class="flex-center flex-col">
         <p
           class="w-4/5 text-cr-gray-darker text-2xl md:leading-snug md:text-4xl text-center font-normal mb-10 md:mb-20"
