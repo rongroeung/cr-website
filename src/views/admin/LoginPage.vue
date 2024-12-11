@@ -65,7 +65,6 @@ export default {
             labelCss="text-cr-gray-light"
             placeholder="username"
             v-model="formData.username"
-            :required="true"
           />
         </div>
         <div class="mb-5">
@@ -76,7 +75,6 @@ export default {
             :type="showPassword ? 'text' : 'password'"
             placeholder="••••••"
             v-model="formData.password"
-            :required="true"
           />
         </div>
         <div class="flex items-start mb-5">

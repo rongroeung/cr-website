@@ -3,8 +3,18 @@
     <label class="font-medium text-center text-2xl">Description</label>
     <div v-for="(desc, index) in description" :key="index" class="flex flex-col mb-2">
       <b class="text-secondary">Description {{ index + 1 }}</b>
-      <TextareaInput label="English" v-model="desc.text" :id="'description' + index" />
-      <TextareaInput label="Khmer" v-model="desc.kh_text" :id="'kh_description' + index" />
+      <TextareaInput
+        label="English"
+        v-model="desc.text"
+        :id="'description' + index"
+        :required="true"
+      />
+      <TextareaInput
+        label="Khmer"
+        v-model="desc.kh_text"
+        :id="'kh_description' + index"
+        :required="true"
+      />
       <button
         v-if="removeAble"
         type="button"

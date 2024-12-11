@@ -39,7 +39,7 @@ export default {
         </div>
         <div id="18004001" v-if="section4" class="bg-white flex-center flex-col py-20">
           <ContentSection :section="section4" class="w-4/5" :margin="'m-0'" />
-          <VolunteerForm class="w-full xl:w-1/2" />
+          <VolunteerForm class="w-4/5" />
         </div>
       </div>
     </div>

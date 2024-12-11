@@ -9,6 +9,7 @@
         v-model="mediaItem.url"
         placeholder="Media URL"
         :id="'media_url_' + index"
+        :required="true"
       />
       <TextInput
         label="Name"

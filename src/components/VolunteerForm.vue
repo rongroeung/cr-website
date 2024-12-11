@@ -18,20 +18,22 @@ export default {
     }
   },
   methods: {
+    resetForm() {
+      this.formData.name = ''
+      this.formData.email = ''
+      this.formData.mobile = ''
+      this.formData.role = ''
+      this.formData.description = ''
+    },
     async submitForm() {
       this.disableSubmit = true
       this.statusMessage = ''
       this.messageClass = ''
-
       const templateParams = {
         from_name: this.formData.name,
         from_email: this.formData.email,
-        message:
-          this.formData.mobile +
-          ' descriptoin: ' +
-          this.formData.description +
-          ' role: ' +
-          this.formData.role
+        message: 'description: ' + this.formData.description + ' role: ' + this.formData.role,
+        mobile: this.formData.mobile
       }
 
       emailjs.init({
@@ -46,15 +48,13 @@ export default {
         )
         .then(
           (response) => {
-            // Success handling
-            this.statusMessage = 'Email sent successfully!'
-            this.messageClass = 'success-message'
-
             // Reset form
             this.name = ''
             this.email = ''
             this.message = ''
-            if (response.statusMessage == 200) this.$toast.success(this.statusMessage)
+            if (response.statusMessage == 200) {
+              this.$toast.success('Email sent successfully!')
+            }
             console.log('response', response)
           },
           (error) => {
@@ -75,7 +75,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-left p-4">
+  <div class="text-left">
     <form @submit.prevent="submitForm" class="space-y-4">
       <!-- Name -->
       <TextInput
@@ -115,7 +115,11 @@ export default {
 
       <!-- Description -->
       <div class="flex flex-col my-4">
-        <label for="description" class="font-medium mb-2" v-t="'What-would-you-like'"></label>
+        <div class="flex flex-row mb-2">
+          <label for="description" class="font-medium" v-t="'What-would-you-like'"></label>
+          <p class="text-red-500 ml-2 text-sm self-center italic" v-t="'Required'"></p>
+        </div>
+
         <textarea
           id="description"
           v-model="formData.description"
@@ -126,12 +130,12 @@ export default {
       </div>
 
       <div class="w-full flex flex-col items-end">
-        <p v-if="disableSubmit">Loading...</p>
+        <p v-if="disableSubmit" class="text-cr-gray-light">Loading...</p>
         <button
           type="submit"
           :disabled="disableSubmit"
           :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-secondary w-full px-4 py-2 rounded ms-auto mb-10"
+          class="bg-secondary w-24 px-4 py-2 rounded ms-auto mb-10"
           v-t="'submit'"
         ></button>
       </div>

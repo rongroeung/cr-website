@@ -10,10 +10,9 @@ export default {
       section2: null,
       section3: null,
       isGlobalPage: true,
-      cssTab:
-        'w-1/2 md:w-2/5 inline-block px-4 py-2 md:py-3 text-lg text-cr-gray-darker hover:text-gray-700 bg-cr-gray-light hover:bg-gray-200 cursor-pointer',
+      cssTab: 'w-1/2 md:w-2/5 inline-block px-4 py-2 md:py-3 text-lg text-primary  cursor-pointer',
       cssSelectedTab:
-        'Selected w-1/2 md:w-2/5 inline-block px-4 py-2 md:py-3 text-lg  bg-cr-gray-dark hover:bg-gray-500 active cursor-pointer'
+        'Selected w-1/2 md:w-2/5 inline-block px-4 py-2 md:py-3 text-lg bg-sub-primary active cursor-pointer'
     }
   },
   async created() {
@@ -25,17 +24,16 @@ export default {
 </script>
 
 <template>
-  <section class="bg-white h-fit w-full flex-center flex-col">
+  <section class="bg-cr-gray-light h-fit w-full flex-center flex-col">
     <div id="19001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="content flex-center flex-col mx-auto my-10 md:my-20 bg-cr-gray-light">
+    <div class="content flex-center flex-col mx-auto my-10 md:my-20">
       <div id="19002001" v-if="section2" class="flex-center flex-col">
         <p
           class="w-4/5 text-cr-gray-darker text-2xl md:leading-snug md:text-4xl text-center font-normal mb-10 md:mb-20"
-        >
-          {{ section2.title }}
-        </p>
+          v-html="section2.title"
+        ></p>
         <div class="flex-center mb-10 md:mb-20 w-11/12 md:w-4/5 h-64 md:h-30rem">
           <iframe
             width="100%"
@@ -52,40 +50,28 @@ export default {
       <div class="give-section w-4/5">
         <ul class="flex-center text-sm font-medium text-center w-full">
           <li
-            :class="[isGlobalPage ? cssSelectedTab : cssTab, 'rounded-l-lg']"
+            :class="[
+              isGlobalPage ? cssSelectedTab : cssTab,
+              'rounded-l-lg border-rounded-sub-primary'
+            ]"
             @click="isGlobalPage = true"
             v-t="'Global'"
           ></li>
           <li
-            :class="[!isGlobalPage ? cssSelectedTab : cssTab, 'rounded-r-lg']"
+            :class="[
+              !isGlobalPage ? cssSelectedTab : cssTab,
+              'rounded-r-lg border-rounded-sub-primary'
+            ]"
             @click="isGlobalPage = false"
             v-t="'Local'"
           ></li>
         </ul>
 
         <div v-if="section3" class="Paypal w-full h-fit flex-center">
-          <transition
-            enter-active-class="transition-opacity duration-300 ease-out"
-            enter-from-class="opacity-0"
-            enter-to-class="opacity-100"
-            leave-active-class="transition-opacity duration-300 ease-in"
-            leave-from-class="opacity-100"
-            leave-to-class="opacity-0"
-          >
-            <Paypal v-show="isGlobalPage" class="mt-8 md:mt-16 text-cr-gray-darker" />
-          </transition>
-          <transition
-            enter-active-class="transition-opacity duration-300 ease-out"
-            enter-from-class="opacity-0"
-            enter-to-class="opacity-100"
-            leave-active-class="transition-opacity duration-300 ease-in"
-            leave-from-class="opacity-100"
-            leave-to-class="opacity-0"
-          >
-            <div v-show="!isGlobalPage" class="max-w-screen-lg mt-10 md:mt-20">
-              <img :src="section3.media[0].url" :alt="section3.media[0].name" class="h-100" />
-            </div>
-          </transition>
+          <Paypal v-show="isGlobalPage" class="mt-8 md:mt-16 text-cr-gray-darker" />
+          <div v-show="!isGlobalPage" class="max-w-screen-lg mt-10 md:mt-20">
+            <img :src="section3.media[0].url" :alt="section3.media[0].name" class="h-100" />
+          </div>
         </div>
       </div>
     </div>

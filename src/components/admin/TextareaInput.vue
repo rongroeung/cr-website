@@ -1,6 +1,10 @@
 <template>
   <div class="flex flex-row my-4">
-    <p class="font-medium w-20">{{ label }}</p>
+    <div>
+      <p class="font-medium w-20">{{ label }}</p>
+      <p v-if="required" class="text-red-500 text-sm self-center italic" v-t="'Required'"></p>
+    </div>
+
     <textarea
       :id="id"
       :value="modelValue"
@@ -21,6 +25,10 @@ export default {
     rows: {
       type: Number,
       default: 3
+    },
+    required: {
+      type: Boolean,
+      default: false
     },
     placeholder: String
   },

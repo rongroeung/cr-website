@@ -46,7 +46,6 @@
         id="thumbnail_name"
         label="Video Thumbnail Describe"
         v-model="youtubeItem.thumbnail_name"
-        :required="true"
       />
       <ImagePreview
         :src="youtubeItem.thumbnail_url"

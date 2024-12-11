@@ -1,8 +1,10 @@
 <template>
   <div class="flex flex-col mb-4">
-    <label v-if="translate" :for="id" class="font-medium" :class="labelCss" v-t="label"></label>
-    <label v-else :for="id" class="font-medium" :class="labelCss">{{ label }}</label>
-
+    <div class="flex flex-row mb-2">
+      <label v-if="translate" :for="id" class="font-medium" :class="labelCss" v-t="label"></label>
+      <label v-else :for="id" class="font-medium" :class="labelCss">{{ label }}</label>
+      <p v-if="required" class="text-red-500 ml-2 text-sm self-center italic" v-t="'Required'"></p>
+    </div>
     <input
       :id="id"
       :type="type"
@@ -42,6 +44,5 @@ export default {
 <style scoped>
 label {
   font-size: medium;
-  margin-bottom: 0.5rem;
 }
 </style>
