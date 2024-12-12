@@ -30,10 +30,11 @@ export default {
       this.statusMessage = ''
       this.messageClass = ''
       const templateParams = {
-        from_name: this.formData.name,
-        from_email: this.formData.email,
-        message: 'description: ' + this.formData.description + ' role: ' + this.formData.role,
-        mobile: this.formData.mobile
+        user_name: this.formData.name,
+        user_email: this.formData.email,
+        user_mobile: this.formData.mobile,
+        user_role: this.formData.role,
+        user_desc: this.formData.description
       }
 
       emailjs.init({
