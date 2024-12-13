@@ -38,36 +38,26 @@ export default {
       }
 
       emailjs.init({
-        publicKey: 'NBUw0ugIqWNRRmFF_'
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       })
 
       emailjs
         .send(
-          'service_69e1qwv', // Replace with your EmailJS service ID
-          'template_77estnt', // Replace with your EmailJS template ID
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_VOLUNTEER_ID,
           templateParams
         )
         .then(
           (response) => {
-            // Reset form
-            this.name = ''
-            this.email = ''
-            this.message = ''
-            if (response.statusMessage == 200) {
+            if (response.status === 200 && response.text === 'OK') {
               this.$toast.success('Email sent successfully!')
             }
-            console.log('response', response)
           },
           (error) => {
-            // Error handling
-            console.error('Email send failed:', error)
-            this.statusMessage = 'Failed to send email. Please try again.'
-            this.messageClass = 'error-message'
-            this.$toast.error(error)
+            this.$toast.error('Failed to send email. Please try again.', error)
           }
         )
         .finally(() => {
-          // Re-enable submit button
           this.disableSubmit = false
         })
     }
@@ -131,7 +121,7 @@ export default {
       </div>
 
       <div class="w-full flex flex-col items-end">
-        <p v-if="disableSubmit" class="text-cr-gray-light">Loading...</p>
+        <p v-if="disableSubmit" class="text-cr-gray-dark">Loading...</p>
         <button
           type="submit"
           :disabled="disableSubmit"
