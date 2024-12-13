@@ -11,6 +11,10 @@ export default {
   },
   async created() {
     this.section5 = await this.getContentById('01005001')
+
+    this.section2.youtube.sort((a, b) => {
+      return new Date(b.publish_date) - new Date(a.publish_date)
+    })
   }
 }
 </script>
