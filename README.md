@@ -208,7 +208,7 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
 
 ## Architechture
 
-[drawio](#https://drive.google.com/file/d/1Okoszd_MMkYCFDu9LlS1LtYLB2lnyEUd/view?usp=sharing)
+drawio https://drive.google.com/file/d/1Okoszd_MMkYCFDu9LlS1LtYLB2lnyEUd/view?usp=sharing
 
 
 ## Project Setup
