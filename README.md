@@ -1,25 +1,19 @@
-# Front-end Technical Documentation
 
 `By: Kosalvireak Kheoun`
 
-# Table of content for Admin
+# Table of contents for Admin
 
 | Content                                            | Description                                |
 | -------------------------------------------------- | ------------------------------------------ |
 | [Website Admin and Eligibility](#crossroads-admin) | For Admin User                             |
 | [Special Page](#special-page)                      | Page with different structure of data      |
 | [Auto render content](#auto-render-content)        | Content that render without need of coding |
-| [Project Setup](#project-setup)                    | Initialize development environment         |
-| [Project Plugin](#project-plugin)                  | Essential dependency for project           |
-| [Folder Structure](#folder-structure)              | Project structure                          |
-| [Commit Message](#commit-message)                  | Convention for commit message              |
-| [Global Sizing](#global-styling)                   | Global class for text, image size          |
-| [Global Properties](#global-properties)            | Global css, variable, mixin, component     |
 
-# Table of content for Developer
+# Table of contents for Developer
 
 | Content                                 | Description                            |
 | --------------------------------------- | -------------------------------------- |
+| [Application Architecture](#architechture) | Application Architecture of website |
 | [Project Setup](#project-setup)         | Initialize development environment     |
 | [Project Plugin](#project-plugin)       | Essential dependency for project       |
 | [Folder Structure](#folder-structure)   | Project structure                      |
@@ -28,7 +22,7 @@
 
 ## Crossroads Admin
 
-We allow website admin to make change to most of the data via admin site https://crossroadscambodia.church/admin
+We allow the website admin to make changes to most of the data viathe admin site https://crossroadscambodia.church/admin
 
 ### Key terms admin must know
 
@@ -210,6 +204,12 @@ This page has 3 parts namely Senior Pastors, Full-Time Co-Workers, Part-Time Co-
 [Contact Page](#https://crossroadscambodia.church/contact)
 
     Contact                 : 24002
+
+
+## Architechture
+
+[drawio](#https://drive.google.com/file/d/1Okoszd_MMkYCFDu9LlS1LtYLB2lnyEUd/view?usp=sharing)
+
 
 ## Project Setup
 
