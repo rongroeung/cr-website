@@ -40,7 +40,7 @@ export default {
       id="01002001"
       class="section2 w-4/5 flex flex-col items-center py-12 md:py-20"
     >
-      <p class="text-2xl md:text-4xl xl:text-5xl pb-6">{{ section2.title }}</p>
+      <p class="text-2xl md:text-3xl xl:text-4xl pb-6">{{ section2.title }}</p>
       <ul class="text-base md:text-lg xl:text-lg w-fit text-center pb-8">
         <template v-for="content in section2.description" :key="content.id">
           <li>{{ content.text }}</li>

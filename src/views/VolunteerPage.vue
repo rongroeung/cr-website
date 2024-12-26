@@ -32,7 +32,7 @@ export default {
         <div id="18002001" v-if="section2" class="w-4/5">
           <ContentSection :section="section2" :margin="'mt-20 mb-10'" />
         </div>
-        <div class="content w-4/5 xl:w-full h-full flex-center flex-row flex-wrap">
+        <div class="content w-4/5 h-full grid grid-cols-1 md:grid-cols-2 gap-8">
           <template v-for="section in section3" :key="section">
             <ContactItem :section="section" />
           </template>

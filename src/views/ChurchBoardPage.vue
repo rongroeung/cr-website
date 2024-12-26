@@ -38,7 +38,7 @@ export default {
     </div>
     <div class="content w-4/5 mx-auto my-20">
       <div v-if="section2" id="03002001">
-        <p class="text-secondary text-2xl md:text-4xl xl:text-5xl text-center mb-2 font-normal">
+        <p class="text-secondary text-2xl md:text-3xl xl:text-4xl text-center mb-2 font-normal">
           {{ section2.title }}
         </p>
         <p class="text-sm leading-6 md:leading-8 md:text-lg my-8 text-left">

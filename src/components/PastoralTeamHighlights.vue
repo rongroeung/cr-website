@@ -27,7 +27,7 @@ export default {
   >
     <div class="w-4/5 mb-6">
       <p
-        class="w-full md:w-2/4 text-center md:text-start text-cr-gray-darker text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
+        class="w-full md:w-2/4 text-center md:text-start text-cr-gray-darker text-2xl md:text-3xl xl:text-4xl mb-4 sm:mb-0"
         v-t="'pastoral-team'"
       ></p>
     </div>

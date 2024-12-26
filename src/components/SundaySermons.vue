@@ -11,8 +11,7 @@ export default {
   },
   async created() {
     this.section5 = await this.getContentById('01005001')
-
-    this.section2.youtube.sort((a, b) => {
+    this.section5.youtube.sort((a, b) => {
       return new Date(b.publish_date) - new Date(a.publish_date)
     })
   }
@@ -27,7 +26,7 @@ export default {
     >
       <div id="our-sunday-sermons" class="h-fit w-full mb-6 items-center">
         <p
-          class="w-full md:w-2/4 text-center md:text-start text-cr-gray-darker text-2xl md:text-4xl xl:text-5xl mb-4 sm:mb-0"
+          class="w-full md:w-2/4 text-center md:text-start text-cr-gray-darker text-2xl md:text-3xl xl:text-4xl mb-4 sm:mb-0"
         >
           {{ section5.title }}
         </p>

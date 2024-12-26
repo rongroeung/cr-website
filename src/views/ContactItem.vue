@@ -8,12 +8,9 @@ export default {
 </script>
 
 <template>
-  <div
-    :id="section.id"
-    class="flex flex-col md:flex-row items-start justify-center w-full md:w-1/2 xl:w-2/5 p-4 min-h-40"
-  >
+  <div :id="section.id" class="flex flex-row w-full gap-4">
     <!-- Icon -->
-    <div class="flex-center w-full md:w-16 h-12 mb-4">
+    <div class="flex-center min-w-12 h-12 mb-4 flex-shrink-0">
       <img
         loading="lazy"
         class="w-12 h-12 object-contain"
@@ -23,7 +20,7 @@ export default {
     </div>
 
     <!-- Content -->
-    <div class="ml-0 md:ml-4 text-left w-full h-full text-cr-gray-darker">
+    <div class="text-left h-full w-auto text-cr-gray-darker flex-grow-1">
       <p class="font-bold text-lg text-left mb-2">{{ section.title }}</p>
       <ul>
         <div v-for="description in section.description" :key="description">
