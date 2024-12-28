@@ -1,5 +1,5 @@
 <script>
-import ContactItem from '@/views/ContactItem.vue'
+import ContactItem from '@/components/ContactItem.vue'
 import VolunteerForm from '@/components/VolunteerForm.vue'
 export default {
   name: 'VolunteerPage',

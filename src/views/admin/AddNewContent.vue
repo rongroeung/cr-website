@@ -1,5 +1,5 @@
 <script>
-import DynamicShadow from '@/components/DynamicShadow.vue'
+import DynamicShadow from '@/components/admin/DynamicShadow.vue'
 import AddNewContentForm from '@/components/admin/AddNewContentForm.vue'
 export default {
   name: 'AddNewContent',

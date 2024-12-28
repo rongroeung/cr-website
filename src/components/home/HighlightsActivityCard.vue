@@ -1,5 +1,5 @@
 <script>
-import CrButton from '@/components/CrButton.vue'
+import CrButton from '@/components/common/CrButton.vue'
 export default {
   name: 'HighlightsActivityCard',
   components: { CrButton },

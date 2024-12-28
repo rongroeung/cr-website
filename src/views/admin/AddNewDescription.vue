@@ -1,7 +1,7 @@
 <script>
 import AddNewDescriptionForm from '@/components/admin/AddNewDescriptionForm.vue'
-import SelectContentIds from '@/components/SelectContentIds.vue'
-import DynamicShadow from '@/components/DynamicShadow.vue'
+import SelectContentIds from '@/components/admin/SelectContentIds.vue'
+import DynamicShadow from '@/components/admin/DynamicShadow.vue'
 export default {
   name: 'AddNewDescription',
   components: { AddNewDescriptionForm, SelectContentIds, DynamicShadow },

@@ -1,6 +1,6 @@
 <script>
-import DiscipleshipCard from '@/components/DiscipleshipCard.vue'
-import CrButton from '@/components/CrButton.vue'
+import DiscipleshipCard from '@/components/home/DiscipleshipCard.vue'
+import CrButton from '@/components/common/CrButton.vue'
 export default {
   name: 'DiscipleshipJourney',
   components: { DiscipleshipCard, CrButton },

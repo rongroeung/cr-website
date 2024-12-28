@@ -1,6 +1,6 @@
 <script>
 import { windowResizeMixin } from '@/util/mixin'
-import PageHeader from '@/components/PageHeader.vue'
+import PageHeader from '@/components/common/PageHeader.vue'
 export default {
   name: 'MilestonePage',
   components: { PageHeader },

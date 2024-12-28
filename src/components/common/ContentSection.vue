@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ImagesGrid from '@/components/ImagesGrid.vue'
+import ImagesGrid from '@/components/common/ImagesGrid.vue'
 export default {
   name: 'ContentSection',
   components: { ImagesGrid },

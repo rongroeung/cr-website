@@ -1,7 +1,7 @@
 <script>
-import DynamicShadow from '@/components/DynamicShadow.vue'
+import DynamicShadow from '@/components/admin/DynamicShadow.vue'
 import UpdateDataForm from '@/components/admin/UpdateDataForm.vue'
-import SelectContentIds from '@/components/SelectContentIds.vue'
+import SelectContentIds from '@/components/admin/SelectContentIds.vue'
 export default {
   name: 'UpdateContentById',
   components: { UpdateDataForm, SelectContentIds, DynamicShadow },

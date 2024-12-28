@@ -1,8 +1,8 @@
 <script>
 import AddNewMediaForm from '@/components/admin/AddNewMediaForm.vue'
-import SelectContentIds from '@/components/SelectContentIds.vue'
+import SelectContentIds from '@/components/admin/SelectContentIds.vue'
 
-import DynamicShadow from '@/components/DynamicShadow.vue'
+import DynamicShadow from '@/components/admin/DynamicShadow.vue'
 export default {
   name: 'AddNewMedia',
   components: { AddNewMediaForm, SelectContentIds, DynamicShadow },

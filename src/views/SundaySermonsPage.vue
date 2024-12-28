@@ -1,6 +1,6 @@
 <script>
-import PageHeader from '@/components/PageHeader.vue'
-import YoutubeCard from '@/components/YoutubeCard.vue'
+import PageHeader from '@/components/common/PageHeader.vue'
+import YoutubeCard from '@/components/common/YoutubeCard.vue'
 import Pagination from '@/components/Pagination.vue'
 export default {
   name: 'SundaySermonsPage',

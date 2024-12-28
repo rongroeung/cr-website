@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Loader from '../Loader.vue'
+import Loader from '../common/Loader.vue'
 import TextareaInput from './TextareaInput.vue'
 export default {
   props: {

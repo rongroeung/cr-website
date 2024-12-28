@@ -1,8 +1,8 @@
 <script>
 import { RouterView } from 'vue-router'
-import Navbar from '@/components/Navbar.vue'
-import FooterSection from '@/components/FooterSection.vue'
-import ScrollTopButton from '@/components/ScrollTopButton.vue'
+import Navbar from '@/components/common/Navbar.vue'
+import FooterSection from '@/components/common/FooterSection.vue'
+import ScrollTopButton from '@/components/common/ScrollTopButton.vue'
 export default {
   name: 'UserLayout',
   components: { Navbar, RouterView, FooterSection, ScrollTopButton }

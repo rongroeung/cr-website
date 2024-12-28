@@ -1,5 +1,5 @@
 <script>
-import PastoralTeamHighlightCard from '@/components/PastoralTeamHighlightCard.vue'
+import PastoralTeamHighlightCard from '@/components/home/PastoralTeamHighlightCard.vue'
 export default {
   name: 'PastoralTeamHighlights',
   components: { PastoralTeamHighlightCard },

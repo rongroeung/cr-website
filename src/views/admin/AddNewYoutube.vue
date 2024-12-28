@@ -1,8 +1,8 @@
 <script>
 import AddNewYoutubeForm from '@/components/admin/AddNewYoutubeForm.vue'
-import SelectContentIds from '@/components/SelectContentIds.vue'
+import SelectContentIds from '@/components/admin/SelectContentIds.vue'
 
-import DynamicShadow from '@/components/DynamicShadow.vue'
+import DynamicShadow from '@/components/admin/DynamicShadow.vue'
 export default {
   name: 'AddNewYoutube',
   components: { AddNewYoutubeForm, SelectContentIds, DynamicShadow },

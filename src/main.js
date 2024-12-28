@@ -16,10 +16,10 @@ import '@/assets/css/main.css'
 import { fetchDataMixin } from '@/util/mixin'
 
 // Register global component //
-import ImagePreview from '@/components/ImagePreview.vue'
-import ContentSection from '@/components/ContentSection.vue'
-import PageHeader from '@/components/PageHeader.vue'
-import ResizableContainer from '@/components/ResizableContainer.vue'
+import ImagePreview from '@/components/common/ImagePreview.vue'
+import ContentSection from '@/components/common/ContentSection.vue'
+import PageHeader from '@/components/common/PageHeader.vue'
+import ResizableContainer from '@/components/admin/ResizableContainer.vue'
 
 const app = createApp(App)
 

@@ -1,5 +1,5 @@
 <script>
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import LanguageSwitcher from '@/components/common/LanguageSwitcher.vue'
 import Field from '@/util/constant'
 import { windowResizeMixin } from '@/util/mixin.js'
 export default {

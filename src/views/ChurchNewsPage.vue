@@ -1,5 +1,5 @@
 <script>
-import PageHeader from '@/components/PageHeader.vue'
+import PageHeader from '@/components/common/PageHeader.vue'
 export default {
   name: 'ChurchesNewsPage',
   components: { PageHeader },

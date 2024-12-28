@@ -1,10 +1,10 @@
 <script>
-import CarouselContainer from '@/components/CarouselContainer.vue'
-import DiscipleshipJourney from '@/components/DiscipleshipJourney.vue'
-import HighlightsActivity from '@/components/HighlightsActivity.vue'
-import SundaySermons from '@/components/SundaySermons.vue'
-import PastoralTeamHighlights from '@/components/PastoralTeamHighlights.vue'
-import ContactUsMap from '@/components/ContactUsMap.vue'
+import CarouselContainer from '@/components/home/CarouselContainer.vue'
+import DiscipleshipJourney from '@/components/home/DiscipleshipJourney.vue'
+import HighlightsActivity from '@/components/home/HighlightsActivity.vue'
+import SundaySermons from '@/components/home/SundaySermons.vue'
+import PastoralTeamHighlights from '@/components/home/PastoralTeamHighlights.vue'
+import ContactUsMap from '@/components/home/ContactUsMap.vue'
 export default {
   name: 'HomePage',
   components: {
