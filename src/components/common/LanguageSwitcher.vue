@@ -36,7 +36,7 @@ watchEffect(() => {
       class="language mr-2"
       :class="select('kh') ? disableClass : ''"
     >
-      <img :disabled="select('kh')" loading="lazy" src="../assets/img/kh-flag.png" />
+      <img :disabled="select('kh')" loading="lazy" src="../../assets/img/kh-flag.png" />
       <button :disabled="select('kh')">ភាសាខ្មែរ</button>
     </div>
     <div
@@ -45,7 +45,7 @@ watchEffect(() => {
       class="language"
       :class="select('en') ? disableClass : ''"
     >
-      <img :disabled="select('en')" loading="lazy" src="../assets/img/us-flag.png" />
+      <img :disabled="select('en')" loading="lazy" src="../../assets/img/us-flag.png" />
       <button :disabled="select('en')">English</button>
     </div>
   </div>
