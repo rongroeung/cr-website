@@ -1,27 +1,4 @@
 import axios from 'axios'
-import moment from 'moment'
-import 'moment/locale/km'
-
-function formatDateForBackend(date) {
-  if (date == null) return
-  return moment(date).format('YYYY-MM-DD HH:mm:ss') + '.000'
-}
-
-function formatDateForDateInput(date) {
-  if (date == null) return
-  date.split(':00.000')
-  return moment(date).format('YYYY-MM-DDTHH:mm')
-}
-
-function formatDateForDisplay(date) {
-  if (date == null) return
-
-  const lang = localStorage.getItem('lang')
-  if (lang === 'kh') {
-    moment.locale('km') // Set Khmer locale
-  }
-  return moment(date).format('LLLL') // Format the date
-}
 
 const windowResizeMixin = {
   data() {
@@ -44,44 +21,27 @@ const windowResizeMixin = {
 }
 
 
-function setItemWithExpiry(key, value, ttl) {
-  const now = new Date()
-  const item = {
-    value: value,
-    expiry: now.getTime() + ttl // ttl is in milliseconds
-  }
-  localStorage.setItem(key, JSON.stringify(item))
-}
-
-function getItemWithExpiry(key) {
-  const itemStr = localStorage.getItem(key)
-  if (!itemStr) {
-    return null
-  }
-  const item = JSON.parse(itemStr)
-  const now = new Date()
-  if (now.getTime() > item.expiry) {
-    localStorage.removeItem(key)
-    return null
-  }
-  return item.value
-}
-
 const fetchDataMixin = {
-  data() {
-    return {
-      allContentIds: []
-    }
-  },
   methods: {
+    async getAllContentIdsFromLocalStorage() {
+      let content_ids;
+      content_ids = localStorage.getItem('content_ids')
+
+      if (content_ids != null || content_ids !== "undefined") {
+        return JSON.parse(content_ids);
+      } else {
+        const response = await this.getAllContentId()
+        content_ids = response.content_id
+        localStorage.setItem('content_ids', JSON.stringify(content_ids))
+        return content_ids
+      }
+    },
     async getAllContentStartByIds(id) {
-      const response = await this.getAllContentId()
-      const content_ids = response.content_id
+      const content_ids = await this.getAllContentIdsFromLocalStorage()
       const filteredContentIds = this.filterContentStartWithId(content_ids, id)
       const contents = await this.fetchContentByIds(filteredContentIds)
 
       if (!contents) return null
-
       return contents
     },
     filterContentStartWithId(contentIds, sectionPrefix) {
@@ -164,7 +124,6 @@ const fetchDataMixin = {
     async getAllContentId(sort = '') {
       let buildUrl = this.$backendUrl + 'getAllContentId'
       // https://crossroadscambodia.church:7002/cr-web-backend/api/v1/getAllContentId
-
       // Add sort parameter if provided date-desc or date-asc
       if (sort) {
         buildUrl += '?sort=' + sort
@@ -292,9 +251,4 @@ const fetchDataMixin = {
 export {
   windowResizeMixin,
   fetchDataMixin,
-  setItemWithExpiry,
-  getItemWithExpiry,
-  formatDateForBackend,
-  formatDateForDateInput,
-  formatDateForDisplay
 }

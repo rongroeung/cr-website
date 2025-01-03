@@ -1,5 +1,5 @@
 <script>
-import { formatDateForDisplay } from '@/util/mixin.js'
+import { formatDateForDisplay } from '@/util/dateFormatUtils.js'
 export default {
   name: 'NewsItem',
   props: {

@@ -3,10 +3,10 @@
     <h2 id="accordion-flush-heading-1">
       <button
         type="button"
-        class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+        class="flex items-center justify-between w-full text-secondary py-5 font-medium rtl:text-right border-b border-gray-200 gap-3"
         @click="toggleBody()"
       >
-        <span>Mail Us</span>
+        <span v-t="title"></span>
         <svg
           ref="accordionIcon"
           class="w-3 h-3 shrink-0"
@@ -25,7 +25,7 @@
         </svg>
       </button>
     </h2>
-    <div id="accordion-flush-body-1" ref="accordingBody">
+    <div id="accordion-flush-body-1" ref="accordingBody" class="hidden">
       <div class="py-5 border-b border-gray-200">
         <p class="mb-2 text-gray-500">
           Flowbite is an open-source library of interactive components built on top of Tailwind CSS
@@ -46,6 +46,9 @@
 <script>
 export default {
   name: 'AccordingItem',
+  props: {
+    title: String
+  },
   data() {
     return {}
   },

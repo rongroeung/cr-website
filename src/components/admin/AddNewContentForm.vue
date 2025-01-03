@@ -4,7 +4,7 @@ import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
 import DescriptionInput from './DescriptionInput.vue'
 
-import { formatDateForBackend, formatDateForDisplay } from '@/util/mixin'
+import { formatDateForBackend, formatDateForDisplay } from '@/util/dateFormatUtils.js'
 export default {
   name: 'AddNewContentForm',
   components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },

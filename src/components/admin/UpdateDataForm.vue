@@ -3,7 +3,11 @@ import TextInput from './TextInput.vue'
 import MediaInput from './MediaInput.vue'
 import YouTubeInput from './YouTubeInput.vue'
 import DescriptionInput from './DescriptionInput.vue'
-import { formatDateForBackend, formatDateForDateInput, formatDateForDisplay } from '@/util/mixin'
+import {
+  formatDateForBackend,
+  formatDateForDateInput,
+  formatDateForDisplay
+} from '@/util/dateFormatUtils.js'
 export default {
   name: 'UpdateDataForm',
   components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },

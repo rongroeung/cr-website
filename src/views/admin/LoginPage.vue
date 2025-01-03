@@ -1,6 +1,6 @@
 <script>
 import TextInput from '@/components/admin/TextInput.vue'
-import { setItemWithExpiry, getItemWithExpiry } from '@/util/mixin'
+import { setItemWithExpiry, getItemWithExpiry } from '@/util/localStorageUtils.js'
 export default {
   name: 'LoginPage',
   components: { TextInput },

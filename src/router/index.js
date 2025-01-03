@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { getItemWithExpiry } from '@/util/mixin.js'
+import { getItemWithExpiry } from '@/util/localStorageUtils.js'
 import HomePage from '@/views/HomePage.vue'
 import AboutPage from '@/views/AboutPage.vue'
 import CampusMinistryPage from '@/views/CampusMinistryPage.vue'

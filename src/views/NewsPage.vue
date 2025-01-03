@@ -16,7 +16,6 @@ export default {
   },
   async created() {
     this.section1 = await this.getContentById('20001001')
-
     this.onCreateProcess()
   },
   watch: {

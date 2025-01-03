@@ -22,20 +22,19 @@ export default {
     <div id="24001001" v-if="section1" class="w-full">
       <PageHeader :section="section1" />
     </div>
-    <div class="content w-4/5 h-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
-      <ContactItem v-for="contact in contacts" :key="contact" :section="contact" />
+    <div class="w-full lg:w-4/5 flex-center">
+      <div class="content w-4/5 h-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
+        <ContactItem v-for="contact in contacts" :key="contact" :section="contact" />
+      </div>
     </div>
-    <div class="content w-4/5 h-full my-20">
-      <p
-        class="w-full text-center md:text-start text-cr-gray-darker text-2xl md:text-3xl xl:text-4xl mb-4"
-      >
+    <div class="content w-4/5 h-full my-20 text-secondary">
+      <p class="w-full text-center md:text-start text-2xl md:text-3xl xl:text-4xl mb-4 font-bold">
         Reach Out
       </p>
-      <p class="w-full text-center md:text-start text-cr-gray-darker text-xl xl:text-2xl">
-        Have a specific need?
-      </p>
+      <p class="w-full text-center md:text-start text-xl xl:text-2xl">Have a specific need?</p>
 
-      <AccordingItem />
+      <AccordingItem title="Mail-Us" />
+      <AccordingItem title="Ask-for-Prayer" />
     </div>
   </section>
 </template>
