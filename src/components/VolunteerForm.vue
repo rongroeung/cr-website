@@ -1,5 +1,5 @@
 <script>
-import TextInput from './form/TextInput.vue'
+import TextInput from '@/components/form/TextInput.vue'
 import emailjs from '@emailjs/browser'
 export default {
   name: 'AddNewContentForm',

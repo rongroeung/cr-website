@@ -1,9 +1,10 @@
 <script>
-import ContactItem from '@/components/ContactItem.vue'
+import ContactItem from '@/components/contact/ContactItem.vue'
 import AccordingItem from '@/components/common/AccordingItem.vue'
+import MailUsForm from '@/components/contact/MailUsForm.vue'
 export default {
   name: 'ContactPage',
-  components: { ContactItem, AccordingItem },
+  components: { ContactItem, AccordingItem, MailUsForm },
   data() {
     return {
       section1: null,
@@ -27,14 +28,14 @@ export default {
         <ContactItem v-for="contact in contacts" :key="contact" :section="contact" />
       </div>
     </div>
-    <div class="content w-4/5 h-full my-20 text-secondary">
-      <p class="w-full text-center md:text-start text-2xl md:text-3xl xl:text-4xl mb-4 font-bold">
+    <div class="w-full lg:w-4/5 h-full my-20 text-secondary space-y-4">
+      <p class="w-full text-center md:text-start text-2xl md:text-3xl xl:text-4xl font-bold">
         Reach Out
       </p>
       <p class="w-full text-center md:text-start text-xl xl:text-2xl">Have a specific need?</p>
 
       <AccordingItem title="Mail-Us">
-        <h1>Hello</h1>
+        <MailUsForm />
       </AccordingItem>
       <AccordingItem title="Ask-for-Prayer">
         <h1>Hello Prayer</h1>

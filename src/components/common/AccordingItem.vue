@@ -25,7 +25,7 @@
         </svg>
       </button>
     </h2>
-    <div id="accordion-flush-body-1" ref="accordingBody" class="hidden">
+    <div id="accordion-flush-body-1" ref="accordingBody" class="hidden p-4">
       <slot />
     </div>
   </section>
