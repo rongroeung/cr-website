@@ -33,8 +33,15 @@ export default {
       </p>
       <p class="w-full text-center md:text-start text-xl xl:text-2xl">Have a specific need?</p>
 
-      <AccordingItem title="Mail-Us" />
-      <AccordingItem title="Ask-for-Prayer" />
+      <AccordingItem title="Mail-Us">
+        <h1>Hello</h1>
+      </AccordingItem>
+      <AccordingItem title="Ask-for-Prayer">
+        <h1>Hello Prayer</h1>
+      </AccordingItem>
+      <router-link :to="{ name: 'volunteer' }">
+        <AccordingItem title="volunteer" />
+      </router-link>
     </div>
   </section>
 </template>

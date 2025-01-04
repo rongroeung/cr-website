@@ -28,17 +28,17 @@ export default {
       <PageHeader :section="section1" />
     </div>
     <div class="w-full h-full flex-center">
-      <div class="bg-cr-gray-light flex justify-center items-start flex-row flex-wrap mb-20">
+      <div class="bg-cr-gray-light flex justify-center items-start flex-row flex-wrap">
         <div id="18002001" v-if="section2" class="w-4/5">
-          <ContentSection :section="section2" :margin="'mt-20 mb-10'" />
+          <ContentSection :section="section2" margin="mt-20 mb-0" />
         </div>
-        <div class="content w-4/5 h-full grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="content w-4/5 h-full grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           <template v-for="section in section3" :key="section">
             <ContactItem :section="section" />
           </template>
         </div>
-        <div id="18004001" v-if="section4" class="bg-white flex-center flex-col py-20">
-          <ContentSection :section="section4" class="w-4/5" :margin="'m-0'" />
+        <div id="18004001" v-if="section4" class="bg-white flex-center flex-col">
+          <ContentSection :section="section4" class="w-4/5" margin="mt-10 mb-0" />
           <VolunteerForm class="w-4/5" />
         </div>
       </div>

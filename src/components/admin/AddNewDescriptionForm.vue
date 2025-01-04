@@ -1,5 +1,5 @@
 <script>
-import DescriptionInput from './DescriptionInput.vue'
+import DescriptionInput from '../form/DescriptionInput.vue'
 export default {
   name: 'AddNewDescriptionForm',
   components: { DescriptionInput },
@@ -48,7 +48,6 @@ export default {
       <p class="text-sm md:text-lg font-semibold">Title: {{ sectionTitle }}</p>
       <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium">Description</label>
         <DescriptionInput
           v-if="formData.description.length"
           :description="formData.description"

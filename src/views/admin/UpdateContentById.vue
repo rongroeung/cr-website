@@ -24,9 +24,7 @@ export default {
 <template>
   <section>
     <DynamicShadow text="Update Content" />
-
     <SelectContentIds @update:values="handleSelectContentIds" />
-
     <ResizableContainer>
       <template #left_container>
         <UpdateDataForm

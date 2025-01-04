@@ -1,8 +1,8 @@
 <script>
-import TextInput from './TextInput.vue'
-import MediaInput from './MediaInput.vue'
-import YouTubeInput from './YouTubeInput.vue'
-import DescriptionInput from './DescriptionInput.vue'
+import TextInput from '@/components/form/TextInput.vue'
+import MediaInput from '../form/MediaInput.vue'
+import YouTubeInput from '../form/YouTubeInput.vue'
+import DescriptionInput from '../form/DescriptionInput.vue'
 
 import { formatDateForBackend, formatDateForDisplay } from '@/util/dateFormatUtils.js'
 export default {

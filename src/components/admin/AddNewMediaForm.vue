@@ -1,5 +1,5 @@
 <script>
-import MediaInput from './MediaInput.vue'
+import MediaInput from '../form/MediaInput.vue'
 export default {
   name: 'AddNewMediaForm',
   components: { MediaInput },
@@ -46,9 +46,7 @@ export default {
   <div class="text-left">
     <form @submit.prevent="submitForm" class="space-y-4">
       <p class="text-sm md:text-lg font-semibold">Title: {{ sectionTitle }}</p>
-      <!-- Description -->
       <div class="flex flex-col">
-        <label class="font-medium">Media</label>
         <MediaInput
           v-if="formData.media.length"
           :media="formData.media"

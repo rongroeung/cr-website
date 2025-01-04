@@ -1,5 +1,5 @@
 <script>
-import YoutubeInput from './YouTubeInput.vue'
+import YoutubeInput from '../form/YouTubeInput.vue'
 export default {
   name: 'AddNewYoutubeForm',
   components: { YoutubeInput },

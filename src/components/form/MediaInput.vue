@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import TextInput from './TextInput.vue'
+import TextInput from '@/components/form/TextInput.vue'
 import ImagePreview from '@/components/common/ImagePreview.vue'
 
 export default {

@@ -3,7 +3,7 @@
     <h2 id="accordion-flush-heading-1">
       <button
         type="button"
-        class="flex items-center justify-between w-full text-secondary py-5 font-medium rtl:text-right border-b border-gray-200 gap-3"
+        class="flex items-center justify-between w-full text-secondary py-5 font-medium rtl:text-right border-b border-gray-200 gap-3 hover:bg-gray-200 px-4"
         @click="toggleBody()"
       >
         <span v-t="title"></span>
@@ -26,19 +26,7 @@
       </button>
     </h2>
     <div id="accordion-flush-body-1" ref="accordingBody" class="hidden">
-      <div class="py-5 border-b border-gray-200">
-        <p class="mb-2 text-gray-500">
-          Flowbite is an open-source library of interactive components built on top of Tailwind CSS
-          including buttons, dropdowns, modals, navbars, and more.
-        </p>
-        <p class="text-gray-500">
-          Check out this guide to learn how to
-          <a href="/docs/getting-started/introduction/" class="text-blue-600 hover:underline"
-            >get started</a
-          >
-          and start developing websites even faster with components on top of Tailwind CSS.
-        </p>
-      </div>
+      <slot />
     </div>
   </section>
 </template>

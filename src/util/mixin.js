@@ -23,21 +23,9 @@ const windowResizeMixin = {
 
 const fetchDataMixin = {
   methods: {
-    async getAllContentIdsFromLocalStorage() {
-      let content_ids;
-      content_ids = localStorage.getItem('content_ids')
-
-      if (content_ids != null || content_ids !== "undefined") {
-        return JSON.parse(content_ids);
-      } else {
-        const response = await this.getAllContentId()
-        content_ids = response.content_id
-        localStorage.setItem('content_ids', JSON.stringify(content_ids))
-        return content_ids
-      }
-    },
     async getAllContentStartByIds(id) {
-      const content_ids = await this.getAllContentIdsFromLocalStorage()
+      const response = await this.getAllContentId()
+      const content_ids = response.content_id
       const filteredContentIds = this.filterContentStartWithId(content_ids, id)
       const contents = await this.fetchContentByIds(filteredContentIds)
 
