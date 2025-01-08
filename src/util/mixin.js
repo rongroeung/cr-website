@@ -20,7 +20,6 @@ const windowResizeMixin = {
   }
 }
 
-
 const fetchDataMixin = {
   methods: {
     async getAllContentStartByIds(id) {
@@ -236,7 +235,4 @@ const fetchDataMixin = {
   }
 }
 
-export {
-  windowResizeMixin,
-  fetchDataMixin,
-}
+export { windowResizeMixin, fetchDataMixin }

@@ -1,5 +1,3 @@
-
-
 <script>
 import TextInput from '@/components/form/TextInput.vue'
 export default {
@@ -70,5 +68,4 @@ export default {
     </form>
   </div>
 </template>
-<style>
-</style>
+<style></style>
