@@ -33,7 +33,6 @@ export default {
         Reach Out
       </p>
       <p class="w-full text-center md:text-start text-xl xl:text-2xl">Have a specific need?</p>
-
       <AccordingItem title="Mail-Us">
         <MailUsForm />
       </AccordingItem>

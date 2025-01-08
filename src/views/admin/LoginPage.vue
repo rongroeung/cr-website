@@ -1,9 +1,7 @@
 <script>
-import TextInput from '@/components/form/TextInput.vue'
 import { setItemWithExpiry, getItemWithExpiry } from '@/util/localStorageUtils.js'
 export default {
   name: 'LoginPage',
-  components: { TextInput },
   data() {
     return {
       formData: {

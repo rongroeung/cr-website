@@ -1,5 +1,4 @@
 <script>
-import TextInput from '@/components/form/TextInput.vue'
 import MediaInput from '@/components/form/MediaInput.vue'
 import YouTubeInput from '@/components/form/YouTubeInput.vue'
 import DescriptionInput from '@/components/form/DescriptionInput.vue'
@@ -10,7 +9,7 @@ import {
 } from '@/util/dateFormatUtils.js'
 export default {
   name: 'UpdateDataForm',
-  components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },
+  components: { MediaInput, YouTubeInput, DescriptionInput },
   props: {
     contentId: String
   },

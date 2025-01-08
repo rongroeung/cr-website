@@ -201,7 +201,7 @@ const fetchDataMixin = {
           },
           data: contentObject
         })
-        if (response.data.code == 200) {
+        if (response.data.code === 200) {
           this.$toast.success(response.data.message)
         }
       } catch (error) {
@@ -221,7 +221,7 @@ const fetchDataMixin = {
             'Content-Type': 'application/json'
           }
         })
-        if (response.data.code == 200) {
+        if (response.data.code === 200) {
           this.$toast.success(response.data.message)
           return true
         }

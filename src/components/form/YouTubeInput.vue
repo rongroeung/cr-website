@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import TextInput from '@/components/form/TextInput.vue'
 import ImagePreview from '@/components/common/ImagePreview.vue'
 
 export default {
@@ -82,7 +81,6 @@ export default {
     }
   },
   components: {
-    TextInput,
     ImagePreview
   }
 }

@@ -1,5 +1,4 @@
 <script>
-import TextInput from '@/components/form/TextInput.vue'
 import MediaInput from '../form/MediaInput.vue'
 import YouTubeInput from '../form/YouTubeInput.vue'
 import DescriptionInput from '../form/DescriptionInput.vue'
@@ -7,7 +6,7 @@ import DescriptionInput from '../form/DescriptionInput.vue'
 import { formatDateForBackend, formatDateForDisplay } from '@/util/dateFormatUtils.js'
 export default {
   name: 'AddNewContentForm',
-  components: { TextInput, MediaInput, YouTubeInput, DescriptionInput },
+  components: { MediaInput, YouTubeInput, DescriptionInput },
   props: {
     // We get data model from parent because we need to display JSON format
     modelValue: Object
