@@ -1,8 +1,7 @@
 <script>
-import TextInput from '@/components/form/TextInput.vue'
+import emailjs from '@emailjs/browser'
 export default {
   name: 'MailUsForm',
-  components: { TextInput },
   data() {
     return {
       formData: {
@@ -11,12 +10,49 @@ export default {
         mobile: '',
         message: ''
       },
-      disableSubmit: false,
-      statusMessage: ''
+      disableSubmit: false
     }
   },
   methods: {
-    async submitForm() {}
+    async submitForm() {
+      this.disableSubmit = true
+      const templateParams = {
+        user_name: this.formData.name,
+        user_email: this.formData.email,
+        user_mobile: this.formData.mobile,
+        user_message: this.formData.message
+      }
+
+      emailjs.init({
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      })
+      emailjs
+        .send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_MAIL_US,
+          templateParams
+        )
+        .then(
+          (response) => {
+            if (response.status === 200 && response.text === 'OK') {
+              this.$toast.success('Email sent successfully!')
+            }
+          },
+          (error) => {
+            this.$toast.error('Failed to send email. Please try again.', error)
+          }
+        )
+        .finally(() => {
+          this.disableSubmit = false
+          this.resetForm()
+        })
+    },
+    resetForm() {
+      this.formData.name = ''
+      this.formData.email = ''
+      this.formData.mobile = ''
+      this.formData.message = ''
+    }
   }
 }
 </script>
@@ -64,6 +100,17 @@ export default {
           ref="textarea"
           required
         ></textarea>
+      </div>
+
+      <div class="w-full flex flex-col items-end">
+        <p v-if="disableSubmit" class="text-cr-gray-dark">Loading...</p>
+        <button
+          type="submit"
+          :disabled="disableSubmit"
+          :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
+          class="bg-secondary w-24 px-4 py-2 rounded ms-auto mb-10"
+          v-t="'submit'"
+        ></button>
       </div>
     </form>
   </div>

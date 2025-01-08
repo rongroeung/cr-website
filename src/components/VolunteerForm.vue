@@ -1,20 +1,17 @@
 <script>
-import TextInput from '@/components/form/TextInput.vue'
-import emailjs from '@emailjs/browser'
+import { sendVolunteerForm } from '@/util/emailJs.js'
 export default {
   name: 'AddNewContentForm',
-  components: { TextInput },
   data() {
     return {
       formData: {
-        name: '',
-        email: '',
-        mobile: '',
-        role: '',
-        description: ''
+        name: 'sad',
+        email: 'asd',
+        mobile: 'asd',
+        role: 'asd',
+        description: 'dsa'
       },
-      disableSubmit: false,
-      statusMessage: ''
+      disableSubmit: false
     }
   },
   methods: {
@@ -27,8 +24,6 @@ export default {
     },
     async submitForm() {
       this.disableSubmit = true
-      this.statusMessage = ''
-      this.messageClass = ''
       const templateParams = {
         user_name: this.formData.name,
         user_email: this.formData.email,
@@ -36,30 +31,14 @@ export default {
         user_role: this.formData.role,
         user_desc: this.formData.description
       }
-
-      emailjs.init({
-        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      })
-
-      emailjs
-        .send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_VOLUNTEER_ID,
-          templateParams
-        )
-        .then(
-          (response) => {
-            if (response.status === 200 && response.text === 'OK') {
-              this.$toast.success('Email sent successfully!')
-            }
-          },
-          (error) => {
-            this.$toast.error('Failed to send email. Please try again.', error)
-          }
-        )
-        .finally(() => {
-          this.disableSubmit = false
-        })
+      const response = await sendVolunteerForm(templateParams)
+      if (response === true) {
+        this.$toast.success('Email sent successfully!')
+        this.resetForm()
+        this.disableSubmit = false
+      } else {
+        this.$toast.error('Failed to send email. Please try again.')
+      }
     }
   }
 }
@@ -130,17 +109,6 @@ export default {
           v-t="'submit'"
         ></button>
       </div>
-      <div v-if="statusMessage" :class="messageClass">
-        {{ statusMessage }}
-      </div>
     </form>
   </div>
 </template>
-
-<style scoped>
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-</style>
