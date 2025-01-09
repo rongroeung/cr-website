@@ -5,11 +5,11 @@ export default {
   data() {
     return {
       formData: {
-        name: 'sad',
-        email: 'asd',
-        mobile: 'asd',
-        role: 'asd',
-        description: 'dsa'
+        name: '',
+        email: '',
+        mobile: '',
+        role: '',
+        description: ''
       },
       disableSubmit: false
     }

@@ -37,9 +37,6 @@ export default {
   props: {
     title: String
   },
-  data() {
-    return {}
-  },
   methods: {
     toggleBody() {
       this.$refs.accordingBody.classList.toggle('hidden')
