@@ -1,6 +1,6 @@
 <script>
 import ContactItem from '@/components/contact/ContactItem.vue'
-import VolunteerForm from '@/components/VolunteerForm.vue'
+import VolunteerForm from '@/components/form/VolunteerForm.vue'
 export default {
   name: 'VolunteerPage',
   components: { ContactItem, VolunteerForm },

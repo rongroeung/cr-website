@@ -1,29 +1,25 @@
 <script>
-import { sendVolunteerForm } from '@/util/emailJs.js'
 export default {
   name: 'AddNewContentForm',
   data() {
     return {
-      formData: {
+      initialFormData: {
         name: '',
         email: '',
         mobile: '',
         role: '',
         description: ''
       },
-      disableSubmit: false
+      formData: {},
+      isSubmitting: false
     }
   },
+  created() {
+    this.resetForm()
+  },
   methods: {
-    resetForm() {
-      this.formData.name = ''
-      this.formData.email = ''
-      this.formData.mobile = ''
-      this.formData.role = ''
-      this.formData.description = ''
-    },
     async submitForm() {
-      this.disableSubmit = true
+      this.isSubmitting = true
       const templateParams = {
         user_name: this.formData.name,
         user_email: this.formData.email,
@@ -31,14 +27,13 @@ export default {
         user_role: this.formData.role,
         user_desc: this.formData.description
       }
-      const response = await sendVolunteerForm(templateParams)
-      if (response === true) {
-        this.$toast.success('Email sent successfully!')
+      this.sendVolunteerForm(templateParams).then(() => {
         this.resetForm()
-        this.disableSubmit = false
-      } else {
-        this.$toast.error('Failed to send email. Please try again.')
-      }
+        this.isSubmitting = false
+      })
+    },
+    resetForm() {
+      this.formData = { ...this.initialFormData }
     }
   }
 }
@@ -99,15 +94,8 @@ export default {
         ></textarea>
       </div>
 
-      <div class="w-full flex flex-col items-end">
-        <p v-if="disableSubmit" class="text-cr-gray-dark">Loading...</p>
-        <button
-          type="submit"
-          :disabled="disableSubmit"
-          :class="{ 'cursor-not-allowed opacity-50': disableSubmit }"
-          class="bg-secondary w-24 px-4 py-2 rounded ms-auto mb-10"
-          v-t="'submit'"
-        ></button>
+      <div class="w-full flex justify-end !mb-10">
+        <LoadingButton :isLoading="isSubmitting" />
       </div>
     </form>
   </div>
