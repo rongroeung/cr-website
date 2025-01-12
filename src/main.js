@@ -14,6 +14,7 @@ import '@/assets/css/main.css'
 
 // Register mixin //
 import { fetchDataMixin } from '@/util/mixin'
+import { sendMailMixin } from '@/util/emailJs'
 
 // Register global component //
 import ImagePreview from '@/components/common/ImagePreview.vue'
@@ -21,6 +22,7 @@ import ContentSection from '@/components/common/ContentSection.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import ResizableContainer from '@/components/admin/ResizableContainer.vue'
 import TextInput from '@/components/form/TextInput.vue'
+import LoadingButton from './components/common/LoadingButton.vue'
 
 const app = createApp(App)
 
@@ -66,9 +68,11 @@ app.component('ContentSection', ContentSection)
 app.component('PageHeader', PageHeader)
 app.component('ResizableContainer', ResizableContainer)
 app.component('TextInput', TextInput)
+app.component('LoadingButton', LoadingButton)
 
 app.use(ToastPlugin)
 app.use(router)
 app.use(i18n)
 app.mixin(fetchDataMixin)
+app.mixin(sendMailMixin)
 app.mount('#app')
