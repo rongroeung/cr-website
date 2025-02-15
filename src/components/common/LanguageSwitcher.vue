@@ -11,9 +11,9 @@ const setLanguage = (newLang) => {
   if (storedLang == newLang) {
     return
   }
+  window.location.reload()
   locale.value = newLang
   localStorage.setItem('lang', newLang)
-  window.location.reload()
 }
 
 const select = (lang) => {
