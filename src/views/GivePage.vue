@@ -68,7 +68,10 @@ export default {
         </ul>
 
         <div v-if="section3" class="Paypal w-full h-fit flex-center">
-          <Paypal v-show="isGlobalPage" class="mt-8 md:mt-16 text-cr-gray-darker" />
+          <Paypal
+            v-show="isGlobalPage"
+            class="Paypal-Container mt-8 md:mt-16 text-cr-gray-darker"
+          />
           <div v-show="!isGlobalPage" class="max-w-screen-lg mt-10 md:mt-20">
             <img :src="section3.media[0].url" :alt="section3.media[0].name" class="h-100" />
           </div>
@@ -79,7 +82,7 @@ export default {
 </template>
 
 <style scoped>
-#paypal-form-fields-container-7DXNCEKJAMG3L {
+.Paypal > .Paypal-Container {
   width: 19.75rem !important;
 }
 </style>

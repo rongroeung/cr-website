@@ -1,5 +1,5 @@
 <template>
-  <div id="paypal-container-7DXNCEKJAMG3L"></div>
+  <div id="paypal-container-7DXNCEKJAMG3L" class="w-full"></div>
 </template>
 
 <script>
