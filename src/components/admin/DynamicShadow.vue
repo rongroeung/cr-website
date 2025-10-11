@@ -1,6 +1,6 @@
 <template>
-  <div ref="hero" class="hero" @mousemove="shadow">
-    <h1 ref="text">{{ text }}</h1>
+  <div class="flex justify-center items-center">
+    <div class="shine">{{ text }}</div>
   </div>
 </template>
 
@@ -9,59 +9,83 @@ export default {
   name: 'DynamicShadow',
   props: {
     text: String
-  },
-  data() {
-    return {
-      range: 20 // 20px * 2
-    }
-  },
-  methods: {
-    shadow(e) {
-      const hero = this.$refs.hero
-      const text = this.$refs.text
-
-      if (!hero || !text) return
-
-      let x = e.offsetX
-      let y = e.offsetY
-
-      // Handle nested element offset
-      if (e.target !== hero) {
-        x = x + e.target.offsetLeft
-        y = y + e.target.offsetTop
-      }
-
-      const width = hero.offsetWidth
-      const height = hero.offsetHeight
-
-      const xRange = Math.round((x / width) * this.range - this.range / 2)
-      const yRange = Math.round((y / height) * this.range - this.range / 2)
-
-      text.style.textShadow = `${xRange}px ${yRange}px 5px rgba(245, 168, 7, 0.7)`
-    }
   }
 }
 </script>
 
 <style scoped>
-html {
-  color: black;
-  font-family: sans-serif;
+.shine {
+  font-size: 3em;
+  font-weight: bold;
 }
 
-body {
-  margin: 0;
+/* Re-defined .shine to include modern CSS features */
+.shine {
+  /* Initial background color */
+  background: var(--secondary-color);
+  /* Standard linear gradient syntax */
+  background-image: linear-gradient(to right, #222, #222, #fff 50%, #222);
+
+  /* Vendor-prefixed gradient for older WebKit/Chrome/Safari */
+  background-image: -webkit-linear-gradient(left, #222, #222, #fff 50%, #222);
+
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  /* Standard background size, replacing -webkit-background-size */
+  background-size: 150px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  /* Standard background clip, replacing -webkit-background-clip */
+  background-clip: text;
+  /* WebKit prefix is still often necessary for text clipping */
+  -webkit-background-clip: text;
+
+  /* Standard animation properties */
+  animation-name: shine;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  /* WebKit prefixed animation properties */
+  -webkit-animation-name: shine;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+
+  text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
 }
 
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
+/* Standard keyframes block */
+@keyframes shine {
+  0%,
+  10% {
+    background-position: -1000px;
+  }
+  20% {
+    background-position: top left;
+  }
+  90% {
+    background-position: top right;
+  }
+  100% {
+    background-position: 1000px;
+  }
 }
 
-h1 {
-  text-shadow: 10px 10px 10px rgba(245, 168, 7, 0.7);
-  font-size: 2.5rem;
+/* WebKit keyframes block for compatibility */
+@-webkit-keyframes shine {
+  0%,
+  10% {
+    background-position: -1000px;
+  }
+  20% {
+    background-position: top left;
+  }
+  90% {
+    background-position: top right;
+  }
+  100% {
+    background-position: 1000px;
+  }
 }
 </style>

@@ -50,18 +50,18 @@ export default {
 </script>
 
 <template>
-  <div class="py-8 mx-auto flex text-center gap-4 h-screen">
+  <div class="pt-8 mx-auto flex text-center gap-4 h-max">
     <!-- Left Container -->
     <div class="h-full" :style="{ width: `${leftColumnWidth}%` }">
       <slot name="left_container"></slot>
     </div>
 
     <!-- Divider Line -->
-    <div class="relative mx-4 mt-6">
+    <div class="relative mx-4 mt-6 h-auto">
       <div
         @mousedown="startResizing"
         @touchstart="startResizing"
-        class="resizer bg-primary w-2-px h-screen cursor-col-resize"
+        class="resizer bg-primary w-2-px h-full cursor-col-resize"
       ></div>
 
       <button
@@ -73,7 +73,7 @@ export default {
       </button>
     </div>
     <!-- Right Container -->
-    <div class="h-full" :style="{ width: `${100 - leftColumnWidth}%` }">
+    <div class="right-container mb-8" :style="{ width: `${100 - leftColumnWidth}%` }">
       <slot name="right_container"></slot>
     </div>
   </div>
@@ -94,5 +94,9 @@ export default {
   border-radius: 4px;
   transition: all 0.3s ease;
   text-align: center;
+}
+
+.right-container {
+  height: -webkit-fill-available;
 }
 </style>

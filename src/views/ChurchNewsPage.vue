@@ -51,7 +51,7 @@ export default {
               </p>
             </div>
           </div>
-          <a href="https://t.me/crossroadscommunity" target="_blank">
+          <a :href="section2.media[0].note" target="_blank">
             <button
               class="mt-4 w-full px-4 py-2 bg-secondary rounded-md hover:bg-sub-secondary text-cr-gray-light transition ease-in-out"
               v-t="'Join-Now'"

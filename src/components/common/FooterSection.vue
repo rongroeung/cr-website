@@ -3,7 +3,8 @@ export default {
   name: 'FooterSection',
   data() {
     return {
-      cssHeader: 'font-semibold uppercase hover:text-primary'
+      cssHeader: 'font-semibold uppercase hover:text-primary',
+      currentYear: new Date().getFullYear()
     }
   }
 }
@@ -72,7 +73,7 @@ export default {
         </div>
       </div>
       <div class="flex justify-between items-center flex-wrap">
-        <p class="text-sm mb-6">&copy; 2024 The Crossroads Church of Cambodia.</p>
+        <p class="text-sm mb-6">&copy; {{ currentYear }} The Crossroads Church of Cambodia.</p>
         <div class="space-x-4 flex flex-row mb-6">
           <a target="_blank" href="https://facebook.com/onlinechurch.crossroads"
             ><img loading="lazy" src="@/assets/icon/facebook.svg" alt="Facebook" class="h-6"
