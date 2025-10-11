@@ -30,7 +30,7 @@ const app = createApp(App)
 app.config.globalProperties.$backendUrl =
   'https://crossroadscambodia.org:7002/cr-web-backend/api/v1/'
 app.config.globalProperties.$logoUrl =
-  'https://crossroadscambodia.org:7004/filebrowser/api/public/dl/Zbj4LVgK/base-content/cr-photos/cr-logo-001.png?inline=true'
+  'https://crossroadscambodia.org:7004/filebrowser/api/public/dl/bbs3rW77/base-content/cr-photos/cr-logo-001.png?inline=true'
 
 app.config.globalProperties.$numberOfSundaySermonPerPage = 8
 app.config.globalProperties.$numberOfNewsAndEventsItemPerPage = 4
